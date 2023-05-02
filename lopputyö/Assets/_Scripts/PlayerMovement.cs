@@ -131,12 +131,10 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
             if (Mathf.Sign(dir) != Mathf.Sign(_velocity))
             {
                 _maxSpeedChange = turnSpeed * Time.fixedDeltaTime;
-                Debug.Log("k‰‰ntyy");
             }
             else
             {
                 _maxSpeedChange = acceleration * Time.fixedDeltaTime;
-                Debug.Log("kiihtyy");
             }
         }
         else

@@ -430,9 +430,9 @@ MonoBehaviour:
   normalGravity: 5
   groundTime: 0.2
   pressJumpTime: 0.2
-  acceleration: 29.3
+  acceleration: 20.1
   deceleration: 100
-  turnSpeed: 54.8
+  turnSpeed: 52.2
 --- !u!61 &1434082878
 BoxCollider2D:
   m_ObjectHideFlags: 0
