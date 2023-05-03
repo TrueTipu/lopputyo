@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
     [Header("Jump")]
 
     [SerializeField]
-    [Range(0.0f, 20.0f)]
+    [Range(0.0f, 30.0f)]
     float jumpForce;
 
     [SerializeField]
@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
 
         //lopeta hyppy hyppy irrottaessa
         //nerokas koodi by monni
-        if (Input.GetKeyUp(KeyCode.Space)) 
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.Space)) 
         {
             if (rb2.velocity.y > 0)
             {
@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
         Move();
     }
 
-    private void Flip() //vaihda spriten kääntymiseksi jos tarve, tässä etuna lasten kääntyminen mukana
+    private void Flip() //vaihda spriten kï¿½ï¿½ntymiseksi jos tarve, tï¿½ssï¿½ etuna lasten kï¿½ï¿½ntyminen mukana
     {
         if (dir > 0)
         {
@@ -115,7 +115,7 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
     {
         //huom ilma ja maa variablet voi erottaa helposti
 
-        //jotain tän kaltaista
+        //jotain tï¿½n kaltaista
         /*
         acceleration = onGround ? maxAcceleration : maxAirAcceleration;
         deceleration = onGround ? maxDecceleration : maxAirDeceleration;
@@ -127,7 +127,7 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
         float _velocity = rb2.velocity.x;
         if (dir != 0)
         {
-            //jos käännyt, kääntymisnopeus
+            //jos kï¿½ï¿½nnyt, kï¿½ï¿½ntymisnopeus
             if (Mathf.Sign(dir) != Mathf.Sign(_velocity))
             {
                 _maxSpeedChange = turnSpeed * Time.fixedDeltaTime;
@@ -144,7 +144,7 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
 
         float _desiredSpeed = dir * speed;
 
-        //Liikutetaan velocityä kohti haluttua nopeutta, yllä määritetyllä nopeudella
+        //Liikutetaan velocityï¿½ kohti haluttua nopeutta, yllï¿½ mï¿½ï¿½ritetyllï¿½ nopeudella
         _velocity = Mathf.MoveTowards(_velocity, _desiredSpeed, _maxSpeedChange);
         rb2.velocity = new Vector2(_velocity, rb2.velocity.y);
     }
@@ -158,7 +158,7 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
         rb2.velocity = new Vector2(rb2.velocity.x, Vector2.up.y * jumpForce);
     }
 
-    private void MultiplyFall() //vapaaehtoinen koodi putoamisnopeuden kiihdyttämiseen
+    private void MultiplyFall() //vapaaehtoinen koodi putoamisnopeuden kiihdyttï¿½miseen
     {
         if (isGround)
         {
@@ -194,7 +194,7 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
 
     private void PressCheck()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetKeyDown(KeyCode.Space))
         {
             pressJumpTimer = pressJumpTime;
             pressedJump = true;
