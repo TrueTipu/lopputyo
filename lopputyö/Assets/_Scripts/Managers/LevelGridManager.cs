@@ -13,6 +13,8 @@ public class LevelGridManager : Singleton<LevelGridManager>
     [SerializeField] float tileSize;
     [SerializeField] int gridOffset;
 
+    RoomManager roomManager;
+
     public Tile[,] GetAllTiles()
     {
         return tiles;
@@ -24,7 +26,24 @@ public class LevelGridManager : Singleton<LevelGridManager>
     protected override void Awake()
     {
         base.Awake();
+
+    }
+
+    private void Start()
+    {
         GenerateGrid();
+        roomManager = RoomManager.Instance;
+
+        roomManager.SubscribeRoomsChanged(SetRoomSprites);
+        SetRoomSprites();
+    }
+
+    void SetRoomSprites()
+    {
+        foreach (Tile tile in tiles)
+        {
+            tile.SetRoom(roomManager.GetRoom(tile.TileCords));
+        }
     }
 
     void GenerateGrid()
@@ -40,7 +59,7 @@ public class LevelGridManager : Singleton<LevelGridManager>
                 spawnedTile.SetName($"Tile {x}, {y}");
 
                 bool darker = (x + y) % 2 == 1; //shakkipattern
-                spawnedTile.Init(darker, new Vector2(x, y));
+                spawnedTile.Init(darker, new Vector2Int(x, y));
 
                 tiles[x, y] = spawnedTile;
             }
@@ -69,4 +88,11 @@ public class LevelGridManager : Singleton<LevelGridManager>
 
 
 
+}
+public enum Direction
+{
+    Left,
+    Right,
+    Up,
+    Down
 }

@@ -5,27 +5,76 @@ using System;
 
 
 /// <summary>
-///Hallitsee hiirtä ja hoveria
+///Hallitsee hiirtä, hoveria ja koko gridin ja room managerin yhteyttä
+///TODO: jos jaksat ja haluat siirrä tähän vain position ja input check, ja itse toiminnot omaan yhtenäisyysmanageriin
 /// </summary>
 public class Hover : MonoBehaviour
 {
     LevelGridManager grid;
+    RoomManager roomManager;
 
     Vector3 rememberPos;
     Tile rememberTile;
     Tile currentTile;
 
+    Tile selectedTile;
+
+    [SerializeField] GameObject selectedLogo;
+
     private void Start()
     {
         grid = LevelGridManager.Instance;
+        roomManager = RoomManager.Instance;
+        print(roomManager);
     }
 
     private void Update()
     {
         MouseCheck();
         CheckKeyboard();
+        if(Input.GetKeyDown(KeyCode.Z) || Input.GetMouseButtonDown(0))
+        {
+            SelectTile();
+        }
+        if(Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(1))
+        {
+            selectedTile = null;
+            selectedLogo.SetActive(false);
+        }
 
         transform.position = currentTile.transform.position;
+
+    }
+
+    void SelectTile()
+    {
+        if (selectedTile == null)
+        {
+            if (!currentTile.HasRoom) return;
+
+            //huom, käsitellään vain tilejä, koska ainakin joskus ajattelin että tämä johtaisi siistimpään koodiin
+            //muuta järkevästi jos muutat, idea on siis että roomien siirtymiä hallitaan yhdestä(1) paikasta: room manager
+            //ei sekotetat gridiä tähän
+            selectedTile = currentTile;
+
+            selectedLogo.SetActive(true);
+            selectedLogo.transform.position = selectedTile.transform.position;
+            //Debug.Log("Tile Selected");
+        }
+        else
+        {
+            if (currentTile.HasRoom)
+            {
+                //Debug.Log("Täynnä");
+                return;
+            }
+
+            roomManager.MoveRoom(selectedTile.TileCords, currentTile.TileCords);
+            selectedTile = null;
+
+            selectedLogo.SetActive(false);
+            //Debug.Log("Tile Placed");
+        }
 
     }
 

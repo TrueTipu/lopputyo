@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
 
         //lopeta hyppy hyppy irrottaessa
         //nerokas koodi by monni
-        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.Space)) 
+        if (JumpKeysUp()) 
         {
             if (rb2.velocity.y > 0)
             {
@@ -194,7 +194,7 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
 
     private void PressCheck()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetKeyDown(KeyCode.Space))
+        if (JumpKeysDown())
         {
             pressJumpTimer = pressJumpTime;
             pressedJump = true;
@@ -208,6 +208,23 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
             pressJumpTimer -= Time.deltaTime;
         }
     }
+
+    #region input check
+    //helpotetaan nappien vaihtamista ja ehkä toiseen input järjestelmään siirtymistä
+    private bool JumpKeysDown()
+    {
+        return (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z));
+    }
+    private bool JumpKeys()
+    {
+        return (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Z));
+    }
+    private bool JumpKeysUp()
+    {
+        return (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Z));
+    }
+    #endregion
+
 
     private void OnDrawGizmosSelected()
     {
