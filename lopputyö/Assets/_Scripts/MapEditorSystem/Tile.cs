@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tile : MonoBehaviour
+public class Tile : MonoBehaviour, ITileNode
 {
     [SerializeField] Color baseColor, darkerColor;
     [SerializeField] SpriteRenderer sRenderer;
@@ -56,7 +56,4 @@ public class Tile : MonoBehaviour
         TileCords = _cords;
         sRenderer.color = _darker ? darkerColor : baseColor;
     }
-
-
-
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
-public class RoomSpawner : MonoBehaviour
+public class RoomSpawner : MonoBehaviour, ITileNode
 {
 
     Room room;
@@ -81,4 +81,5 @@ public class RoomSpawner : MonoBehaviour
             roomActivated(tileCords);
         }
     }
+
 }

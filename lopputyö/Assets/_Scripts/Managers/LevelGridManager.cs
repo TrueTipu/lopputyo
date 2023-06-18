@@ -7,21 +7,11 @@ using System;
 /// <summary>
 ///Hallitsee gridiä ja sen tilejä
 /// </summary>
-public class LevelGridManager : Singleton<LevelGridManager>
+public class LevelGridManager : GenericGrid<Tile, LevelGridManager>
 {
-    [SerializeField] int width, height;
-    [SerializeField] float tileSize;
-    [SerializeField] int gridOffset;
 
     RoomManager roomManager;
 
-    public Tile[,] GetAllTiles()
-    {
-        return tiles;
-    }
-
-    [SerializeField] Tile tilePrefab;
-    Tile[,] tiles;
 
     protected override void Awake()
     {
@@ -29,9 +19,11 @@ public class LevelGridManager : Singleton<LevelGridManager>
 
     }
 
-    private void Start()
+
+
+    protected override void Start()
     {
-        GenerateGrid();
+        base.Start();
         roomManager = RoomManager.Instance;
 
         roomManager.SubscribeRoomsChanged(SetRoomSprites);
@@ -46,47 +38,11 @@ public class LevelGridManager : Singleton<LevelGridManager>
         }
     }
 
-    void GenerateGrid()
+    protected override void InitNode(Tile _tile, int _x, int _y)
     {
-        tiles = new Tile[width, height];
-
-        for (int x = 0; x < width; x++)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                Vector3 pos = new Vector3(x * tileSize - gridOffset, y * tileSize - gridOffset);
-                Tile spawnedTile = Instantiate(tilePrefab, pos, Quaternion.identity);
-                spawnedTile.SetName($"Tile {x}, {y}");
-
-                bool darker = (x + y) % 2 == 1; //shakkipattern
-                spawnedTile.Init(darker, new Vector2Int(x, y));
-
-                tiles[x, y] = spawnedTile;
-            }
-        }
+        bool darker = (_x + _y) % 2 == 1; //shakkipattern
+        _tile.Init(darker, new Vector2Int(_x, _y));
     }
-
-
-    public Tile GetTile(Vector3 _worldPos)
-    {
-        int x = Mathf.RoundToInt((_worldPos.x + gridOffset) / tileSize);
-        int y = Mathf.RoundToInt((_worldPos.y + gridOffset) / tileSize);
-        return GetTile(x, y);
-    }
-
-    public Tile GetTile(float _x, float _y)
-    {
-        int x = Mathf.RoundToInt(_x);
-        int y = Mathf.RoundToInt(_y);
-        if (x >= width) { x = width - 1; }
-        if (y >= width) { y = height - 1; }
-        if (x <= 0) { x = 0; }
-        if (y <= 0) { y = 0; }
-
-        return tiles[x, y];
-    }
-
-
 
 }
 public enum Direction

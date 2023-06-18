@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D))]
-public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
+public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_OnGround, IA_FacingRight, IA_JumpVariables
 {
     [SerializeField] Rigidbody2D rb2;
 
@@ -32,20 +32,14 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
     [Range(0.0f, 1.0f)]
     float jumpCut; //irrottaessa hidastus
 
+
     [SerializeField]
     [Range(0.0f, 5.0f)]
     float fallAdd;
 
-    [SerializeField]
-    [Range(0.0f, 20.0f)]
-    float normalGravity;
-
-
-    bool fallAddApplied;
 
 
 
-    bool isGround;
     bool pressedJump;
 
     [Header("Timers")]
@@ -62,57 +56,103 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
     //[SerializeField, Range(0f, 100f)] float maxAirDeceleration;
     //[SerializeField, Range(0f, 100f)] float maxAirTurnSpeed = 80f;
 
+    [SerializeField, Range(0f, 10f)] float hangTimeRange = 2f;
+    [SerializeField, Range(0f, 1f)] float hangTimeStrength = 0.5f;
+
+    PlayerStateCheck playerStateCheck;
+
+    bool IsGround
+    {
+        get { return playerStateCheck.OnGround; }
+
+        set
+        {
+            SetOnGround(value);
+            SetOnAir(!value);
+        }
+    }
+    public Action<bool> SetOnGround { get; set; }
+    public Action<bool> SetOnAir { get; set; }
+
+    JumpVariables JumpVariables
+    {
+
+        get { return playerStateCheck.JumpVariables; }
+
+        set
+        {
+            SetJumpVariables(value);
+        }
+    }
+    public Action<JumpVariables> SetJumpVariables { get; set; }
+
+
+    public bool FacingRight
+    {
+        set { SetFacingRight(value); }
+    }
+    public Action<bool> SetFacingRight { get; set; }
     private void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
-        rb2.gravityScale = normalGravity;
+        rb2.gravityScale = playerStateCheck.NORMAL_GRAVITY;
     }
 
+    public void SetPSC(PlayerStateCheck _playerStateCheck)
+    {
+        playerStateCheck = _playerStateCheck;
+    }
     private void Update()
     {
         dir = Input.GetAxisRaw("Horizontal");
 
         Flip();
 
-        GroundCheck();
+        if (playerStateCheck.IsDashing) return;
         PressCheck();
 
         MultiplyFall();
 
-        if (pressedJump && isGround)
+        if (pressedJump && IsGround)
         {
             Jump();
         }
 
         //lopeta hyppy hyppy irrottaessa
         //nerokas koodi by monni
-        if (JumpKeysUp()) 
+        if (!Keys.JumpKeys() && JumpVariables.JumpCanceled == false) 
         {
-            if (rb2.velocity.y > 0)
-            {
-                rb2.velocity = new Vector2(rb2.velocity.x, rb2.velocity.y * jumpCut);
-            }
+            JumpVariables = JumpVariables.SetJumpCanceled(true);
+            rb2.velocity = new Vector2(rb2.velocity.x, rb2.velocity.y * jumpCut);
+        }
+        if (!Keys.JumpKeys())
+        {
+            JumpVariables = JumpVariables.SetIsJumping(false);
         }
     }
     private void FixedUpdate()
     {
         Move();
+        GroundCheck();
     }
 
     private void Flip() //vaihda spriten k��ntymiseksi jos tarve, t�ss� etuna lasten k��ntyminen mukana
     {
         if (dir > 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = Vector3.one;
+            FacingRight = true;
         }
         else if (dir < 0)
         {
-            transform.localScale = Vector3.one;
+            transform.localScale = new Vector3(-1, 1, 1);
+            FacingRight = false;
         }
     }
 
     private void Move()
     {
+
         //huom ilma ja maa variablet voi erottaa helposti
 
         //jotain t�n kaltaista
@@ -121,6 +161,10 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
         deceleration = onGround ? maxDecceleration : maxAirDeceleration;
         turnSpeed = onGround ? maxTurnSpeed : maxAirTurnSpeed
         */
+
+        if (playerStateCheck.IsDashing || playerStateCheck.IsWallJumping) return;
+
+        Debug.Log("moved");
 
         float _maxSpeedChange;
 
@@ -151,8 +195,10 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
 
     private void Jump()
     {
+        JumpVariables = new JumpVariables(true, false, false, false);
+
         pressedJump = false;
-        isGround = false;
+        IsGround = false;
         groundTimer = 0;
         pressJumpTimer = 0;
         rb2.velocity = new Vector2(rb2.velocity.x, Vector2.up.y * jumpForce);
@@ -160,31 +206,40 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
 
     private void MultiplyFall() //vapaaehtoinen koodi putoamisnopeuden kiihdytt�miseen
     {
-        if (isGround)
+        if (playerStateCheck.OnGround)
         {
-            fallAddApplied = false;
-            rb2.gravityScale = normalGravity;
+            rb2.gravityScale = playerStateCheck.NORMAL_GRAVITY;           
             return;
         }
 
-        if (rb2.velocity.y < 0 && !fallAddApplied)
+        //hidastus hypyn maximissa
+        if (!JumpVariables.FallSlowApplied && rb2.velocity.y < hangTimeRange )
         {
-            rb2.gravityScale *= fallAdd;
-            fallAddApplied = true;
+            Debug.Log("yks");
+            JumpVariables = JumpVariables.SetFallSlowApplied(true);
+            rb2.gravityScale = playerStateCheck.NORMAL_GRAVITY * hangTimeStrength;
+        }
+        //nopeutus sen jälkeen
+        else if (!JumpVariables.FallAddApplied && rb2.velocity.y < 0)
+        {
+            Debug.Log("kaks");
+            rb2.gravityScale = playerStateCheck.NORMAL_GRAVITY * fallAdd;
+            JumpVariables = JumpVariables.SetFallAddApplied(true);
         }
     }
 
     private void GroundCheck()
     {
 
-        if (Physics2D.OverlapBox(transform.position - jumpPosOffset, area, 1, groundLayer))
+        if (Physics2D.OverlapBox(transform.position - jumpPosOffset, area, 1, groundLayer) && rb2.velocity.y == 0)
         {
             groundTimer = groundTime;
-            isGround = true;
+            IsGround = true;
+            JumpVariables = JumpVariables.SetIsJumping(false);
         }
         else if (groundTimer <= 0)
         {
-            isGround = false;
+            IsGround = false;
         }
         else
         {
@@ -194,7 +249,7 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
 
     private void PressCheck()
     {
-        if (JumpKeysDown())
+        if (Keys.JumpKeysDown())
         {
             pressJumpTimer = pressJumpTime;
             pressedJump = true;
@@ -209,26 +264,9 @@ public class PlayerMovement : MonoBehaviour //AND ONLY MOVEMENT
         }
     }
 
-    #region input check
-    //helpotetaan nappien vaihtamista ja ehkä toiseen input järjestelmään siirtymistä
-    private bool JumpKeysDown()
-    {
-        return (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z));
-    }
-    private bool JumpKeys()
-    {
-        return (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Z));
-    }
-    private bool JumpKeysUp()
-    {
-        return (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Z));
-    }
-    #endregion
-
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireCube(transform.position - jumpPosOffset, area);
     }
-
 }
