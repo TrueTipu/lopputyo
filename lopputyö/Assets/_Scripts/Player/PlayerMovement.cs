@@ -129,11 +129,12 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         {
             JumpVariables = JumpVariables.SetIsJumping(false);
         }
+
+        GroundCheck();
     }
     private void FixedUpdate()
     {
         Move();
-        GroundCheck();
     }
 
     private void Flip() //vaihda spriten k��ntymiseksi jos tarve, t�ss� etuna lasten k��ntyminen mukana
@@ -163,8 +164,6 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         */
 
         if (playerStateCheck.IsDashing || playerStateCheck.IsWallJumping) return;
-
-        Debug.Log("moved");
 
         float _maxSpeedChange;
 
@@ -215,14 +214,14 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         //hidastus hypyn maximissa
         if (!JumpVariables.FallSlowApplied && rb2.velocity.y < hangTimeRange )
         {
-            Debug.Log("yks");
+            //Debug.Log("yks");
             JumpVariables = JumpVariables.SetFallSlowApplied(true);
             rb2.gravityScale = playerStateCheck.NORMAL_GRAVITY * hangTimeStrength;
         }
         //nopeutus sen jälkeen
         else if (!JumpVariables.FallAddApplied && rb2.velocity.y < 0)
         {
-            Debug.Log("kaks");
+            //Debug.Log("kaks");
             rb2.gravityScale = playerStateCheck.NORMAL_GRAVITY * fallAdd;
             JumpVariables = JumpVariables.SetFallAddApplied(true);
         }

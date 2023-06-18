@@ -38,8 +38,9 @@ public class DoubleJump : MonoBehaviour, IAbility, IA_JumpVariables
             rb2.gravityScale = playerStateCheck.NORMAL_GRAVITY;
             hasDoubleJump = false;
         }
-        if (playerStateCheck.OnGround || playerStateCheck.OnWall)
+        if ((playerStateCheck.OnGround || playerStateCheck.OnWall) && !hasDoubleJump)
         {
+            Debug.Log("dj back");
             hasDoubleJump = true;
         }
     }
