@@ -38,4 +38,19 @@ public static class Keys
         return (Input.GetKeyUp(KeyCode.C) || Input.GetKeyUp(KeyCode.LeftShift));
     }
     #endregion
+
+    #region Interact
+    public static bool InteractKeysDown()
+    {
+        return (Input.GetKeyDown(KeyCode.I));
+    }
+    public static bool InteractKeys()
+    {
+        return (Input.GetKey(KeyCode.I));
+    }
+    public static bool InteractKeysUp()
+    {
+        return (Input.GetKeyUp(KeyCode.I));
+    }
+    #endregion
 }

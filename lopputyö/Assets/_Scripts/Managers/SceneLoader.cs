@@ -10,11 +10,16 @@ public class SceneLoader : PersistentSingleton<SceneLoader>
     {
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SceneManager.LoadScene(1);
+            LoadLevelEditor();
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SceneManager.LoadScene(0);
         }
+    }
+
+    public void LoadLevelEditor()
+    {
+        SceneManager.LoadScene(1);
     }
 }
