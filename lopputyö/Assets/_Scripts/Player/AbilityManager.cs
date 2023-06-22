@@ -10,7 +10,8 @@ public class AbilityManager : MonoBehaviour
     [SerializeField] Rigidbody2D rb2;
     [SerializeField] PlayerMovement playerMovement;
 
-    [SerializeField] List<AbilityPacket> abilities;
+    [field: SerializeField] public List<AbilityPacket> Abilities { get; private set; }
+
     PlayerStateCheck playerStateCheck;
 
 
@@ -27,12 +28,12 @@ public class AbilityManager : MonoBehaviour
         Rigidbody2D rb2 = GetComponent<Rigidbody2D>();
         PlayerMovement playerMovement = GetComponent<PlayerMovement>();
 
-        foreach (AbilityPacket _ability in abilities)
+        foreach (AbilityPacket _ability in Abilities)
         {
             _ability.Boot();
         }
 
-        List<IPlayerStateChanger> playerStateChangers = abilities.Select(a => a.AbilityScript).
+        List<IPlayerStateChanger> playerStateChangers = Abilities.Select(a => a.AbilityScript).
             ToList().
             ConvertAll(a => (IPlayerStateChanger)a);
         playerStateChangers.Add((IPlayerStateChanger)playerMovement);
@@ -45,23 +46,23 @@ public class AbilityManager : MonoBehaviour
     
     public void ActivateAbility(PlayerAbility _abilityTag)
     {
-        AbilityPacket _ability = abilities.Find(_a => _a.AbilityTag == _abilityTag);
+        AbilityPacket _ability = Abilities.Find(_a => _a.AbilityTag == _abilityTag);
         _ability.Activate(playerStateCheck, rb2);
     }
     public void DeActivateAbility(PlayerAbility _abilityTag)
     {
-        AbilityPacket _ability = abilities.Find(_a => _a.AbilityTag == _abilityTag);
+        AbilityPacket _ability = Abilities.Find(_a => _a.AbilityTag == _abilityTag);
         _ability.DeActivate();
     }
     public bool IsActive(PlayerAbility _abilityTag)
     {
-        AbilityPacket _ability = abilities.Find(_a => _a.AbilityTag == _abilityTag);
+        AbilityPacket _ability = Abilities.Find(_a => _a.AbilityTag == _abilityTag);
         return _ability.Enabled;
     }
 
 
     [System.Serializable]
-    class AbilityPacket
+    public class AbilityPacket
     {
         public void Boot()
         {
@@ -69,7 +70,7 @@ public class AbilityManager : MonoBehaviour
                 AbilityScript = abilityObject.GetComponent<IAbility>();
             abilityObject.SetActive(false);
         }
-        [SerializeField] string abilityName;
+        [field: SerializeField] public string abilityName { get; private set; }
         [SerializeField] GameObject abilityObject;
 
         public IAbility AbilityScript { get; private set; }

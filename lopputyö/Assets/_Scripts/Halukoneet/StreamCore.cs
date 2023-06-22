@@ -9,6 +9,8 @@ public class StreamCore : MonoBehaviour
 
     UIManager uIManager; //safety reasons to avoid singleton problems
 
+    AbilityManager playerAbilities;
+
     private void Start()
     {
         uIManager = UIManager.Instance;
@@ -18,6 +20,7 @@ public class StreamCore : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             onTrigger = true;
+            playerAbilities = collision.GetComponent<AbilityManager>();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -34,12 +37,16 @@ public class StreamCore : MonoBehaviour
         {
             if (!powered)
             {
-                uIManager.ActivateItemChoose(true);
+                uIManager.ActivateItemChoose(true, playerAbilities.Abilities, this);
             }
             else
             {
 
             }
         }
+    }
+    public void SetAbility(PlayerAbility _abilityTag)
+    {
+        return;
     }
 }
