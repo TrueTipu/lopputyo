@@ -19,8 +19,6 @@ public class RoomObject : MonoBehaviour
             upBlock?.SetActive(false);
         if(downBlock != null)
             downBlock?.SetActive(false);
-
-        
     }
 
     public void BlockPath(Direction _dir)

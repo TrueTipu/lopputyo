@@ -45,3 +45,18 @@ public class Room : ScriptableObject
 
 }
 
+public enum Direction
+{
+    Left,
+    LeftUp,
+    LeftDown,
+    Right,
+    RightUp,
+    RightDown,
+    Up,
+    UpLeft,
+    UpRight,
+    Down,
+    DownLeft,
+    DownRight,
+}

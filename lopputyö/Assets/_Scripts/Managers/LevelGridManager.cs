@@ -45,10 +45,3 @@ public class LevelGridManager : GenericGrid<Tile, LevelGridManager>
     }
 
 }
-public enum Direction
-{
-    Left,
-    Right,
-    Up,
-    Down
-}
