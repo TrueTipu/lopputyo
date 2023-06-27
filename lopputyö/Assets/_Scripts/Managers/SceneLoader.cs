@@ -18,7 +18,7 @@ public class SceneLoader : PersistentSingleton<SceneLoader>
         }
     }
 
-    public void LoadLevelEditor()
+    public static void LoadLevelEditor()
     {
         SceneManager.LoadScene(1);
     }

@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
+using System;
 public class StreamCore : MonoBehaviour
 {
     bool powered;
+    public AbilityManager.AbilityPacket CurrentAbility { get;  private set; }
 
     bool onTrigger;
 
     UIManager uIManager; //safety reasons to avoid singleton problems
 
     AbilityManager playerAbilities;
+
+    
+
 
     private void Start()
     {
@@ -41,12 +46,27 @@ public class StreamCore : MonoBehaviour
             }
             else
             {
-
+                SceneLoader.LoadLevelEditor();
             }
         }
     }
-    public void SetAbility(PlayerAbility _abilityTag)
+    public void SetAbility(AbilityManager.AbilityPacket _ability, Action<List<AbilityManager.AbilityPacket>> _reloadCallback)
     {
-        return;
+        if(CurrentAbility != null)
+        {
+            playerAbilities.ActivateAbility(CurrentAbility.AbilityTag);
+        }
+
+        CurrentAbility = _ability;
+
+        if(_ability != null)
+        {
+            powered = true;
+            playerAbilities.DeActivateAbility(_ability.AbilityTag);
+        }
+        
+        _reloadCallback(playerAbilities.Abilities);
     }
+
+
 }

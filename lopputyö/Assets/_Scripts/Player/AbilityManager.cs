@@ -97,6 +97,7 @@ public class AbilityManager : MonoBehaviour
 }
 public enum PlayerAbility
 {
+    None,
     Doublejump,
     Walljump,
     Dash
