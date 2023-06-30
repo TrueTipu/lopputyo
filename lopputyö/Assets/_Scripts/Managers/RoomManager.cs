@@ -45,7 +45,7 @@ public class RoomManager : Singleton<RoomManager>
     {
         //huom päivitä kun saat uudet suunnat
         Room _left = GetRoom(_roomPosition.x - 1, _roomPosition.y);
-        if ((_left == null || _room == null || !(_left.Right))) // vaihda tämä kun uusi järjestlemä, oon laiska ja teen nyt näin
+        if ((_left == null || _room == null || !(_left.PossibleDirections[Direction.Right]))) // vaihda tämä kun uusi järjestlemä, oon laiska ja teen nyt näin
         {
             _room?.AddBlockedDirection(Direction.Left);
             _left?.AddBlockedDirection(Direction.Right);
@@ -57,7 +57,7 @@ public class RoomManager : Singleton<RoomManager>
         }
 
         Room _right = GetRoom(_roomPosition.x + 1, _roomPosition.y);
-        if ((_right == null || _room == null || !(_right.Left))) // vaihda tämä kun uusi järjestlemä, oon laiska ja teen nyt näin
+        if ((_right == null || _room == null || !(_right.PossibleDirections[Direction.Left]))) // vaihda tämä kun uusi järjestlemä, oon laiska ja teen nyt näin
         {
             _room?.AddBlockedDirection(Direction.Right);
             _right?.AddBlockedDirection(Direction.Left);
@@ -69,7 +69,7 @@ public class RoomManager : Singleton<RoomManager>
         }
 
         Room _down = GetRoom(_roomPosition.x, _roomPosition.y - 1);
-        if ((_down == null || _room == null || !(_down.Up))) // vaihda tämä kun uusi järjestlemä, oon laiska ja teen nyt näin
+        if ((_down == null || _room == null || !(_down.PossibleDirections[Direction.Up]))) // vaihda tämä kun uusi järjestlemä, oon laiska ja teen nyt näin
         {
             _room?.AddBlockedDirection(Direction.Down);
             _down?.AddBlockedDirection(Direction.Up);
@@ -82,7 +82,7 @@ public class RoomManager : Singleton<RoomManager>
 
 
         Room _up = GetRoom(_roomPosition.x, _roomPosition.y + 1);
-        if ((_up == null || _room == null || !(_up.Down))) // vaihda tämä kun uusi järjestlemä, oon laiska ja teen nyt näin
+        if ((_up == null || _room == null || !(_up.PossibleDirections[Direction.Down]))) // vaihda tämä kun uusi järjestlemä, oon laiska ja teen nyt näin
         {
             _room?.AddBlockedDirection(Direction.Up);
             _up?.AddBlockedDirection(Direction.Down);

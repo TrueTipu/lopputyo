@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Array2DEditor;
 
 
 [CreateAssetMenu(fileName = "Room", menuName = "ScriptableObjects/Room")]
@@ -15,11 +15,23 @@ public class Room : ScriptableObject
 
     [field: SerializeField] public string Name { get; private set; }
 
-    //tee tähän custom editor näille 
-    [field: SerializeField] public bool Up { get; private set; }
-    [field: SerializeField] public bool Down { get; private set; }
-    [field: SerializeField] public bool Left { get; private set; }
-    [field: SerializeField] public bool Right { get; private set; }
+    public DirectionDictionary PossibleDirections { get; private set; } = new DirectionDictionary()   
+    {
+        {Direction.Up, false},
+        {Direction.Right, false},
+        {Direction.Left, false},
+        {Direction.Down, false},
+        {Direction.UpLeft, false},
+        {Direction.RightDown, false},
+        {Direction.LeftDown, false},
+        {Direction.DownLeft, false},
+        {Direction.UpRight, false},
+        {Direction.RightUp, false},
+        {Direction.LeftUp, false},
+        {Direction.DownRight, false},
+    };
+
+    [SerializeField] Array2DBool possibleDirectionsSetter;
 
 
     Dictionary<Direction, bool> blockedDirections = new Dictionary<Direction, bool>()
