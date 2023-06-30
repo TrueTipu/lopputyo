@@ -33,6 +33,28 @@ public static class Helpers
         return new Timer(time, end);
     }
 
+    public static int FindValue<T>(T _begin, Func<int,T> _getNewComparable, Func<T, T, bool> _returnComparision, int _iterationMax, int _iterationIncrement = 1)
+    {
+        int _minIndex = -1;
+        for (int i = 0; i < _iterationMax; i += _iterationIncrement)
+        {
+            T _newComparable = _getNewComparable(i);
+            if(_returnComparision(_newComparable, _begin))
+            {
+                _begin = _newComparable;
+                _minIndex = i;
+            }
+        }
+        return _minIndex;
+    }
+    public static int FindMin(float _begin, Func<int, float> _getNewComparable, int _iterationMax, int _iterationIncrement = 1)
+    {
+        return FindValue<float>(_begin, _getNewComparable, (x, y) => { return x < y; }, _iterationMax, _iterationIncrement);
+    }
+    public static int FindMax(float _begin, Func<int, float> _getNewComparable, int _iterationMax, int _iterationIncrement = 1)
+    {
+        return FindValue<float>(_begin, _getNewComparable, (x, y) => { return x > y; }, _iterationMax, _iterationIncrement);
+    }
 
     public static void Tick(float deltaTime)
     {
