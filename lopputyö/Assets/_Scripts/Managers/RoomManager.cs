@@ -43,58 +43,38 @@ public class RoomManager : Singleton<RoomManager>
 
     void SetNeighbours(Room _room, Vector2Int _roomPosition)
     {
-        //huom päivitä kun saat uudet suunnat
-        Room _left = GetRoom(_roomPosition.x - 1, _roomPosition.y);
-        if ((_left == null || _room == null || !(_left.PossibleDirections[Direction.Right]))) // vaihda tämä kun uusi järjestlemä, oon laiska ja teen nyt näin
-        {
-            _room?.AddBlockedDirection(Direction.Left);
-            _left?.AddBlockedDirection(Direction.Right);
-        }
-        else
-        {
-            _room?.RemoveBlockedDirection(Direction.Left);
-            _left?.RemoveBlockedDirection(Direction.Right);
-        }
 
+        Room _left = GetRoom(_roomPosition.x - 1, _roomPosition.y);
+        CheckDirectionRooms(_room, _left, new List<Direction> { Direction.Left, Direction.LeftDown, Direction.LeftUp });
+     
         Room _right = GetRoom(_roomPosition.x + 1, _roomPosition.y);
-        if ((_right == null || _room == null || !(_right.PossibleDirections[Direction.Left]))) // vaihda tämä kun uusi järjestlemä, oon laiska ja teen nyt näin
-        {
-            _room?.AddBlockedDirection(Direction.Right);
-            _right?.AddBlockedDirection(Direction.Left);
-        }
-        else
-        {
-            _room?.RemoveBlockedDirection(Direction.Right);
-            _right?.RemoveBlockedDirection(Direction.Left);
-        }
+        CheckDirectionRooms(_room, _right, new List<Direction> { Direction.Right, Direction.RightDown, Direction.RightUp });
 
         Room _down = GetRoom(_roomPosition.x, _roomPosition.y - 1);
-        if ((_down == null || _room == null || !(_down.PossibleDirections[Direction.Up]))) // vaihda tämä kun uusi järjestlemä, oon laiska ja teen nyt näin
-        {
-            _room?.AddBlockedDirection(Direction.Down);
-            _down?.AddBlockedDirection(Direction.Up);
-        }
-        else
-        {
-            _room?.RemoveBlockedDirection(Direction.Down);
-            _down?.RemoveBlockedDirection(Direction.Up);
-        }
-
+        CheckDirectionRooms(_room, _down, new List<Direction> { Direction.Down, Direction.DownLeft, Direction.DownRight });
 
         Room _up = GetRoom(_roomPosition.x, _roomPosition.y + 1);
-        if ((_up == null || _room == null || !(_up.PossibleDirections[Direction.Down]))) // vaihda tämä kun uusi järjestlemä, oon laiska ja teen nyt näin
-        {
-            _room?.AddBlockedDirection(Direction.Up);
-            _up?.AddBlockedDirection(Direction.Down);
-        }
-        else
-        {
-            _room?.RemoveBlockedDirection(Direction.Up);
-            _up?.RemoveBlockedDirection(Direction.Down);
-        }
+        CheckDirectionRooms(_room, _up, new List<Direction> { Direction.Up, Direction.UpLeft, Direction.UpRight });
 
     }
+    void CheckDirectionRooms(Room _currentRoom, Room _neighbourRoom, List<Direction> _dirs)
+    {
 
+        foreach (Direction _dir in _dirs)
+        {
+            if (_neighbourRoom == null || _currentRoom == null || (!_currentRoom.PossibleDirections[_dir]) || (!_neighbourRoom.PossibleDirections[_dir.ReturnAntiDir()]))
+            {
+                _currentRoom?.AddBlockedDirection(_dir);
+                _neighbourRoom?.AddBlockedDirection(_dir.ReturnAntiDir());
+
+            }
+            else
+            {
+                _currentRoom?.RemoveBlockedDirection(_dir);
+                _neighbourRoom?.RemoveBlockedDirection(_dir.ReturnAntiDir());
+            }
+        }
+    }
     public void MoveRoom(Vector2Int _startCords, Vector2Int _endCords)
     {
         Room _room = rooms[_startCords];

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Array2DEditor;
+using System.Collections;
+
 
 
 [CreateAssetMenu(fileName = "Room", menuName = "ScriptableObjects/Room")]
@@ -15,7 +17,10 @@ public class Room : ScriptableObject
 
     [field: SerializeField] public string Name { get; private set; }
 
-    public DirectionDictionary PossibleDirections { get; private set; } = new DirectionDictionary()   
+    [SerializeField] RoomOpenData possibleDirections = new RoomOpenData();
+    public RoomOpenData PossibleDirections => possibleDirections;
+
+    public Dictionary<Direction, bool> BlockedDirections { get; } = new Dictionary<Direction, bool>()
     {
         {Direction.Up, false},
         {Direction.Right, false},
@@ -31,44 +36,14 @@ public class Room : ScriptableObject
         {Direction.DownRight, false},
     };
 
-    [SerializeField] Array2DBool possibleDirectionsSetter;
-
-
-    Dictionary<Direction, bool> blockedDirections = new Dictionary<Direction, bool>()
-    {
-        {Direction.Up, false},
-        {Direction.Right, false},
-        {Direction.Left, false},
-        {Direction.Down, false},
-    };
-
-    public Dictionary<Direction, bool> BlockedDirections
-    { get { return new Dictionary<Direction, bool>(blockedDirections); } }
-    
 
     public void AddBlockedDirection(Direction _dir)
     {
-        blockedDirections[_dir] = true;
+        BlockedDirections[_dir] = true;
     }
     public void RemoveBlockedDirection(Direction _dir)
     {
-        blockedDirections[_dir] = false;
+        BlockedDirections[_dir] = false;
     }
-
-}
-
-public enum Direction
-{
-    Left,
-    LeftUp,
-    LeftDown,
-    Right,
-    RightUp,
-    RightDown,
-    Up,
-    UpLeft,
-    UpRight,
-    Down,
-    DownLeft,
-    DownRight,
+   
 }

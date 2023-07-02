@@ -197,6 +197,3 @@ public abstract class DictionaryDrawer<TK, TV> : PropertyDrawer
 
 //[CustomPropertyDrawer(typeof(CustomDictionary))]
 //public class CustomDictionaryDrawer : DictionaryDrawer<string, bool> { }
-
-[CustomPropertyDrawer(typeof(DirectionDictionary))]
-public class DirectionDictionaryDrawer : DictionaryDrawer<Direction, bool> { }
