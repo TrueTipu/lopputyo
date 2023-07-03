@@ -13,12 +13,6 @@ public class LevelGridManager : GenericGrid<Tile, LevelGridManager>
     RoomManager roomManager;
 
 
-    protected override void Awake()
-    {
-        base.Awake();
-
-    }
-
 
 
     protected override void Start()

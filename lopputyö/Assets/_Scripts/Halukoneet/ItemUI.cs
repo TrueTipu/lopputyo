@@ -14,6 +14,9 @@ public class ItemUI : MonoBehaviour
 
     [SerializeField] GameObject chosenAbilitySquare;
 
+    [SerializeField] GameObject openEditorButton;
+    [SerializeField] GameObject openEditorButtonFake;
+
 
     public void Load(List<AbilityManager.AbilityPacket> _abilityPackets, StreamCore _core)
     {
@@ -46,8 +49,16 @@ public class ItemUI : MonoBehaviour
         if(_index != -1)
         {
             core.SetAbility(abilityPackets[_index], (_newAbilityPackets) => { Load(_newAbilityPackets, core); });
+            openEditorButton.SetActive(true);
+            openEditorButtonFake.SetActive(false);
+
         }
-        else core.SetAbility(null, (_newAbilityPackets) => { Load(_newAbilityPackets, core); });
+        else
+        {
+            core.SetAbility(null, (_newAbilityPackets) => { Load(_newAbilityPackets, core); });
+            openEditorButton.SetActive(false);
+            openEditorButtonFake.SetActive(true);
+        }
     }
         
 

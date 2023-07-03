@@ -8,10 +8,10 @@ using System;
 public class AbilityManager : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb2;
-    [SerializeField] PlayerMovement playerMovement;
 
     [field: SerializeField] public List<AbilityPacket> Abilities { get; private set; }
 
+    [SerializeField]
     PlayerStateCheck playerStateCheck;
 
 
@@ -26,7 +26,6 @@ public class AbilityManager : MonoBehaviour
     private void Awake()
     {
         Rigidbody2D rb2 = GetComponent<Rigidbody2D>();
-        PlayerMovement playerMovement = GetComponent<PlayerMovement>();
 
         foreach (AbilityPacket _ability in Abilities)
         {
@@ -36,11 +35,8 @@ public class AbilityManager : MonoBehaviour
         List<IPlayerStateChanger> playerStateChangers = Abilities.Select(a => a.AbilityScript).
             ToList().
             ConvertAll(a => (IPlayerStateChanger)a);
-        playerStateChangers.Add((IPlayerStateChanger)playerMovement);
 
-        playerStateCheck = new PlayerStateCheck(playerStateChangers, normalGravity);
-
-        playerMovement.SetPSC(playerStateCheck);
+        playerStateCheck.SetAbilities(playerStateChangers);
     }
 
     

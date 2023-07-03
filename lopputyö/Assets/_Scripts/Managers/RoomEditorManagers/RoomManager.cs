@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class RoomManager : Singleton<RoomManager>
 {
-    //TODO tee tännekin parempi tietorakenne
-    [SerializeField] List<Room> initRooms;
 
-    Dictionary<Vector2Int, Room> rooms = new Dictionary<Vector2Int, Room>();
+
+    [SerializeField]RoomSet roomSet;
+    Dictionary<Vector2Int, Room> rooms => roomSet.Rooms; //shortcut niin ei tarvi rewriteä
 
     Action roomsChanged = () => { return; };
 
@@ -19,12 +19,6 @@ public class RoomManager : Singleton<RoomManager>
 
         SceneManager.sceneLoaded += (_s, _lSM) => { roomsChanged = () => { return; }; };
 
-        int _x = 0;
-        foreach (Room _room in initRooms)
-        {
-            rooms.Add(new Vector2Int(_x, 0), _room);
-            _x += 1;
-        }
         roomsChanged();
 
         foreach (Vector2Int _pos in rooms.Keys)
@@ -75,6 +69,9 @@ public class RoomManager : Singleton<RoomManager>
             }
         }
     }
+
+    #region HMMM
+    ///periaatteessa nämä voisi siirtää scriptable objectiin jolloin päästäisiin eroon Singletonista
     public void MoveRoom(Vector2Int _startCords, Vector2Int _endCords)
     {
         Room _room = rooms[_startCords];
@@ -104,5 +101,6 @@ public class RoomManager : Singleton<RoomManager>
         {
             return null;
         }
-    }
+    } 
+    #endregion
 }

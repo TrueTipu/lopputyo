@@ -14,7 +14,7 @@ public class UIManager : Singleton<UIManager>
 
     }
 
-    public void ChangeScene(int _index)  { SceneLoader.Instance.ChangeScene(_index); }
-    public void NextScene() {  SceneLoader.Instance.NextScene(); }
-    public void ReloadScene() {  SceneLoader.Instance.ReloadScene(); }
+    public void ChangeScene(int _index)  { SceneLoader.ChangeScene(_index); }
+    public void NextScene() {  SceneLoader.NextScene(); }
+    public void ReloadScene() {  SceneLoader.ReloadScene(); }
 }

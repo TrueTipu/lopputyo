@@ -10,7 +10,7 @@ using System;
 /// </summary>
 public class Hover : MonoBehaviour
 {
-    LevelGridManager grid;
+    [SerializeField] LevelGridManager grid;
     RoomManager roomManager;
 
     Vector3 rememberPos;
@@ -23,7 +23,6 @@ public class Hover : MonoBehaviour
 
     private void Start()
     {
-        grid = LevelGridManager.Instance;
         roomManager = RoomManager.Instance;
         print(roomManager);
     }

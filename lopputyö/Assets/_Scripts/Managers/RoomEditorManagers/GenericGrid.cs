@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 
-public abstract class GenericGrid<Node, T> : Singleton<T> where Node : MonoBehaviour, ITileNode where T : MonoBehaviour
+public abstract class GenericGrid<Node, T> : MonoBehaviour where Node : MonoBehaviour, ITileNode where T : MonoBehaviour
 {
     [SerializeField] int width, height;
     [SerializeField] float roomWidth, roomHeight;
@@ -19,16 +19,11 @@ public abstract class GenericGrid<Node, T> : Singleton<T> where Node : MonoBehav
     [SerializeField] Node tilePrefab;
     protected Node[,] tiles;
 
-    protected override void Awake()
-    {
-        base.Awake();
 
-    }
 
     protected virtual void Start()
     {
         GenerateGrid();
-
     }
 
 

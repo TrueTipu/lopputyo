@@ -74,7 +74,7 @@ public class Dashing : MonoBehaviour, IAbility, IA_JumpVariables, IA_IsDashing
 
         yield return new WaitForSeconds(dashingTime);
 
-        rb2.gravityScale = playerStateCheck.NORMAL_GRAVITY;
+        rb2.gravityScale = playerStateCheck.NormalGravity;
         IsDashing = false;
         JumpVariables = new JumpVariables(false, true, true, true); 
 

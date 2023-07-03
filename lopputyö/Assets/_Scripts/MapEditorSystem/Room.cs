@@ -10,12 +10,14 @@ using System.Collections;
 [System.Serializable]
 public class Room : ScriptableObject
 {
+    [SerializeField] Sprite mapIcon;
+    public Sprite MapIcon => mapIcon;
 
-    [field: SerializeField] public Sprite MapIcon { get; private set; }
+    [SerializeField] GameObject roomPrefab;
+    public GameObject RoomPrefab => roomPrefab;
 
-    [field: SerializeField] public GameObject RoomPrefab { get; private set; }
-
-    [field: SerializeField] public string Name { get; private set; }
+    [SerializeField] new string name;
+    public string Name => name;
 
     [SerializeField] RoomOpenData possibleDirections = new RoomOpenData();
     public RoomOpenData PossibleDirections => possibleDirections;

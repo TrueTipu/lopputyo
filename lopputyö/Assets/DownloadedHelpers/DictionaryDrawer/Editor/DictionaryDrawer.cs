@@ -151,6 +151,7 @@ public abstract class DictionaryDrawer<TK, TV> : PropertyDrawer
                 { typeof(string), (rect, value) => EditorGUI.TextField(rect, (string)value) },
                 { typeof(bool), (rect, value) => EditorGUI.Toggle(rect, (bool)value) },
                 { typeof(Vector2), (rect, value) => EditorGUI.Vector2Field(rect, GUIContent.none, (Vector2)value) },
+                { typeof(Vector2Int), (rect, value) => EditorGUI.Vector2IntField(rect, GUIContent.none, (Vector2Int)value) },
                 { typeof(Vector3), (rect, value) => EditorGUI.Vector3Field(rect, GUIContent.none, (Vector3)value) },
                 { typeof(Bounds), (rect, value) => EditorGUI.BoundsField(rect, (Bounds)value) },
                 { typeof(Rect), (rect, value) => EditorGUI.RectField(rect, (Rect)value) },
@@ -197,3 +198,7 @@ public abstract class DictionaryDrawer<TK, TV> : PropertyDrawer
 
 //[CustomPropertyDrawer(typeof(CustomDictionary))]
 //public class CustomDictionaryDrawer : DictionaryDrawer<string, bool> { }
+
+[CustomPropertyDrawer(typeof(RoomPositionDict))]
+public class RoomPositionDictDrawer : DictionaryDrawer<Vector2Int, Room> { }
+

@@ -41,7 +41,7 @@ public interface IA_OnWall : IA_Bool
     Action<bool> SetOnWall { get; set; }
 }
 
-
+[System.Serializable]
 public struct JumpVariables
 {
     public JumpVariables(bool _isJumping, bool _fallAddApplied, bool _fallSlowApplied, bool _jumpCanceled) : this()

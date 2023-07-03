@@ -88,7 +88,7 @@ public class WallJumpAndSlide : MonoBehaviour, IAbility, IA_JumpVariables, IA_On
         FacingRight = !FacingRight;
 
         Debug.Log("WJ");
-        rb2.gravityScale = playerStateCheck.NORMAL_GRAVITY;
+        rb2.gravityScale = playerStateCheck.NormalGravity;
         JumpVariables = new JumpVariables(false, true, true, true);
 
         yield return new WaitForSeconds(wallJumpingDuration);

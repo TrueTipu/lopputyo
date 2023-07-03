@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     [SerializeField, Range(0f, 10f)] float hangTimeRange = 2f;
     [SerializeField, Range(0f, 1f)] float hangTimeStrength = 0.5f;
 
-    PlayerStateCheck playerStateCheck;
+    [SerializeField]PlayerStateCheck playerStateCheck;
 
     bool IsGround
     {
@@ -71,8 +71,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
             SetOnAir(!value);
         }
     }
-    public Action<bool> SetOnGround { get; set; }
-    public Action<bool> SetOnAir { get; set; }
+    public Action<bool> SetOnGround { get; set; } = (x) => { };
+    public Action<bool> SetOnAir { get; set; } = (x) => { };
 
     JumpVariables JumpVariables
     {
@@ -84,24 +84,23 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
             SetJumpVariables(value);
         }
     }
-    public Action<JumpVariables> SetJumpVariables { get; set; }
+    public Action<JumpVariables> SetJumpVariables { get; set; } = (x) => { };
 
 
     public bool FacingRight
     {
         set { SetFacingRight(value); }
     }
-    public Action<bool> SetFacingRight { get; set; }
+    public Action<bool> SetFacingRight { get; set; } = (x) => { };
+
+
     private void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
-        rb2.gravityScale = playerStateCheck.NORMAL_GRAVITY;
+        playerStateCheck.SetAbilities(this as IPlayerStateChanger);
+        rb2.gravityScale = playerStateCheck.NormalGravity;
     }
 
-    public void SetPSC(PlayerStateCheck _playerStateCheck)
-    {
-        playerStateCheck = _playerStateCheck;
-    }
     private void Update()
     {
         dir = Input.GetAxisRaw("Horizontal");
@@ -120,7 +119,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
         //lopeta hyppy hyppy irrottaessa
         //nerokas koodi by monni
-        if (!Keys.JumpKeys() && JumpVariables.JumpCanceled == false) 
+        if (!Keys.JumpKeys() && JumpVariables.JumpCanceled == false && !IsGround) 
         {
             JumpVariables = JumpVariables.SetJumpCanceled(true);
             rb2.velocity = new Vector2(rb2.velocity.x, rb2.velocity.y * jumpCut);
@@ -207,7 +206,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     {
         if (playerStateCheck.OnGround)
         {
-            rb2.gravityScale = playerStateCheck.NORMAL_GRAVITY;           
+            rb2.gravityScale = playerStateCheck.NormalGravity;           
             return;
         }
 
@@ -216,13 +215,13 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         {
             //Debug.Log("yks");
             JumpVariables = JumpVariables.SetFallSlowApplied(true);
-            rb2.gravityScale = playerStateCheck.NORMAL_GRAVITY * hangTimeStrength;
+            rb2.gravityScale = playerStateCheck.NormalGravity * hangTimeStrength;
         }
         //nopeutus sen jälkeen
         else if (!JumpVariables.FallAddApplied && rb2.velocity.y < 0)
         {
             //Debug.Log("kaks");
-            rb2.gravityScale = playerStateCheck.NORMAL_GRAVITY * fallAdd;
+            rb2.gravityScale = playerStateCheck.NormalGravity * fallAdd;
             JumpVariables = JumpVariables.SetFallAddApplied(true);
         }
     }
@@ -230,7 +229,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     private void GroundCheck()
     {
 
-        if (Physics2D.OverlapBox(transform.position - jumpPosOffset, area, 1, groundLayer) && rb2.velocity.y == 0)
+        if (Physics2D.OverlapBox(transform.position - jumpPosOffset, area, 1, groundLayer) && rb2.velocity.y <= 0)
         {
             groundTimer = groundTime;
             IsGround = true;

@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
-public class PlayerStateCheck
+
+[CreateAssetMenu(fileName = "PlayerStateCheck", menuName = "ScriptableObjects/PlayerStateCheck")]
+[System.Serializable]
+public class PlayerStateCheck : ScriptableObject
 {
+
+
     public bool OnAir { get; private set; }
     public bool OnGround { get; private set; }
     public JumpVariables JumpVariables { get; private set; }
@@ -14,13 +19,16 @@ public class PlayerStateCheck
     public bool OnWall { get; private set; }
 
 
-    //normalized variables
-    public readonly float NORMAL_GRAVITY;
+    [SerializeField]float normalGravity;
+    public float NormalGravity => normalGravity;
 
 
-    public PlayerStateCheck(List<IPlayerStateChanger> _abilities, float _normalGravity)
+
+    public void SetAbilities(IPlayerStateChanger _ability) => SetAbilities(new List<IPlayerStateChanger>(){_ability});
+
+    public void SetAbilities(List<IPlayerStateChanger> _abilities)
     {
-        NORMAL_GRAVITY = _normalGravity;
+        if (_abilities == null) return;
 
         _abilities.FindAll(_ability => typeof(IA_OnAir).
              IsAssignableFrom(_ability.GetType())).

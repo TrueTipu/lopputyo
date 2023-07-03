@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : PersistentSingleton<SceneLoader>
 {
 
-
     // Update is called once per frame
     void Update()
     {
@@ -23,15 +22,15 @@ public class SceneLoader : PersistentSingleton<SceneLoader>
         SceneManager.LoadScene(1);
     }
 
-    public void ChangeScene(int _index)
+    public static void ChangeScene(int _index)
     {
         SceneManager.LoadScene(_index);
     }
-    public void NextScene()
+    public static void NextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-    public void ReloadScene()
+    public static void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
