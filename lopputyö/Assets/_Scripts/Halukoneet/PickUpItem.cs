@@ -6,14 +6,15 @@ using UnityEngine;
 public class PickUpItem : MonoBehaviour
 {
     [SerializeField] PlayerAbility ability;
+
+    [SerializeField] AbilityData abilityData;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            AbilityManager _abilityManager = collision.GetComponent<AbilityManager>();
 
             //cool effekts här
-            _abilityManager.ActivateAbility(ability);
+            abilityData.AddActiveAbilities(ability);
 
             Destroy(gameObject);
         }

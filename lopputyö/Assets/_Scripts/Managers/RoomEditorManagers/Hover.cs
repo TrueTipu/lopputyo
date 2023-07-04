@@ -24,7 +24,6 @@ public class Hover : MonoBehaviour
     private void Start()
     {
         roomManager = RoomManager.Instance;
-        print(roomManager);
     }
 
     private void Update()

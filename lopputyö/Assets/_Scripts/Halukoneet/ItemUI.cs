@@ -9,8 +9,13 @@ using Text = TMPro.TextMeshProUGUI;
 public class ItemUI : MonoBehaviour
 {
     [SerializeField] GameObject[] abilitySquares;
-    StreamCore core;
-    List<AbilityManager.AbilityPacket> abilityPackets;
+
+    [Tooltip("VAIN DEBUGGIA VARTEN")]
+    [SerializeField] CoreData core;
+
+    [SerializeField]UIData uIData;
+
+    List<PlayerAbility> abilities;
 
     [SerializeField] GameObject chosenAbilitySquare;
 
@@ -18,26 +23,66 @@ public class ItemUI : MonoBehaviour
     [SerializeField] GameObject openEditorButtonFake;
 
 
-    public void Load(List<AbilityManager.AbilityPacket> _abilityPackets, StreamCore _core)
-    {
-        _abilityPackets = _abilityPackets.FindAll((x) => { return x.Enabled; });
-        for (int i = 0; i < _abilityPackets.Count; i++)
-        {
-            abilitySquares[i].SetActive(true);
-            Text _text = abilitySquares[i].GetComponentInChildren<Text>();
-            _text.text = _abilityPackets[i].abilityName;
-        }
-        core = _core;
-        abilityPackets = _abilityPackets;
+    [SerializeField] AbilityData abilityData;
 
-        if (core.CurrentAbility != null)
+    Action<PlayerAbility> abilityCallback;
+    public void Start()
+    {
+        abilityCallback = (a) =>
+        {
+            if (core == null) return;
+            Load(abilityData.ActiveAbilities, core);
+        };
+        abilityData.SubscribeAbilityAdded(abilityCallback);
+        abilityData.SubscribeAbilityRemoved(abilityCallback);
+    }
+
+    private void Update()
+    {
+        ///debug
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Load(abilityData.ActiveAbilities, core);
+        }
+    }
+
+    public void Load(List<PlayerAbility> _abilities, CoreData _core)
+    {
+        //Debug.Log("2 [" + string.Join(", ",_abilities.ConvertAll<string>((x)=>x.ToString()).ToArray()) + "]");
+        for (int i = 0; i < abilitySquares.Length; i++)
+        {
+            if (i < _abilities.Count)
+            {
+                abilitySquares[i].SetActive(true);
+                Text _text = abilitySquares[i].GetComponentInChildren<Text>();
+                _text.text = _abilities[i].ToString();
+            }
+
+            else { abilitySquares[i].SetActive(false); }
+        }
+
+        core = _core;
+        abilities = _abilities;
+
+        if (core.CurrentAbility != PlayerAbility.None)
         {
             chosenAbilitySquare.SetActive(true);
-            chosenAbilitySquare.GetComponentInChildren<Text>().text = core.CurrentAbility.abilityName;
+            chosenAbilitySquare.GetComponentInChildren<Text>().text = core.CurrentAbility.ToString();
         }
         else
         {
             chosenAbilitySquare.SetActive(false);
+        }
+
+        if(core.Powered)
+        {
+            openEditorButton.SetActive(true);
+            openEditorButtonFake.SetActive(false);
+        }
+        else
+        {
+            openEditorButton.SetActive(false);
+            openEditorButtonFake.SetActive(true);
         }
     }
 
@@ -48,25 +93,25 @@ public class ItemUI : MonoBehaviour
 
         if(_index != -1)
         {
-            core.SetAbility(abilityPackets[_index], (_newAbilityPackets) => { Load(_newAbilityPackets, core); });
+            core.SetAbility(abilities[_index]);
             openEditorButton.SetActive(true);
             openEditorButtonFake.SetActive(false);
 
         }
         else
         {
-            core.SetAbility(null, (_newAbilityPackets) => { Load(_newAbilityPackets, core); });
+            core.SetAbility(PlayerAbility.None);
             openEditorButton.SetActive(false);
             openEditorButtonFake.SetActive(true);
         }
     }
         
 
-    void CloseUI()
+    public void CloseUI()
     {
         abilitySquares.ToList().ForEach((x) => { x.SetActive(false); });
-        core = null;
-        abilityPackets = null;
+        uIData.ItemUIActive = false;
         gameObject.SetActive(false);
     }
+
 }

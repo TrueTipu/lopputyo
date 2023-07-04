@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemChooseUI: {fileID: 0}
+  uIData: {fileID: 11400000, guid: f53ab9dbbf5c63d478b347b7142674dc, type: 2}
 --- !u!1 &193752414
 GameObject:
   m_ObjectHideFlags: 0

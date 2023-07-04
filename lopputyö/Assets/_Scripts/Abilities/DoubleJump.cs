@@ -40,7 +40,6 @@ public class DoubleJump : MonoBehaviour, IAbility, IA_JumpVariables
         }
         if ((playerStateCheck.OnGround || playerStateCheck.OnWall) && !hasDoubleJump)
         {
-            Debug.Log("dj back");
             hasDoubleJump = true;
         }
     }

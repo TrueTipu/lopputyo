@@ -5,7 +5,6 @@ using System.Collections;
 //vain ja ainoastaan debuggia varten
 public class AbilityEnabler : MonoBehaviour
 {
-    AbilityManager abilityManager;
 
     [SerializeField] bool doubleJump;
     bool doubleJumpActive;
@@ -17,23 +16,20 @@ public class AbilityEnabler : MonoBehaviour
     [SerializeField] bool wJump;
     bool wJumpActive;
 
-    private void Start()
-    {
-        abilityManager = GetComponent<AbilityManager>();
-    }
+    [SerializeField] AbilityData abilityData;
 
     private void Update()
     {
         #region DoubleJump
-        if (Input.GetKeyDown(KeyCode.J) && !abilityManager.IsActive(PlayerAbility.Doublejump))
+        if (Input.GetKeyDown(KeyCode.J) && !abilityData.IsActive(PlayerAbility.Doublejump))
         {
-            abilityManager.ActivateAbility(PlayerAbility.Doublejump);
+            abilityData.AddActiveAbilities(PlayerAbility.Doublejump);
             doubleJump = true;
             doubleJumpActive = true;
         }
         else if (Input.GetKeyDown(KeyCode.J))
         {
-            abilityManager.DeActivateAbility(PlayerAbility.Doublejump);
+            abilityData.RemoveActiveAbilities(PlayerAbility.Doublejump);
             doubleJump = false;
             doubleJumpActive = false;
         }
@@ -41,25 +37,25 @@ public class AbilityEnabler : MonoBehaviour
         if (doubleJump && !doubleJumpActive)
         {
             doubleJumpActive = true;
-            abilityManager.ActivateAbility(PlayerAbility.Doublejump);
+            abilityData.AddActiveAbilities(PlayerAbility.Doublejump);
         }
         else if (!doubleJump && doubleJumpActive)
         {
             doubleJumpActive = false;
-            abilityManager.DeActivateAbility(PlayerAbility.Doublejump);
+            abilityData.RemoveActiveAbilities(PlayerAbility.Doublejump);
         }
         #endregion
 
         #region Dash
-        if (Input.GetKeyDown(KeyCode.K) && !abilityManager.IsActive(PlayerAbility.Dash))
+        if (Input.GetKeyDown(KeyCode.K) && !abilityData.IsActive(PlayerAbility.Dash))
         {
-            abilityManager.ActivateAbility(PlayerAbility.Dash);
+            abilityData.AddActiveAbilities(PlayerAbility.Dash);
             dash = true;
             dashActive = true;
         }
         else if (Input.GetKeyDown(KeyCode.K))
         {
-            abilityManager.DeActivateAbility(PlayerAbility.Dash);
+            abilityData.RemoveActiveAbilities(PlayerAbility.Dash);
             dash = false;
             dashActive = false;
         }
@@ -67,25 +63,25 @@ public class AbilityEnabler : MonoBehaviour
         if (dash && !dashActive)
         {
             dashActive = true;
-            abilityManager.ActivateAbility(PlayerAbility.Dash);
+            abilityData.AddActiveAbilities(PlayerAbility.Dash);
         }
         else if (!dash && dashActive)
         {
             dashActive = false;
-            abilityManager.DeActivateAbility(PlayerAbility.Dash);
+            abilityData.RemoveActiveAbilities(PlayerAbility.Dash);
         }
         #endregion
 
         #region WallJump
-        if (Input.GetKeyDown(KeyCode.L) && !abilityManager.IsActive(PlayerAbility.Walljump))
+        if (Input.GetKeyDown(KeyCode.L) && !abilityData.IsActive(PlayerAbility.Walljump))
         {
-            abilityManager.ActivateAbility(PlayerAbility.Walljump);
+            abilityData.AddActiveAbilities(PlayerAbility.Walljump);
             wJump = true;
             wJumpActive = true;
         }
         else if (Input.GetKeyDown(KeyCode.L))
         {
-            abilityManager.DeActivateAbility(PlayerAbility.Walljump);
+            abilityData.RemoveActiveAbilities(PlayerAbility.Walljump);
             wJump = false;
             wJumpActive = false;
         }
@@ -93,12 +89,12 @@ public class AbilityEnabler : MonoBehaviour
         if (wJump && !wJumpActive)
         {
             wJumpActive = true;
-            abilityManager.ActivateAbility(PlayerAbility.Walljump);
+            abilityData.AddActiveAbilities(PlayerAbility.Walljump);
         }
         else if (!wJump && wJumpActive)
         {
             wJumpActive = false;
-            abilityManager.DeActivateAbility(PlayerAbility.Walljump);
+            abilityData.RemoveActiveAbilities(PlayerAbility.Walljump);
         }
         #endregion
 

@@ -3,15 +3,27 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
-public class UIManager : Singleton<UIManager>
+public class UIManager : MonoBehaviour
 {
     [SerializeField] ItemUI itemChooseUI;
+    [SerializeField] UIData uIData;
 
-    public void ActivateItemChoose(bool _value, List<AbilityManager.AbilityPacket> _abilityPackets, StreamCore _core)
+
+
+    private void Start()
     {
-        itemChooseUI.gameObject.SetActive(_value);
-        itemChooseUI.Load(_abilityPackets, _core);
+        uIData.SubscribeItemUIActivated(ActivateItemChoose);
 
+        if (uIData.ItemUIActive && itemChooseUI != null)
+        {
+            uIData.ActivateItemUI();
+        }
+    }
+    public void ActivateItemChoose(AbilityData  _abilityData, CoreData _core)
+    {
+        itemChooseUI.gameObject.SetActive(true);
+        itemChooseUI.Load(_abilityData.ActiveAbilities, _core);
+        uIData.ItemUIActive = true;
     }
 
     public void ChangeScene(int _index)  { SceneLoader.ChangeScene(_index); }

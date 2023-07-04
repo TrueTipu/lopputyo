@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 
 public static class Helpers
@@ -69,6 +69,11 @@ public static class Helpers
 
             }
         }
+    }
+
+    public static void AddAutounsubDelegate(Func<Delegate> _action)
+    {
+        SceneManager.sceneUnloaded += (s1) => _action();
     }
 }
 public class Timer

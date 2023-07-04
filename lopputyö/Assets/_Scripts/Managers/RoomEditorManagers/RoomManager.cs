@@ -17,9 +17,7 @@ public class RoomManager : Singleton<RoomManager>
     {
         base.Awake();
 
-        SceneManager.sceneLoaded += (_s, _lSM) => { roomsChanged = () => { return; }; };
-
-        roomsChanged();
+        roomsChanged = () => { return; };
 
         foreach (Vector2Int _pos in rooms.Keys)
         {

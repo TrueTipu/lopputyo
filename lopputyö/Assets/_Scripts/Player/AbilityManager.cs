@@ -13,6 +13,8 @@ public class AbilityManager : MonoBehaviour
 
     [SerializeField]
     PlayerStateCheck playerStateCheck;
+    [SerializeField]
+    AbilityData abilityData;
 
 
     [Range(0.0f, 20.0f)]
@@ -27,45 +29,50 @@ public class AbilityManager : MonoBehaviour
     {
         Rigidbody2D rb2 = GetComponent<Rigidbody2D>();
 
+        abilityData.SubscribeAbilityAdded(ActivateAbility);
+        abilityData.SubscribeAbilityRemoved(DeActivateAbility);
+
         foreach (AbilityPacket _ability in Abilities)
         {
-            _ability.Boot();
+            bool _value = abilityData.IsActive(_ability.AbilityTag);
+            _ability.Boot(_value, playerStateCheck, rb2);
         }
-
+        
         List<IPlayerStateChanger> playerStateChangers = Abilities.Select(a => a.AbilityScript).
             ToList().
             ConvertAll(a => (IPlayerStateChanger)a);
 
         playerStateCheck.SetAbilities(playerStateChangers);
+
     }
 
-    
-    public void ActivateAbility(PlayerAbility _abilityTag)
+    void ActivateAbility(PlayerAbility _abilityTag)
     {
         AbilityPacket _ability = Abilities.Find(_a => _a.AbilityTag == _abilityTag);
+        if (_ability == null) return;
         _ability.Activate(playerStateCheck, rb2);
     }
-    public void DeActivateAbility(PlayerAbility _abilityTag)
+    void DeActivateAbility(PlayerAbility _abilityTag)
     {
         AbilityPacket _ability = Abilities.Find(_a => _a.AbilityTag == _abilityTag);
+        if (_ability == null) return;
         _ability.DeActivate();
     }
-    public bool IsActive(PlayerAbility _abilityTag)
-    {
-        AbilityPacket _ability = Abilities.Find(_a => _a.AbilityTag == _abilityTag);
-        return _ability.Enabled;
-    }
+
 
 
     [System.Serializable]
     public class AbilityPacket
     {
-        public void Boot()
+        public void Boot(bool _active, PlayerStateCheck _pSC, Rigidbody2D _rb2)
         {
             if (AbilityScript == null)
                 AbilityScript = abilityObject.GetComponent<IAbility>();
-            abilityObject.SetActive(false);
+
+            if (_active) Activate(_pSC, _rb2);
+            else DeActivate();
         }
+
         [field: SerializeField] public string abilityName { get; private set; }
         [SerializeField] GameObject abilityObject;
 

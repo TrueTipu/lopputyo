@@ -4,28 +4,28 @@ using System.Collections.Generic;
 using System;
 public class StreamCore : MonoBehaviour
 {
-    bool powered;
-    public AbilityManager.AbilityPacket CurrentAbility { get;  private set; }
+
+    [SerializeField] CoreData coreData;
+    public PlayerAbility CurrentAbility
+    {
+        get => coreData.CurrentAbility;
+    }
+    bool powered => coreData.Powered;
 
     bool onTrigger;
 
-    UIManager uIManager; //safety reasons to avoid singleton problems
-
-    AbilityManager playerAbilities;
-
-    
-
+    [SerializeField] AbilityData abilityData;
+    [SerializeField] UIData uIData;
 
     private void Start()
     {
-        uIManager = UIManager.Instance;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             onTrigger = true;
-            playerAbilities = collision.GetComponent<AbilityManager>();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -42,31 +42,18 @@ public class StreamCore : MonoBehaviour
         {
             if (!powered)
             {
-                uIManager.ActivateItemChoose(true, playerAbilities.Abilities, this);
+                uIData.ActivateItemUI(abilityData, coreData);
             }
             else
             {
+                uIData.ItemUIActive = true;
                 SceneLoader.LoadLevelEditor();
             }
         }
     }
-    public void SetAbility(AbilityManager.AbilityPacket _ability, Action<List<AbilityManager.AbilityPacket>> _reloadCallback)
-    {
-        if(CurrentAbility != null)
-        {
-            playerAbilities.ActivateAbility(CurrentAbility.AbilityTag);
-        }
 
-        CurrentAbility = _ability;
 
-        if(_ability != null)
-        {
-            powered = true;
-            playerAbilities.DeActivateAbility(_ability.AbilityTag);
-        }
-        
-        _reloadCallback(playerAbilities.Abilities);
-    }
+
 
 
 }

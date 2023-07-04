@@ -124,4 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ff0729d466667449d2ef9c6a6388be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: 0
+  ability: 1
+  abilityData: {fileID: 11400000, guid: 55260b79bf6dcbb4fbbe87faef80d289, type: 2}

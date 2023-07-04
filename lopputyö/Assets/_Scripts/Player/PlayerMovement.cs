@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     [SerializeField, Range(0f, 1f)] float hangTimeStrength = 0.5f;
 
     [SerializeField]PlayerStateCheck playerStateCheck;
+    [SerializeField] PlayerData playerData;
 
     bool IsGround
     {
@@ -97,8 +98,17 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     private void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
+
         playerStateCheck.SetAbilities(this as IPlayerStateChanger);
         rb2.gravityScale = playerStateCheck.NormalGravity;
+
+        playerData.TrySetPosition(transform.position); //yritetään joka kerta, koodi tsekkaa onko eka kerta vai ei
+        transform.position = playerData.Position; //asetetaan oma positio, oli tai ei
+        //ehkä turhia kutsuja ja asetuksia mut hällä väliä
+    }
+    private void OnDisable()
+    {
+        playerData.Position = transform.position;
     }
 
     private void Update()
