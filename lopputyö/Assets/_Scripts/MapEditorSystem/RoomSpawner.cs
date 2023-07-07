@@ -3,6 +3,7 @@ using System.Collections;
 using System;
 public class RoomSpawner : MonoBehaviour, ITileNode
 {
+    [GetSO] RoomVisitedData roomVisitedData;
 
     Room room;
     RoomObject roomObject = null;
@@ -10,10 +11,14 @@ public class RoomSpawner : MonoBehaviour, ITileNode
 
     Vector2Int tileCords;
 
+    Action<Vector2Int, Vector2> roomActivated = delegate { };
 
-    Action<Vector2Int> roomActivated;
+    void OnEnable()
+    {
+        this.InjectGetSO();
+    }
 
-    public void InitRoomSpawn(Room _room, int _x, int _y, Action<Vector2Int> _callBackListener)
+    public void InitRoomSpawn(Room _room, int _x, int _y, Action<Vector2Int, Vector2> _callBackListener)
     {
         if (_room == null) return;
         room = _room;
@@ -22,13 +27,15 @@ public class RoomSpawner : MonoBehaviour, ITileNode
 
         SetBlocks();
 
-        roomActivated = _callBackListener;
+        roomActivated += _callBackListener;
+        roomActivated += (Vector2Int _cords, Vector2 _pos) => roomVisitedData.AddRoom(roomObject, _pos);
     }
+
 
     public void ActivateRoom()
     {
         if (roomObject == null) return;
-        //jos ei loadata koko sceneä
+        ///jos ei loadata koko sceneä
         //if (!updaited)
         //{
 
@@ -37,6 +44,8 @@ public class RoomSpawner : MonoBehaviour, ITileNode
         //UpdateRoomSpawn();
         //updaited = true;
         //}
+
+
         roomObject.gameObject.SetActive(true);
         roomObject.SetActive(true);
     }
@@ -78,7 +87,7 @@ public class RoomSpawner : MonoBehaviour, ITileNode
     {
         if (collision.CompareTag("Player"))
         {
-            roomActivated(tileCords);
+            roomActivated(tileCords, collision.transform.position);
         }
     }
 

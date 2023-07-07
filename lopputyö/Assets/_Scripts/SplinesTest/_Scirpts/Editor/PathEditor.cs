@@ -71,7 +71,7 @@ public class PathEditor : Editor
             //selvitetään lähin
             int _closestAnchor = 
             Helpers.FindMin(creator.AnchorDiameter * 1.5f,//max matka klikkaukselle
-                (i) => { return Vector2.Distance(_mousePos, Path[i]); },
+                (i) => { return Vector2.zero.Distance(_mousePos, Path[i]); },
                 Path.NumPoints, 3);
 
             if(_closestAnchor != -1) //jos ei ole default, poista

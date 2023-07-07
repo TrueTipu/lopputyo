@@ -6,12 +6,14 @@ using System.Collections.Generic;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] ItemUI itemChooseUI;
-    [SerializeField] UIData uIData;
+    [GetSO] UIData uIData;
 
 
 
     private void Start()
     {
+        this.InjectGetSO();
+
         uIData.SubscribeItemUIActivated(ActivateItemChoose);
 
         if (uIData.ItemUIActive && itemChooseUI != null)

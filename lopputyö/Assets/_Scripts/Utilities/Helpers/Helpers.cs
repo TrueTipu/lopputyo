@@ -75,6 +75,12 @@ public static class Helpers
     {
         SceneManager.sceneUnloaded += (s1) => _action();
     }
+
+    public static float Distance(this Vector2 _vector, Vector2 _pos1, Vector2 _pos2)
+    {
+        return Vector2.SqrMagnitude(_pos1 - _pos2);
+    }
+
 }
 public class Timer
 {

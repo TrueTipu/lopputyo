@@ -5,7 +5,7 @@ using System;
 public class StreamCore : MonoBehaviour
 {
 
-    [SerializeField] CoreData coreData;
+    [GetSO] CoreData coreData;
     public PlayerAbility CurrentAbility
     {
         get => coreData.CurrentAbility;
@@ -19,6 +19,7 @@ public class StreamCore : MonoBehaviour
 
     private void Start()
     {
+        this.InjectGetSO();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

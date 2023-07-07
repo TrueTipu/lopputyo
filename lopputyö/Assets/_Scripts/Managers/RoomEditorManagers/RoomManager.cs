@@ -8,7 +8,7 @@ public class RoomManager : Singleton<RoomManager>
 {
 
 
-    [SerializeField]RoomSet roomSet;
+    [GetSO]RoomSet roomSet;
     Dictionary<Vector2Int, Room> rooms => roomSet.Rooms; //shortcut niin ei tarvi rewriteä
 
     Action roomsChanged = () => { return; };
@@ -16,6 +16,8 @@ public class RoomManager : Singleton<RoomManager>
     protected override void Awake()
     {
         base.Awake();
+
+        this.InjectGetSO();
 
         roomsChanged = () => { return; };
 

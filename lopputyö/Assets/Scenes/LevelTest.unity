@@ -4363,7 +4363,7 @@ MonoBehaviour:
   hangTimeRange: 2
   hangTimeStrength: 0.4
   playerStateCheck: {fileID: 11400000, guid: 7c9061502fe59084496f4b16da69620a, type: 2}
-  playerData: {fileID: 11400000, guid: 5157d1a388fb16b4fb0a91e0b378a9e7, type: 2}
+  playerData: {fileID: 0}
 --- !u!61 &1434082878
 BoxCollider2D:
   m_ObjectHideFlags: 0

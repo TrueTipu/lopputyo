@@ -11,9 +11,9 @@ public class AbilityManager : MonoBehaviour
 
     [field: SerializeField] public List<AbilityPacket> Abilities { get; private set; }
 
-    [SerializeField]
+    [GetSO]
     PlayerStateCheck playerStateCheck;
-    [SerializeField]
+    [GetSO]
     AbilityData abilityData;
 
 
@@ -25,9 +25,10 @@ public class AbilityManager : MonoBehaviour
 
     #endregion
 
-    private void Awake()
+    private void Start()
     {
         Rigidbody2D rb2 = GetComponent<Rigidbody2D>();
+        this.InjectGetSO();
 
         abilityData.SubscribeAbilityAdded(ActivateAbility);
         abilityData.SubscribeAbilityRemoved(DeActivateAbility);

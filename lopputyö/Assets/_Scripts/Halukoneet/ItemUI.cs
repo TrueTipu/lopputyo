@@ -11,9 +11,9 @@ public class ItemUI : MonoBehaviour
     [SerializeField] GameObject[] abilitySquares;
 
     [Tooltip("VAIN DEBUGGIA VARTEN")]
-    [SerializeField] CoreData core;
+    [GetSO] CoreData core;
 
-    [SerializeField]UIData uIData;
+    [GetSO] UIData uIData;
 
     List<PlayerAbility> abilities;
 
@@ -28,6 +28,8 @@ public class ItemUI : MonoBehaviour
     Action<PlayerAbility> abilityCallback;
     public void Start()
     {
+        this.InjectGetSO();
+
         abilityCallback = (a) =>
         {
             if (core == null) return;
