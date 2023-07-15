@@ -769,7 +769,120 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1401bae5323fe408a743618c3eeb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftBlock: {fileID: 1116939388}
-  rightBlock: {fileID: 585052665}
-  downBlock: {fileID: 0}
-  upBlock: {fileID: 1737546870}
+  PathNodes:
+    middlePoints:
+    - position: {x: 0.05, y: -0.05}
+      linkedNodes:
+      - {x: 0.05, y: -4.55}
+      - {x: 5.05, y: -4.55}
+      - {x: 5.0500007, y: 0.049144268}
+      - {x: -4.95, y: -0.05}
+      - {x: -0.058248192, y: 4.34175}
+      - {x: -5.004126, y: 4.45}
+      - {x: -4.95, y: -4.55}
+    - position: {x: -4.95, y: -0.05}
+      linkedNodes:
+      - {x: -4.95, y: -4.55}
+      - {x: 0.05, y: -0.05}
+      - {x: -7.95, y: -0.05}
+    - position: {x: -5.004126, y: 4.45}
+      linkedNodes:
+      - {x: -4.95, y: -0.05}
+      - {x: -0.058248192, y: 4.34175}
+      - {x: 0.05, y: -0.05}
+      - {x: -4.95, y: 7.45}
+      - {x: -7.95, y: 4.45}
+    - position: {x: -0.058248192, y: 4.34175}
+      linkedNodes:
+      - {x: 0.05, y: -0.05}
+      - {x: -5.004126, y: 4.45}
+      - {x: 0.05, y: 7.45}
+    - position: {x: 5.0500007, y: 4.495019}
+      linkedNodes:
+      - {x: -0.058248192, y: 4.34175}
+      - {x: 0.05, y: -0.05}
+      - {x: 5.0500007, y: 0.049144268}
+      - {x: 5.05, y: 7.45}
+      - {x: 8.05, y: 4.45}
+    - position: {x: 4.887312, y: -0.005085945}
+      linkedNodes:
+      - {x: 0.05, y: -4.55}
+      - {x: 0.05, y: -0.05}
+      - {x: 5.0500007, y: 4.495019}
+      - {x: 5.004982, y: -4.55}
+      - {x: 8.05, y: -0.05}
+    - position: {x: 5.004982, y: -4.55}
+      linkedNodes:
+      - {x: 0.05, y: -0.05}
+      - {x: 0.05, y: -4.55}
+      - {x: 5.05, y: -7.55}
+      - {x: 5.0500007, y: 0.049144268}
+      - {x: 8.05, y: -4.55}
+    - position: {x: 0.05, y: -4.55}
+      linkedNodes:
+      - {x: -4.95, y: -4.55}
+      - {x: 0.05, y: -0.05}
+      - {x: 0.05, y: -7.55}
+    - position: {x: -4.95, y: -4.55}
+      linkedNodes:
+      - {x: -4.95, y: -0.05}
+      - {x: 0.05, y: -4.55}
+      - {x: 0.05, y: -0.05}
+      - {x: -7.95, y: -4.55}
+      - {x: -4.95, y: -7.55}
+    borderPoints:
+    - position: {x: -7.95, y: -4.55}
+      linkedNodes:
+      - {x: -4.95, y: -4.55}
+    - position: {x: -7.95, y: -0.05}
+      linkedNodes:
+      - {x: -4.95, y: -0.05}
+      - {x: -4.95, y: -0.05}
+    - position: {x: -7.95, y: 4.45}
+      linkedNodes:
+      - {x: -4.95, y: -0.05}
+      - {x: -5.004126, y: 4.45}
+      - {x: -5.004126, y: 4.45}
+      - {x: -5.004126, y: 4.45}
+      - {x: -5.004126, y: 4.45}
+      - {x: -5.004126, y: 4.45}
+      - {x: -5.004126, y: 4.45}
+    - position: {x: -4.95, y: 7.45}
+      linkedNodes:
+      - {x: -5.004126, y: 4.45}
+      - {x: -5.004126, y: 4.45}
+      - {x: -5.004126, y: 4.45}
+      - {x: -5.004126, y: 4.45}
+      - {x: -5.004126, y: 4.45}
+      - {x: -5.004126, y: 4.45}
+    - position: {x: 0.05, y: 7.45}
+      linkedNodes:
+      - {x: -0.058248192, y: 4.34175}
+    - position: {x: 5.05, y: 7.45}
+      linkedNodes:
+      - {x: 5.0500007, y: 4.495019}
+    - position: {x: 8.05, y: 4.45}
+      linkedNodes:
+      - {x: 5.0500007, y: 4.495019}
+    - position: {x: 8.05, y: -0.05}
+      linkedNodes:
+      - {x: 5.0500007, y: 0.049144268}
+    - position: {x: 8.05, y: -4.55}
+      linkedNodes:
+      - {x: 5.004982, y: -4.55}
+    - position: {x: 5.05, y: -7.55}
+      linkedNodes:
+      - {x: 5.004982, y: -4.55}
+    - position: {x: 0.05, y: -7.55}
+      linkedNodes:
+      - {x: 0.05, y: -4.55}
+    - position: {x: -4.95, y: -7.55}
+      linkedNodes:
+      - {x: -4.95, y: -4.55}
+  <MiddleDis>k__BackingField: {x: 5, y: 4.5}
+  <BorderDis>k__BackingField: {x: 3, y: 3}
+  <MiddlePointSize>k__BackingField: 1
+  <BorderPointSize>k__BackingField: 1
+  <MiddlePointColor>k__BackingField: {r: 0, g: 1, b: 1, a: 1}
+  <BorderPointColor>k__BackingField: {r: 1, g: 0, b: 0, a: 1}
+  <SelectedPointColor>k__BackingField: {r: 0, g: 1, b: 0, a: 1}

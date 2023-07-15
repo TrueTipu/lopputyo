@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using System.Linq;
+using System;
 
 [CustomEditor(typeof(RoomObject))]
 public class PathNodesEditor : Editor
@@ -13,10 +14,9 @@ public class PathNodesEditor : Editor
         get { return pathNodeHandler.PathNodes; }
     }
 
-    PathNodes.Node selectedNode = null;
-
     const float SEDGMENT_SELECT_DIS = 0.1f;
 
+    
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -25,9 +25,22 @@ public class PathNodesEditor : Editor
 
         if (GUILayout.Button("Reset nodes"))
         {
-            Undo.RecordObject(pathNodeHandler, "Reset"); //tallennus undo varten
-
+            PrefabUtility.RecordPrefabInstancePropertyModifications(pathNodeHandler); //tallennus undo varten
+            UnityEditor.Undo.RegisterFullObjectHierarchyUndo(pathNodeHandler, "reset");
             pathNodeHandler.CreateNodes();
+            Undo.willFlushUndoRecord += PathNodes.ResetLocalDatas;
+        }
+        if (GUILayout.Button("Reset links"))
+        {
+            PathNodes.ResetLocalDatas();
+        }
+        bool _drawLines = GUILayout.Toggle(PathNodes.DrawLines, "DrawLineToggle");
+        if (_drawLines != PathNodes.DrawLines)
+        {
+            PrefabUtility.RecordPrefabInstancePropertyModifications(pathNodeHandler); //tallennus undo varten
+            UnityEditor.Undo.RegisterFullObjectHierarchyUndo(pathNodeHandler, "DrawLineToggle");
+            PathNodes.DrawLines = _drawLines;
+            Debug.Log("moi");
         }
 
         if (EditorGUI.EndChangeCheck()) //jos muutoksia niin maalataan
@@ -35,7 +48,26 @@ public class PathNodesEditor : Editor
             SceneView.RepaintAll();
         }
     }
+    void DrawLines()
+    {
 
+        Handles.color = Color.black;
+
+        for (int i = 0; i < PathNodes.MiddlePointCount; i++)
+        {
+            List<Vector2> _targets = PathNodes.GetLinks(i);
+
+            if (_targets == null || _targets.Count == 0) continue;
+
+            Vector2 _center = PathNodes.GetMiddlePoint(i);
+            foreach (Vector2 _target in _targets)
+            {
+                Handles.DrawLine(_center, _target, 2.5f);
+
+            }
+        }
+
+    }
     private void OnSceneGUI()
     {
         Input();
@@ -49,14 +81,18 @@ public class PathNodesEditor : Editor
 
         if (_guiEvent.type == EventType.MouseDown && _guiEvent.button == 0 && _guiEvent.shift)
         {
-            selectedNode = null;
 
             {
-                Undo.RecordObject(pathNodeHandler, "Add node");
-                PathNodes.AddMiddlePoint(_mousePos);
+                UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(pathNodeHandler);
+                UnityEditor.Undo.RegisterFullObjectHierarchyUndo(pathNodeHandler, "Spawn");
+                PathNodes.AddMiddlePoint(_mousePos, pathNodeHandler);
+                //PathNodes.MoveMiddlePoint(PathNodes.MiddlePointCount - 1, _mousePos);
             }
         }
-
+        if (_guiEvent.type == EventType.MouseDown && _guiEvent.button == 0 && !_guiEvent.control)
+        {
+            PathNodes.RemoveSelect();
+        }
 
         if (_guiEvent.type == EventType.MouseDown && _guiEvent.button == 0 && _guiEvent.control)
         {
@@ -71,30 +107,15 @@ public class PathNodesEditor : Editor
                         (i) => { return Vector2.zero.Distance(_mousePos, PathNodes.GetBorderPoint(i)); },
                         PathNodes.BorderPointCount);
 
+                UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(pathNodeHandler);
+                UnityEditor.Undo.RegisterFullObjectHierarchyUndo(this, "Select");
+                PathNodes.SelectNode(_closestMiddle, _closestBorder);
 
-                if (_closestMiddle != -1)
-                {
-                    if (selectedNode != null)
-                    {
-                        Connect(selectedNode, PathNodes.GetMiddlePointNode(_closestMiddle));
-                    }
-                    else { selectedNode = PathNodes.GetMiddlePointNode(_closestMiddle); }
-                }
-                else if (_closestBorder != -1)
-                {
-                    if (selectedNode != null)
-                    {
-                        Connect(selectedNode, PathNodes.GetBorderPointNode(_closestBorder));
-                    }
-                    else { selectedNode = PathNodes.GetBorderPointNode(_closestBorder); }
-                }
-                Undo.RecordObject(pathNodeHandler, "Select Node");
             }
         }
 
         if (_guiEvent.type == EventType.MouseDown && _guiEvent.button == 1)
         {
-            selectedNode = null;
 
             //selvitetään lähin
             int _closestMiddle =
@@ -104,7 +125,8 @@ public class PathNodesEditor : Editor
 
             if (_closestMiddle != -1) //jos ei ole default, poista
             {
-                Undo.RecordObject(pathNodeHandler, "Delete node");
+                UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(pathNodeHandler);
+                UnityEditor.Undo.RegisterFullObjectHierarchyUndo(pathNodeHandler, "Delete");
 
                 PathNodes.DeleteMiddlePoint(_closestMiddle);
             }
@@ -112,58 +134,32 @@ public class PathNodesEditor : Editor
 
         HandleUtility.AddDefaultControl(0);
 
-        void Connect(PathNodes.Node _firstNode, PathNodes.Node _secondNode)
-        {
-            PathNodes.AddLink(_firstNode, _secondNode);
-            selectedNode = _secondNode;
-        }
+
     }
 
 
 
     void Draw()
     {
-
-        var _doublePrevent = new Dictionary<Vector2, List<Vector2>>();
-        Handles.color = Color.black;
-
-        for (int i = 0; i < PathNodes.MiddlePointCount; i++)
-        {
-            List<Vector2> _targets = PathNodes.GetLinks(i);
-            Vector2 _center = PathNodes.GetMiddlePoint(i);
-            foreach (Vector2 _target in _targets)
-            {
-                if (!_doublePrevent.ContainsKey(_target))
-                {
-                    Handles.DrawLine(_center, _target, 2.5f);
-                    _doublePrevent.Add(_target, new List<Vector2> { _center });
-                }
-                else if (!_doublePrevent[_target].Contains(_center))
-                {
-                    Handles.DrawLine(_center, _target, 2.5f);
-                    _doublePrevent[_target].Add(_center);
-                }
-            }
-        }
-
+        if (PathNodes.DrawLines) DrawLines();
 
         //piirtää jokaista pathpistettä kohden liikutusjutun, aika itseselitteinen kun lukee vähän
         for (int i = 0; i < PathNodes.MiddlePointCount; i++)
         {
-            Handles.color = (PathNodes.GetMiddlePointNode(i) == selectedNode) ? pathNodeHandler.SelectedPointColor : pathNodeHandler.MiddlePointColor;
+            Handles.color = (PathNodes.IsSelectedMiddleNode(i)) ? pathNodeHandler.SelectedPointColor : pathNodeHandler.MiddlePointColor;
             float _handleSize = pathNodeHandler.MiddlePointSize;
 
             Vector2 _newPos = Handles.FreeMoveHandle(PathNodes.GetMiddlePoint(i), Quaternion.identity, _handleSize, Vector2.zero, Handles.CylinderHandleCap);
             if (PathNodes.GetMiddlePoint(i) != _newPos)
             {
-                Undo.RecordObject(pathNodeHandler, "Move points"); //tallennus undo varten
-                selectedNode = null;
+                PrefabUtility.RecordPrefabInstancePropertyModifications(pathNodeHandler); //tallennus undo varten
+                UnityEditor.Undo.RegisterFullObjectHierarchyUndo(pathNodeHandler, "move");
                 PathNodes.MoveMiddlePoint(i, _newPos);
             }
         }
         for (int i = 0; i < PathNodes.BorderPointCount; i++)
         {
-            Handles.color = (PathNodes.GetBorderPointNode(i) == selectedNode) ? pathNodeHandler.SelectedPointColor : pathNodeHandler.BorderPointColor;
+            Handles.color = (PathNodes.IsSelectedBorderNode(i)) ? pathNodeHandler.SelectedPointColor : pathNodeHandler.BorderPointColor;
             float _handleSize = pathNodeHandler.BorderPointSize;
             Handles.FreeMoveHandle(PathNodes.GetBorderPoint(i), Quaternion.identity, _handleSize, Vector2.zero, Handles.CylinderHandleCap);
         }
@@ -176,6 +172,7 @@ public class PathNodesEditor : Editor
         {
             pathNodeHandler.CreateNodes();
         }
-        selectedNode = null;
+        PathNodes.ResetLocalDatas();
+        Undo.undoRedoPerformed += () => PathNodes.ResetLocalDatas();
     }
 }

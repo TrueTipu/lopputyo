@@ -11,6 +11,7 @@ using UnityEngine;
 
 [Serializable] public class RoomPositionDict : SerializableDictionary<Vector2Int, Room> { }
 
+//[Serializable] public class NodeLinkDict : SerializableDictionary<PathNodes.Node, PathNodes.Node> { }
 ///Laita alempi editor scriptiin
 
 //[CustomPropertyDrawer(typeof(CustomDictionary))] // Name of your class (same as above)

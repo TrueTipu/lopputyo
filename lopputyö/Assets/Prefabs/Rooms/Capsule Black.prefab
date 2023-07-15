@@ -769,6 +769,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1401bae5323fe408a743618c3eeb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PathNodes:
+    middlePoints:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    borderPoints:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   <MiddleDis>k__BackingField: {x: 5, y: 4.5}
   <BorderDis>k__BackingField: {x: 3, y: 3}
   <MiddlePointSize>k__BackingField: 1
