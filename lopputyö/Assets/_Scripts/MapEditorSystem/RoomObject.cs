@@ -23,8 +23,7 @@ public class RoomObject : MonoBehaviour
     [field: SerializeField] public Color BorderPointColor { get; private set; } = Color.red;
     [field: SerializeField] public Color SelectedPointColor { get; private set; } = Color.green;
 
-    List<int >enterPoint = new List<int>();
-    List<int> exitPoint = new List<int>();
+
 
     private void Update()
     {
@@ -48,55 +47,24 @@ public class RoomObject : MonoBehaviour
         PathNodes = new PathNodes(transform.position, MiddleDis, BorderDis);
     }
 
-    int GetClosest(Vector2 _pos)
+    public int GetClosest(Vector2 _pos)
     {
         return Helpers.FindMin(Mathf.Infinity,
             (i) => { return Vector2.zero.Distance(_pos, PathNodes.GetBorderPoint(i)); },
             PathNodes.BorderPointCount);
     }
-    public bool IsInPath(Vector2 _playerPos)
+    public bool IsInPath(int _enterPoint, Vector2 _playerPos)
     {
         int _closestBorder = GetClosest(_playerPos);
 
         if (_closestBorder != -1)
         {
-            return PathNodes.HasConnection(enterPoint[enterPoint.Count-1], _closestBorder);
+            return PathNodes.HasConnection(_enterPoint, _closestBorder);
 
         }
         else return false;
     }
 
-    public void SetEnterPoint(Vector2 _playerPos, bool _needClear = false)
-    {
-        int _closestBorder = GetClosest(_playerPos);
-
-        if(_needClear) { enterPoint = new List<int>(); }
-        if (_closestBorder != -1)
-        {
-            enterPoint.Add(_closestBorder);
-        }
-    }
-    public void RemoveLatestEnter()
-    {
-        if(enterPoint.Count > 0)
-        enterPoint.RemoveAt(enterPoint.Count - 1);
-    }
-
-    public void SetExitPoint(Vector2 _playerPos, bool _needClear = false)
-    {
-        int _closestBorder = GetClosest(_playerPos);
-
-        if (_needClear) { exitPoint = new List<int>(); }
-        if (_closestBorder != -1)
-        {
-            exitPoint.Add(_closestBorder);
-        }
-    }
-    public void RemoveLatestExit()
-    {
-        if (enterPoint.Count > 0)
-            enterPoint.RemoveAt(enterPoint.Count - 1);
-    }
     private void Reset() //automaattinen unity kutsu resetistä
     {
         CreateNodes();

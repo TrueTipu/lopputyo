@@ -9,12 +9,17 @@ using System;
 public class UIData : PlaytimeObject, IHasDelegates
 {
     [SerializeField] bool itemUIActive = false;
-    public bool ItemUIActive { get; set; }
+    public bool ItemUIActive { get; private set; }
 
     Action<AbilityData, CoreData> itemUIActivated;
 
     AbilityData lastAbilities;
     CoreData lastCore;
+
+    public void SetItemUI(bool _value)
+    {
+        ItemUIActive = _value;
+    }
 
     public void SubscribeItemUIActivated(Action<AbilityData, CoreData> _action)
     {
@@ -24,13 +29,13 @@ public class UIData : PlaytimeObject, IHasDelegates
     {
         itemUIActivated -= _action;
     }
-    public void ActivateItemUI(AbilityData _abilities, CoreData _core)
+    public void SetupItemUI(AbilityData _abilities, CoreData _core)
     {
         lastAbilities = _abilities;
         lastCore = _core;
         itemUIActivated?.Invoke(_abilities, _core);
     }
-    public void ActivateItemUI()
+    public void SetupItemUI()
     {
         if (ItemUIActive)
         {

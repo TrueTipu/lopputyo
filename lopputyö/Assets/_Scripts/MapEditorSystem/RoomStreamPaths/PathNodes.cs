@@ -4,6 +4,8 @@ using System.Linq;
 using UnityEngine;
 using System.Threading.Tasks;
 using System.Collections;
+using RoomStreamPathNodes;
+using System.Windows;
 
 [System.Serializable]
 public class PathNodes
@@ -18,7 +20,7 @@ public class PathNodes
 
    
 
-    public Node FindWithPos(Vector2 x)
+    internal Node FindWithPos(Vector2 x)
     {
         var _node = middlePoints.Find((a) => a.Pos.Equals(x));
         return (_node != null) ? _node : borderPoints.ToList().Find((a) => a.Pos.Equals(x));
@@ -71,11 +73,23 @@ public class PathNodes
         selectedNode = null;
     }
 
+    public void ResetPos(Vector3 _center)
+    {
+        foreach (Node _node in middlePoints)
+        {
+            _node.ChangePos(new Vector2(_center.x + _node.Pos.x, _center.y + _node.Pos.y));
+            _node.ResetLinkData();
+        }
+        foreach (Node _node in borderPoints)
+        {
+            _node.ChangePos(new Vector2(_center.x + _node.Pos.x, _center.y + _node.Pos.y));
+        }
+        ResetLocalDatas();
+    }
 
     public async void ResetLocalDatas()
     {
         await Task.Delay(10);
-        Debug.Log("Moi");
         foreach (Node _node in middlePoints)
         {
             _node.SetCreator(this);
@@ -90,30 +104,38 @@ public class PathNodes
         selectedNode = null;
     }
 
-    List<Node> LongSearch(Node _enterPoint, Node _exitPoint)
+    public List<Vector2> GivePath(int _enter, int _exit)
     {
-        var _map = new Dictionary<Node, Tuple<int, Node>>();
+
+        return DepthFirstSearch(borderPoints[_enter], borderPoints[_exit]).ConvertAll(x => x.Pos);
+    }
+    public bool HasConnection(int _enter, int _exit)
+    {
+        List<Node> _path = DepthFirstSearch(borderPoints[_enter], borderPoints[_exit]);
+        return _path != null;
+    }
+    List<Node> DepthFirstSearch(Node _enterPoint, Node _exitPoint)
+    {
+        var _map = new Dictionary<Node, Tuple<float, Node>>();
         Stack<Node> _stack = new Stack<Node>();
         Node _current = _enterPoint;
 
         _stack.Push(_current);
-        int _layer = 0;
-        _map[_current] = new Tuple<int, Node>(0, null);
+        _map[_current] = new Tuple<float, Node>(0, null);
         while (_stack.Count > 0)
         {
             _current = _stack.Pop();
-            _layer = _map[_current].Item1;
-
+            float _dis = _map[_current].Item1;
             foreach (Node _node in _current.LinkedNodes)
             {
-
-                if (_map.ContainsKey(_node) && (_map[_node].Item1 < _layer + 1))
+                float _newDis = _dis + Vector2.Distance(_node.Pos, _current.Pos);
+                if (_map.ContainsKey(_node) && (_map[_node].Item1 < _newDis))
                 {
                      continue;
                 }
                 else
                 {
-                    _map[_node] = new Tuple<int, Node>(_layer + 1, _current);
+                    _map[_node] = new Tuple<float, Node>(_newDis, _current);
                     _stack.Push(_node);
                 }
             }
@@ -182,11 +204,7 @@ public class PathNodes
         }
     }
 
-    public bool HasConnection(int point1, int point2)
-    {
-        List<Node> _path = LongSearch(borderPoints[point1], borderPoints[point2]);
-        return _path != null;
-    }
+
 
     public int MiddlePointCount => middlePoints.Count;
     public int BorderPointCount => BORDER_POINTS_SIZE;
@@ -216,7 +234,7 @@ public class PathNodes
         {
             return middlePoints[_index].GetConnectedPoints();
         }
-        catch (Exception e)
+        catch
         {
             return null;
         }

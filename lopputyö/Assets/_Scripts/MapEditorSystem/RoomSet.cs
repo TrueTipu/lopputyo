@@ -8,7 +8,7 @@ public class RoomSet : PlaytimeObject
 {
 
     [SerializeField] RoomPositionDict rooms = new RoomPositionDict();
-    public Dictionary<Vector2Int, Room> Rooms { get; set; } = new Dictionary<Vector2Int, Room>();
+    public Dictionary<Vector2Int, Room> Rooms { get; private set; } = new Dictionary<Vector2Int, Room>();
 
     protected override void LoadInspectorData()
     {

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class PlayerData : PlaytimeObject
     bool positionPlaced;
     Vector3 position;
 
-    public Vector3 Position { get; set; }
+    public Vector3 Position { get; private set; }
     
     public void TrySetPosition(Vector3 _position)
     {
@@ -26,6 +27,11 @@ public class PlayerData : PlaytimeObject
     {
         Position = position;
         positionPlaced = false;
+    }
+
+    public void UpdatePosition(Vector3 _position)
+    {
+        Position = _position;
     }
 }
 

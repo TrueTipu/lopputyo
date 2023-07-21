@@ -43,11 +43,11 @@ public class StreamCore : MonoBehaviour
         {
             if (!powered)
             {
-                uIData.ActivateItemUI(abilityData, coreData);
+                uIData.SetupItemUI(abilityData, coreData);
             }
             else
             {
-                uIData.ItemUIActive = true;
+                uIData.SetItemUI(true);
                 SceneLoader.LoadLevelEditor();
             }
         }

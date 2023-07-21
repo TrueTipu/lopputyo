@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(StreamCreator))]
+[CustomEditor(typeof(StreamPlacer))]
 public class StreamEditor : Editor
 {
-    StreamCreator creator;
+    StreamPlacer creator;
 
     void OnSceneGUI()
     {
@@ -29,6 +29,6 @@ public class StreamEditor : Editor
     }
     void OnEnable()
     {
-        creator = (StreamCreator)target;
+        creator = (StreamPlacer)target;
     }
 }

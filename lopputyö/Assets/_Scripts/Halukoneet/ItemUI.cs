@@ -112,7 +112,7 @@ public class ItemUI : MonoBehaviour
     public void CloseUI()
     {
         abilitySquares.ToList().ForEach((x) => { x.SetActive(false); });
-        uIData.ItemUIActive = false;
+        uIData.SetItemUI(false);
         gameObject.SetActive(false);
     }
 

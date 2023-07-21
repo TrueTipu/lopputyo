@@ -18,6 +18,11 @@ public abstract class PlaytimeObject : ScriptableObject
         LoadInspectorData();
     }
 }
+public abstract class EditablePlaytimeObject : PlaytimeObject
+{
+
+}
+
 
 public abstract class InitializableObject<SO, Del> : ScriptableObject where SO : InitializableObject<SO, Del> where Del : System.Delegate {
     protected abstract Del GiveConstructor();

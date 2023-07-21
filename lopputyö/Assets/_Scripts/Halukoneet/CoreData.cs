@@ -13,7 +13,7 @@ public class CoreData : PlaytimeObject, IHasDelegates
     public bool Powered { get => PlayerAbility.None != CurrentAbility; }
 
     [SerializeField] PlayerAbility currentAbility = PlayerAbility.None;
-    public PlayerAbility CurrentAbility { get; set; }
+    public PlayerAbility CurrentAbility { get; private set; }
 
     protected override void LoadInspectorData()
     {

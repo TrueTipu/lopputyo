@@ -9,7 +9,7 @@ using System;
 public class AbilityData : PlaytimeObject, IHasDelegates
 {
     [SerializeField]List<PlayerAbility> activeAbilities;
-    public List<PlayerAbility> ActiveAbilities { get; set; }
+    public List<PlayerAbility> ActiveAbilities { get; private set; }
 
     public void AddActiveAbilities(PlayerAbility _ability)
     {

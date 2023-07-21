@@ -18,14 +18,14 @@ public class UIManager : MonoBehaviour
 
         if (uIData.ItemUIActive && itemChooseUI != null)
         {
-            uIData.ActivateItemUI();
+            uIData.SetupItemUI();
         }
     }
     public void ActivateItemChoose(AbilityData  _abilityData, CoreData _core)
     {
         itemChooseUI.gameObject.SetActive(true);
         itemChooseUI.Load(_abilityData.ActiveAbilities, _core);
-        uIData.ItemUIActive = true;
+        uIData.SetItemUI(true);
     }
 
     public void ChangeScene(int _index)  { SceneLoader.ChangeScene(_index); }

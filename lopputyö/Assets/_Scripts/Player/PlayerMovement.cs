@@ -110,7 +110,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     }
     private void OnDisable()
     {
-        playerData.Position = transform.position;
+        playerData.UpdatePosition(transform.position);
     }
 
     private void Update()

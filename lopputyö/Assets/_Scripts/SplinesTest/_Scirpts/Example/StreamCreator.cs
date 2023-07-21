@@ -2,35 +2,42 @@
 using System.Collections;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(PathCreator))]
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
+
+///Ei omista editorscriptiä, referensöitävä, muun koodin käytettäväksi
 public class StreamCreator : MonoBehaviour
 {
     [Range(0.05f, 1.5f)]
     [SerializeField] float meshSpacing = 1;
-    [SerializeField] int particleIntensity = 10;
+    [Range(0.05f, 1.5f)]
+    [SerializeField] float particleSpacing = 1;
 
     [SerializeField] GameObject particlePrefab;
 
     [SerializeField] float width = 1;
     [SerializeField] float tiling = 1;
 
-    [field: SerializeField] public bool AutoUpdate { get; private set; } = true;
-
     List<GameObject> particles = new List<GameObject>();
 
-    float streamMove;
     [SerializeField] float streamMoveSpeed = 1;
+    float streamMove;
+
+    Material mat;
+
+    private void Start()
+    {
+        mat = GetComponent<MeshRenderer>().sharedMaterial;
+    }
+
     private void Update()
     {
         streamMove = (streamMove + Time.deltaTime * streamMoveSpeed) % 1;
-        GetComponent<MeshRenderer>().sharedMaterial.mainTextureOffset = new Vector2(0, streamMove);
+        mat.mainTextureOffset = new Vector2(0, streamMove);
     }
 
-    public void UpdateStream()
+    public void UpdateStream(Path _path)
     {
-        Path _path = GetComponent<PathCreator>().Path;
         Vector2[] _points = _path.CalculateEvenlySpacedPoints(meshSpacing);
         GetComponent<MeshFilter>().mesh = RoadMeshCreator.CreateRoadMesh(_points, width);
 
@@ -38,13 +45,12 @@ public class StreamCreator : MonoBehaviour
         int _textureRepeat = Mathf.RoundToInt(tiling * _points.Length * meshSpacing * 0.05f);
         GetComponent<MeshRenderer>().sharedMaterial.mainTextureScale = new Vector2(1, _textureRepeat);
     }
-    public void UpdateParticles()
+    public void UpdateParticles(Path _path)
     {
-        Path _path = GetComponent<PathCreator>().Path;
-        Vector2[] _points = _path.CalculateEvenlySpacedPoints(meshSpacing);
+        Vector2[] _points = _path.CalculateEvenlySpacedPoints(particleSpacing);
         SpawnParticles(_points);
     }
-    
+
     void SpawnParticles(Vector2[] _points)
     {
         foreach (GameObject _particle in particles)
@@ -53,9 +59,9 @@ public class StreamCreator : MonoBehaviour
         }
         particles.Clear();
 
-        for (int i = 0; i < _points.Length; i += particleIntensity)
+        for (int i = 0; i < _points.Length; i += 1)
         {
-            particles.Add(Instantiate(particlePrefab, _points[i], Quaternion.LookRotation(RoadMeshCreator.CalculateForwardVector(i, _points, particleIntensity)), transform));
+            particles.Add(Instantiate(particlePrefab, _points[i], Quaternion.LookRotation(RoadMeshCreator.CalculateForwardVector(i, _points, 3)), transform));
         }
     }
 }
