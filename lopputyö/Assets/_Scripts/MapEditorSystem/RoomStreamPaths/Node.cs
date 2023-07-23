@@ -1,49 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+[Serializable]
+public class VectorReference
+{
+    [SerializeField, HideInInspector]
+    internal Vector2 Pos = Vector2.zero;
 
+    [SerializeField, HideInInspector]
+    internal Vector2 Middle = Vector2.zero;
+}
 namespace RoomStreamPathNodes
 {
+
     [Serializable]
     internal class Node
     {
 
-        [NonSerialized]
-        PathNodes creator;
+
 
         [SerializeField, HideInInspector]
-        Vector2 position;
-        public Vector2 Pos => position;
+        public VectorReference vectorReference = new VectorReference();
+
 
         [SerializeField, HideInInspector]
-        List<Vector2> linkedNodes;
+        List<VectorReference> linkedNodes;
+
+        public Vector2 Pos => vectorReference.Pos + vectorReference.Middle;
 
         [field: NonSerialized]
         public List<Node> LinkedNodes { get; private set; }
 
         public List<Vector2> GetConnectedPoints()
         {
-            return LinkedNodes.ConvertAll(x => x.Pos);
+            return LinkedNodes.ConvertAll(x => x.vectorReference.Pos + x.vectorReference.Middle);
         }
 
-        public void SetCreator(PathNodes _creator)
+        public void SetLocalData(PathNodes _creator)
         {
-            creator = _creator;
-            LinkedNodes = linkedNodes.ConvertAll(x => _creator.FindWithPos(x)).FindAll(x => x != null);
+            LinkedNodes = linkedNodes.ConvertAll(x => _creator.FindWithPos(x.Pos + x.Middle)).FindAll(x => x != null);
         }
 
-        public void Init(Vector2 _position, PathNodes _creator)
+        public void Init(Vector2 _position, Vector2 _middle)
         {
-            creator = _creator;
-            LinkedNodes = new List<Node>(); ;
-            linkedNodes = new List<Vector2>();
-            position = _position;
+            LinkedNodes = new List<Node>();
+            linkedNodes = new List<VectorReference>();
+            vectorReference.Pos = _position - _middle;
+            vectorReference.Middle = _middle;
         }
 
-        public static Node CreateInstance(Vector2 _position, PathNodes _creator)
+        public static Node CreateInstance(Vector2 _position, Vector2 _middle)
         {
             var data = new Node();
-            data.Init(_position, _creator);
+            data.Init(_position, _middle);
             return data;
         }
 
@@ -63,7 +72,7 @@ namespace RoomStreamPathNodes
         }
         public void ResetLinkData()
         {
-            linkedNodes = LinkedNodes.ConvertAll(x => x.Pos);
+            linkedNodes = LinkedNodes.ConvertAll(x => x.vectorReference);
         }
         public void ResetLinks()
         {
@@ -75,12 +84,15 @@ namespace RoomStreamPathNodes
 
         public void ChangePos(Vector2 _pos)
         {
-            position = _pos;
+            vectorReference.Pos = _pos - vectorReference.Middle;
         }
-
+        public void ChangeMiddle(Vector2 _middle)
+        {
+            vectorReference.Middle = _middle;
+        }
         public override string ToString()
         {
-            return "POS: " + Pos.ToString() + " LINK AMOUNT" + LinkedNodes.Count;
+            return "POS: " + vectorReference.Pos.ToString() + " LINK AMOUNT" + LinkedNodes?.Count;
         }
     }
 

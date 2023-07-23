@@ -38,12 +38,13 @@ public class StreamCreator : MonoBehaviour
 
     public void UpdateStream(Path _path)
     {
-        Vector2[] _points = _path.CalculateEvenlySpacedPoints(meshSpacing);
-        GetComponent<MeshFilter>().mesh = RoadMeshCreator.CreateRoadMesh(_points, width);
 
+        Vector2[] _points = _path.CalculateEvenlySpacedPoints(meshSpacing);
+        this.GetComponent<MeshFilter>().mesh = RoadMeshCreator.CreateRoadMesh(_points, width);
+        Debug.Log("kutsuttua" + _points + " " + _path  + "    " + _path.NumSegments);
         //asetetaan tiling consistentiksi
         int _textureRepeat = Mathf.RoundToInt(tiling * _points.Length * meshSpacing * 0.05f);
-        GetComponent<MeshRenderer>().sharedMaterial.mainTextureScale = new Vector2(1, _textureRepeat);
+        this.GetComponent<MeshRenderer>().sharedMaterial.mainTextureScale = new Vector2(1, _textureRepeat);
     }
     public void UpdateParticles(Path _path)
     {

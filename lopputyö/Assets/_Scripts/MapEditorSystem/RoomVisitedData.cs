@@ -13,7 +13,7 @@ public class RoomVisitedData : EditablePlaytimeObject
 
     public void AddRoom(RoomObject _room, Vector2 _playerPos)
     {
-        VisitedRoom _roomVisit = RoomsVisited.Find(r => r.Room == _room);
+        VisitedRoom _roomVisit = RoomsVisited.Find(r => r.Room == _room.name);
         if (_roomVisit != null)
         {
             if (_room.IsInPath(_roomVisit.EnterPointIndexes[_roomVisit.EnterPointIndexes.Count-1],_playerPos)) //uudestaan samasta sisäänkäynnistä huoneeseen
@@ -21,12 +21,12 @@ public class RoomVisitedData : EditablePlaytimeObject
                 //poistaa kaikki turhat lopusta
                 RoomsVisited = RoomsVisited.AsEnumerable().Reverse().SkipWhile((r) => 
                 {
-                    if(r.Room != _room)
+                    if(r.Room != _room.name)
                     {
                         r.RemoveLatestEnter();
                         r.RemoveLatestExit(); //TODO: TÄÄLLÄ SAATTAA OLLA VIRHEITÄ
                     }
-                    return r.Room != _room;
+                    return r.Room != _room.name;
                 }
                 ).ToList();
                 return;
@@ -57,8 +57,9 @@ public class RoomVisitedData : EditablePlaytimeObject
 [System.Serializable]
 public class VisitedRoom
 {
-    [SerializeField] RoomObject room;
-    public RoomObject Room => room;
+    [SerializeField] string room;
+    public string Room => room;
+    RoomObject Object => GameObject.Find(room).GetComponent<RoomObject>();
     [SerializeField] List<int> enterPointIndexes;
     public List<int> EnterPointIndexes => enterPointIndexes;
     [SerializeField] List<int> exitPointIndexes;
@@ -67,7 +68,7 @@ public class VisitedRoom
 
     public void SetEnterPoint(Vector2 _playerPos, bool _needClear = false)
     {
-        int _closestBorder = Room.GetClosest(_playerPos);
+        int _closestBorder = Object.GetClosest(_playerPos);
 
         if (_needClear) { enterPointIndexes = new List<int>(); }
         if (_closestBorder != -1)
@@ -83,7 +84,7 @@ public class VisitedRoom
 
     public void SetExitPoint(Vector2 _playerPos, bool _needClear = false)
     {
-        int _closestBorder = Room.GetClosest(_playerPos);
+        int _closestBorder = Object.GetClosest(_playerPos);
 
         if (_needClear) { exitPointIndexes = new List<int>(); }
         if (_closestBorder != -1)

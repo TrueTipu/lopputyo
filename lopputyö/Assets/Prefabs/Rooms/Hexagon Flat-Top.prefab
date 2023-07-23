@@ -814,6 +814,7 @@ Transform:
   - {fileID: 848327073}
   - {fileID: 577846456}
   - {fileID: 511843109}
+  - {fileID: 1249422993133815613}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -883,139 +884,269 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PathNodes:
     middlePoints:
-    - position: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: -2.8040268, y: 0.15932214}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: -0.0000009536743, y: -2.7036278}
-      - {x: -3.2036278, y: -0.04082614}
-      - {x: 0.04082656, y: 2.4994953}
-      - {x: 2.6320562, y: 0.00000017881393}
-    - position: {x: -3.2036278, y: -0.04082614}
+      - Pos: {x: -0.10769749, y: -3.155696}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -0.0057172775, y: 2.5095112}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -8, y: 0}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -8, y: -4.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -8, y: 4.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -4.715399, y: -4.3485146}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -0.0057172775, y: 2.5095112}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -4.718709, y: 4.28781}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 0.06847918, y: -0.059154272}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: -0.0057172775, y: 2.5095112}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: -5, y: -4.5}
-      - {x: -5, y: 4.5}
-      - {x: -8, y: -4.5}
-      - {x: -8, y: 4.5}
-      - {x: 0.04082656, y: 2.4994953}
-      - {x: -0.0000009536743, y: -2.7036278}
-      - {x: 0, y: 0}
-    - position: {x: -5, y: 4.5}
+      - Pos: {x: 3.1510444, y: -0.17012286}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 5.038332, y: 4.441181}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 0, y: 7.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -5, y: 7.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 5, y: 7.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -4.718709, y: 4.28781}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -2.8040268, y: 0.15932214}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: 3.1510444, y: -0.17012286}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: 0, y: 7.5}
-      - {x: 5.0408278, y: 4.4999995}
-      - {x: -5, y: -4.5}
-      - {x: -3.2036278, y: -0.04082614}
-      - {x: -8, y: 0}
-      - {x: -8, y: 4.5}
-      - {x: -5, y: 7.5}
-      - {x: 0.04082656, y: 2.4994953}
-    - position: {x: 0.04082656, y: 2.4994953}
+      - Pos: {x: -0.056708097, y: 2.458522}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -0.056708097, y: -2.798768}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 5.038332, y: 4.441181}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 8, y: 0}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 2.8451064, y: -0.17012286}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 2.8451064, y: -0.17012286}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 8, y: 4.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 8, y: -4.5}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: -0.10769749, y: -3.155696}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: 5, y: 7.5}
-      - {x: 0, y: 7.5}
-      - {x: -5, y: 7.5}
-      - {x: 2.6320562, y: 0.00000017881393}
-      - {x: -3.2036278, y: -0.04082614}
-      - {x: 0, y: 0}
-      - {x: -5, y: 4.5}
-      - {x: 5.0408278, y: 4.4999995}
-    - position: {x: 5.0408278, y: 4.4999995}
+      - Pos: {x: 3.1510444, y: -0.17012286}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 0, y: -7.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 5, y: -7.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -5, y: -7.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 4.754792, y: -4.518638}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -4.715399, y: -4.3485146}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 0.06847918, y: -0.059154272}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: 0.06847918, y: -0.059154272}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: 8, y: 0}
-      - {x: 2.6320562, y: 0.00000017881393}
-      - {x: 0, y: 7.5}
-      - {x: -5, y: 4.5}
-      - {x: 5.0816536, y: -4.5000005}
-      - {x: 5, y: 7.5}
-      - {x: 8, y: 4.5}
-      - {x: 0.04082656, y: 2.4994953}
-    - position: {x: 2.6320562, y: 0.00000017881393}
+      - Pos: {x: -0.0057172775, y: 2.5095112}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 3.1510444, y: -0.17012286}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -2.8040268, y: 0.15932214}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -0.10769749, y: -3.155696}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: 5.038332, y: 4.441181}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: 5.0408278, y: 4.4999995}
-      - {x: 8, y: 4.5}
-      - {x: 8, y: 0}
-      - {x: 8, y: -4.5}
-      - {x: -0.0000009536743, y: -2.7036278}
-      - {x: 0.04082656, y: 2.4994953}
-      - {x: 0, y: 0}
-    - position: {x: 5.0816536, y: -4.5000005}
+      - Pos: {x: 3.1510444, y: -0.17012286}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 4.754792, y: -4.518638}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -0.0057172775, y: 2.5095112}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 5, y: 7.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 8, y: 4.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 8, y: 0}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 0, y: 7.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -4.718709, y: 4.28781}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: 4.754792, y: -4.518638}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: 8, y: -4.5}
-      - {x: 8, y: 0}
-      - {x: 5.0408278, y: 4.4999995}
-      - {x: 5, y: -7.5}
-      - {x: -0.0000009536743, y: -2.7036278}
-      - {x: -5, y: -4.5}
-    - position: {x: -0.0000009536743, y: -2.7036278}
+      - Pos: {x: 5.038332, y: 4.441181}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -4.715399, y: -4.3485146}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 8, y: 0}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 8, y: -4.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 5, y: -7.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 0, y: -7.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -0.056708097, y: -2.798768}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: -4.715399, y: -4.3485146}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: -5, y: -7.5}
-      - {x: 5, y: -7.5}
-      - {x: 5.0816536, y: -4.5000005}
-      - {x: -5, y: -4.5}
-      - {x: 0, y: -7.5}
-      - {x: 2.6320562, y: 0.00000017881393}
-      - {x: -3.2036278, y: -0.04082614}
-      - {x: 0, y: 0}
-    - position: {x: -5, y: -4.5}
+      - Pos: {x: 4.754792, y: -4.518638}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 0, y: -7.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -5, y: -7.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -8, y: -4.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -8, y: 0}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -0.10769749, y: -3.155696}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: -4.718709, y: 4.28781}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: -5, y: 4.5}
-      - {x: -3.2036278, y: -0.04082614}
-      - {x: -8, y: 0}
-      - {x: -5, y: -7.5}
-      - {x: -8, y: -4.5}
-      - {x: 5.0816536, y: -4.5000005}
-      - {x: -0.0000009536743, y: -2.7036278}
+      - Pos: {x: -8, y: 4.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -5, y: 7.5}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -0.0057172775, y: 2.5095112}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -2.8040268, y: 0.15932214}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -8, y: 0}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 5.038332, y: 4.441181}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 0, y: 7.5}
+        Middle: {x: 0, y: 0}
     borderPoints:
-    - position: {x: -8, y: -4.5}
+    - vectorReference:
+        Pos: {x: -8, y: -4.5}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: -3.2036278, y: -0.04082614}
-      - {x: -5, y: -4.5}
-    - position: {x: -8, y: 0}
+      - Pos: {x: -4.715399, y: -4.3485146}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 0, y: 0}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: -8, y: 0}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: -5, y: 4.5}
-      - {x: -5, y: -4.5}
-    - position: {x: -8, y: 4.5}
+      - Pos: {x: -4.715399, y: -4.3485146}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -4.718709, y: 4.28781}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: -8, y: 4.5}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: -3.2036278, y: -0.04082614}
-      - {x: -5, y: 4.5}
-    - position: {x: -5, y: 7.5}
+      - Pos: {x: -4.718709, y: 4.28781}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: -5, y: 7.5}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: 0.04082656, y: 2.4994953}
-      - {x: -5, y: 4.5}
-    - position: {x: 0, y: 7.5}
+      - Pos: {x: -0.0057172775, y: 2.5095112}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -4.718709, y: 4.28781}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: 0, y: 7.5}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: 0.04082656, y: 2.4994953}
-      - {x: 0, y: 7.5}
-      - {x: 0, y: 7.5}
-      - {x: -5, y: 4.5}
-      - {x: 5, y: 4.5}
-    - position: {x: 5, y: 7.5}
+      - Pos: {x: -0.0057172775, y: 2.5095112}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 5.038332, y: 4.441181}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -4.718709, y: 4.28781}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: 5, y: 7.5}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: 0.04082656, y: 2.4994953}
-      - {x: 5.0408278, y: 4.4999995}
-    - position: {x: 8, y: 4.5}
+      - Pos: {x: 5.038332, y: 4.441181}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -0.056708097, y: 2.458522}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: 8, y: 4.5}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: 2.6320562, y: 0.00000017881393}
-      - {x: 5.0408278, y: 4.4999995}
-    - position: {x: 8, y: 0}
+      - Pos: {x: 5.038332, y: 4.441181}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 2.8451064, y: -0.17012286}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: 8, y: 0}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: 5.0816536, y: -4.5000005}
-      - {x: 5, y: 4.5}
-      - {x: 2.6320562, y: 0.00000017881393}
-    - position: {x: 8, y: -4.5}
+      - Pos: {x: 5.038332, y: 4.441181}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 4.754792, y: -4.518638}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 2.8451064, y: -0.17012286}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: 8, y: -4.5}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: 5.0816536, y: -4.5000005}
-      - {x: 2.6320562, y: 0.00000017881393}
-    - position: {x: 5, y: -7.5}
+      - Pos: {x: 4.754792, y: -4.518638}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 2.8451064, y: -0.17012286}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: 5, y: -7.5}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: -0.0000009536743, y: -2.7036278}
-      - {x: 5.0816536, y: -4.5000005}
-    - position: {x: 0, y: -7.5}
+      - Pos: {x: 4.754792, y: -4.518638}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -0.056708097, y: -2.798768}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: 0, y: -7.5}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: -0.0000009536743, y: -2.7036278}
-    - position: {x: -5, y: -7.5}
+      - Pos: {x: 4.754792, y: -4.518638}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -4.715399, y: -4.3485146}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: 0.056706667, y: -2.798768}
+        Middle: {x: 0, y: 0}
+    - vectorReference:
+        Pos: {x: -5, y: -7.5}
+        Middle: {x: 0, y: 0}
       linkedNodes:
-      - {x: -5, y: -4.5}
-      - {x: -0.0000009536743, y: -2.7036278}
+      - Pos: {x: -4.715399, y: -4.3485146}
+        Middle: {x: 0, y: 0}
+      - Pos: {x: -0.056708097, y: -2.798768}
+        Middle: {x: 0, y: 0}
   <MiddleDis>k__BackingField: {x: 5, y: 4.5}
   <BorderDis>k__BackingField: {x: 3, y: 3}
   <MiddlePointSize>k__BackingField: 1
@@ -1023,3 +1154,106 @@ MonoBehaviour:
   <MiddlePointColor>k__BackingField: {r: 0, g: 1, b: 1, a: 1}
   <BorderPointColor>k__BackingField: {r: 1, g: 0, b: 0, a: 1}
   <SelectedPointColor>k__BackingField: {r: 0, g: 1, b: 0, a: 1}
+  <RoomStream>k__BackingField: {fileID: 5742747313247269251}
+--- !u!1 &3437792723373975207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1249422993133815613}
+  - component: {fileID: 8114174990976225135}
+  - component: {fileID: 2492898147484856389}
+  - component: {fileID: 5742747313247269251}
+  m_Layer: 0
+  m_Name: RoomStream
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1249422993133815613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437792723373975207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.028664598}
+  m_LocalScale: {x: 0.14155884, y: 0.2062536, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 727085813721604866}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8114174990976225135
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437792723373975207}
+  m_Mesh: {fileID: 0}
+--- !u!23 &2492898147484856389
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437792723373975207}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 6c29ebdc671bf254f8ee55f92e6b67ed, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5742747313247269251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437792723373975207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a7693d69e9b46409ea6ebfa244a561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshSpacing: 0.05
+  particleSpacing: 1
+  particlePrefab: {fileID: 3167076967437474699, guid: 6cdaa5bf9d306e04097d90ae8f5bd27f, type: 3}
+  width: 0.45
+  tiling: 18.32
+  streamMoveSpeed: 1

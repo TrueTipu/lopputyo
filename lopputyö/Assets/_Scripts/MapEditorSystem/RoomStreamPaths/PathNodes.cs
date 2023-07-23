@@ -51,7 +51,7 @@ public class PathNodes
             _centre + (Vector2.right + Vector2.down) * _middleDis,
              _centre + Vector2.down * _middleDis.y,
              _centre + (Vector2.down + Vector2.left) * _middleDis,
-        }).ConvertAll((v) => Node.CreateInstance(v, this));
+        }).ConvertAll((v) => Node.CreateInstance(v, _centre));
 
         borderPoints = (new List<Vector2>
         {
@@ -67,7 +67,7 @@ public class PathNodes
             middlePoints[6].Pos + Vector2.down * _borderDis.y,
             middlePoints[7].Pos + Vector2.down * _borderDis.y,
             middlePoints[8].Pos + Vector2.down * _borderDis.y,
-        }).ConvertAll((v) => Node.CreateInstance(v, this)).ToArray();
+        }).ConvertAll((v) => Node.CreateInstance(v, _centre)).ToArray();
 
         //linkNodes = new HashSet<KeyValuePair<Vector2, Vector2>>();
         selectedNode = null;
@@ -77,26 +77,25 @@ public class PathNodes
     {
         foreach (Node _node in middlePoints)
         {
-            _node.ChangePos(new Vector2(_center.x + _node.Pos.x, _center.y + _node.Pos.y));
+            _node.ChangeMiddle(_center);
             _node.ResetLinkData();
         }
         foreach (Node _node in borderPoints)
         {
-            _node.ChangePos(new Vector2(_center.x + _node.Pos.x, _center.y + _node.Pos.y));
+            _node.ChangeMiddle(_center);
         }
         ResetLocalDatas();
     }
 
-    public async void ResetLocalDatas()
+    public void ResetLocalDatas()
     {
-        await Task.Delay(10);
         foreach (Node _node in middlePoints)
         {
-            _node.SetCreator(this);
+            _node.SetLocalData(this);
         }
         foreach (Node _node in borderPoints)
         {
-            _node.SetCreator(this);
+            _node.SetLocalData(this);
         }
     }
     public void RemoveSelect()
@@ -106,6 +105,7 @@ public class PathNodes
 
     public List<Vector2> GivePath(int _enter, int _exit)
     {
+        Debug.Log(borderPoints[_enter] + " " + borderPoints[_exit]);
 
         return DepthFirstSearch(borderPoints[_enter], borderPoints[_exit]).ConvertAll(x => x.Pos);
     }
@@ -129,7 +129,7 @@ public class PathNodes
             foreach (Node _node in _current.LinkedNodes)
             {
                 float _newDis = _dis + Vector2.Distance(_node.Pos, _current.Pos);
-                if (_map.ContainsKey(_node) && (_map[_node].Item1 < _newDis))
+                if (_map.ContainsKey(_node) && (_map[_node].Item1 <= _newDis))
                 {
                      continue;
                 }
@@ -152,7 +152,7 @@ public class PathNodes
                 _result.Add(_backCurrent);
             }
 
-            if (_result != null) _result.ForEach(n => Debug.Log(n));
+            //if (_result != null) _result.ForEach(n => Debug.Log(n));
 
             return _result;
         }
@@ -212,8 +212,7 @@ public class PathNodes
     public void AddMiddlePoint(Vector2 _anchorPos, RoomObject _pathNodeHandler)
     {
         selectedNode = null;
-        middlePoints.Add(Node.CreateInstance(_anchorPos, this));
-        middlePoints[middlePoints.Count - 1].ChangePos(_anchorPos);
+        middlePoints.Add(Node.CreateInstance(_anchorPos, _pathNodeHandler.transform.position));
     }
 
 

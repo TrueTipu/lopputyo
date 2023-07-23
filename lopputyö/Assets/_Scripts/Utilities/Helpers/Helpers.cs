@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using System.Threading.Tasks;
 
 public static class Helpers
 {
@@ -22,8 +22,21 @@ public static class Helpers
     {
         return Camera.ScreenToWorldPoint(Input.mousePosition);
     }
-
-
+    public static async void OneSDelay(Action _action)
+    {
+        await Task.Delay(1000);
+        _action();
+    }
+    public static async void pointO_OneSDelay(Action _action)
+    {
+        await Task.Delay(10);
+        _action();
+    }
+    public static async void pointOneSDelay(Action _action)
+    {
+        await Task.Delay(100);
+        _action();
+    }
     public static void CreateAutoTimer(float time, Action end)
     {
         timers.Add(new Timer(time, end));

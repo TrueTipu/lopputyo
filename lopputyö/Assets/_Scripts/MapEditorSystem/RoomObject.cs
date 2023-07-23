@@ -24,6 +24,7 @@ public class RoomObject : MonoBehaviour
     [field: SerializeField] public Color SelectedPointColor { get; private set; } = Color.green;
 
 
+    [field: SerializeField] public StreamCreator RoomStream { get; private set; }
 
     private void Update()
     {

@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 public class RoomStreamTester : MonoBehaviour
 {
-    [SerializeField] StreamCreator streamCreator;
-
 
     [SerializeField] RoomObject singleRoom;
 
@@ -18,11 +16,13 @@ public class RoomStreamTester : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
-            SpawnTray(singleRoom.PathNodes, 0, 3);
+            singleRoom.PathNodes.ResetLocalDatas();
+            SpawnTray(singleRoom.PathNodes, 0, 3, singleRoom);
         }
     }
-    void SpawnTray(PathNodes _pathNodes, int _start, int _end)
+    void SpawnTray(PathNodes _pathNodes, int _start, int _end, RoomObject _room)
     {
+        Debug.Log(_room.name);
         Path _path = new Path(Vector2.zero);
         _path.SetAutoSetMode(true);
         List<Vector2> _pathList = _pathNodes.GivePath(_start, _end);
@@ -33,7 +33,7 @@ public class RoomStreamTester : MonoBehaviour
         }
         _path.DeleteSegment(0);
         _path.DeleteSegment(0);
-        streamCreator.UpdateStream(_path);
+        _room.RoomStream.UpdateStream(_path);
     }
 
     void SpawnTrayForEachRoom()
@@ -41,15 +41,16 @@ public class RoomStreamTester : MonoBehaviour
         Dictionary<VisitedRoom, int> _visitCounts = new Dictionary<VisitedRoom, int>();
         foreach (VisitedRoom _visit in roomVisitedData.RoomsVisited)
         {
+            RoomObject _room = GameObject.Find(_visit.Room).GetComponent<RoomObject>();
             if (!_visitCounts.ContainsKey(_visit))
-            {
-                Debug.Log(_visit.Room);
-                SpawnTray(_visit.Room.PathNodes, _visit.EnterPointIndexes[0], _visit.ExitPointIndexes[0]);
+            {            
+                _room.PathNodes.ResetLocalDatas();
+                SpawnTray(_room.PathNodes, _visit.EnterPointIndexes[0], _visit.ExitPointIndexes[0], _room);
                 _visitCounts[_visit] = 1;
             }
             else
             {
-                SpawnTray(_visit.Room.PathNodes, _visit.EnterPointIndexes[_visitCounts[_visit]], _visit.ExitPointIndexes[_visitCounts[_visit]]);
+                SpawnTray(_room.PathNodes, _visit.EnterPointIndexes[_visitCounts[_visit]], _visit.ExitPointIndexes[_visitCounts[_visit]], _room);
                 _visitCounts[_visit] += 1;
             }
         }
