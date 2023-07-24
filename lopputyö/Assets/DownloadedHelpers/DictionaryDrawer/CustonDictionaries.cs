@@ -11,6 +11,8 @@ using UnityEngine;
 
 [Serializable] public class RoomPositionDict : SerializableDictionary<Vector2Int, Room> { }
 
+[Serializable] public class DirectionGameObjectDict : SerializableDictionary<Direction, GameObject> { }
+
 //[Serializable] public class NodeLinkDict : SerializableDictionary<PathNodes.Node, PathNodes.Node> { }
 ///Laita alempi editor scriptiin
 

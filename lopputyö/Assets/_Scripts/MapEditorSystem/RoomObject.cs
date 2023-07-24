@@ -26,6 +26,12 @@ public class RoomObject : MonoBehaviour
 
     [field: SerializeField] public StreamCreator RoomStream { get; private set; }
 
+    [SerializeField] DirectionGameObjectDict blockObjectDict = new DirectionGameObjectDict();
+
+    private void Start()
+    {
+        PathNodes.ResetLocalDatas();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -73,36 +79,15 @@ public class RoomObject : MonoBehaviour
 
     public void Clear()
     {
-        //if (leftBlock != null)
-        //    leftBlock?.SetActive(false);
-        //if (rightBlock != null)
-        //    rightBlock?.SetActive(false);
-        //if (upBlock != null)
-        //    upBlock?.SetActive(false);
-        //if(downBlock != null)
-        //    downBlock?.SetActive(false);
+        foreach(GameObject _object in blockObjectDict.Values)
+        {
+            _object.SetActive(false);
+        }
     }
 
     public void BlockPath(Direction _dir)
     {
-        //rewrite with new dirs
-        switch (_dir)
-        {
-            case Direction.Left:
-
-                break;
-            case Direction.Right:
-
-                break;
-            case Direction.Up:
-
-                break;
-            case Direction.Down:
-
-                break;
-            default:
-                break;
-        }
+        blockObjectDict[_dir]?.SetActive(true);
     }
 
     public void SetActive(bool _active)

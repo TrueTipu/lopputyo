@@ -127,10 +127,10 @@ public class PathNodes
             _current = _stack.Pop();
             float _dis = _map[_current].Item1;
             foreach (Node _node in _current.LinkedNodes)
-            {
+            { 
                 float _newDis = _dis + Vector2.Distance(_node.Pos, _current.Pos);
                 if (_map.ContainsKey(_node) && (_map[_node].Item1 <= _newDis))
-                {
+                { 
                      continue;
                 }
                 else

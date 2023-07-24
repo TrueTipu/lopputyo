@@ -8,7 +8,7 @@ public class RoomManager : Singleton<RoomManager>
 {
 
 
-    [GetSO]RoomSet roomSet;
+    [GetSO, SerializeField] RoomSet roomSet;
     Dictionary<Vector2Int, Room> rooms => roomSet.Rooms; //shortcut niin ei tarvi rewriteä
 
     Action roomsChanged = () => { return; };
@@ -56,6 +56,7 @@ public class RoomManager : Singleton<RoomManager>
 
         foreach (Direction _dir in _dirs)
         {
+            //TODO: jaa oman ja toisen blokkaaminen erikseen tämän foreach sisään, ettei laiteta blockeja seinien päälle
             if (_neighbourRoom == null || _currentRoom == null || (!_currentRoom.PossibleDirections[_dir]) || (!_neighbourRoom.PossibleDirections[_dir.ReturnAntiDir()]))
             {
                 _currentRoom?.AddBlockedDirection(_dir);

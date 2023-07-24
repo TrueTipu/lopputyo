@@ -2,13 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 using UnityEngine.SceneManagement;
 
 
 public class SceneLoader : PersistentSingleton<SceneLoader>
 {
+    private void OnEnable()
+    {
+        Resources.FindObjectsOfTypeAll<PlaytimeObject>().ToList().ForEach(x => x.OnStartLoad());
+    }
 
-            
     // Update is called once per frame
     void Update()
     {

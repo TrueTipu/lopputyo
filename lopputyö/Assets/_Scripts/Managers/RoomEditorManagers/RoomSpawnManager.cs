@@ -38,7 +38,7 @@ public class RoomSpawnManager : GenericGrid<RoomSpawner, RoomSpawnManager>
         _newRooms.Add(GetTile(_cords.x + 1, _cords.y ));
         _newRooms.Add(_roomSpawner);
 
-        //luodaan differenssi listoista(yhdistelmä molemmista differnsseistä), differensseille pitää aina tehdä jotain.
+     
         foreach (RoomSpawner _room in _newRooms)
         {
             if (!_room.IsActive)

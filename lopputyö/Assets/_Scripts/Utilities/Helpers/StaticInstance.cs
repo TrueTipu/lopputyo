@@ -52,7 +52,7 @@ public abstract class PersistentSingleton<T> : Singleton<T> where T : MonoBehavi
             base.Awake();
             return;
         }
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(base.gameObject);
         base.Awake();
     }
 }

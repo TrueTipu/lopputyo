@@ -56,7 +56,7 @@ public class RoomOpenData
     private Vector2Int cellSize;
 
     [System.Serializable]
-    public class Row
+    class Row
     {
         [SerializeField]
         private SerializableDirectionBoolPair[] row = new SerializableDirectionBoolPair[SIZE];
@@ -84,7 +84,7 @@ public class RoomOpenData
     private Row[] cells;
 
     [System.Serializable]
-    public class SerializableDirectionBoolPair
+    class SerializableDirectionBoolPair
     {
         public SerializableDirectionBoolPair(Direction _dir, bool _value)
         {

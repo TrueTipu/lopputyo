@@ -59,8 +59,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     [SerializeField, Range(0f, 10f)] float hangTimeRange = 2f;
     [SerializeField, Range(0f, 1f)] float hangTimeStrength = 0.5f;
 
-    [SerializeField]PlayerStateCheck playerStateCheck;
-    [GetSO] PlayerData playerData;
+    [GetSO, SerializeField] PlayerStateCheck playerStateCheck;
+    [GetSO, SerializeField] PlayerData playerData;
 
     bool IsGround
     {

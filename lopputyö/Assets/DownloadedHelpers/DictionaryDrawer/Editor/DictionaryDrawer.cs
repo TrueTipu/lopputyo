@@ -204,6 +204,8 @@ public abstract class DictionaryDrawer<TK, TV> : PropertyDrawer
 [CustomPropertyDrawer(typeof(RoomPositionDict))]
 public class RoomPositionDictDrawer : DictionaryDrawer<Vector2Int, Room> { }
 
+[CustomPropertyDrawer(typeof(DirectionGameObjectDict))]
+public class DirectionGameObjectDictDrawer : DictionaryDrawer<Direction, GameObject> { }
 //moi
 
 //[CustomPropertyDrawer(typeof(NodeLinkDict))]

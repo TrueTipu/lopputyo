@@ -26,6 +26,7 @@ public class RoomSpawner : MonoBehaviour, ITileNode
         tileCords = new Vector2Int(_x, _y);
 
         SetBlocks();
+        roomObject.PathNodes.ResetLocalDatas();
 
         roomActivated += _callBackListener;
         roomActivated += (Vector2Int _cords, Vector2 _pos) => roomVisitedData.AddRoom(roomObject, _pos);

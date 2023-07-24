@@ -40,8 +40,9 @@ public class RoomVisitedData : EditablePlaytimeObject
         }
         else //uusi huone
         {
+            _roomVisit = new VisitedRoom(_room.name);
             _roomVisit.SetEnterPoint(_playerPos, true);
-            RoomsVisited[RoomsVisited.Count - 1].SetExitPoint(_playerPos, true);
+            if (RoomsVisited.Count - 1 >= 0) { RoomsVisited[RoomsVisited.Count - 1]?.SetExitPoint(_playerPos, true); }
             RoomsVisited.Add(_roomVisit);
         }
 
@@ -63,6 +64,12 @@ public class VisitedRoom
     [SerializeField] List<int> enterPointIndexes;
     public List<int> EnterPointIndexes => enterPointIndexes;
     [SerializeField] List<int> exitPointIndexes;
+
+    public VisitedRoom(string _roomName)
+    {
+        this.room = _roomName;
+    }
+
     public List<int> ExitPointIndexes => exitPointIndexes;
 
 
@@ -84,13 +91,13 @@ public class VisitedRoom
 
     public void SetExitPoint(Vector2 _playerPos, bool _needClear = false)
     {
-        int _closestBorder = Object.GetClosest(_playerPos);
+        //int _closestBorder = Object.GetClosest(_playerPos);
 
-        if (_needClear) { exitPointIndexes = new List<int>(); }
-        if (_closestBorder != -1)
-        {
-            exitPointIndexes.Add(_closestBorder);
-        }
+        //if (_needClear) { exitPointIndexes = new List<int>(); }
+        //if (_closestBorder != -1)
+        //{
+        //    exitPointIndexes.Add(_closestBorder);
+        //}
     }
     public void RemoveLatestExit()
     {

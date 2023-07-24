@@ -9,7 +9,7 @@ using UnityEngine;
 public class PlayerData : PlaytimeObject
 {
     bool positionPlaced;
-    Vector3 position;
+    [SerializeField]Vector3 position;
 
     public Vector3 Position { get; private set; }
     
