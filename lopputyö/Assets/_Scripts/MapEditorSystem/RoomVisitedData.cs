@@ -101,8 +101,8 @@ public class VisitedRoom
     }
     public void RemoveLatestExit()
     {
-        if (exitPointIndexes.Count > 0)
-            exitPointIndexes.RemoveAt(exitPointIndexes.Count - 1);
+        //if (exitPointIndexes.Count > 0)
+        //    exitPointIndexes.RemoveAt(exitPointIndexes.Count - 1);
     }
 }
 

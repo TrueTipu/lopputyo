@@ -33,9 +33,11 @@ public class RoomSpawner : MonoBehaviour, ITileNode
     }
 
 
-    public void ActivateRoom()
+    public void ActivateDisabledRoom()
     {
         if (roomObject == null) return;
+
+
         ///jos ei loadata koko sceneä
         //if (!updaited)
         //{
@@ -51,7 +53,7 @@ public class RoomSpawner : MonoBehaviour, ITileNode
         roomObject.SetActive(true);
     }
 
-    public void DisableRoom()
+    public void DisableActiveRoom()
     {
         if (roomObject == null) return;
 

@@ -43,19 +43,20 @@ public class RoomSpawnManager : GenericGrid<RoomSpawner, RoomSpawnManager>
         {
             if (!_room.IsActive)
             {
-                _room.ActivateRoom();
+                _room.ActivateDisabledRoom();
             }
         }
         foreach(RoomSpawner _room in activeRooms.Except(_newRooms))
         {
             if (_room.IsActive)
             {
-                _room.DisableRoom();
+                _room.DisableActiveRoom();
             }
         }
-        
+
         activeRooms = new List<RoomSpawner>(_newRooms);
 
+        Helpers.Camera.transform.position = _roomSpawner.transform.position + new Vector3(0, 0, -10);
     }
     protected override void InitNode(RoomSpawner _node, int _x, int _y)
     {

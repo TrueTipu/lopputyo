@@ -36,15 +36,15 @@ public class RoomObject : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log(PathNodes.HasConnection(0, 3));
-            Debug.Log("");
-            Debug.Log("");
-            Debug.Log(PathNodes.HasConnection(1, 3));
-            Debug.Log("");
-            Debug.Log("");
-            Debug.Log(PathNodes.HasConnection(5, 3));
-            Debug.Log("");
-            Debug.Log("");
+            //Debug.Log(PathNodes.HasConnection(0, 3));
+            //Debug.Log("");
+            //Debug.Log("");
+            //Debug.Log(PathNodes.HasConnection(1, 3));
+            //Debug.Log("");
+            //Debug.Log("");
+            //Debug.Log(PathNodes.HasConnection(5, 3));
+            //Debug.Log("");
+            //Debug.Log("");
         }
 
     }
