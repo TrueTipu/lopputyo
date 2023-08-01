@@ -15,7 +15,7 @@ public static class InjectScriptableObject
             var component = ResourceSystem.GetScriptableObject(type.ToString());
             if (component == null)
             {
-                Debug.LogWarning("GetComponent typeof(" + type.Name + ") in game object '" + _object.name + "' is null");
+                Debug.LogWarning("GetComponent typeof(" + type.Name + ") in game object '" + _object.name + "' is null" + type.ToString());
                 continue;
             }
             field.SetValue(_object, component);

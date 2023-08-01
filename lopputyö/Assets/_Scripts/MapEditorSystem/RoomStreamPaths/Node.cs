@@ -5,10 +5,22 @@ using UnityEngine;
 public class VectorReference
 {
     [SerializeField, HideInInspector]
-    internal Vector2 Pos = Vector2.zero;
+    Vector2 pos;
+    public Vector2 Pos => pos;
+
+    public void SetPos(Vector2 _pos)
+    {
+        pos = _pos;
+    }
 
     [SerializeField, HideInInspector]
-    internal Vector2 Middle = Vector2.zero;
+    Vector2 middle;
+    public Vector2 Middle => middle;
+
+    public void SetMiddle(Vector2 _middle)
+    {
+        middle = _middle;
+    }
 }
 namespace RoomStreamPathNodes
 {
@@ -20,13 +32,13 @@ namespace RoomStreamPathNodes
 
 
         [SerializeField, HideInInspector]
-        public VectorReference vectorReference = new VectorReference();
+        VectorReference vectorReference = new VectorReference();
 
 
         [SerializeField, HideInInspector]
         List<VectorReference> linkedNodes;
 
-        public Vector2 Pos => vectorReference.Pos + vectorReference.Middle;
+        public Vector2 Pos => (vectorReference.Pos + vectorReference.Middle);
 
         [field: NonSerialized]
         public List<Node> LinkedNodes { get; private set; }
@@ -36,7 +48,7 @@ namespace RoomStreamPathNodes
             return LinkedNodes.ConvertAll(x => x.vectorReference.Pos + x.vectorReference.Middle);
         }
 
-        public void SetLocalData(PathNodes _creator)
+        public void SetLocalLinkData(PathNodes _creator)
         {
             LinkedNodes = linkedNodes.ConvertAll(x => _creator.FindWithPos(x.Pos + x.Middle)).FindAll(x => x != null);
         }
@@ -45,8 +57,9 @@ namespace RoomStreamPathNodes
         {
             LinkedNodes = new List<Node>();
             linkedNodes = new List<VectorReference>();
-            vectorReference.Pos = _position - _middle;
-            vectorReference.Middle = _middle;
+            vectorReference = new VectorReference();
+            vectorReference.SetPos(_position - _middle);
+            vectorReference.SetMiddle(_middle);
         }
 
         public static Node CreateInstance(Vector2 _position, Vector2 _middle)
@@ -72,7 +85,15 @@ namespace RoomStreamPathNodes
         }
         public void ResetLinkData()
         {
-            linkedNodes = LinkedNodes.ConvertAll(x => x.vectorReference);
+            if(LinkedNodes == null)
+            {
+                linkedNodes = new List<VectorReference>();
+            }
+            else
+            {
+                linkedNodes = LinkedNodes.ConvertAll(x => x.vectorReference);
+            }
+         
         }
         public void ResetLinks()
         {
@@ -84,11 +105,12 @@ namespace RoomStreamPathNodes
 
         public void ChangePos(Vector2 _pos)
         {
-            vectorReference.Pos = _pos - vectorReference.Middle;
+            vectorReference.SetPos(_pos - vectorReference.Middle);
         }
         public void ChangeMiddle(Vector2 _middle)
         {
-            vectorReference.Middle = _middle;
+            vectorReference.SetMiddle(_middle);
+            Debug.Log(vectorReference.Middle);
         }
         public override string ToString()
         {

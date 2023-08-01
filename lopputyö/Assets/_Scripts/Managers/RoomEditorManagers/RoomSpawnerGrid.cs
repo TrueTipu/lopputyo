@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 
-public class RoomSpawnManager : GenericGrid<RoomSpawner, RoomSpawnManager>
+public class RoomSpawnerGrid : GenericGrid<RoomSpawner, RoomSpawnerGrid>
 {
     RoomManager roomManager;
 
@@ -60,6 +60,6 @@ public class RoomSpawnManager : GenericGrid<RoomSpawner, RoomSpawnManager>
     }
     protected override void InitNode(RoomSpawner _node, int _x, int _y)
     {
-        _node.InitRoomSpawn(roomManager.GetRoom(_x, _y), _x, _y, ActivateRoom);
+        _node.InitRoomSpawn(roomManager.GetRoom(_x, _y), _x, _y, this, ActivateRoom);
     }
 }

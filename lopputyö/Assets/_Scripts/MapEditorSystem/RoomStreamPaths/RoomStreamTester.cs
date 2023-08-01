@@ -8,6 +8,7 @@ public class RoomStreamTester : MonoBehaviour
 
     [SerializeField] RoomVisitedData roomVisitedData;
 
+    [SerializeField] RoomSpawnerGrid spawnerGrid;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -16,7 +17,6 @@ public class RoomStreamTester : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
-            singleRoom.PathNodes.ResetLocalDatas();
             SpawnTray(singleRoom.PathNodes, 0, 3, singleRoom);
         }
     }
@@ -41,10 +41,10 @@ public class RoomStreamTester : MonoBehaviour
         Dictionary<VisitedRoom, int> _visitCounts = new Dictionary<VisitedRoom, int>();
         foreach (VisitedRoom _visit in roomVisitedData.RoomsVisited)
         {
-            RoomObject _room = GameObject.Find(_visit.Room).GetComponent<RoomObject>();
+            RoomObject _room = spawnerGrid.GetTile(_visit.RoomPos).RoomObject;
             if (!_visitCounts.ContainsKey(_visit))
-            {            
-                _room.PathNodes.ResetLocalDatas();
+            {
+                _room.PathNodes.ResetLocalLinkDatas();
                 SpawnTray(_room.PathNodes, _visit.EnterPointIndexes[0], _visit.ExitPointIndexes[0], _room);
                 _visitCounts[_visit] = 1;
             }

@@ -30,7 +30,7 @@ public class RoomObject : MonoBehaviour
 
     private void Start()
     {
-        PathNodes.ResetLocalDatas();
+            PathNodes.ResetLocalData(transform.position);  
     }
     private void Update()
     {
@@ -101,4 +101,5 @@ public class RoomObject : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
+
 }

@@ -29,183 +29,167 @@ Preset:
     value: 9
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].vectorReference.Pos.x
-    value: -2.8040268
+    propertyPath: PathNodes.middlePoints.Array.data[0].vectorReference.pos.x
+    value: -0.04746151
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].vectorReference.Pos.y
-    value: 0.15932214
+    propertyPath: PathNodes.middlePoints.Array.data[0].vectorReference.pos.y
+    value: -0.0949254
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].vectorReference.Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[0].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].vectorReference.Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[0].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.size
-    value: 9
+    value: 8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[0].Pos.x
-    value: -0.10769749
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[0].pos.x
+    value: -4.9690456
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[0].Pos.y
-    value: -3.155696
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[0].pos.y
+    value: -4.2894015
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[1].Pos.x
-    value: -0.0057172775
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[1].pos.x
+    value: -0.00000047683716
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[1].Pos.y
-    value: 2.5095112
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[1].pos.y
+    value: -3.0011818
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[2].Pos.x
-    value: -8
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[2].pos.x
+    value: 3.327684
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[2].Pos.y
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[2].pos.y
+    value: 0.055637658
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[2].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[2].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[2].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[2].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[3].pos.x
+    value: 4.8847766
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[3].pos.y
+    value: -4.246026
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[3].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[3].Pos.x
-    value: -8
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[3].Pos.y
-    value: -4.5
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[3].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[3].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[3].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[4].pos.x
+    value: -5.014465
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[4].pos.y
+    value: 4.383534
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[4].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[4].Pos.x
-    value: -8
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[4].Pos.y
-    value: 4.5
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[4].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[4].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[4].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[5].pos.x
+    value: 4.6143084
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[5].pos.y
+    value: 4.56521
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[5].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[5].Pos.x
-    value: -4.715399
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[5].Pos.y
-    value: -4.3485146
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[5].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[5].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[5].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[6].pos.x
+    value: -0.045418978
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[6].pos.y
+    value: 2.229063
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[6].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[6].Pos.x
-    value: -0.0057172775
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[6].Pos.y
-    value: 2.5095112
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[6].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[6].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[6].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[7].pos.x
+    value: -3.0469937
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[7].pos.y
+    value: -0.090837
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[7].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[7].Pos.x
-    value: -4.718709
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[7].Pos.y
-    value: 4.28781
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[7].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[7].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[7].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[1].vectorReference.pos.x
+    value: -3.0469937
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[1].vectorReference.pos.y
+    value: -0.090837
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[1].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[8].Pos.x
-    value: 0.06847918
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[8].Pos.y
-    value: -0.059154272
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[8].Middle.x
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[0].linkedNodes.Array.data[8].Middle.y
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].vectorReference.Pos.x
-    value: -0.0057172775
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].vectorReference.Pos.y
-    value: 2.5095112
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].vectorReference.Middle.x
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].vectorReference.Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[1].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -213,131 +197,131 @@ Preset:
     value: 7
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[0].Pos.x
-    value: 3.1510444
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[0].pos.x
+    value: -8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[0].Pos.y
-    value: -0.17012286
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[0].pos.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[1].Pos.x
-    value: 5.038332
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[1].Pos.y
-    value: 4.441181
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[1].pos.x
+    value: -5.014465
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[1].pos.y
+    value: 4.383534
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[2].Pos.x
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[2].Pos.y
-    value: 7.5
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[2].pos.x
+    value: -8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[2].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[2].pos.y
+    value: -4.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[2].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[2].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[2].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[3].Pos.x
-    value: -5
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[3].pos.x
+    value: -4.9690456
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[3].Pos.y
-    value: 7.5
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[3].pos.y
+    value: -4.2894015
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[3].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[3].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[3].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[3].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[4].Pos.x
-    value: 5
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[4].pos.x
+    value: -0.045418978
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[4].Pos.y
-    value: 7.5
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[4].pos.y
+    value: 2.229063
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[4].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[4].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[4].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[4].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[5].Pos.x
-    value: -4.718709
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[5].pos.x
+    value: -0.00000047683716
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[5].Pos.y
-    value: 4.28781
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[5].pos.y
+    value: -3.0011818
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[5].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[5].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[5].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[5].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[6].Pos.x
-    value: -2.8040268
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[6].pos.x
+    value: -0.04746151
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[6].Pos.y
-    value: 0.15932214
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[6].pos.y
+    value: -0.0949254
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[6].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[6].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[6].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[1].linkedNodes.Array.data[6].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].vectorReference.Pos.x
-    value: 3.1510444
+    propertyPath: PathNodes.middlePoints.Array.data[2].vectorReference.pos.x
+    value: -0.045418978
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].vectorReference.Pos.y
-    value: -0.17012286
+    propertyPath: PathNodes.middlePoints.Array.data[2].vectorReference.pos.y
+    value: 2.229063
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].vectorReference.Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[2].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].vectorReference.Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[2].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -345,875 +329,1067 @@ Preset:
     value: 8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[0].Pos.x
-    value: -0.056708097
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[0].Pos.y
-    value: 2.458522
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[0].pos.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[0].pos.y
+    value: 7.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[1].Pos.x
-    value: -0.056708097
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[1].Pos.y
-    value: -2.798768
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[1].pos.x
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[1].pos.y
+    value: 7.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[2].Pos.x
-    value: 5.038332
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[2].Pos.y
-    value: 4.441181
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[2].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[2].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[2].pos.x
+    value: -5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[2].pos.y
+    value: 7.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[2].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[3].Pos.x
-    value: 8
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[3].Pos.y
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[2].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[3].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[3].pos.x
+    value: 4.6143084
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[3].pos.y
+    value: 4.56521
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[3].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[3].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[3].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[4].Pos.x
-    value: 2.8451064
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[4].pos.x
+    value: -3.0469937
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[4].Pos.y
-    value: -0.17012286
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[4].pos.y
+    value: -0.090837
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[4].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[4].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[4].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[4].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[5].Pos.x
-    value: 2.8451064
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[5].pos.x
+    value: 3.327684
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[5].Pos.y
-    value: -0.17012286
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[5].pos.y
+    value: 0.055637658
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[5].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[5].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[5].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[5].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[6].Pos.x
-    value: 8
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[6].pos.x
+    value: -5.014465
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[6].Pos.y
-    value: 4.5
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[6].pos.y
+    value: 4.383534
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[6].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[6].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[6].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[6].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[7].Pos.x
-    value: 8
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[7].pos.x
+    value: -0.04746151
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[7].Pos.y
-    value: -4.5
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[7].pos.y
+    value: -0.0949254
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[7].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[7].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[7].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[2].linkedNodes.Array.data[7].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].vectorReference.Pos.x
-    value: -0.10769749
+    propertyPath: PathNodes.middlePoints.Array.data[3].vectorReference.pos.x
+    value: 3.327684
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].vectorReference.Pos.y
-    value: -3.155696
+    propertyPath: PathNodes.middlePoints.Array.data[3].vectorReference.pos.y
+    value: 0.055637658
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].vectorReference.Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[3].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].vectorReference.Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[3].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.size
-    value: 7
+    value: 8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[0].Pos.x
-    value: 3.1510444
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[0].pos.x
+    value: 8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[0].Pos.y
-    value: -0.17012286
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[0].pos.y
+    value: 4.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[1].Pos.x
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[1].pos.x
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[1].pos.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[1].Pos.y
-    value: -7.5
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[2].Pos.x
-    value: 5
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[2].pos.x
+    value: -0.045418978
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[2].Pos.y
-    value: -7.5
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[2].pos.y
+    value: 2.229063
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[2].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[2].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[2].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[2].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[3].Pos.x
-    value: -5
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[3].pos.x
+    value: -0.00000047683716
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[3].Pos.y
-    value: -7.5
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[3].pos.y
+    value: -3.0011818
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[3].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[3].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[3].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[3].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[4].Pos.x
-    value: 4.754792
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[4].pos.x
+    value: -0.04746151
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[4].Pos.y
-    value: -4.518638
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[4].pos.y
+    value: -0.0949254
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[4].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[4].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[4].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[4].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[5].Pos.x
-    value: -4.715399
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[5].pos.x
+    value: 8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[5].Pos.y
-    value: -4.3485146
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[5].pos.y
+    value: -4.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[5].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[5].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[5].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[5].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[6].Pos.x
-    value: 0.06847918
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[6].pos.x
+    value: 4.8847766
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[6].Pos.y
-    value: -0.059154272
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[6].pos.y
+    value: -4.246026
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[6].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[6].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[6].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[6].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].vectorReference.Pos.x
-    value: 0.06847918
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[7].pos.x
+    value: 4.6143084
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].vectorReference.Pos.y
-    value: -0.059154272
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[7].pos.y
+    value: 4.56521
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].vectorReference.Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[7].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].vectorReference.Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[3].linkedNodes.Array.data[7].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].vectorReference.pos.x
+    value: -0.00000047683716
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].vectorReference.pos.y
+    value: -3.0011818
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].vectorReference.middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.size
-    value: 4
+    value: 8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[0].Pos.x
-    value: -0.0057172775
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[0].pos.x
+    value: -5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[0].Pos.y
-    value: 2.5095112
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[0].pos.y
+    value: -7.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[1].Pos.x
-    value: 3.1510444
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[1].Pos.y
-    value: -0.17012286
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[1].pos.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[1].pos.y
+    value: -7.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[2].Pos.x
-    value: -2.8040268
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[2].Pos.y
-    value: 0.15932214
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[2].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[2].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[2].pos.x
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[2].pos.y
+    value: -7.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[2].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[3].Pos.x
-    value: -0.10769749
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[3].Pos.y
-    value: -3.155696
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[3].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[2].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[3].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[3].pos.x
+    value: 3.327684
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[3].pos.y
+    value: 0.055637658
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[3].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].vectorReference.Pos.x
-    value: 5.038332
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].vectorReference.Pos.y
-    value: 4.441181
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].vectorReference.Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[3].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].vectorReference.Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[4].pos.x
+    value: -4.9690456
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[4].pos.y
+    value: -4.2894015
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[4].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[4].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[5].pos.x
+    value: -0.04746151
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[5].pos.y
+    value: -0.0949254
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[5].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[5].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[6].pos.x
+    value: -3.0469937
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[6].pos.y
+    value: -0.090837
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[6].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[6].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[7].pos.x
+    value: 4.8847766
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[7].pos.y
+    value: -4.246026
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[7].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[4].linkedNodes.Array.data[7].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].vectorReference.pos.x
+    value: 4.8847766
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].vectorReference.pos.y
+    value: -4.246026
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].vectorReference.middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.size
+    value: 9
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[0].pos.x
     value: 8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[0].Pos.x
-    value: 3.1510444
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[0].Pos.y
-    value: -0.17012286
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[0].pos.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[1].Pos.x
-    value: 4.754792
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[1].Pos.y
-    value: -4.518638
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[1].pos.x
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[1].pos.y
+    value: -4.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[2].Pos.x
-    value: -0.0057172775
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[2].Pos.y
-    value: 2.5095112
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[2].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[2].Middle.y
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[3].Pos.x
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[2].pos.x
     value: 5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[3].Pos.y
-    value: 7.5
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[2].pos.y
+    value: -7.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[3].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[2].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[3].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[2].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[4].Pos.x
-    value: 8
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[3].pos.x
+    value: -0.04746151
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[4].Pos.y
-    value: 4.5
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[3].pos.y
+    value: -0.0949254
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[4].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[3].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[4].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[3].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[5].Pos.x
-    value: 8
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[4].pos.x
+    value: 4.6143084
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[5].Pos.y
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[4].pos.y
+    value: 4.56521
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[4].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[5].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[4].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[5].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[5].pos.x
+    value: -0.00000047683716
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[5].pos.y
+    value: -3.0011818
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[5].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[6].Pos.x
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[5].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[6].Pos.y
-    value: 7.5
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[6].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[6].pos.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[6].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[6].pos.y
+    value: -7.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[6].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[7].Pos.x
-    value: -4.718709
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[7].Pos.y
-    value: 4.28781
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[7].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[6].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[7].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[7].pos.x
+    value: 3.327684
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[7].pos.y
+    value: 0.055637658
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[7].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].vectorReference.Pos.x
-    value: 4.754792
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].vectorReference.Pos.y
-    value: -4.518638
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].vectorReference.Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[7].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].vectorReference.Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[8].pos.x
+    value: -4.9690456
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[8].pos.y
+    value: -4.2894015
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[8].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[5].linkedNodes.Array.data[8].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].vectorReference.pos.x
+    value: 4.6143084
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].vectorReference.pos.y
+    value: 4.56521
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].vectorReference.middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.size
-    value: 7
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[0].Pos.x
-    value: 5.038332
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[0].Pos.y
-    value: 4.441181
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[0].Middle.x
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[0].Middle.y
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[1].Pos.x
-    value: -4.715399
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[1].Pos.y
-    value: -4.3485146
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[1].Middle.x
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[1].Middle.y
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[2].Pos.x
     value: 8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[2].Pos.y
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[2].Middle.x
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[2].Middle.y
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[3].Pos.x
-    value: 8
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[3].Pos.y
-    value: -4.5
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[3].Middle.x
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[3].Middle.y
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[4].Pos.x
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[0].pos.x
     value: 5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[4].Pos.y
-    value: -7.5
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[0].pos.y
+    value: 7.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[4].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[4].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[5].Pos.x
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[1].pos.x
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[1].pos.y
+    value: 4.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[5].Pos.y
-    value: -7.5
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[5].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[5].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[2].pos.x
+    value: -0.045418978
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[2].pos.y
+    value: 2.229063
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[2].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[6].Pos.x
-    value: -0.056708097
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[6].Pos.y
-    value: -2.798768
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[6].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[2].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[6].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[3].pos.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].vectorReference.Pos.x
-    value: -4.715399
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[3].pos.y
+    value: 7.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].vectorReference.Pos.y
-    value: -4.3485146
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].vectorReference.Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[3].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].vectorReference.Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[3].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[4].pos.x
+    value: 4.8847766
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[4].pos.y
+    value: -4.246026
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[4].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[4].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[5].pos.x
+    value: -5.014465
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[5].pos.y
+    value: 4.383534
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[5].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[5].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[6].pos.x
+    value: -0.04746151
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[6].pos.y
+    value: -0.0949254
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[6].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[6].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[7].pos.x
+    value: 3.327684
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[7].pos.y
+    value: 0.055637658
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[7].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[6].linkedNodes.Array.data[7].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].vectorReference.pos.x
+    value: -5.014465
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].vectorReference.pos.y
+    value: 4.383534
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].vectorReference.middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.size
-    value: 6
+    value: 9
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[0].Pos.x
-    value: 4.754792
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[0].pos.x
+    value: -8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[0].Pos.y
-    value: -4.518638
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[0].pos.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[1].Pos.x
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[1].Pos.y
-    value: -7.5
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[1].pos.x
+    value: -8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[1].pos.y
+    value: 4.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[2].Pos.x
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[2].pos.x
     value: -5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[2].Pos.y
-    value: -7.5
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[2].pos.y
+    value: 7.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[2].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[2].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[2].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[2].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[3].Pos.x
-    value: -8
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[3].Pos.y
-    value: -4.5
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[3].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[3].pos.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[3].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[3].pos.y
+    value: 7.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[3].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[4].Pos.x
-    value: -8
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[4].Pos.y
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[3].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[4].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[4].pos.x
+    value: -3.0469937
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[4].pos.y
+    value: -0.090837
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[4].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[4].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[4].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[5].Pos.x
-    value: -0.10769749
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[5].pos.x
+    value: -0.045418978
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[5].Pos.y
-    value: -3.155696
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[5].pos.y
+    value: 2.229063
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[5].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[5].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[5].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[5].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].vectorReference.Pos.x
-    value: -4.718709
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[6].pos.x
+    value: 4.6143084
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].vectorReference.Pos.y
-    value: 4.28781
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[6].pos.y
+    value: 4.56521
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].vectorReference.Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[6].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].vectorReference.Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[6].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[7].pos.x
+    value: -4.9690456
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[7].pos.y
+    value: -4.2894015
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[7].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[7].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[8].pos.x
+    value: -0.04746151
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[8].pos.y
+    value: -0.0949254
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[8].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[7].linkedNodes.Array.data[8].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].vectorReference.pos.x
+    value: -4.9690456
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].vectorReference.pos.y
+    value: -4.2894015
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].vectorReference.middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.size
-    value: 7
+    value: 9
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[0].Pos.x
-    value: -8
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[0].Pos.y
-    value: 4.5
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[0].Middle.x
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[0].Middle.y
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[1].Pos.x
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[0].pos.x
     value: -5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[1].Pos.y
-    value: 7.5
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[0].pos.y
+    value: -7.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[2].Pos.x
-    value: -0.0057172775
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[2].Pos.y
-    value: 2.5095112
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[2].Middle.x
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[2].Middle.y
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[3].Pos.x
-    value: -2.8040268
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[3].Pos.y
-    value: 0.15932214
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[3].Middle.x
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[3].Middle.y
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[4].Pos.x
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[1].pos.x
     value: -8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[4].Pos.y
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[1].pos.y
+    value: -4.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[4].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[4].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[2].pos.x
+    value: -8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[2].pos.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[5].Pos.x
-    value: 5.038332
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[5].Pos.y
-    value: 4.441181
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[5].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[2].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[5].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[2].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[6].Pos.x
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[3].pos.x
+    value: -3.0469937
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[3].pos.y
+    value: -0.090837
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[3].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[6].Pos.y
-    value: 7.5
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[6].Middle.x
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[3].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[6].Middle.y
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[4].pos.x
+    value: -0.00000047683716
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[4].pos.y
+    value: -3.0011818
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[4].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[4].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[5].pos.x
+    value: -0.04746151
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[5].pos.y
+    value: -0.0949254
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[5].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[5].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[6].pos.x
+    value: -5.014465
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[6].pos.y
+    value: 4.383534
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[6].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[6].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[7].pos.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[7].pos.y
+    value: -7.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[7].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[7].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[8].pos.x
+    value: 4.8847766
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[8].pos.y
+    value: -4.246026
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[8].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.middlePoints.Array.data[8].linkedNodes.Array.data[8].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -1221,19 +1397,19 @@ Preset:
     value: 12
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[0].vectorReference.Pos.x
+    propertyPath: PathNodes.borderPoints.Array.data[0].vectorReference.pos.x
     value: -8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[0].vectorReference.Pos.y
+    propertyPath: PathNodes.borderPoints.Array.data[0].vectorReference.pos.y
     value: -4.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[0].vectorReference.Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[0].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[0].vectorReference.Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[0].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -1241,103 +1417,119 @@ Preset:
     value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[0].Pos.x
-    value: -4.715399
+    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[0].pos.x
+    value: -4.969045
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[0].Pos.y
-    value: -4.3485146
+    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[0].pos.y
+    value: -4.3368635
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[1].Pos.x
+    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[1].pos.x
+    value: -3.0469937
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[1].pos.y
+    value: -0.090837
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[1].Pos.y
+    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[1].Middle.x
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[0].linkedNodes.Array.data[1].Middle.y
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[1].vectorReference.Pos.x
+    propertyPath: PathNodes.borderPoints.Array.data[1].vectorReference.pos.x
     value: -8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[1].vectorReference.Pos.y
+    propertyPath: PathNodes.borderPoints.Array.data[1].vectorReference.pos.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[1].vectorReference.Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[1].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[1].vectorReference.Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[1].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.size
-    value: 2
+    value: 3
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[0].Pos.x
-    value: -4.715399
+    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[0].pos.x
+    value: -3.0469937
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[0].Pos.y
-    value: -4.3485146
+    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[0].pos.y
+    value: -0.090837
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[1].Pos.x
-    value: -4.718709
+    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[1].pos.x
+    value: -5.014465
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[1].Pos.y
-    value: 4.28781
+    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[1].pos.y
+    value: 4.383534
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[2].vectorReference.Pos.x
+    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[2].pos.x
+    value: -4.969045
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[2].pos.y
+    value: -4.3368635
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[2].middle.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.borderPoints.Array.data[1].linkedNodes.Array.data[2].middle.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: PathNodes.borderPoints.Array.data[2].vectorReference.pos.x
     value: -8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[2].vectorReference.Pos.y
+    propertyPath: PathNodes.borderPoints.Array.data[2].vectorReference.pos.y
     value: 4.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[2].vectorReference.Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[2].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[2].vectorReference.Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[2].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -1345,35 +1537,35 @@ Preset:
     value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[2].linkedNodes.Array.data[0].Pos.x
-    value: -4.718709
+    propertyPath: PathNodes.borderPoints.Array.data[2].linkedNodes.Array.data[0].pos.x
+    value: -5.014465
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[2].linkedNodes.Array.data[0].Pos.y
-    value: 4.28781
+    propertyPath: PathNodes.borderPoints.Array.data[2].linkedNodes.Array.data[0].pos.y
+    value: 4.383534
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[2].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[2].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[2].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[2].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[3].vectorReference.Pos.x
+    propertyPath: PathNodes.borderPoints.Array.data[3].vectorReference.pos.x
     value: -5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[3].vectorReference.Pos.y
+    propertyPath: PathNodes.borderPoints.Array.data[3].vectorReference.pos.y
     value: 7.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[3].vectorReference.Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[3].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[3].vectorReference.Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[3].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -1381,51 +1573,51 @@ Preset:
     value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[0].Pos.x
-    value: -0.0057172775
+    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[0].pos.x
+    value: -5.014465
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[0].Pos.y
-    value: 2.5095112
+    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[0].pos.y
+    value: 4.383534
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[1].Pos.x
-    value: -4.718709
+    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[1].pos.x
+    value: -0.045418978
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[1].Pos.y
-    value: 4.28781
+    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[1].pos.y
+    value: 2.229063
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[3].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].vectorReference.Pos.x
+    propertyPath: PathNodes.borderPoints.Array.data[4].vectorReference.pos.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].vectorReference.Pos.y
+    propertyPath: PathNodes.borderPoints.Array.data[4].vectorReference.pos.y
     value: 7.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].vectorReference.Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[4].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].vectorReference.Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[4].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -1433,67 +1625,67 @@ Preset:
     value: 3
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[0].Pos.x
-    value: -0.0057172775
+    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[0].pos.x
+    value: -5.014465
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[0].Pos.y
-    value: 2.5095112
+    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[0].pos.y
+    value: 4.383534
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[1].Pos.x
-    value: 5.038332
+    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[1].pos.x
+    value: -0.045418978
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[1].Pos.y
-    value: 4.441181
+    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[1].pos.y
+    value: 2.229063
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[2].Pos.x
-    value: -4.718709
+    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[2].pos.x
+    value: 4.6143084
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[2].Pos.y
-    value: 4.28781
+    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[2].pos.y
+    value: 4.56521
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[2].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[2].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[2].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[4].linkedNodes.Array.data[2].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[5].vectorReference.Pos.x
+    propertyPath: PathNodes.borderPoints.Array.data[5].vectorReference.pos.x
     value: 5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[5].vectorReference.Pos.y
+    propertyPath: PathNodes.borderPoints.Array.data[5].vectorReference.pos.y
     value: 7.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[5].vectorReference.Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[5].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[5].vectorReference.Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[5].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -1501,51 +1693,51 @@ Preset:
     value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[0].Pos.x
-    value: 5.038332
+    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[0].pos.x
+    value: -0.045418978
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[0].Pos.y
-    value: 4.441181
+    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[0].pos.y
+    value: 2.229063
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[1].Pos.x
-    value: -0.056708097
+    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[1].pos.x
+    value: 4.6143084
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[1].Pos.y
-    value: 2.458522
+    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[1].pos.y
+    value: 4.56521
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[5].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[6].vectorReference.Pos.x
+    propertyPath: PathNodes.borderPoints.Array.data[6].vectorReference.pos.x
     value: 8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[6].vectorReference.Pos.y
+    propertyPath: PathNodes.borderPoints.Array.data[6].vectorReference.pos.y
     value: 4.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[6].vectorReference.Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[6].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[6].vectorReference.Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[6].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -1553,119 +1745,103 @@ Preset:
     value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[0].Pos.x
-    value: 5.038332
+    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[0].pos.x
+    value: 4.6143084
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[0].Pos.y
-    value: 4.441181
+    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[0].pos.y
+    value: 4.56521
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[1].Pos.x
-    value: 2.8451064
+    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[1].pos.x
+    value: 3.1378336
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[1].Pos.y
-    value: -0.17012286
+    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[1].pos.y
+    value: -0.18167502
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[6].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].vectorReference.Pos.x
+    propertyPath: PathNodes.borderPoints.Array.data[7].vectorReference.pos.x
     value: 8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].vectorReference.Pos.y
+    propertyPath: PathNodes.borderPoints.Array.data[7].vectorReference.pos.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].vectorReference.Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[7].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].vectorReference.Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[7].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.size
-    value: 3
+    value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[0].Pos.x
-    value: 5.038332
+    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[0].pos.x
+    value: 3.1378336
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[0].Pos.y
-    value: 4.441181
+    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[0].pos.y
+    value: -0.18167502
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[1].Pos.x
-    value: 4.754792
+    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[1].pos.x
+    value: 4.9322395
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[1].Pos.y
-    value: -4.518638
+    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[1].pos.y
+    value: -4.246026
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[2].Pos.x
-    value: 2.8451064
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[2].Pos.y
-    value: -0.17012286
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[2].Middle.x
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[7].linkedNodes.Array.data[2].Middle.y
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[8].vectorReference.Pos.x
+    propertyPath: PathNodes.borderPoints.Array.data[8].vectorReference.pos.x
     value: 8
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[8].vectorReference.Pos.y
+    propertyPath: PathNodes.borderPoints.Array.data[8].vectorReference.pos.y
     value: -4.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[8].vectorReference.Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[8].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[8].vectorReference.Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[8].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -1673,51 +1849,51 @@ Preset:
     value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[0].Pos.x
-    value: 4.754792
+    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[0].pos.x
+    value: 4.8847766
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[0].Pos.y
-    value: -4.518638
+    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[0].pos.y
+    value: -4.246026
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[1].Pos.x
-    value: 2.8451064
+    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[1].pos.x
+    value: 3.327684
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[1].Pos.y
-    value: -0.17012286
+    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[1].pos.y
+    value: 0.055637658
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[8].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[9].vectorReference.Pos.x
+    propertyPath: PathNodes.borderPoints.Array.data[9].vectorReference.pos.x
     value: 5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[9].vectorReference.Pos.y
+    propertyPath: PathNodes.borderPoints.Array.data[9].vectorReference.pos.y
     value: -7.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[9].vectorReference.Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[9].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[9].vectorReference.Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[9].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -1725,51 +1901,51 @@ Preset:
     value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[0].Pos.x
-    value: 4.754792
+    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[0].pos.x
+    value: -0.00000047683716
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[0].Pos.y
-    value: -4.518638
+    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[0].pos.y
+    value: -3.0011818
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[1].Pos.x
-    value: -0.056708097
+    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[1].pos.x
+    value: 4.9322395
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[1].Pos.y
-    value: -2.798768
+    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[1].pos.y
+    value: -4.246026
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[9].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].vectorReference.Pos.x
+    propertyPath: PathNodes.borderPoints.Array.data[10].vectorReference.pos.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].vectorReference.Pos.y
+    propertyPath: PathNodes.borderPoints.Array.data[10].vectorReference.pos.y
     value: -7.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].vectorReference.Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[10].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].vectorReference.Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[10].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -1777,67 +1953,67 @@ Preset:
     value: 3
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[0].Pos.x
-    value: 4.754792
+    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[0].pos.x
+    value: -0.00000047683716
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[0].Pos.y
-    value: -4.518638
+    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[0].pos.y
+    value: -3.0011818
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[1].Pos.x
-    value: -4.715399
+    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[1].pos.x
+    value: 4.8847766
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[1].Pos.y
-    value: -4.3485146
+    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[1].pos.y
+    value: -4.246026
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[2].Pos.x
-    value: 0.056706667
+    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[2].pos.x
+    value: -4.9690456
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[2].Pos.y
-    value: -2.798768
+    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[2].pos.y
+    value: -4.2894015
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[2].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[2].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[2].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[2].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[11].vectorReference.Pos.x
+    propertyPath: PathNodes.borderPoints.Array.data[11].vectorReference.pos.x
     value: -5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[11].vectorReference.Pos.y
+    propertyPath: PathNodes.borderPoints.Array.data[11].vectorReference.pos.y
     value: -7.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[11].vectorReference.Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[11].vectorReference.middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[11].vectorReference.Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[11].vectorReference.middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -1845,35 +2021,35 @@ Preset:
     value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[0].Pos.x
-    value: -4.715399
+    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[0].pos.x
+    value: -0.00000047683716
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[0].Pos.y
-    value: -4.3485146
+    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[0].pos.y
+    value: -3.0011818
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[0].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[0].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[0].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[0].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[1].Pos.x
-    value: -0.056708097
+    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[1].pos.x
+    value: -4.969045
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[1].Pos.y
-    value: -2.798768
+    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[1].pos.y
+    value: -4.3368635
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[1].Middle.x
+    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[1].middle.x
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[1].Middle.y
+    propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[1].middle.y
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -1950,6 +2126,382 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: <RoomStream>k__BackingField
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.size
+    value: 17
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[0]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[1]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[2]
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[3]
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[4]
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[5]
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[6]
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[7]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[8]
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[9]
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[10]
+    value: 9
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[11]
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[12]
+    value: 11
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[13]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[14]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[15]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Buckets.Array.data[16]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.size
+    value: 17
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[0]
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[1]
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[2]
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[3]
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[4]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[5]
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[6]
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[7]
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[8]
+    value: 9
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[9]
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[10]
+    value: 11
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[11]
+    value: 12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[12]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[13]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[14]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[15]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._HashCodes.Array.data[16]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.size
+    value: 17
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[0]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[1]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[2]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[3]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[4]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[5]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[6]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[7]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[8]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[9]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[10]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[11]
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[12]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[13]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[14]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[15]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Next.Array.data[16]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Count
+    value: 12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Version
+    value: 66
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._FreeList
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._FreeCount
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.size
+    value: 17
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[0]
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[1]
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[2]
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[3]
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[4]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[5]
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[6]
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[7]
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[8]
+    value: 9
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[9]
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[10]
+    value: 11
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[11]
+    value: 12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[12]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[13]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[14]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[15]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Keys.Array.data[16]
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.size
+    value: 17
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[0]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[1]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[2]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[3]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[4]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[5]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[6]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[7]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[8]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[9]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[10]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[11]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[12]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[13]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[14]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[15]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: blockObjectDict._Values.Array.data[16]
     value: 
     objectReference: {fileID: 0}
   m_ExcludedProperties: []

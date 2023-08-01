@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+[RequireComponent(typeof(BoxCollider2D))]
 public class RoomSpawner : MonoBehaviour, ITileNode
 {
     [GetSO] RoomVisitedData roomVisitedData;
 
+    RoomSpawnerGrid spawnerGrid;
+
     Room room;
-    RoomObject roomObject = null;
-    public bool IsActive { get { return roomObject == null ? false : roomObject.gameObject.activeSelf; } }
+    public RoomObject RoomObject { get; private set; } = null;
+    public bool IsActive { get { return RoomObject == null ? false : RoomObject.gameObject.activeSelf; } }
 
     Vector2Int tileCords;
 
@@ -18,24 +21,30 @@ public class RoomSpawner : MonoBehaviour, ITileNode
         this.InjectGetSO();
     }
 
-    public void InitRoomSpawn(Room _room, int _x, int _y, Action<Vector2Int, Vector2> _callBackListener)
+    private IEnumerator Start()
+    {
+        yield return null;
+        GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+    public void InitRoomSpawn(Room _room, int _x, int _y, RoomSpawnerGrid _spawner, Action<Vector2Int, Vector2> _callBackListener)
     {
         if (_room == null) return;
         room = _room;
-        roomObject = Instantiate(_room.RoomPrefab, transform).GetComponent<RoomObject>();
+        spawnerGrid = _spawner;
+        RoomObject = Instantiate(_room.RoomPrefab, transform).GetComponent<RoomObject>();
         tileCords = new Vector2Int(_x, _y);
 
         SetBlocks();
-        roomObject.PathNodes.ResetLocalDatas();
 
         roomActivated += _callBackListener;
-        roomActivated += (Vector2Int _cords, Vector2 _pos) => roomVisitedData.AddRoom(roomObject, _pos);
+        roomActivated += (Vector2Int _cords, Vector2 _pos) => roomVisitedData.AddRoom(RoomObject, spawnerGrid, tileCords, _pos);
     }
 
 
     public void ActivateDisabledRoom()
     {
-        if (roomObject == null) return;
+        if (RoomObject == null) return;
 
 
         ///jos ei loadata koko sceneä
@@ -49,15 +58,15 @@ public class RoomSpawner : MonoBehaviour, ITileNode
         //}
 
 
-        roomObject.gameObject.SetActive(true);
-        roomObject.SetActive(true);
+        RoomObject.gameObject.SetActive(true);
+        RoomObject.SetActive(true);
     }
 
     public void DisableActiveRoom()
     {
-        if (roomObject == null) return;
+        if (RoomObject == null) return;
 
-        roomObject.SetActive(false);
+        RoomObject.SetActive(false);
     }
 
     //Jos ei loadata koko sceneä
@@ -75,12 +84,12 @@ public class RoomSpawner : MonoBehaviour, ITileNode
 
     void SetBlocks()
     {
-        roomObject.Clear();
+        RoomObject.Clear();
         foreach (Direction _bDir in room.BlockedDirections.Keys)
         {
             if (room.BlockedDirections[_bDir] == true)
             {
-                roomObject.BlockPath(_bDir);
+                RoomObject.BlockPath(_bDir);
             }
                 
         }

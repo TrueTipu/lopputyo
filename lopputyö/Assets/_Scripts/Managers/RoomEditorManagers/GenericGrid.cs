@@ -66,7 +66,10 @@ public abstract class GenericGrid<Node, T> : MonoBehaviour where Node : MonoBeha
 
         return tiles[x, y];
     }
-
+    public virtual Node GetTile(Vector2Int _vector)
+    {
+        return GetTile(_vector.x, _vector.y);
+    }
 
 
 }

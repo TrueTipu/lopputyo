@@ -32,9 +32,8 @@ public class PathNodes
 
     [SerializeField, HideInInspector]
     Node[] borderPoints;
-    public Vector2 GetBorderPoint(int _index) => borderPoints[_index].Pos;
+    public Vector2 GetBorderPoint(int _index) => BorderPointNode(_index).Pos;
     private Node BorderPointNode(int _index) => borderPoints[_index];
-
 
 
     public PathNodes(Vector2 _centre, Vector2 _middleDis, Vector2 _borderDis)
@@ -73,29 +72,29 @@ public class PathNodes
         selectedNode = null;
     }
 
-    public void ResetPos(Vector3 _center)
+    public void ResetLocalData(Vector3 _center)
     {
+        Debug.Log(_center);
         foreach (Node _node in middlePoints)
         {
             _node.ChangeMiddle(_center);
-            _node.ResetLinkData();
         }
         foreach (Node _node in borderPoints)
         {
             _node.ChangeMiddle(_center);
         }
-        ResetLocalDatas();
+        ResetLocalLinkDatas();
     }
 
-    public void ResetLocalDatas()
+    public void ResetLocalLinkDatas()
     {
         foreach (Node _node in middlePoints)
         {
-            _node.SetLocalData(this);
+            _node.SetLocalLinkData(this);
         }
         foreach (Node _node in borderPoints)
         {
-            _node.SetLocalData(this);
+            _node.SetLocalLinkData(this);
         }
     }
     public void RemoveSelect()

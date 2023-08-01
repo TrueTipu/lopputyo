@@ -28,17 +28,17 @@ public class PathNodesEditor : Editor
             PrefabUtility.RecordPrefabInstancePropertyModifications(pathNodeHandler); //tallennus undo varten
             UnityEditor.Undo.RegisterFullObjectHierarchyUndo(pathNodeHandler, "reset");
             pathNodeHandler.CreateNodes();
-            Undo.undoRedoPerformed = () => PathNodes.ResetLocalDatas();
+            Undo.undoRedoPerformed = () => PathNodes.ResetLocalLinkDatas();
         }
         if (GUILayout.Button("Reset pos"))
         {
             PrefabUtility.RecordPrefabInstancePropertyModifications(pathNodeHandler); //tallennus undo varten
             UnityEditor.Undo.RegisterFullObjectHierarchyUndo(pathNodeHandler, "resetpos");
-            PathNodes.ResetPos(pathNodeHandler.transform.position);
+            PathNodes.ResetLocalData(pathNodeHandler.transform.position);
         }
         if (GUILayout.Button("Reset links"))
         {
-            PathNodes.ResetLocalDatas();
+            PathNodes.ResetLocalLinkDatas();
         }
         bool _drawLines = GUILayout.Toggle(PathNodes.DrawLines, "DrawLineToggle");
         if (_drawLines != PathNodes.DrawLines)
@@ -178,7 +178,7 @@ public class PathNodesEditor : Editor
         {
             pathNodeHandler.CreateNodes();
         }
-        PathNodes.ResetLocalDatas();
-        Undo.undoRedoPerformed = () => Helpers.pointO_OneSDelay(PathNodes.ResetLocalDatas);
+        PathNodes.ResetLocalLinkDatas();
+        Undo.undoRedoPerformed = () => Helpers.pointO_OneSDelay(PathNodes.ResetLocalLinkDatas);
     }
 }

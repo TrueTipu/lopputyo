@@ -11,38 +11,64 @@ public class RoomVisitedData : EditablePlaytimeObject
     [SerializeField] List<VisitedRoom> roomsVisited = new List<VisitedRoom>();
     public List<VisitedRoom> RoomsVisited { get; private set; }
 
-    public void AddRoom(RoomObject _room, Vector2 _playerPos)
+    public void AddRoom(RoomObject _roomObject, RoomSpawnerGrid _spawnerGrid, Vector2Int _roomPos, Vector2 _playerPos)
     {
-        VisitedRoom _roomVisit = RoomsVisited.Find(r => r.Room == _room.name);
+        VisitedRoom _roomVisit = RoomsVisited.Find(r => r.RoomPos == _roomPos);
         if (_roomVisit != null)
         {
-            if (_room.IsInPath(_roomVisit.EnterPointIndexes[_roomVisit.EnterPointIndexes.Count-1],_playerPos)) //uudestaan samasta sisäänkäynnistä huoneeseen
+            if (_roomObject.IsInPath(_roomVisit.EnterPointIndexes[_roomVisit.EnterPointIndexes.Count-1], _playerPos)) //uudestaan samasta sisäänkäynnistä huoneeseen
             {
                 //poistaa kaikki turhat lopusta
                 RoomsVisited = RoomsVisited.AsEnumerable().Reverse().SkipWhile((r) => 
                 {
-                    if(r.Room != _room.name)
+                    if(r.RoomPos != _roomPos)
                     {
                         r.RemoveLatestEnter();
                         r.RemoveLatestExit(); //TODO: TÄÄLLÄ SAATTAA OLLA VIRHEITÄ
                     }
-                    return r.Room != _room.name;
+                    return r.RoomPos != _roomPos;
                 }
                 ).ToList();
+                RoomsVisited.Reverse();
+                Debug.Log(1);
                 return;
             }
             else //uudestaan toisesta sisäänkäynnistä
             {
-                _roomVisit.SetEnterPoint(_playerPos);
-                RoomsVisited[RoomsVisited.Count - 1].SetExitPoint(_playerPos);
+                Debug.Log(2 + "EI PITÄS");
+
+                if (RoomsVisited.Count > 0)
+                {
+                    VisitedRoom _lastRoom = RoomsVisited[RoomsVisited.Count - 1];
+                    int _closestExit = _spawnerGrid.GetTile(_lastRoom.RoomPos).RoomObject.GetClosest(_playerPos);
+                    _lastRoom.SetExitPoint(_closestExit);
+                }
+
+                int _closestEnter = _roomObject.GetClosest(_playerPos);
+                Debug.Log(_playerPos + " " + _closestEnter);
+                _roomVisit.SetEnterPoint(_closestEnter);
+
                 RoomsVisited.Add(_roomVisit);
             }
         }
         else //uusi huone
         {
-            _roomVisit = new VisitedRoom(_room.name);
-            _roomVisit.SetEnterPoint(_playerPos, true);
-            if (RoomsVisited.Count - 1 >= 0) { RoomsVisited[RoomsVisited.Count - 1]?.SetExitPoint(_playerPos, true); }
+            Debug.Log(3);
+
+            
+
+            if(RoomsVisited.Count > 0)
+            {
+                VisitedRoom _lastRoom = RoomsVisited[RoomsVisited.Count - 1];
+                int _closestExit = _spawnerGrid.GetTile(_lastRoom.RoomPos).RoomObject.GetClosest(_playerPos);
+                _lastRoom.SetExitPoint(_closestExit, true);
+            }
+
+            _roomVisit = new VisitedRoom(_roomPos);
+            int _closestEnter = _roomObject.GetClosest(_playerPos);
+            Debug.Log(_playerPos + " " + _closestEnter);
+            _roomVisit.SetEnterPoint(_closestEnter, true);
+
             RoomsVisited.Add(_roomVisit);
         }
 
@@ -58,24 +84,24 @@ public class RoomVisitedData : EditablePlaytimeObject
 [System.Serializable]
 public class VisitedRoom
 {
-    [SerializeField] string room;
-    public string Room => room;
-    RoomObject Object => GameObject.Find(room).GetComponent<RoomObject>();
+    [SerializeField] Vector2Int roomPos;
+    public Vector2Int RoomPos => roomPos;
     [SerializeField] List<int> enterPointIndexes;
     public List<int> EnterPointIndexes => enterPointIndexes;
     [SerializeField] List<int> exitPointIndexes;
 
-    public VisitedRoom(string _roomName)
+    public VisitedRoom(Vector2Int _roomPos)
     {
-        this.room = _roomName;
+        this.roomPos = _roomPos;
+        exitPointIndexes = new List<int>();
+        enterPointIndexes = new List<int>();
     }
 
     public List<int> ExitPointIndexes => exitPointIndexes;
 
 
-    public void SetEnterPoint(Vector2 _playerPos, bool _needClear = false)
+    public void SetEnterPoint(int _closestBorder, bool _needClear = false)
     {
-        int _closestBorder = Object.GetClosest(_playerPos);
 
         if (_needClear) { enterPointIndexes = new List<int>(); }
         if (_closestBorder != -1)
@@ -89,20 +115,19 @@ public class VisitedRoom
             enterPointIndexes.RemoveAt(enterPointIndexes.Count - 1);
     }
 
-    public void SetExitPoint(Vector2 _playerPos, bool _needClear = false)
+    public void SetExitPoint(int _closestBorder, bool _needClear = false)
     {
-        //int _closestBorder = Object.GetClosest(_playerPos);
 
-        //if (_needClear) { exitPointIndexes = new List<int>(); }
-        //if (_closestBorder != -1)
-        //{
-        //    exitPointIndexes.Add(_closestBorder);
-        //}
+        if (_needClear) { exitPointIndexes = new List<int>(); }
+        if (_closestBorder != -1)
+        {
+            exitPointIndexes.Add(_closestBorder);
+        }
     }
     public void RemoveLatestExit()
     {
-        //if (exitPointIndexes.Count > 0)
-        //    exitPointIndexes.RemoveAt(exitPointIndexes.Count - 1);
+        if (exitPointIndexes.Count > 0)
+            exitPointIndexes.RemoveAt(exitPointIndexes.Count - 1);
     }
 }
 
