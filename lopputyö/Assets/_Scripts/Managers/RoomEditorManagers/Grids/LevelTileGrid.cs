@@ -7,13 +7,16 @@ using System;
 /// <summary>
 ///Hallitsee gridiä ja sen tilejä
 /// </summary>
-public class LevelGridManager : GenericGrid<Tile, LevelGridManager>
+public class LevelTileGrid : GenericGrid<Tile, LevelTileGrid>
 {
 
     RoomManager roomManager;
 
-
-
+    [GetSO]LevelTileGridData levelGridData;
+    protected override GridData<Tile> gridData {
+        get => levelGridData;
+        set => levelGridData = value as LevelTileGridData;
+    }
 
     protected override void Start()
     {

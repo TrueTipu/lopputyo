@@ -10,8 +10,7 @@ public class ItemUI : MonoBehaviour
 {
     [SerializeField] GameObject[] abilitySquares;
 
-    [Tooltip("VAIN DEBUGGIA VARTEN")]
-    [GetSO] CoreData core;
+    CoreData lastCore;
 
     [GetSO] UIData uIData;
 
@@ -26,14 +25,20 @@ public class ItemUI : MonoBehaviour
     [SerializeField] AbilityData abilityData;
 
     Action<PlayerAbility> abilityCallback;
-    public void Start()
+
+    private void OnEnable()
     {
         this.InjectGetSO();
+    }
+
+    public void Start()
+    {
+
 
         abilityCallback = (a) =>
         {
-            if (core == null) return;
-            Load(abilityData.ActiveAbilities, core);
+            if (lastCore == null) return;
+            Load(abilityData.ActiveAbilities, lastCore);
         };
         abilityData.SubscribeAbilityAdded(abilityCallback);
         abilityData.SubscribeAbilityRemoved(abilityCallback);
@@ -44,7 +49,7 @@ public class ItemUI : MonoBehaviour
         ///debug
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Load(abilityData.ActiveAbilities, core);
+            Load(abilityData.ActiveAbilities, lastCore);
         }
     }
 
@@ -63,20 +68,20 @@ public class ItemUI : MonoBehaviour
             else { abilitySquares[i].SetActive(false); }
         }
 
-        core = _core;
+        lastCore = _core;
         abilities = _abilities;
 
-        if (core.CurrentAbility != PlayerAbility.None)
+        if (lastCore.CurrentAbility != PlayerAbility.None)
         {
             chosenAbilitySquare.SetActive(true);
-            chosenAbilitySquare.GetComponentInChildren<Text>().text = core.CurrentAbility.ToString();
+            chosenAbilitySquare.GetComponentInChildren<Text>().text = lastCore.CurrentAbility.ToString();
         }
         else
         {
             chosenAbilitySquare.SetActive(false);
         }
 
-        if(core.Powered)
+        if(lastCore.Powered)
         {
             openEditorButton.SetActive(true);
             openEditorButtonFake.SetActive(false);
@@ -95,14 +100,14 @@ public class ItemUI : MonoBehaviour
 
         if(_index != -1)
         {
-            core.SetAbility(abilities[_index]);
+            lastCore.SetAbility(abilities[_index]);
             openEditorButton.SetActive(true);
             openEditorButtonFake.SetActive(false);
 
         }
         else
         {
-            core.SetAbility(PlayerAbility.None);
+            lastCore.SetAbility(PlayerAbility.None);
             openEditorButton.SetActive(false);
             openEditorButtonFake.SetActive(true);
         }

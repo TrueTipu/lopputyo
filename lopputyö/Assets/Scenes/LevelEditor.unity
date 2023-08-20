@@ -302,7 +302,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemChooseUI: {fileID: 0}
-  uIData: {fileID: 11400000, guid: f53ab9dbbf5c63d478b347b7142674dc, type: 2}
 --- !u!1 &193752414
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,7 +766,7 @@ MonoBehaviour:
   height: 10
   roomWidth: 2
   roomHeight: 2
-  gridOffset: 2
+  gridOffset: 3
   tilePrefab: {fileID: 3831263319677472010, guid: 9f7fc5fc6f40b7f418aa322a9cf055a6, type: 3}
 --- !u!1 &1592611352
 GameObject:

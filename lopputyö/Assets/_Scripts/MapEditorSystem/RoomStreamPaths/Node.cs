@@ -4,7 +4,7 @@ using UnityEngine;
 [Serializable]
 public class VectorReference
 {
-    [SerializeField, HideInInspector]
+    [SerializeField]
     Vector2 pos;
     public Vector2 Pos => pos;
 
@@ -13,7 +13,7 @@ public class VectorReference
         pos = _pos;
     }
 
-    [SerializeField, HideInInspector]
+    [SerializeField]
     Vector2 middle;
     public Vector2 Middle => middle;
 
@@ -30,12 +30,12 @@ namespace RoomStreamPathNodes
     {
 
 
+        [SerializeField]
+        VectorReference vectorReference;
 
-        [SerializeField, HideInInspector]
-        VectorReference vectorReference = new VectorReference();
+        internal VectorReference VectorReference => vectorReference;
 
-
-        [SerializeField, HideInInspector]
+        [SerializeField]
         List<VectorReference> linkedNodes;
 
         public Vector2 Pos => (vectorReference.Pos + vectorReference.Middle);
@@ -91,7 +91,7 @@ namespace RoomStreamPathNodes
             }
             else
             {
-                linkedNodes = LinkedNodes.ConvertAll(x => x.vectorReference);
+                linkedNodes = LinkedNodes.ConvertAll(x => x.VectorReference);
             }
          
         }
@@ -110,7 +110,6 @@ namespace RoomStreamPathNodes
         public void ChangeMiddle(Vector2 _middle)
         {
             vectorReference.SetMiddle(_middle);
-            Debug.Log(vectorReference.Middle);
         }
         public override string ToString()
         {

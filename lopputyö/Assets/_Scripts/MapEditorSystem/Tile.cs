@@ -12,6 +12,7 @@ public class Tile : MonoBehaviour, ITileNode
     Transform effectObject;
 
     public bool HasRoom { get; private set; }
+    public bool HasMovableRoom { get; private set; }
 
     public Vector2Int TileCords { get; private set; }
 
@@ -38,12 +39,14 @@ public class Tile : MonoBehaviour, ITileNode
         {
             childSRenderer.sprite = null;
             HasRoom = false;
+            HasMovableRoom = false;
         }
         else
         {
             if (childSRenderer == null) { Debug.Log(name + " " + HasRoom + " " + _room + " " + _room.MapIcon + " " + childSRenderer);  }
+
             HasRoom = true;
-           
+            HasMovableRoom = _room.HasCore ? false : true;
             
             childSRenderer.sprite = _room.MapIcon;
         }

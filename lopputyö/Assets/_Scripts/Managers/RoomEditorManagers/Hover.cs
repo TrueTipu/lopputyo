@@ -10,7 +10,7 @@ using System;
 /// </summary>
 public class Hover : MonoBehaviour
 {
-    [SerializeField] LevelGridManager grid;
+    [GetSO] LevelTileGridData grid;
     RoomManager roomManager;
 
     Vector3 rememberPos;
@@ -23,6 +23,7 @@ public class Hover : MonoBehaviour
 
     private void Start()
     {
+        this.InjectGetSO();
         roomManager = RoomManager.Instance;
     }
 
@@ -64,6 +65,12 @@ public class Hover : MonoBehaviour
             if (currentTile.HasRoom)
             {
                 //Debug.Log("Täynnä");
+                return;
+            }
+            if (!selectedTile.HasMovableRoom)
+            {
+                //et voi siirtää tätä huonetta
+                selectedTile = null;
                 return;
             }
 

@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 [RequireComponent(typeof(BoxCollider2D))]
 public class RoomSpawner : MonoBehaviour, ITileNode
 {
     [GetSO] RoomVisitedData roomVisitedData;
-
-    RoomSpawnerGrid spawnerGrid;
 
     Room room;
     public RoomObject RoomObject { get; private set; } = null;
@@ -14,7 +13,7 @@ public class RoomSpawner : MonoBehaviour, ITileNode
 
     Vector2Int tileCords;
 
-    Action<Vector2Int, Vector2> roomActivated = delegate { };
+    Action<Vector2> roomActivated = delegate { };
 
     void OnEnable()
     {
@@ -27,18 +26,23 @@ public class RoomSpawner : MonoBehaviour, ITileNode
         GetComponent<BoxCollider2D>().enabled = true;
     }
 
-    public void InitRoomSpawn(Room _room, int _x, int _y, RoomSpawnerGrid _spawner, Action<Vector2Int, Vector2> _callBackListener)
+    public void InitRoomSpawn(Room _room, int _x, int _y, Action<Vector2> _callBackListener)
     {
         if (_room == null) return;
         room = _room;
-        spawnerGrid = _spawner;
         RoomObject = Instantiate(_room.RoomPrefab, transform).GetComponent<RoomObject>();
         tileCords = new Vector2Int(_x, _y);
+
+        if (_room.HasCore) _room.Core.SetRoomPos(tileCords);
 
         SetBlocks();
 
         roomActivated += _callBackListener;
-        roomActivated += (Vector2Int _cords, Vector2 _pos) => roomVisitedData.AddRoom(RoomObject, spawnerGrid, tileCords, _pos);
+        roomActivated += (Vector2 _pos) => roomVisitedData.AddRoom(RoomObject, tileCords, _pos);
+        if (_room.HasCore)
+        {
+            roomActivated += (Vector2 _pos) => roomVisitedData.ResetVisits(tileCords);
+        }
     }
 
 
@@ -99,8 +103,7 @@ public class RoomSpawner : MonoBehaviour, ITileNode
     {
         if (collision.CompareTag("Player"))
         {
-            roomActivated(tileCords, collision.transform.position);
+            roomActivated(collision.transform.position);
         }
     }
-
 }

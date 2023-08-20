@@ -41,7 +41,7 @@ public class StreamCreator : MonoBehaviour
 
         Vector2[] _points = _path.CalculateEvenlySpacedPoints(meshSpacing);
         this.GetComponent<MeshFilter>().mesh = RoadMeshCreator.CreateRoadMesh(_points, width);
-        Debug.Log("kutsuttua" + _points + " " + _path  + "    " + _path.NumSegments);
+
         //asetetaan tiling consistentiksi
         int _textureRepeat = Mathf.RoundToInt(tiling * _points.Length * meshSpacing * 0.05f);
         this.GetComponent<MeshRenderer>().sharedMaterial.mainTextureScale = new Vector2(1, _textureRepeat);

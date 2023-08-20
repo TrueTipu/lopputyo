@@ -12,7 +12,12 @@ public class RoomSpawnerGrid : GenericGrid<RoomSpawner, RoomSpawnerGrid>
 
     List<RoomSpawner> activeRooms = new List<RoomSpawner>();
 
-
+    [GetSO]RoomSpawnerGridData levelGridData;
+    protected override GridData<RoomSpawner> gridData
+    {
+        get => levelGridData;
+        set => levelGridData = value as RoomSpawnerGridData;
+    }
 
 
     protected override void Start()
@@ -26,16 +31,16 @@ public class RoomSpawnerGrid : GenericGrid<RoomSpawner, RoomSpawnerGrid>
 
 
 
-    void ActivateRoom(Vector2Int _cords, Vector2 _pos)
+    void ActivateRoom(Vector2Int _cords)
     {
-        RoomSpawner _roomSpawner = GetTile(_cords.x, _cords.y);
+        RoomSpawner _roomSpawner = gridData.GetTile(_cords.x, _cords.y);
         //Debug.Log(_roomSpawner.name);
 
         List<RoomSpawner> _newRooms = new List<RoomSpawner>();
-        _newRooms.Add(GetTile(_cords.x, _cords.y - 1));
-        _newRooms.Add(GetTile(_cords.x, _cords.y + 1));
-        _newRooms.Add(GetTile(_cords.x - 1, _cords.y ));
-        _newRooms.Add(GetTile(_cords.x + 1, _cords.y ));
+        _newRooms.Add(gridData.GetTile(_cords.x, _cords.y - 1));
+        _newRooms.Add(gridData.GetTile(_cords.x, _cords.y + 1));
+        _newRooms.Add(gridData.GetTile(_cords.x - 1, _cords.y ));
+        _newRooms.Add(gridData.GetTile(_cords.x + 1, _cords.y ));
         _newRooms.Add(_roomSpawner);
 
      
@@ -60,6 +65,6 @@ public class RoomSpawnerGrid : GenericGrid<RoomSpawner, RoomSpawnerGrid>
     }
     protected override void InitNode(RoomSpawner _node, int _x, int _y)
     {
-        _node.InitRoomSpawn(roomManager.GetRoom(_x, _y), _x, _y, this, ActivateRoom);
+        _node.InitRoomSpawn(roomManager.GetRoom(_x, _y), _x, _y, (Vector2 _pos) => ActivateRoom(new Vector2Int(_x, _y)));
     }
 }

@@ -233,9 +233,13 @@ public class SerializableDictionary<TKey, TValue> : IDictionary<TKey, TValue>
             {
                 key = ObjectToTKey(new UnityEngine.Object());
             }
+            else if (typeof(TKey) == typeof(CoreLink))
+            {
+                key = (TKey)Convert.ChangeType(key, typeof(TKey));
+            }
             else
             {
-                throw new ArgumentNullException("key");
+                throw new ArgumentNullException("Key");
             }
         }
 

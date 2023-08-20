@@ -16,7 +16,7 @@ public abstract class PlaytimeObject : ScriptableObject
     }
     protected abstract void LoadInspectorData();
 
-    public void OnEnable()
+    protected virtual void OnEnable()
     { 
         this.hideFlags = HideFlags.DontUnloadUnusedAsset;
         OnStartLoad();
@@ -29,15 +29,16 @@ public abstract class EditablePlaytimeObject : PlaytimeObject
 }
 
 
-//public abstract class InitializableObject<SO, Del> : ScriptableObject where SO : InitializableObject<SO, Del> where Del : System.Delegate {
-//    protected abstract Del GiveConstructor();
+public abstract class InitializableObject<SO, Func> : ScriptableObject where SO : InitializableObject<SO, Func> where Func : System.Delegate
+{
+    protected abstract Func GiveConstructor();
 
-//    public static Del CreateInstance(out SO _data)
-//    {
-//        _data = CreateInstance<SO>();
-//        return _data.GiveConstructor();
-//    }
-//}
+    public static Func CreateInstance()
+    {
+        SO _data = CreateInstance<SO>();
+        return _data.GiveConstructor();
+    }
+}
 
 public interface IHasDelegates
 {

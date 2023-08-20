@@ -17,19 +17,23 @@ public abstract class GenericGrid<Node, T> : MonoBehaviour where Node : MonoBeha
     }
 
     [SerializeField] Node tilePrefab;
-    protected Node[,] tiles;
+
+    protected abstract GridData<Node> gridData { get; set; }
+
+    protected Node[,] tiles => gridData.Tiles;
 
 
 
     protected virtual void Start()
     {
+        this.InjectGetSO();
         GenerateGrid();
     }
 
 
     void GenerateGrid()
     {
-        tiles = new Node[width, height];
+        gridData.Init(width, height, roomWidth, roomHeight, gridOffset);
 
         for (int x = 0; x < width; x++)
         {
@@ -48,28 +52,6 @@ public abstract class GenericGrid<Node, T> : MonoBehaviour where Node : MonoBeha
 
     protected abstract void InitNode(Node _node, int _x, int _y);
 
-    public virtual Node GetTile(Vector3 _worldPos)
-    {
-        int x = Mathf.RoundToInt((_worldPos.x + gridOffset) / roomWidth);
-        int y = Mathf.RoundToInt((_worldPos.y + gridOffset) / roomHeight);
-        return GetTile(x, y);
-    }
-
-    public virtual Node GetTile(float _x, float _y)
-    {
-        int x = Mathf.RoundToInt(_x);
-        int y = Mathf.RoundToInt(_y);
-        if (x >= width) { x = width - 1; }
-        if (y >= width) { y = height - 1; }
-        if (x <= 0) { x = 0; }
-        if (y <= 0) { y = 0; }
-
-        return tiles[x, y];
-    }
-    public virtual Node GetTile(Vector2Int _vector)
-    {
-        return GetTile(_vector.x, _vector.y);
-    }
 
 
 }

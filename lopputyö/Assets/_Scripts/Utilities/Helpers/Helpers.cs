@@ -16,7 +16,7 @@ public static class Helpers
         }
     }
 
-    static List<Timer> timers = new List<Timer>();
+    //static List<Timer> timers = new List<Timer>();
 
     public static Vector3 GetMousePosition()
     {
@@ -37,14 +37,14 @@ public static class Helpers
         await Task.Delay(100);
         _action();
     }
-    public static void CreateAutoTimer(float time, Action end)
-    {
-        timers.Add(new Timer(time, end));
-    }
-    public static Timer CreateTimer(float time, Action end)
-    {
-        return new Timer(time, end);
-    }
+    //public static void CreateAutoTimer(float time, Action end)
+    //{
+    //    timers.Add(new Timer(time, end));
+    //}
+    //public static Timer CreateTimer(float time, Action end)
+    //{
+    //    return new Timer(time, end);
+    //}
 
     public static int FindValue<T>(T _begin, Func<int,T> _getNewComparable, Func<T, T, bool> _returnComparision, int _iterationMax, int _iterationIncrement = 1)
     {
@@ -69,20 +69,24 @@ public static class Helpers
         return FindValue<float>(_begin, _getNewComparable, (x, y) => { return x > y; }, _iterationMax, _iterationIncrement);
     }
 
-    public static void Tick(float deltaTime)
-    {
-        if (timers.Count > 0)
-        {
-            for (int i = 0; i < timers.Count; i++)
-            {
-                if (timers[i].Count(deltaTime))
-                {
-                    timers.RemoveAt(i);
-                }
-
-            }
-        }
+    public static SerializeList<T> ToSerializeList<T>(this List<T> _list){
+        return new SerializeList<T>(_list);
     }
+
+    //public static void Tick(float deltaTime)
+    //{
+    //    if (timers.Count > 0)
+    //    {
+    //        for (int i = 0; i < timers.Count; i++)
+    //        {
+    //            if (timers[i].Count(deltaTime))
+    //            {
+    //                timers.RemoveAt(i);
+    //            }
+
+    //        }
+    //    }
+    //}
 
     public static void AddAutounsubDelegate(Func<Delegate> _action)
     {
@@ -95,26 +99,55 @@ public static class Helpers
     }
 
 }
-public class Timer
+[System.Serializable]
+public struct SerializeList<T>
 {
-    float time;
-    Action End;
-    public Timer(float _time, Action _end)
+    [SerializeField] List<T> list;
+
+    public SerializeList(List<T> _list)
     {
-        time = _time;
-        End = _end;
+        list = _list;
     }
 
-    public bool Count(float tick)
+    public T this[int i] //indexer
     {
-        time -= tick;
-        if (time <= 0)
+        get
         {
-            End?.Invoke();
-
-            return true;
+            return list[i];
         }
-        return false;
+        set
+        {
+            list[i] = value;
+        }
     }
-    
+
+    public List<T> List
+    {
+        get { return list; }
+        set { list = value; }
+    }
+
 }
+//public class Timer
+//{
+//    float time;
+//    Action End;
+//    public Timer(float _time, Action _end)
+//    {
+//        time = _time;
+//        End = _end;
+//    }
+
+//    public bool Count(float tick)
+//    {
+//        time -= tick;
+//        if (time <= 0)
+//        {
+//            End?.Invoke();
+
+//            return true;
+//        }
+//        return false;
+//    }
+    
+//}

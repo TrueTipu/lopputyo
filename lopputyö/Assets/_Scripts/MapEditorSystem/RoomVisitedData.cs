@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-
+using System;
 
 [CreateAssetMenu(fileName = "RoomVisitedData", menuName = "ScriptableObjects/RoomVisitedData")]
 [System.Serializable]
@@ -10,8 +10,16 @@ public class RoomVisitedData : EditablePlaytimeObject
 {
     [SerializeField] List<VisitedRoom> roomsVisited = new List<VisitedRoom>();
     public List<VisitedRoom> RoomsVisited { get; private set; }
+    public List<VisitedRoom> OldVisited { get; private set; }
+    [GetSO] RoomSpawnerGridData spawnerGridData;
 
-    public void AddRoom(RoomObject _roomObject, RoomSpawnerGrid _spawnerGrid, Vector2Int _roomPos, Vector2 _playerPos)
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        this.InjectGetSO();
+    }
+
+    public void AddRoom(RoomObject _roomObject, Vector2Int _roomPos, Vector2 _playerPos)
     {
         VisitedRoom _roomVisit = RoomsVisited.Find(r => r.RoomPos == _roomPos);
         if (_roomVisit != null)
@@ -30,17 +38,15 @@ public class RoomVisitedData : EditablePlaytimeObject
                 }
                 ).ToList();
                 RoomsVisited.Reverse();
-                Debug.Log(1);
                 return;
             }
             else //uudestaan toisesta sisäänkäynnistä
             {
-                Debug.Log(2 + "EI PITÄS");
 
                 if (RoomsVisited.Count > 0)
                 {
                     VisitedRoom _lastRoom = RoomsVisited[RoomsVisited.Count - 1];
-                    int _closestExit = _spawnerGrid.GetTile(_lastRoom.RoomPos).RoomObject.GetClosest(_playerPos);
+                    int _closestExit = spawnerGridData.GetTile(_lastRoom.RoomPos).RoomObject.GetClosest(_playerPos);
                     _lastRoom.SetExitPoint(_closestExit);
                 }
 
@@ -53,26 +59,34 @@ public class RoomVisitedData : EditablePlaytimeObject
         }
         else //uusi huone
         {
-            Debug.Log(3);
-
             
 
             if(RoomsVisited.Count > 0)
             {
                 VisitedRoom _lastRoom = RoomsVisited[RoomsVisited.Count - 1];
-                int _closestExit = _spawnerGrid.GetTile(_lastRoom.RoomPos).RoomObject.GetClosest(_playerPos);
+                int _closestExit = spawnerGridData.GetTile(_lastRoom.RoomPos).RoomObject.GetClosest(_playerPos);
                 _lastRoom.SetExitPoint(_closestExit, true);
             }
 
             _roomVisit = new VisitedRoom(_roomPos);
             int _closestEnter = _roomObject.GetClosest(_playerPos);
-            Debug.Log(_playerPos + " " + _closestEnter);
+            //Debug.Log(_playerPos + " " + _closestEnter);
             _roomVisit.SetEnterPoint(_closestEnter, true);
 
             RoomsVisited.Add(_roomVisit);
         }
 
 
+    }
+
+    public void ResetVisits(Vector2Int _room)
+    {
+        OldVisited = new List<VisitedRoom>(RoomsVisited);
+        RoomsVisited = new List<VisitedRoom>();
+        //tee parempi myöhemmin
+        var _current = new VisitedRoom(_room);
+        _current.SetEnterPoint(2);
+        RoomsVisited.Add(_current);
     }
 
     protected override void LoadInspectorData()

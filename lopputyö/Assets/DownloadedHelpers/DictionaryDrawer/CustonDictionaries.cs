@@ -13,6 +13,7 @@ using UnityEngine;
 
 [Serializable] public class DirectionGameObjectDict : SerializableDictionary<Direction, GameObject> { }
 
+//[Serializable] public class CoreLinkStreamPathDict : SerializableDictionary<CoreLink, List<VisitedRoom>> { }
 //[Serializable] public class NodeLinkDict : SerializableDictionary<PathNodes.Node, PathNodes.Node> { }
 ///Laita alempi editor scriptiin
 

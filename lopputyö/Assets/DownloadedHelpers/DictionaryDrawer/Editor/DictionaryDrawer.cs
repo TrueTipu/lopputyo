@@ -169,7 +169,6 @@ public abstract class DictionaryDrawer<TK, TV> : PropertyDrawer
             return (T)(object)EditorGUI.ObjectField(rect, (UnityObject)(object)value, type, true);
 
 
-
         Debug.Log("Type is not supported: " + type);
         return value;
     }
@@ -206,7 +205,10 @@ public class RoomPositionDictDrawer : DictionaryDrawer<Vector2Int, Room> { }
 
 [CustomPropertyDrawer(typeof(DirectionGameObjectDict))]
 public class DirectionGameObjectDictDrawer : DictionaryDrawer<Direction, GameObject> { }
-//moi
+
+
+//[CustomPropertyDrawer(typeof(CoreLinkStreamPathDict))]
+//public class CoreLinkStreaPathDictDrawer : DictionaryDrawer<CoreLink, List<VisitedRoom>> { }
 
 //[CustomPropertyDrawer(typeof(NodeLinkDict))]
 //public class NodeLinkDictDrawer : DictionaryDrawer<PathNodes.Node, PathNodes.Node> { }

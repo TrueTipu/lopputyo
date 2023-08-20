@@ -28,9 +28,9 @@ public class RoomObject : MonoBehaviour
 
     [SerializeField] DirectionGameObjectDict blockObjectDict = new DirectionGameObjectDict();
 
-    private void Start()
+    private void OnEnable()
     {
-            PathNodes.ResetLocalData(transform.position);  
+        PathNodes.ResetLocalData(transform.position);  
     }
     private void Update()
     {

@@ -16,11 +16,15 @@ public class Room : ScriptableObject
     [SerializeField] GameObject roomPrefab;
     public GameObject RoomPrefab => roomPrefab;
 
-    [SerializeField] new string name;
+    [SerializeField] new private string name;
     public string Name => name;
 
     [SerializeField] RoomOpenData possibleDirections = new RoomOpenData();
     public RoomOpenData PossibleDirections => possibleDirections;
+
+    public bool HasCore => core != null;
+    [SerializeField] CoreData core;
+    public CoreData Core => core;
 
     public Dictionary<Direction, bool> BlockedDirections { get; } = new Dictionary<Direction, bool>()
     {

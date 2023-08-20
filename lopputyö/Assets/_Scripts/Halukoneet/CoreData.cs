@@ -8,16 +8,30 @@ using UnityEngine;
 [System.Serializable]
 public class CoreData : PlaytimeObject, IHasDelegates
 {
-    [SerializeField] AbilityData abilityData;
+    [GetSO] AbilityData abilityData;
 
-    public bool Powered { get => PlayerAbility.None != CurrentAbility; }
+    public bool Powered { get => CurrentAbility != PlayerAbility.None; }
+
+
+    public Vector2Int RoomPos { get; private set; }
 
     [SerializeField] PlayerAbility currentAbility = PlayerAbility.None;
     public PlayerAbility CurrentAbility { get; private set; }
 
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        this.InjectGetSO();
+    }
+
     protected override void LoadInspectorData()
     {
         CurrentAbility = currentAbility;
+    }
+
+    public void SetRoomPos(Vector2Int _pos)
+    {
+        RoomPos = _pos;
     }
 
     Action<PlayerAbility, PlayerAbility> setAbility;
@@ -39,6 +53,9 @@ public class CoreData : PlaytimeObject, IHasDelegates
 
         setAbility?.Invoke(_ability, _oldAbility);
     }
+
+
+
     public void SubscribeSetAbility(Action<PlayerAbility, PlayerAbility> _action)
     {
         setAbility += _action;

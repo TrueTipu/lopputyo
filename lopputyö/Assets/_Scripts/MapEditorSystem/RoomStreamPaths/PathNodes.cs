@@ -11,7 +11,7 @@ using System.Windows;
 public class PathNodes
 {
     const int BORDER_POINTS_SIZE = 12;
-    [SerializeField, HideInInspector]
+    [SerializeField]
     List<Node> middlePoints;
     public Vector2 GetMiddlePoint(int _index) => middlePoints[_index].Pos;
     private Node MiddlePointNode(int _index) => middlePoints[_index];
@@ -30,7 +30,7 @@ public class PathNodes
 
     Node selectedNode = null;
 
-    [SerializeField, HideInInspector]
+    [SerializeField]
     Node[] borderPoints;
     public Vector2 GetBorderPoint(int _index) => BorderPointNode(_index).Pos;
     private Node BorderPointNode(int _index) => borderPoints[_index];
@@ -74,7 +74,9 @@ public class PathNodes
 
     public void ResetLocalData(Vector3 _center)
     {
-        Debug.Log(_center);
+        ResetLocalLinkDatas();
+
+        //Debug.Log(_center);
         foreach (Node _node in middlePoints)
         {
             _node.ChangeMiddle(_center);
@@ -83,7 +85,7 @@ public class PathNodes
         {
             _node.ChangeMiddle(_center);
         }
-        ResetLocalLinkDatas();
+
     }
 
     public void ResetLocalLinkDatas()
@@ -91,10 +93,12 @@ public class PathNodes
         foreach (Node _node in middlePoints)
         {
             _node.SetLocalLinkData(this);
+            _node.ResetLinkData();
         }
         foreach (Node _node in borderPoints)
         {
             _node.SetLocalLinkData(this);
+            _node.ResetLinkData();
         }
     }
     public void RemoveSelect()
@@ -104,9 +108,9 @@ public class PathNodes
 
     public List<Vector2> GivePath(int _enter, int _exit)
     {
-        Debug.Log(borderPoints[_enter] + " " + borderPoints[_exit]);
+        //Debug.Log(borderPoints[_enter] + " " + borderPoints[_exit]);
 
-        return DepthFirstSearch(borderPoints[_enter], borderPoints[_exit]).ConvertAll(x => x.Pos);
+        return DepthFirstSearch(borderPoints[_enter], borderPoints[_exit])?.ConvertAll(x => x.Pos);
     }
     public bool HasConnection(int _enter, int _exit)
     {

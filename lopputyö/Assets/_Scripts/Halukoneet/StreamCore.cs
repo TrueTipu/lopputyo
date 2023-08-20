@@ -5,7 +5,7 @@ using System;
 public class StreamCore : MonoBehaviour
 {
 
-    [GetSO] CoreData coreData;
+    [SerializeField] CoreData coreData;
     public PlayerAbility CurrentAbility
     {
         get => coreData.CurrentAbility;
@@ -20,8 +20,8 @@ public class StreamCore : MonoBehaviour
     private void Start()
     {
         this.InjectGetSO();
-    }
 
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -41,15 +41,13 @@ public class StreamCore : MonoBehaviour
     {
         if(onTrigger && Keys.InteractKeysDown())
         {
-            if (!powered)
-            {
-                uIData.SetupItemUI(abilityData, coreData);
-            }
-            else
-            {
-                uIData.SetItemUI(true);
-                SceneLoader.LoadLevelEditor();
-            }
+
+            uIData.SetupItemUI(abilityData, coreData);
+            //}
+            //else
+            //{
+            //    uIData.SetItemUI(true);
+            //    SceneLoader.LoadLevelEditor();
         }
     }
 
