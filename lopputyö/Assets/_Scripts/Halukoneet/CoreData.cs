@@ -10,8 +10,10 @@ public class CoreData : PlaytimeObject, IHasDelegates
 {
     [GetSO] AbilityData abilityData;
 
-    public bool Powered { get => CurrentAbility != PlayerAbility.None; }
+    [SerializeField] bool main;
+    public bool IsMainCore { get; private set; }
 
+    public bool Powered => (CurrentAbility != PlayerAbility.None);
 
     public Vector2Int RoomPos { get; private set; }
 
@@ -27,6 +29,7 @@ public class CoreData : PlaytimeObject, IHasDelegates
     protected override void LoadInspectorData()
     {
         CurrentAbility = currentAbility;
+        IsMainCore = main;
     }
 
     public void SetRoomPos(Vector2Int _pos)

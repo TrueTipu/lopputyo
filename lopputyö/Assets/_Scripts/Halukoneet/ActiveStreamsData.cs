@@ -12,6 +12,7 @@ public class ActiveStreamsData : PlaytimeObject
     public CoreData LastCore { get; private set; }
 
     [SerializeField] CoreData defaultCore;
+    public CoreData DefaultCore { get; private set; }
 
     [SerializeField] List<CoreLink> activeStreamKeys = new List<CoreLink>();
     [SerializeField] List<SerializeList<VisitedRoom>> activeStreamValues = new List<SerializeList<VisitedRoom>>();
@@ -50,6 +51,7 @@ public class ActiveStreamsData : PlaytimeObject
     protected override void LoadInspectorData()
     {
         LastCore = lastCore;
+        DefaultCore = defaultCore;
 
     }
 

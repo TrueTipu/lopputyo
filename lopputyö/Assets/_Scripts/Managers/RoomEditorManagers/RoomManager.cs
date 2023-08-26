@@ -57,17 +57,17 @@ public class RoomManager : Singleton<RoomManager>
         foreach (Direction _dir in _dirs)
         {
             //TODO: jaa oman ja toisen blokkaaminen erikseen tämän foreach sisään, ettei laiteta blockeja seinien päälle
-            if (_neighbourRoom == null || _currentRoom == null || (!_currentRoom.PossibleDirections[_dir]) || (!_neighbourRoom.PossibleDirections[_dir.ReturnAntiDir()]))
+            if ((_neighbourRoom == null || (!_neighbourRoom.PossibleDirections[_dir.ReturnAntiDir()])) && (_currentRoom == null || _currentRoom.PossibleDirections[_dir]))
             {
                 _currentRoom?.AddBlockedDirection(_dir);
-                _neighbourRoom?.AddBlockedDirection(_dir.ReturnAntiDir());
+            }
+            else {  _currentRoom?.RemoveBlockedDirection(_dir);}
 
-            }
-            else
-            {
-                _currentRoom?.RemoveBlockedDirection(_dir);
-                _neighbourRoom?.RemoveBlockedDirection(_dir.ReturnAntiDir());
-            }
+            //if ((_currentRoom == null || (!_currentRoom.PossibleDirections[_dir])) && (_neighbourRoom.PossibleDirections[_dir.ReturnAntiDir()]))
+            //{
+            //    _neighbourRoom?.AddBlockedDirection(_dir.ReturnAntiDir());
+            //}
+            //else {_neighbourRoom?.RemoveBlockedDirection(_dir.ReturnAntiDir());  }
         }
     }
 

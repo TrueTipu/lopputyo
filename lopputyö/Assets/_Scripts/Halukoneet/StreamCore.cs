@@ -10,7 +10,6 @@ public class StreamCore : MonoBehaviour
     {
         get => coreData.CurrentAbility;
     }
-    bool powered => coreData.Powered;
 
     bool onTrigger;
 
@@ -41,13 +40,14 @@ public class StreamCore : MonoBehaviour
     {
         if(onTrigger && Keys.InteractKeysDown())
         {
+            if (coreData.IsMainCore)
+            {
+                SceneLoader.LoadLevelEditor();
+                return;
+            }
 
             uIData.SetupItemUI(abilityData, coreData);
-            //}
-            //else
-            //{
-            //    uIData.SetItemUI(true);
-            //    SceneLoader.LoadLevelEditor();
+
         }
     }
 

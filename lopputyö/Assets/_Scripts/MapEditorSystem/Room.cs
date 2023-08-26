@@ -22,7 +22,10 @@ public class Room : ScriptableObject
     [SerializeField] RoomOpenData possibleDirections = new RoomOpenData();
     public RoomOpenData PossibleDirections => possibleDirections;
 
-    public bool HasCore => core != null;
+    [SerializeField] bool isMovable = true;
+    public bool IsMovable => (isMovable && !HasCore);
+
+    public bool HasCore => Core != null;
     [SerializeField] CoreData core;
     public CoreData Core => core;
 

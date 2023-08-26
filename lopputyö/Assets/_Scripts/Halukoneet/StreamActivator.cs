@@ -26,12 +26,12 @@ class StreamActivator : MonoBehaviour
 
     void CreateStream(PlayerAbility _ability)
     {
-
+        CoreData _currentCore = coreData;
         if (_ability == PlayerAbility.None)
         {
             activeStreamsData.DeActivateStream(coreData, out List<List<VisitedRoom>> _deletableLists);
             _deletableLists.ForEach(x => DeleteTray(x));
-            activeStreamsData.SetLastCore(null);
+            activeStreamsData.SetLastCore(null); //HUOM, vaihda edellisen asettamiseksi
             return;
         }
         if (activeStreamsData.LastCore == coreData)
@@ -41,12 +41,12 @@ class StreamActivator : MonoBehaviour
         if (activeStreamsData.LastCore == null)
         {
             activeStreamsData.SetLastCore(coreData);
-            return;
+            _currentCore = activeStreamsData.DefaultCore;
         }
 
         //Debug.Log("moi");
         SpawnTrayForEachRoom(roomVisitData.OldVisited);
-        activeStreamsData.SetVisits(new CoreLink(activeStreamsData.LastCore, coreData), new List<VisitedRoom>(roomVisitData.OldVisited));
+        activeStreamsData.SetVisits(new CoreLink(_currentCore, coreData), new List<VisitedRoom>(roomVisitData.OldVisited));
 
         activeStreamsData.SetLastCore(coreData);
     }

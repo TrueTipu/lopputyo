@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "RoomSet", menuName = "ScriptableObjects/RoomSet")]
@@ -13,6 +12,5 @@ public class RoomSet : PlaytimeObject
     protected override void LoadInspectorData()
     {
         Rooms = rooms.AsDictionary;
-        
     }
 }

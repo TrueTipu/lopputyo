@@ -46,7 +46,7 @@ public class Tile : MonoBehaviour, ITileNode
             if (childSRenderer == null) { Debug.Log(name + " " + HasRoom + " " + _room + " " + _room.MapIcon + " " + childSRenderer);  }
 
             HasRoom = true;
-            HasMovableRoom = _room.HasCore ? false : true;
+            HasMovableRoom = _room.IsMovable;
             
             childSRenderer.sprite = _room.MapIcon;
         }
