@@ -9,8 +9,6 @@ using UnityEngine;
 
 //[Serializable] public class CustomDictionary : SerializableDictionary<string, bool> { }
 
-[Serializable] public class RoomPositionDict : SerializableDictionary<Vector2Int, Room> { }
-
 [Serializable] public class DirectionGameObjectDict : SerializableDictionary<Direction, GameObject> { }
 
 //[Serializable] public class CoreLinkStreamPathDict : SerializableDictionary<CoreLink, List<VisitedRoom>> { }

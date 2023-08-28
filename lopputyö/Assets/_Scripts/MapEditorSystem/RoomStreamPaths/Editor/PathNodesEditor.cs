@@ -22,7 +22,12 @@ public class PathNodesEditor : Editor
         base.OnInspectorGUI();
 
         EditorGUI.BeginChangeCheck();
-
+        if (GUILayout.Button("MakeCorePoint"))
+        {
+            PrefabUtility.RecordPrefabInstancePropertyModifications(pathNodeHandler);
+            Undo.RegisterFullObjectHierarchyUndo(pathNodeHandler, "Spawn");
+            PathNodes.AddBorderPoint(pathNodeHandler.CorePointPos, pathNodeHandler);
+        }
         if (GUILayout.Button("Reset nodes"))
         {
             PrefabUtility.RecordPrefabInstancePropertyModifications(pathNodeHandler); //tallennus undo varten
@@ -33,9 +38,10 @@ public class PathNodesEditor : Editor
         if (GUILayout.Button("Reset pos"))
         {
             PrefabUtility.RecordPrefabInstancePropertyModifications(pathNodeHandler); //tallennus undo varten
-            UnityEditor.Undo.RegisterFullObjectHierarchyUndo(pathNodeHandler, "resetpos");
+            Undo.RegisterFullObjectHierarchyUndo(pathNodeHandler, "resetpos");
             PathNodes.ResetLocalData(pathNodeHandler.transform.position);
         }
+
         if (GUILayout.Button("Reset links"))
         {
             PathNodes.ResetLocalLinkDatas();
@@ -44,7 +50,7 @@ public class PathNodesEditor : Editor
         if (_drawLines != PathNodes.DrawLines)
         {
             PrefabUtility.RecordPrefabInstancePropertyModifications(pathNodeHandler); //tallennus undo varten
-            UnityEditor.Undo.RegisterFullObjectHierarchyUndo(pathNodeHandler, "DrawLineToggle");
+            Undo.RegisterFullObjectHierarchyUndo(pathNodeHandler, "DrawLineToggle");
             PathNodes.DrawLines = _drawLines;
             Debug.Log("moi");
         }
@@ -86,14 +92,11 @@ public class PathNodesEditor : Editor
         Vector2 _mousePos = HandleUtility.GUIPointToWorldRay(_guiEvent.mousePosition).origin;
 
         if (_guiEvent.type == EventType.MouseDown && _guiEvent.button == 0 && _guiEvent.shift)
-        {
-
-            {
-                UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(pathNodeHandler);
-                UnityEditor.Undo.RegisterFullObjectHierarchyUndo(pathNodeHandler, "Spawn");
-                PathNodes.AddMiddlePoint(_mousePos, pathNodeHandler);
-                //PathNodes.MoveMiddlePoint(PathNodes.MiddlePointCount - 1, _mousePos);
-            }
+        {    
+            UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(pathNodeHandler);
+            UnityEditor.Undo.RegisterFullObjectHierarchyUndo(pathNodeHandler, "Spawn");
+            PathNodes.AddMiddlePoint(_mousePos, pathNodeHandler);
+            
         }
         if (_guiEvent.type == EventType.MouseDown && _guiEvent.button == 0 && !_guiEvent.control)
         {

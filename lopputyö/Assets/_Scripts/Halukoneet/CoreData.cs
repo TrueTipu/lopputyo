@@ -13,7 +13,7 @@ public class CoreData : PlaytimeObject, IHasDelegates
     [SerializeField] bool main;
     public bool IsMainCore { get; private set; }
 
-    public bool Powered => (CurrentAbility != PlayerAbility.None);
+    public bool Powered => (CurrentAbility != PlayerAbility.None) || IsMainCore;
 
     public Vector2Int RoomPos { get; private set; }
 

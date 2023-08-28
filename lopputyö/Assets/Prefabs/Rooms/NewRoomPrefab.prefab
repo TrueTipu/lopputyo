@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &155022131729980316
 Transform:
   m_ObjectHideFlags: 0
@@ -59,184 +59,92 @@ MonoBehaviour:
     - vectorReference:
         pos: {x: 0, y: 0}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: 0, y: 3.6875}
-        middle: {x: 0, y: 0}
-      - pos: {x: -7.333333, y: 0}
-        middle: {x: 0, y: 0}
-      - pos: {x: 0, y: -3.6875}
-        middle: {x: 0, y: 0}
-      - pos: {x: 7.333333, y: 0}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: -7.333333, y: 0}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: 0, y: 0}
-        middle: {x: 0, y: 0}
-      - pos: {x: -7.333333, y: 3.6875}
-        middle: {x: 0, y: 0}
-      - pos: {x: -12.5, y: 0}
-        middle: {x: 0, y: 0}
-      - pos: {x: -7.333333, y: -3.6875}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: -7.333333, y: 3.6875}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: -12.5, y: 3.6875}
-        middle: {x: 0, y: 0}
-      - pos: {x: -7.333333, y: 7.03125}
-        middle: {x: 0, y: 0}
-      - pos: {x: 0, y: 3.6875}
-        middle: {x: 0, y: 0}
-      - pos: {x: -7.333333, y: 0}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: 0, y: 3.6875}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: -7.333333, y: 3.6875}
-        middle: {x: 0, y: 0}
-      - pos: {x: 7.333333, y: 3.6875}
-        middle: {x: 0, y: 0}
-      - pos: {x: 0, y: 7.03125}
-        middle: {x: 0, y: 0}
-      - pos: {x: 0, y: 0}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: 7.333333, y: 3.6875}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: 0, y: 3.6875}
-        middle: {x: 0, y: 0}
-      - pos: {x: 7.333333, y: 7.03125}
-        middle: {x: 0, y: 0}
-      - pos: {x: 7.333333, y: 0}
-        middle: {x: 0, y: 0}
-      - pos: {x: 12.5, y: 3.6875}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: 7.333333, y: 0}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: 0, y: 0}
-        middle: {x: 0, y: 0}
-      - pos: {x: 7.333333, y: -3.6875}
-        middle: {x: 0, y: 0}
-      - pos: {x: 12.5, y: 0}
-        middle: {x: 0, y: 0}
-      - pos: {x: 7.333333, y: 3.6875}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: 7.333333, y: -3.6875}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: 7.333333, y: 0}
-        middle: {x: 0, y: 0}
-      - pos: {x: 7.333333, y: -7.03125}
-        middle: {x: 0, y: 0}
-      - pos: {x: 0, y: -3.6875}
-        middle: {x: 0, y: 0}
-      - pos: {x: 12.5, y: -3.6875}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: 0, y: -3.6875}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: -7.333333, y: -3.6875}
-        middle: {x: 0, y: 0}
-      - pos: {x: 0, y: 0}
-        middle: {x: 0, y: 0}
-      - pos: {x: 0, y: -7.03125}
-        middle: {x: 0, y: 0}
-      - pos: {x: 7.333333, y: -3.6875}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: -7.333333, y: -3.6875}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: -7.333333, y: 0}
-        middle: {x: 0, y: 0}
-      - pos: {x: 0, y: -3.6875}
-        middle: {x: 0, y: 0}
-      - pos: {x: -12.5, y: -3.6875}
-        middle: {x: 0, y: 0}
-      - pos: {x: -7.333333, y: -7.03125}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     borderPoints:
     - vectorReference:
         pos: {x: -12.5, y: -3.6875}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: -7.333333, y: -3.6875}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: -12.5, y: 0}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: -7.333333, y: 0}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: -12.5, y: 3.6875}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: -7.333333, y: 3.6875}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: -7.333333, y: 7.03125}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: -7.333333, y: 3.6875}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: 0, y: 7.03125}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: 0, y: 3.6875}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: 7.333333, y: 7.03125}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: 7.333333, y: 3.6875}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: 12.5, y: 3.6875}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: 7.333333, y: 3.6875}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: 12.5, y: 0}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: 7.333333, y: 0}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: 12.5, y: -3.6875}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: 7.333333, y: -3.6875}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: 7.333333, y: -7.03125}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: 7.333333, y: -3.6875}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: 0, y: -7.03125}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: 0, y: -3.6875}
-        middle: {x: 0, y: 0}
+      linkedNodes: []
     - vectorReference:
         pos: {x: -7.333333, y: -7.03125}
         middle: {x: 0, y: 0}
-      linkedNodes:
-      - pos: {x: -7.333333, y: -3.6875}
+      linkedNodes: []
+    - vectorReference:
+        pos: {x: 0, y: 1}
         middle: {x: 0, y: 0}
+      linkedNodes: []
   <MiddleDis>k__BackingField: {x: 7.333333, y: 3.6875}
   <BorderDis>k__BackingField: {x: 5.166667, y: 3.34375}
   <MiddlePointSize>k__BackingField: 1
@@ -245,6 +153,7 @@ MonoBehaviour:
   <BorderPointColor>k__BackingField: {r: 1, g: 0, b: 0, a: 1}
   <SelectedPointColor>k__BackingField: {r: 0, g: 1, b: 0, a: 1}
   <RoomStream>k__BackingField: {fileID: 1581772126907244723}
+  <CorePointPos>k__BackingField: {x: 1, y: 1}
   blockObjectDict:
     _Buckets: ffffffff000000000100000002000000030000000500000004000000060000000700000008000000090000000a0000000b000000ffffffffffffffffffffffffffffffff
     _HashCodes: 0100000002000000030000000400000006000000050000000700000008000000090000000a0000000b0000000c0000000000000000000000000000000000000000000000

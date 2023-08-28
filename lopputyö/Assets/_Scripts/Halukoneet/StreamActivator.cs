@@ -7,10 +7,6 @@ using UnityEngine;
 
 class StreamActivator : MonoBehaviour
 {
-    [SerializeField] CoreData coreData;
-
-    [GetSO] ActiveStreamsData activeStreamsData;
-    [GetSO] RoomVisitedData roomVisitData;
 
     [GetSO] RoomSpawnerGridData spawnerGridData;
 
@@ -18,37 +14,13 @@ class StreamActivator : MonoBehaviour
     {
         this.InjectGetSO();
     }
-    private void Start()
+    
+    public void DeleteTrayList(List<List<VisitedRoom>> _list)
     {
-        coreData.SubscribeSetAbility((_newAbility, _oldAbility) => { CreateStream(_newAbility); });
-    }
-
-
-    void CreateStream(PlayerAbility _ability)
-    {
-        CoreData _currentCore = coreData;
-        if (_ability == PlayerAbility.None)
+        foreach (var _i in _list)
         {
-            activeStreamsData.DeActivateStream(coreData, out List<List<VisitedRoom>> _deletableLists);
-            _deletableLists.ForEach(x => DeleteTray(x));
-            activeStreamsData.SetLastCore(null); //HUOM, vaihda edellisen asettamiseksi
-            return;
+            DeleteTray(_i);
         }
-        if (activeStreamsData.LastCore == coreData)
-        {
-            return;
-        }
-        if (activeStreamsData.LastCore == null)
-        {
-            activeStreamsData.SetLastCore(coreData);
-            _currentCore = activeStreamsData.DefaultCore;
-        }
-
-        //Debug.Log("moi");
-        SpawnTrayForEachRoom(roomVisitData.OldVisited);
-        activeStreamsData.SetVisits(new CoreLink(_currentCore, coreData), new List<VisitedRoom>(roomVisitData.OldVisited));
-
-        activeStreamsData.SetLastCore(coreData);
     }
 
     void DeleteTray(List<VisitedRoom> _visitedRooms)
@@ -80,7 +52,7 @@ class StreamActivator : MonoBehaviour
         _room.RoomStream.UpdateStream(_path);
     }
 
-    void SpawnTrayForEachRoom(List<VisitedRoom> _visitedRooms)
+    public void SpawnTrayForEachRoom(List<VisitedRoom> _visitedRooms)
     {
         Dictionary<VisitedRoom, int> _visitCounts = new Dictionary<VisitedRoom, int>();
         foreach (VisitedRoom _visit in _visitedRooms)
@@ -92,7 +64,7 @@ class StreamActivator : MonoBehaviour
             {
                 if (_visit.ExitPointIndexes.Count == 0)
                 {
-                    SpawnTray(_room.PathNodes, _visit.EnterPointIndexes[0], 5, _room);
+                    SpawnTray(_room.PathNodes, _visit.EnterPointIndexes[0], 12, _room);
                 }
                 else { SpawnTray(_room.PathNodes, _visit.EnterPointIndexes[0], _visit.ExitPointIndexes[0], _room); }
                 _visitCounts[_visit] = 1;

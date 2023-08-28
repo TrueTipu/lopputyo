@@ -10,7 +10,7 @@ using System.Windows;
 [System.Serializable]
 public class PathNodes
 {
-    const int BORDER_POINTS_SIZE = 12;
+    const int BORDER_POINTS_SIZE = 13;
     [SerializeField]
     List<Node> middlePoints;
     public Vector2 GetMiddlePoint(int _index) => middlePoints[_index].Pos;
@@ -52,7 +52,9 @@ public class PathNodes
              _centre + (Vector2.down + Vector2.left) * _middleDis,
         }).ConvertAll((v) => Node.CreateInstance(v, _centre));
 
-        borderPoints = (new List<Vector2>
+        borderPoints = new Node[13];
+        int i = 0;
+        (new List<Vector2>
         {
             middlePoints[8].Pos + Vector2.left * _borderDis.x,
             middlePoints[1].Pos + Vector2.left * _borderDis.x,
@@ -66,7 +68,12 @@ public class PathNodes
             middlePoints[6].Pos + Vector2.down * _borderDis.y,
             middlePoints[7].Pos + Vector2.down * _borderDis.y,
             middlePoints[8].Pos + Vector2.down * _borderDis.y,
-        }).ConvertAll((v) => Node.CreateInstance(v, _centre)).ToArray();
+            _centre + Vector2.up,
+        }).ForEach((v) =>
+        {
+            borderPoints[i] = Node.CreateInstance(v, _centre);
+            i++;
+        });
 
         //linkNodes = new HashSet<KeyValuePair<Vector2, Vector2>>();
         selectedNode = null;
@@ -108,10 +115,11 @@ public class PathNodes
 
     public List<Vector2> GivePath(int _enter, int _exit)
     {
-        //Debug.Log(borderPoints[_enter] + " " + borderPoints[_exit]);
+        Debug.Log(borderPoints[_enter] + " " + borderPoints[_exit]);
 
         return DepthFirstSearch(borderPoints[_enter], borderPoints[_exit])?.ConvertAll(x => x.Pos);
     }
+
     public bool HasConnection(int _enter, int _exit)
     {
         List<Node> _path = DepthFirstSearch(borderPoints[_enter], borderPoints[_exit]);
@@ -216,6 +224,18 @@ public class PathNodes
     {
         selectedNode = null;
         middlePoints.Add(Node.CreateInstance(_anchorPos, _pathNodeHandler.transform.position));
+    }
+    public void AddBorderPoint(Vector2 _anchorPos, RoomObject _pathNodeHandler)
+    {
+        selectedNode = null;
+        DeleteBorderPoint(12);
+        borderPoints[12] = Node.CreateInstance(_anchorPos, _pathNodeHandler.transform.position);
+
+        void DeleteBorderPoint(int _index)
+        {
+            borderPoints[_index].ResetLinks();
+            borderPoints[_index] = null;
+        }
     }
 
 

@@ -7,7 +7,6 @@ public class RoomSpawner : MonoBehaviour, ITileNode
 {
     [GetSO] RoomVisitedData roomVisitedData;
 
-    Room room;
     public RoomObject RoomObject { get; private set; } = null;
     public bool IsActive { get { return RoomObject == null ? false : RoomObject.gameObject.activeSelf; } }
 
@@ -26,22 +25,21 @@ public class RoomSpawner : MonoBehaviour, ITileNode
         GetComponent<BoxCollider2D>().enabled = true;
     }
 
-    public void InitRoomSpawn(Room _room, int _x, int _y, Action<Vector2> _callBackListener)
+    public void InitRoomSpawn(Room _room, int _x, int _y, Action<Vector2> _activationCallBack)
     {
         if (_room == null) return;
-        room = _room;
         RoomObject = Instantiate(_room.RoomPrefab, transform).GetComponent<RoomObject>();
         tileCords = new Vector2Int(_x, _y);
 
         if (_room.HasCore) _room.Core.SetRoomPos(tileCords);
 
-        SetBlocks();
+        SetBlocks(_room);
 
-        roomActivated += _callBackListener;
+        roomActivated += _activationCallBack;
         roomActivated += (Vector2 _pos) => roomVisitedData.AddRoom(RoomObject, tileCords, _pos);
         if (_room.HasCore)
         {
-            roomActivated += (Vector2 _pos) => roomVisitedData.ResetVisits(tileCords);
+            roomActivated += (Vector2 _pos) => { if (_room.Core.Powered) roomVisitedData.ResetVisits(tileCords); };
         }
     }
 
@@ -86,12 +84,13 @@ public class RoomSpawner : MonoBehaviour, ITileNode
         name = _name;
     }
 
-    void SetBlocks()
+    //kinda vois siirtää roomObjektiin mut toimikoon täällä
+    void SetBlocks(Room _room)
     {
         RoomObject.Clear();
-        foreach (Direction _bDir in room.BlockedDirections.Keys)
+        foreach (Direction _bDir in _room.BlockedDirections.Keys)
         {
-            if (room.BlockedDirections[_bDir] == true)
+            if (_room.BlockedDirections[_bDir] == true)
             {
                 RoomObject.BlockPath(_bDir);
             }

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 public class StreamCore : MonoBehaviour
 {
 
@@ -13,14 +14,48 @@ public class StreamCore : MonoBehaviour
 
     bool onTrigger;
 
-    [SerializeField] AbilityData abilityData;
-    [SerializeField] UIData uIData;
+    [GetSO] AbilityData abilityData;
+    [GetSO] UIData uIData;
+
+    [GetSO] ActiveStreamsData activeStreamsData;
+    [GetSO] RoomVisitedData roomVisitData;
+
+    StreamActivator streamActivator;
 
     private void Start()
     {
         this.InjectGetSO();
-
+        streamActivator = GetComponent<StreamActivator>();
+        coreData.SubscribeSetAbility((_newAbility, _oldAbility) => { CheckStreamState(_newAbility); });
     }
+
+
+    void CheckStreamState(PlayerAbility _ability)
+    {
+        CoreData _currentCore = coreData;
+        if (_ability == PlayerAbility.None)
+        {
+            activeStreamsData.DeActivateStream(coreData, out List<List<VisitedRoom>> _deletableLists);
+            streamActivator.DeleteTrayList(_deletableLists);
+            activeStreamsData.SetLastCore(null); //HUOM, vaihda edellisen asettamiseksi
+            return;
+        }
+        if (activeStreamsData.LastCore == coreData)
+        {
+            return;
+        }
+        if (activeStreamsData.LastCore == null)
+        {
+            activeStreamsData.SetLastCore(coreData);
+            _currentCore = activeStreamsData.DefaultCore;
+        }
+        roomVisitData.ResetVisits(roomVisitData.RoomsVisited.Last().RoomPos);
+        streamActivator.SpawnTrayForEachRoom(roomVisitData.OldVisited);
+        activeStreamsData.SetVisits(new CoreLink(_currentCore, coreData), new List<VisitedRoom>(roomVisitData.OldVisited));
+
+        activeStreamsData.SetLastCore(coreData);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
