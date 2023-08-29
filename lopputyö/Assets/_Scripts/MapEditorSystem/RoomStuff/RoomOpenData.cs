@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 
-
+//hienoa editoria varten piti kehittää turhan complexi koodi, tekee siis vain ja ainoastaan sen bool array grid jutun inspectoriin
 [System.Serializable]
 public class RoomOpenData
 {
