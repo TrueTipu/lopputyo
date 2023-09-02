@@ -13,6 +13,8 @@ public class ItemUI : MonoBehaviour
     CoreData lastCore;
 
     [GetSO] UIData uIData;
+    [GetSO] RoomSet roomSet; //tämäkin vain sen yhden intin takia
+    [GetSO] ActiveStreamsData streamData; //tämäkin vain yhden variablen takia
 
     List<PlayerAbility> abilities;
 
@@ -26,14 +28,11 @@ public class ItemUI : MonoBehaviour
 
     Action<PlayerAbility> abilityCallback;
 
-    private void OnEnable()
-    {
-        this.InjectGetSO();
-    }
+
 
     public void Start()
     {
-
+        this.InjectGetSO();
 
         abilityCallback = (a) =>
         {
@@ -107,6 +106,8 @@ public class ItemUI : MonoBehaviour
         }
         else
         {
+            if (roomSet.CurrentStreamLevel >= streamData.ActiveStreamAmount) return;
+
             lastCore.SetAbility(PlayerAbility.None);
             openEditorButton.SetActive(false);
             openEditorButtonFake.SetActive(true);

@@ -106,7 +106,7 @@ public struct SerializeList<T>
 
     public SerializeList(List<T> _list)
     {
-        list = _list;
+        list = new List<T>(_list);
     }
 
     public T this[int i] //indexer

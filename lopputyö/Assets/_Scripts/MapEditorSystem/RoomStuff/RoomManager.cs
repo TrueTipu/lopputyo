@@ -85,6 +85,15 @@ public class RoomManager : Singleton<RoomManager>
         SetNeighbours(_room, _endCords);
     }
 
+    public void MoveRoom(Room _newRoom, Vector2Int _endCords)
+    {
+        rooms.Add(_endCords, _newRoom);
+
+        roomsChanged();
+
+        SetNeighbours(_newRoom, _endCords);
+    }
+
 
     public Room GetRoom(int _x, int _y)
     {

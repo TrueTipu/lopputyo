@@ -15,9 +15,16 @@ public class ActiveStreamsData : PlaytimeObject
     public CoreData DefaultCore { get; private set; }
 
     [SerializeField] List<CoreLink> activeStreamKeys = new List<CoreLink>();
+    List<CoreLink> ActiveStreamKeys { get; set; }
     [SerializeField] List<SerializeList<VisitedRoom>> activeStreamValues = new List<SerializeList<VisitedRoom>>();
+    List<SerializeList<VisitedRoom>> ActiveStreamValues { get; set; }
 
-    public int VisitRoomIndex { get; private set; }
+    public int ActiveStreamAmount => ActiveStreamKeys.Count;
+
+    [GetSO] RoomSet roomSet; //VAIHDA MYÖHEMMIN, vain koska next room
+
+    [SerializeField] int nextLevelUp; //vaihda listaksi/arrayksi jos haluat ettei ole tasainen
+    int NextLevelUp { get; set; }
 
     protected override void OnEnable()
     {
@@ -26,20 +33,33 @@ public class ActiveStreamsData : PlaytimeObject
         this.InjectGetSO();
     }
 
-    public void DeActivateStream(CoreData _coreData, out List<List<VisitedRoom>> _deletableLists)
+    public void PopStream(CoreData _coreData, out List<List<VisitedRoom>> _deletableLists)
     {
         _deletableLists = new List<List<VisitedRoom>>();
-        for (int i = 0; i < activeStreamKeys.Count; )
+        for (int i = 0; i < ActiveStreamKeys.Count; )
         {
-            if (activeStreamKeys[i].Compare(_coreData))
+            if (ActiveStreamKeys[i].Compare(_coreData))
             {
-                _deletableLists.Add(activeStreamValues[i].List);
-                activeStreamKeys.RemoveAt(i);
-                activeStreamValues.RemoveAt(i);
+                _deletableLists.Add(ActiveStreamValues[i].List);
+                ActiveStreamKeys.RemoveAt(i);
+                ActiveStreamValues.RemoveAt(i);
                 continue;
             }
             i++;
         }
+    }
+
+    public bool GetStreamFromCore1(CoreData _coreData, out List<List<VisitedRoom>> _result)
+    {
+        _result = new List<List<VisitedRoom>>();
+        for (int i = 0; i < ActiveStreamKeys.Count; i++)
+        {
+            if (ActiveStreamKeys[i].GetFirst() == _coreData)
+            {
+                _result.Add(ActiveStreamValues[i].List);
+            }
+        }
+        return _result.Count > 0;
     }
 
     public void SetLastCore(CoreData _coreData)
@@ -52,13 +72,28 @@ public class ActiveStreamsData : PlaytimeObject
     {
         LastCore = lastCore;
         DefaultCore = defaultCore;
+        NextLevelUp = nextLevelUp;
 
+        var b = new List<SerializeList<VisitedRoom>>();
+        foreach (var _serList in activeStreamValues)
+        {
+            b.Add(new SerializeList<VisitedRoom>(_serList.List));
+        }
+        ActiveStreamValues = b;
+
+        ActiveStreamKeys = new List<CoreLink>(activeStreamKeys);
     }
 
     public void SetVisits(CoreLink _link, List<VisitedRoom> _list)
     {
-        activeStreamKeys.Add(_link);
-        activeStreamValues.Add(_list.ToSerializeList());
+        ActiveStreamKeys.Add(_link);
+        ActiveStreamValues.Add(_list.ToSerializeList());
+
+        if(ActiveStreamKeys.Count > NextLevelUp)
+        {
+            roomSet.IncreaseStreamLevel();
+            NextLevelUp++;
+        }
     }
 }
 
@@ -86,5 +121,10 @@ public class CoreLink
             return true;
         }
         return false;
+    }
+
+    public CoreData GetFirst()
+    {
+        return core1;
     }
 }

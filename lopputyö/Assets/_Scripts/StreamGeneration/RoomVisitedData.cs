@@ -27,7 +27,7 @@ public class RoomVisitedData : EditablePlaytimeObject
             if (_roomObject.IsInPath(_roomVisit.EnterPointIndexes[_roomVisit.EnterPointIndexes.Count-1], _playerPos)) //uudestaan samasta sisäänkäynnistä huoneeseen
             {
                 //poistaa kaikki turhat lopusta
-                Debug.Log("1");
+                //Debug.Log("1");
                 RoomsVisited = RoomsVisited.AsEnumerable().Reverse().SkipWhile((r) => 
                 {
                     if(r.RoomPos != _roomPos)
@@ -61,7 +61,7 @@ public class RoomVisitedData : EditablePlaytimeObject
         }
         else //uusi huone
         {
-            Debug.Log("2");
+            //Debug.Log("2");
 
             if (RoomsVisited.Count > 0)
             {

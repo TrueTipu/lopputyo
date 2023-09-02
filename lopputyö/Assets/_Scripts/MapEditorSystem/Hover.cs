@@ -21,6 +21,8 @@ public class Hover : MonoBehaviour
 
     [SerializeField] GameObject selectedLogo;
 
+    [GetSO] RoomSet roomSet; //VAIHDA MYÖHEMMIN, vain koska next room
+
     private void Start()
     {
         this.InjectGetSO();
@@ -35,10 +37,15 @@ public class Hover : MonoBehaviour
         {
             SelectTile();
         }
-        if(Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(1))
+
+        if (Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(1))
         {
             selectedTile = null;
             selectedLogo.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.P))//DEBUG
+        {
+            roomSet.IncreaseStreamLevel(); 
         }
 
         transform.position = currentTile.transform.position;
@@ -47,6 +54,20 @@ public class Hover : MonoBehaviour
 
     void SelectTile()
     {
+        if(roomSet.GetNextRooms().Count > 0)
+        {
+            selectedTile = null;
+            selectedLogo.SetActive(false);
+
+            if (currentTile.HasRoom)
+            {
+                return;
+            }
+
+            roomManager.MoveRoom(roomSet.TakeRoom(), currentTile.TileCords);
+            return;
+        }
+
         if (selectedTile == null)
         {
             if (!currentTile.HasRoom) return;

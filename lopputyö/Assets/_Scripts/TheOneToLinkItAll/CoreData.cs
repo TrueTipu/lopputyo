@@ -2,13 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 
 [CreateAssetMenu(fileName = "CoreData", menuName = "ScriptableObjects/CoreData")]
 [System.Serializable]
 public class CoreData : PlaytimeObject, IHasDelegates
 {
-    [GetSO] AbilityData abilityData;
+
 
     [SerializeField] bool main;
     public bool IsMainCore { get; private set; }
@@ -19,6 +19,10 @@ public class CoreData : PlaytimeObject, IHasDelegates
 
     [SerializeField] PlayerAbility currentAbility = PlayerAbility.None;
     public PlayerAbility CurrentAbility { get; private set; }
+
+
+    [GetSO] AbilityData abilityData;
+
 
     protected override void OnEnable()
     {
@@ -36,6 +40,11 @@ public class CoreData : PlaytimeObject, IHasDelegates
     {
         RoomPos = _pos;
     }
+
+
+
+
+
 
     Action<PlayerAbility, PlayerAbility> setAbility;
     public void SetAbility(PlayerAbility _ability)
@@ -56,9 +65,6 @@ public class CoreData : PlaytimeObject, IHasDelegates
 
         setAbility?.Invoke(_ability, _oldAbility);
     }
-
-
-
     public void SubscribeSetAbility(Action<PlayerAbility, PlayerAbility> _action)
     {
         setAbility += _action;

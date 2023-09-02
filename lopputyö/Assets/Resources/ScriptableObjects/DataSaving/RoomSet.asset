@@ -28,3 +28,15 @@ MonoBehaviour:
   - {x: 0, y: 1}
   - {x: 5, y: 0}
   - {x: 4, y: 2}
+  roomAdds:
+  - list: []
+  - list:
+    - {fileID: 11400000, guid: 66e0c487c3e32654a9eb5a478dddac09, type: 2}
+    - {fileID: 11400000, guid: 7cb6e4acca4d11a4b9814d8ddcd8a54b, type: 2}
+  - list:
+    - {fileID: 11400000, guid: f0f0a95aa7e0d6e45898a61c6180cfbf, type: 2}
+    - {fileID: 11400000, guid: f0f0a95aa7e0d6e45898a61c6180cfbf, type: 2}
+    - {fileID: 11400000, guid: 7fd09a4c3a69aa5478de2d4600e4d3d3, type: 2}
+  - list:
+    - {fileID: 11400000, guid: 78c93854d308cc9469c166adc470274a, type: 2}
+  currentStreamLevel: 0

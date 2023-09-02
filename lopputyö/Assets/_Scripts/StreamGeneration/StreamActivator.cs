@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-class StreamActivator : MonoBehaviour
+public class StreamActivator : MonoBehaviour
 {
 
     [GetSO] RoomSpawnerGridData spawnerGridData;

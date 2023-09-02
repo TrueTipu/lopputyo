@@ -115,8 +115,6 @@ public class PathNodes
 
     public List<Vector2> GivePath(int _enter, int _exit)
     {
-        Debug.Log(borderPoints[_enter] + " " + borderPoints[_exit]);
-
         return DepthFirstSearch(borderPoints[_enter], borderPoints[_exit])?.ConvertAll(x => x.Pos);
     }
 

@@ -8,6 +8,9 @@ using System;
 [System.Serializable]
 public class UIData : PlaytimeObject, IHasDelegates
 {
+    //tarvis varmaan omat scriptit mut nah
+
+    #region ItemUI
     [SerializeField] bool itemUIActive = false;
     public bool ItemUIActive { get; private set; }
 
@@ -41,18 +44,46 @@ public class UIData : PlaytimeObject, IHasDelegates
         {
             itemUIActivated?.Invoke(lastAbilities, lastCore);
         }
-        
+
     }
+    #endregion
+
+    #region RoomsToPlace
+    [SerializeField] int roomsLeft = 0;
+    public int RoomsLeft { get; private set; }
+    public bool HasRoomsLeft => RoomsLeft != 0;
+
+    Action<int> roomsLeftChanged;
+
+    public void SubscribeRoomsLeftChanged(Action<int> _action)
+    {
+        roomsLeftChanged += _action;
+    }
+    public void UnSubscribeRoomsLeftChanged(Action<int> _action)
+    {
+        roomsLeftChanged -= _action;
+    }
+
+    public void SetRoomsLeft(int _value)
+    {
+        RoomsLeft = _value;
+        roomsLeftChanged.Invoke(RoomsLeft);
+    }
+
+    #endregion
 
     protected override void LoadInspectorData()
     {
         ItemUIActive = itemUIActive;
+        RoomsLeft = roomsLeft;
     }
 
     void IHasDelegates.AutoUnsubscribeDelegates()
     {
         itemUIActivated = delegate { };
         Helpers.AddAutounsubDelegate(() => itemUIActivated = null);
+        roomsLeftChanged = delegate { };
+        Helpers.AddAutounsubDelegate(() => roomsLeftChanged = null);
     }
 }
 
