@@ -38,7 +38,7 @@ public class Hover : MonoBehaviour
             SelectTile();
         }
 
-        if (Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(3))
         {
             selectedTile = null;
             selectedLogo.SetActive(false);
