@@ -1410,6 +1410,10 @@ PrefabInstance:
       propertyPath: PathNodes.borderPoints.Array.data[10].linkedNodes.Array.data[0].pos.y
       value: -3.5771375
       objectReference: {fileID: 0}
+    - target: {fileID: 8299912605960145919, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
 --- !u!4 &5967996519141224509 stripped
