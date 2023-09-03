@@ -62,6 +62,13 @@ public class RoomObject : MonoBehaviour
             (i) => { return Vector2.zero.Distance(_pos, PathNodes.GetBorderPoint(i)); },
             PathNodes.BorderPointCount);
     }
+
+    //spawnpointtia varten, huom, voi toteuttaa paremminkin ig
+    public Vector2 GetClosestPos(Vector2 _pos)
+    {
+        return PathNodes.GetBorderPoint(GetClosest(_pos));
+    }
+
     public bool IsInPath(int _enterPoint, Vector2 _playerPos)
     {
         int _closestBorder = GetClosest(_playerPos);

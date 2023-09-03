@@ -5424,6 +5424,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemChooseUI: {fileID: 865562157}
+  roomCountUI: {fileID: 0}
+  countText: {fileID: 0}
 --- !u!1 &1917766254
 GameObject:
   m_ObjectHideFlags: 0

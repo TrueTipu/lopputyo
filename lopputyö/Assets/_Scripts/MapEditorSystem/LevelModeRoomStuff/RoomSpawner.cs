@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class RoomSpawner : MonoBehaviour, ITileNode
 {
     [GetSO] RoomVisitedData roomVisitedData;
+    [GetSO] PlayerData playerData;
 
     public RoomObject RoomObject { get; private set; } = null;
     public bool IsActive { get { return RoomObject == null ? false : RoomObject.gameObject.activeSelf; } }
@@ -36,13 +37,20 @@ public class RoomSpawner : MonoBehaviour, ITileNode
         SetBlocks(_room);
 
         roomActivated += _activationCallBack;
-        roomActivated += (Vector2 _pos) => roomVisitedData.AddRoom(RoomObject, tileCords, _pos);
+        roomActivated += (_pos) => roomVisitedData.AddRoom(RoomObject, tileCords, _pos);
         if (_room.HasCore)
         {
-            roomActivated += (Vector2 _pos) => { if (_room.Core.Powered) roomVisitedData.ResetVisits(tileCords); };
+            roomActivated += (_pos) => { if (_room.Core.Powered) roomVisitedData.ResetVisits(tileCords); };
         }
+
+        roomActivated += (_pos) => SetSpawnPoint(_pos, RoomObject);
     }
 
+
+    void SetSpawnPoint(Vector2 _pos, RoomObject _roomObject)
+    {
+        playerData.SetRespawnPoint(_roomObject.GetClosestPos(_pos));
+    }
 
     public void ActivateDisabledRoom()
     {
@@ -84,7 +92,7 @@ public class RoomSpawner : MonoBehaviour, ITileNode
         name = _name;
     }
 
-    //kinda vois siirtää roomObjektiin mut toimikoon täällä
+    ///kinda vois siirtää roomObjektiin mut toimikoon täällä
     void SetBlocks(Room _room)
     {
         RoomObject.Clear();

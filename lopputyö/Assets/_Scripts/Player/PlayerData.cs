@@ -13,8 +13,8 @@ public class PlayerData : PlaytimeObject
     [SerializeField]Vector3 position;
     public Vector3 Position { get; private set; }
 
-    [SerializeField] Vector3 respawnPoint;
-    Vector3 RespawnPoint { get; set; }
+    [SerializeField] Vector3 respawnPoint = Vector2.zero;
+    public Vector3 RespawnPoint { get; private set; }
     
     public void TrySetPosition(Vector3 _position)
     {
@@ -26,17 +26,24 @@ public class PlayerData : PlaytimeObject
         }
     }
 
+    public void SetRespawnPoint(Vector2 _pos)
+    {
+        RespawnPoint = _pos;
+    }
+
+
+
+    public void UpdatePosition(Vector3 _position)
+    {
+        Position = _position;
+    }
+
     protected override void LoadInspectorData()
     {
         Position = position;
         positionPlaced = false;
 
         RespawnPoint = respawnPoint;
-    }
-
-    public void UpdatePosition(Vector3 _position)
-    {
-        Position = _position;
     }
 }
 
