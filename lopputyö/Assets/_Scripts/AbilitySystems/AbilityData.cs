@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-
+/// <summary>
+/// Pitää muistissa pelaajan omistamat abilityt, ja mahdollistaa niiden lisäämisen/poistamisen, ja asioiden triggeröimisen niiden auvlla
+/// </summary>
 [CreateAssetMenu(fileName = "AbilityData", menuName = "ScriptableObjects/AbilityData")]
 [System.Serializable]
 public class AbilityData : PlaytimeObject, IHasDelegates

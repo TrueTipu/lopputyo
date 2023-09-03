@@ -4,6 +4,11 @@ using UnityEngine;
 using System.Linq;
 using System;
 
+/// <summary>
+/// Välittää tietoa pelaajan ns 'stateista'
+/// SO ihan vain helpomman referennöinnin vuoksi
+/// EHKÄ tallentaa dataa en oo varma, pitää korjata jos joo
+/// </summary>
 [CreateAssetMenu(fileName = "PlayerStateCheck", menuName = "ScriptableObjects/PlayerStateCheck")]
 [System.Serializable]
 public class PlayerStateCheck : ScriptableObject

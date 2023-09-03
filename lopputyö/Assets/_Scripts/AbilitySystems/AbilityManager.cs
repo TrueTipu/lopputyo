@@ -4,12 +4,16 @@ using UnityEngine;
 using System.Linq;
 using System;
 
-//jotta playermovementin ei tarvitse tietää abilityistä eikä abilityn player movementista
+/// <summary>
+/// Hallitsee SO-MB linkityksen abilitydatasta itse abilityjen aktivointiin, ja playerstateen syöttämiseen
+/// mahdollistaa playermovementin toimimisen täysin yksittäisenä ja toisaalta playerstatecheckin myös
+/// en oo ihan varma mitä kaikkee tää oikeest itekee lol
+/// </summary>
 public class AbilityManager : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb2;
 
-    [field: SerializeField] public List<AbilityPacket> Abilities { get; private set; }
+    [field: SerializeField] List<AbilityPacket> Abilities { get; set; }
 
     [GetSO]
     PlayerStateCheck playerStateCheck;
@@ -20,10 +24,6 @@ public class AbilityManager : MonoBehaviour
     [Range(0.0f, 20.0f)]
     [SerializeField] float normalGravity;
 
-    #region Debug
-
-
-    #endregion
 
     private void Start()
     {
@@ -63,7 +63,7 @@ public class AbilityManager : MonoBehaviour
 
 
     [System.Serializable]
-    public class AbilityPacket
+    class AbilityPacket
     {
         public void Boot(bool _active, PlayerStateCheck _pSC, Rigidbody2D _rb2)
         {

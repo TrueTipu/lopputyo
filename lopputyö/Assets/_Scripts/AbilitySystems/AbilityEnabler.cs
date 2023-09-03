@@ -2,7 +2,9 @@
 using System.Collections;
 
 
-//vain ja ainoastaan debuggia varten
+/// <summary>
+/// Debuggia varten tehty abilityjen enablauskoodi
+/// </summary>
 public class AbilityEnabler : MonoBehaviour
 {
 

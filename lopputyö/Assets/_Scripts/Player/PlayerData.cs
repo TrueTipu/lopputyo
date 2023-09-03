@@ -9,9 +9,12 @@ using UnityEngine;
 public class PlayerData : PlaytimeObject
 {
     bool positionPlaced;
-    [SerializeField]Vector3 position;
 
+    [SerializeField]Vector3 position;
     public Vector3 Position { get; private set; }
+
+    [SerializeField] Vector3 respawnPoint;
+    Vector3 RespawnPoint { get; set; }
     
     public void TrySetPosition(Vector3 _position)
     {
@@ -27,6 +30,8 @@ public class PlayerData : PlaytimeObject
     {
         Position = position;
         positionPlaced = false;
+
+        RespawnPoint = respawnPoint;
     }
 
     public void UpdatePosition(Vector3 _position)
