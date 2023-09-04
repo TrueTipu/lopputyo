@@ -280,6 +280,6 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     {
         if (IsGround) { Gizmos.color = Color.green; } else { Gizmos.color = Color.red; }
         Gizmos.DrawLine(transform.position + colliderOffset, transform.position + colliderOffset + Vector3.down * groundLength);
-        Gizmos.DrawLine(new Vector3(transform.position.x - colliderOffset.x, transform.position.y + colliderOffset.y), transform.position - colliderOffset + Vector3.down * groundLength);
+        Gizmos.DrawLine(new Vector3(transform.position.x - colliderOffset.x, transform.position.y + colliderOffset.y), new Vector3(transform.position.x - colliderOffset.x, transform.position.y + colliderOffset.y) + Vector3.down * groundLength);
     }
 }
