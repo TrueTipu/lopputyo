@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1697212272135305797}
   - component: {fileID: 1697212272135305787}
   - component: {fileID: 1697212272135305786}
+  - component: {fileID: 3332375434942587855}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1697212272135305793}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.2, y: -3.85, z: 0.049249627}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.69948, y: 0.69948, z: 0.69948}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1697212273193788229}
@@ -51,22 +52,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2: {fileID: 1697212272135305796}
-  speed: 5.4
-  groundLength: 0.69
-  colliderOffset: {x: 0.5, y: 0, z: 0}
+  speed: 5.1
+  groundLength: 0.7
+  colliderOffset: {x: 0.34, y: 0.34, z: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  jumpForce: 20
-  jumpCut: 0.4
-  fallAdd: 1.3
+  jumpForce: 15
+  jumpCut: 0.236
+  fallAdd: 1.25
   groundTime: 0.2
   pressJumpTime: 0.2
-  acceleration: 20.1
-  deceleration: 58.9
-  turnSpeed: 49.5
-  hangTimeRange: 2
-  hangTimeStrength: 0.4
+  acceleration: 17.1
+  deceleration: 53.4
+  turnSpeed: 35
+  hangTimeRange: 1.46
+  hangTimeStrength: 0.32
   playerStateCheck: {fileID: 11400000, guid: 7c9061502fe59084496f4b16da69620a, type: 2}
   playerData: {fileID: 0}
 --- !u!50 &1697212272135305796
@@ -97,7 +98,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697212272135305793}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -153,6 +154,22 @@ MonoBehaviour:
   dash: 0
   wJump: 0
   abilityData: {fileID: 11400000, guid: 55260b79bf6dcbb4fbbe87faef80d289, type: 2}
+--- !u!58 &3332375434942587855
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697212272135305793}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1697212272281233714
 GameObject:
   m_ObjectHideFlags: 0
