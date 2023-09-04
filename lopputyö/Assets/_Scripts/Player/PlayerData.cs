@@ -8,19 +8,25 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData : PlaytimeObject
 {
-    bool positionPlaced;
+    [SerializeField] bool positionPlaced = false;
+    bool PositionPlaced { get; set; }
 
     [SerializeField]Vector3 position;
     public Vector3 Position { get; private set; }
 
     [SerializeField] Vector3 respawnPoint = Vector2.zero;
     public Vector3 RespawnPoint { get; private set; }
-    
+
+    protected override void OnEnable()
+    {
+        base.OnEnable(); 
+    }
+
     public void TrySetPosition(Vector3 _position)
     {
-        if (!positionPlaced)
+        if (!PositionPlaced)
         {
-            positionPlaced = true;
+            PositionPlaced = true;
             position = _position;
             Position = position;
         }
@@ -40,8 +46,9 @@ public class PlayerData : PlaytimeObject
 
     protected override void LoadInspectorData()
     {
+        PositionPlaced = positionPlaced;
         Position = position;
-        positionPlaced = false;
+
 
         RespawnPoint = respawnPoint;
     }

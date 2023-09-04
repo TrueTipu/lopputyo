@@ -18,8 +18,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
     [Header("Ground check properties")]
 
-    [SerializeField] Vector3 jumpPosOffset;
-    [SerializeField] Vector2 area = new Vector2(1, 0.2f);
+    [SerializeField]  float groundLength = 0.95f;
+    [SerializeField]  Vector3 colliderOffset;
     [SerializeField] LayerMask groundLayer;
 
     [Header("Jump")]
@@ -36,9 +36,6 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     [SerializeField]
     [Range(0.0f, 5.0f)]
     float fallAdd;
-
-
-
 
     bool pressedJump;
 
@@ -59,6 +56,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     [SerializeField, Range(0f, 10f)] float hangTimeRange = 2f;
     [SerializeField, Range(0f, 1f)] float hangTimeStrength = 0.5f;
 
+
+    [Header("SO")]
     [GetSO, SerializeField] PlayerStateCheck playerStateCheck;
     [GetSO, SerializeField] PlayerData playerData;
 
@@ -104,7 +103,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         playerStateCheck.SetAbilities(this as IPlayerStateChanger);
         rb2.gravityScale = playerStateCheck.NormalGravity;
 
-        playerData.TrySetPosition(transform.position); //yritetään joka kerta, koodi tsekkaa onko eka kerta vai ei
+        playerData.TrySetPosition(transform.localPosition); //yritetään joka kerta, koodi tsekkaa onko eka kerta vai ei
         transform.position = playerData.Position; //asetetaan oma positio, oli tai ei
         //ehkä turhia kutsuja ja asetuksia mut hällä väliä
     }
@@ -241,7 +240,9 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     private void GroundCheck()
     {
 
-        if (Physics2D.OverlapBox(transform.position - jumpPosOffset, area, 1, groundLayer) && rb2.velocity.y <= 0)
+        if ((Physics2D.Raycast(transform.position + colliderOffset, Vector2.down, groundLength, groundLayer) || 
+            Physics2D.Raycast(transform.position - colliderOffset, Vector2.down, groundLength, groundLayer)) && 
+            rb2.velocity.y <= 0)
         {
             groundTimer = groundTime;
             IsGround = true;
@@ -277,6 +278,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireCube(transform.position - jumpPosOffset, area);
+        if (IsGround) { Gizmos.color = Color.green; } else { Gizmos.color = Color.red; }
+        Gizmos.DrawLine(transform.position + colliderOffset, transform.position + colliderOffset + Vector3.down * groundLength);
+        Gizmos.DrawLine(transform.position - colliderOffset, transform.position - colliderOffset + Vector3.down * groundLength);
     }
 }
