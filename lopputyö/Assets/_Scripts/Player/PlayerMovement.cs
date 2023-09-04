@@ -151,12 +151,12 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     {
         if (dir > 0)
         {
-            transform.localScale = Vector3.one;
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y);
             FacingRight = true;
         }
         else if (dir < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y);
             FacingRight = false;
         }
     }
