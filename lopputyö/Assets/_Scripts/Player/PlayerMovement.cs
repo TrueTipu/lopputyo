@@ -241,7 +241,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     {
 
         if ((Physics2D.Raycast(transform.position + colliderOffset, Vector2.down, groundLength, groundLayer) || 
-            Physics2D.Raycast(transform.position - colliderOffset, Vector2.down, groundLength, groundLayer)) && 
+            Physics2D.Raycast(new Vector3(transform.position.x - colliderOffset.x, transform.position.y + colliderOffset.y), Vector2.down, groundLength, groundLayer)) && 
             rb2.velocity.y <= 0)
         {
             groundTimer = groundTime;
