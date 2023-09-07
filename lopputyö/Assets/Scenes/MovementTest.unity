@@ -1486,35 +1486,7 @@ PrefabInstance:
     - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
       propertyPath: rb2
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: fallAdd
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: jumpForce
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: turnSpeed
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: deceleration
-      value: 53.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: groundLength
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: colliderOffset.x
-      value: 0.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: colliderOffset.y
-      value: 0.34
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1921566809}
     - target: {fileID: 1697212272135305799, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1561,6 +1533,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
+--- !u!50 &1921566809 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 1697212272135305796, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
+  m_PrefabInstance: {fileID: 1921566808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2039511715
 GameObject:
   m_ObjectHideFlags: 0
