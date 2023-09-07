@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697212272135305793}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.2, y: -3.85, z: 0.049249627}
   m_LocalScale: {x: 0.69948, y: 0.69948, z: 0.69948}
   m_ConstrainProportionsScale: 0
@@ -53,19 +53,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2: {fileID: 1697212272135305796}
   speed: 5.1
-  groundLength: 0.7
-  colliderOffset: {x: 0.34, y: 0.34, z: 0}
+  groundLength: 0.365
+  colliderOffset: {x: -0.149, y: 0, z: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  jumpForce: 15
+  jumpForce: 14.5
   jumpCut: 0.236
-  fallAdd: 1.25
+  fallAdd: 1.15
   groundTime: 0.2
   pressJumpTime: 0.2
   acceleration: 17.1
-  deceleration: 53.4
-  turnSpeed: 35
+  deceleration: 45
+  turnSpeed: 45
   hangTimeRange: 1.46
   hangTimeStrength: 0.32
   playerStateCheck: {fileID: 11400000, guid: 7c9061502fe59084496f4b16da69620a, type: 2}
@@ -98,13 +98,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697212272135305793}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0004749596, y: 0.0035388172}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -115,7 +115,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.4152869, y: 0.99292237}
   m_EdgeRadius: 0
 --- !u!114 &1697212272135305787
 MonoBehaviour:
@@ -161,7 +161,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697212272135305793}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80aa4cbf29e8b614a80db5413678f9ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 20
+  jumpForce: 14.5
 --- !u!1 &1697212273193788230
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697212273193788230}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.109971724, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -369,9 +369,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: 282462333, guid: 32c0775ade0cf724f919499079377700, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}

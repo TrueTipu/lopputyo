@@ -224,14 +224,15 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         //hidastus hypyn maximissa
         if (!JumpVariables.FallSlowApplied && rb2.velocity.y < hangTimeRange )
         {
-            //Debug.Log("yks");
+            Debug.Log("yks");
             JumpVariables = JumpVariables.SetFallSlowApplied(true);
             rb2.gravityScale = playerStateCheck.NormalGravity * hangTimeStrength;
         }
         //nopeutus sen jälkeen
         else if (!JumpVariables.FallAddApplied && rb2.velocity.y < 0)
         {
-            //Debug.Log("kaks");
+            JumpVariables = JumpVariables.SetJumpCanceled(true);
+            Debug.Log("kaks");
             rb2.gravityScale = playerStateCheck.NormalGravity * fallAdd;
             JumpVariables = JumpVariables.SetFallAddApplied(true);
         }
