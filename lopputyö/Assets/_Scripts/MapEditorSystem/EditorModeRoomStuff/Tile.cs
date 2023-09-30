@@ -9,10 +9,12 @@ public class Tile : MonoBehaviour, ITileNode
 
     [SerializeField] SpriteRenderer childSRenderer;
 
+
     Transform effectObject;
 
     public bool HasRoom { get; private set; }
     public bool HasMovableRoom { get; private set; }
+    public CoreData Core { get; private set; }
 
     public Vector2Int TileCords { get; private set; }
 
@@ -40,6 +42,7 @@ public class Tile : MonoBehaviour, ITileNode
             childSRenderer.sprite = null;
             HasRoom = false;
             HasMovableRoom = false;
+            Core = null;
         }
         else
         {
@@ -47,7 +50,7 @@ public class Tile : MonoBehaviour, ITileNode
 
             HasRoom = true;
             HasMovableRoom = _room.IsMovable;
-            
+            Core = _room.Core;
             childSRenderer.sprite = _room.MapIcon;
         }
     }

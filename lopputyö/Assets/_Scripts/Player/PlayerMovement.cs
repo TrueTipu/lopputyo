@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     [Header("SO")]
     [GetSO, SerializeField] PlayerStateCheck playerStateCheck;
     [GetSO, SerializeField] PlayerData playerData;
+    [GetSO] RoomSpawnerGridData gridData;
 
     bool IsGround
     {
@@ -100,6 +101,9 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
         this.InjectGetSO();
 
+        playerData.SubscribeTeleport((p) => this.transform.position = p);
+        playerData.SubscribeTeleport(playerData.SetRespawnPoint);
+
         playerStateCheck.SetAbilities(this as IPlayerStateChanger);
         rb2.gravityScale = playerStateCheck.NormalGravity;
 
@@ -110,6 +114,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     private void OnDisable()
     {
         playerData.UpdatePosition(transform.position);
+        playerData.ChangeTeleportLocation(gridData.GetTile(transform.position).TileCords);
     }
 
     private void Update()

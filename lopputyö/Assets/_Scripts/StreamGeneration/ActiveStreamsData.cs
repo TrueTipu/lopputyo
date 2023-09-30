@@ -49,7 +49,7 @@ public class ActiveStreamsData : PlaytimeObject
         }
     }
 
-    public bool GetStreamFromCore1(CoreData _coreData, out List<List<VisitedRoom>> _result)
+    public bool GetStreamsFromCore1(CoreData _coreData, out List<List<VisitedRoom>> _result)
     {
         _result = new List<List<VisitedRoom>>();
         for (int i = 0; i < ActiveStreamKeys.Count; i++)
@@ -60,6 +60,18 @@ public class ActiveStreamsData : PlaytimeObject
             }
         }
         return _result.Count > 0;
+    }
+
+    public bool GetLink(CoreData _coreData1, CoreData _coreData2)
+    {
+        for (int i = 0; i < ActiveStreamKeys.Count; i++)
+        {
+            if (ActiveStreamKeys[i].Compare(_coreData1) && ActiveStreamKeys[i].Compare(_coreData2))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void SetLastCore(CoreData _coreData)

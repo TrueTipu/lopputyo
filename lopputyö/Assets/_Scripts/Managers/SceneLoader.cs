@@ -32,6 +32,11 @@ public class SceneLoader : PersistentSingleton<SceneLoader>
         SceneManager.LoadScene(1);
     }
 
+    public static void LoadLevel()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public static void ChangeScene(int _index)
     {
         SceneManager.LoadScene(_index);

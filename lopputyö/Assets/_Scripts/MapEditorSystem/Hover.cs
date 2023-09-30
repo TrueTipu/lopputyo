@@ -6,11 +6,14 @@ using System;
 
 /// <summary>
 ///Hallitsee hiirtä, hoveria ja koko gridin ja room managerin yhteyttä
-///TODO: jos jaksat ja haluat siirrä tähän vain position ja input check, ja itse toiminnot omaan yhtenäisyysmanageriin
+///joo parmemal mallil
+///also tp menee tälle nyt lol
 /// </summary>
 public class Hover : MonoBehaviour
 {
     [GetSO] LevelTileGridData grid;
+    [GetSO] PlayerData playerData;
+    [GetSO] ActiveStreamsData streamsData;
     RoomManager roomManager;
 
     Vector3 rememberPos;
@@ -20,6 +23,7 @@ public class Hover : MonoBehaviour
     Tile selectedTile;
 
     [SerializeField] GameObject selectedLogo;
+
 
     [GetSO] RoomSet roomSet; //VAIHDA MYÖHEMMIN, vain koska next room
 
@@ -43,6 +47,26 @@ public class Hover : MonoBehaviour
             selectedTile = null;
             selectedLogo.SetActive(false);
         }
+
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetMouseButtonDown(0)) && Input.GetKey(KeyCode.LeftShift) && !selectedTile.HasMovableRoom)
+        {
+            var _core = selectedTile.Core;
+            if (_core == null) return;
+
+            if(streamsData.GetLink(grid.GetTile(playerData.TeleportRoom).Core, _core))
+            {
+                playerData.ChangeTeleportLocation(selectedTile.TileCords);
+                Helpers.pointO_OneSDelay(SceneLoader.LoadLevel);
+
+                selectedTile = null;
+                selectedLogo.SetActive(false);
+            }
+
+
+
+        }
+
+
         if (Input.GetKeyDown(KeyCode.P))//DEBUG
         {
             roomSet.IncreaseStreamLevel(); 

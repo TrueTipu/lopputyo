@@ -29,7 +29,7 @@ public class StreamCore : MonoBehaviour
         coreData.SubscribeSetAbility((_newAbility, _oldAbility) => { CheckStreamState(_newAbility); }); //HMMM
 
         List<List<VisitedRoom>> _streamData;
-        if(activeStreamsData.GetStreamFromCore1(coreData, out _streamData))
+        if(activeStreamsData.GetStreamsFromCore1(coreData, out _streamData))
         {
             foreach (var _stream in _streamData)
             {

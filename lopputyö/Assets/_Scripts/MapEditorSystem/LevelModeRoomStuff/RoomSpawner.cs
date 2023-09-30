@@ -11,9 +11,9 @@ public class RoomSpawner : MonoBehaviour, ITileNode
     public RoomObject RoomObject { get; private set; } = null;
     public bool IsActive { get { return RoomObject == null ? false : RoomObject.gameObject.activeSelf; } }
 
-    Vector2Int tileCords;
-
     Action<Vector2> roomActivated = delegate { };
+
+    public Vector2Int TileCords { get; private set; }
 
     void OnEnable()
     {
@@ -30,17 +30,17 @@ public class RoomSpawner : MonoBehaviour, ITileNode
     {
         if (_room == null) return;
         RoomObject = Instantiate(_room.RoomPrefab, transform).GetComponent<RoomObject>();
-        tileCords = new Vector2Int(_x, _y);
+        TileCords = new Vector2Int(_x, _y);
 
-        if (_room.HasCore) _room.Core.SetRoomPos(tileCords);
+        if (_room.HasCore) _room.Core.SetRoomPos(TileCords);
 
         SetBlocks(_room);
 
         roomActivated += _activationCallBack;
-        roomActivated += (_pos) => roomVisitedData.AddRoom(RoomObject, tileCords, _pos);
+        roomActivated += (_pos) => roomVisitedData.AddRoom(RoomObject, TileCords, _pos);
         if (_room.HasCore)
         {
-            roomActivated += (_pos) => { if (_room.Core.Powered) roomVisitedData.ResetVisits(tileCords); };
+            roomActivated += (_pos) => { if (_room.Core.Powered) roomVisitedData.ResetVisits(TileCords); };
         }
 
         roomActivated += (_pos) => SetSpawnPoint(_pos, RoomObject);

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   positionPlaced: 0
-  position: {x: -17.692308, y: -0.3076923, z: 0.049249627}
+  position: {x: -12.346154, y: -4.269231, z: 0.049249627}
   respawnPoint: {x: 0, y: 0, z: 0}
+  teleportRoom: {x: 0, y: 1}
