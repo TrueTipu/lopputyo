@@ -112,7 +112,7 @@ public class Hover : MonoBehaviour
                 //Debug.Log("Täynnä");
                 return;
             }
-            if (!selectedTile.HasMovableRoom)
+            if (!selectedTile.HasMovableRoom || selectedTile.StreamLocked)
             {
                 //et voi siirtää tätä huonetta
                 selectedTile = null;

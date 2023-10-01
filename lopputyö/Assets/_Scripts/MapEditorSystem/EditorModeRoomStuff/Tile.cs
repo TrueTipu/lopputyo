@@ -16,6 +16,8 @@ public class Tile : MonoBehaviour, ITileNode
     public bool HasMovableRoom { get; private set; }
     public CoreData Core { get; private set; }
 
+    public bool StreamLocked { get; private set; }
+
     public Vector2Int TileCords { get; private set; }
 
     private void Start()
@@ -27,7 +29,10 @@ public class Tile : MonoBehaviour, ITileNode
         childSRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
-
+    public void SetStreamlock(bool _value)
+    {
+        StreamLocked = _value;
+    }
 
     public void SetName(string _name)
     {
@@ -61,5 +66,6 @@ public class Tile : MonoBehaviour, ITileNode
     {
         TileCords = _cords;
         sRenderer.color = _darker ? darkerColor : baseColor;
+        StreamLocked = false;
     }
 }
