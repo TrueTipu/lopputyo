@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-public class WallJumpAndSlide : MonoBehaviour, IAbility, IA_JumpVariables, IA_OnAir, IA_FacingRight, IA_IsWallJumping, IA_OnWall
+public class WallJumpAndSlide : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_OnAir, IA_FacingRight, IA_IsWallJumping, IA_OnWall
 {
     PlayerStateCheck playerStateCheck;
     Rigidbody2D rb2;

@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     [SerializeField, Range(0f, 100f)] float acceleration = 52f;
     [SerializeField, Range(0f, 100f)] float deceleration = 52f;
     [SerializeField, Range(0f, 100f)] float turnSpeed = 80f;
-    //[SerializeField, Range(0f, 100f)] float maxAirAcceleration;
+    [SerializeField, Range(0f, 100f)] float maxAirAcceleration;
     //[SerializeField, Range(0f, 100f)] float maxAirDeceleration;
     //[SerializeField, Range(0f, 100f)] float maxAirTurnSpeed = 80f;
 
@@ -58,14 +58,14 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
 
     [Header("SO")]
-    [GetSO, SerializeField] PlayerStateCheck playerStateCheck;
-    [GetSO, SerializeField] PlayerData playerData;
+    [SerializeField] PlayerStateCheck playerStateCheck;
+    public PlayerStateCheck GetState => playerStateCheck;
+    [GetSO] PlayerData playerData;
     [GetSO] RoomSpawnerGridData gridData;
 
     bool IsGround
     {
         get { return playerStateCheck.OnGround; }
-
         set
         {
             SetOnGround(value);
@@ -75,21 +75,20 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     public Action<bool> SetOnGround { get; set; } = (x) => { };
     public Action<bool> SetOnAir { get; set; } = (x) => { };
 
+
+
     JumpVariables JumpVariables
     {
 
         get { return playerStateCheck.JumpVariables; }
-
-        set
-        {
-            SetJumpVariables(value);
-        }
+        set { SetJumpVariables(value); }
     }
     public Action<JumpVariables> SetJumpVariables { get; set; } = (x) => { };
 
 
     public bool FacingRight
     {
+        get { return playerStateCheck.FacingRight; }
         set { SetFacingRight(value); }
     }
     public Action<bool> SetFacingRight { get; set; } = (x) => { };
@@ -123,12 +122,11 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
         Flip();
 
-        if (playerStateCheck.IsDashing) return;
+        if (!playerStateCheck.IsDashing) MultiplyFall();
+
         PressCheck();
 
-        MultiplyFall();
-
-        if (pressedJump && IsGround)
+        if (pressedJump && IsGround && !playerStateCheck.IsDashing)
         {
             Jump();
         }
@@ -154,14 +152,22 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
     private void Flip() //vaihda spriten k��ntymiseksi jos tarve, t�ss� etuna lasten k��ntyminen mukana
     {
-        if (dir > 0)
+        if (FacingRight)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y);
+        }
+        else
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y);
+        }
+
+        if (playerStateCheck.IsDashing) return;
+        if (dir > 0)
+        {
             FacingRight = true;
         }
         else if (dir < 0)
         {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y);
             FacingRight = false;
         }
     }
@@ -192,7 +198,15 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
             }
             else
             {
-                _maxSpeedChange = acceleration * Time.fixedDeltaTime;
+                if (IsGround)
+                {
+                    _maxSpeedChange = acceleration * Time.fixedDeltaTime;
+
+                }
+                else
+                {
+                    _maxSpeedChange = maxAirAcceleration * Time.fixedDeltaTime;
+                }
             }
         }
         else
@@ -209,6 +223,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
     private void Jump()
     {
+        rb2.gravityScale = playerStateCheck.NormalGravity;
         JumpVariables = new JumpVariables(true, false, false, false);
 
         pressedJump = false;
@@ -229,7 +244,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         //hidastus hypyn maximissa
         if (!JumpVariables.FallSlowApplied && rb2.velocity.y < hangTimeRange )
         {
-            Debug.Log("yks");
+            //Debug.Log("yks");
             JumpVariables = JumpVariables.SetFallSlowApplied(true);
             rb2.gravityScale = playerStateCheck.NormalGravity * hangTimeStrength;
         }
@@ -237,7 +252,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         else if (!JumpVariables.FallAddApplied && rb2.velocity.y < 0)
         {
             JumpVariables = JumpVariables.SetJumpCanceled(true);
-            Debug.Log("kaks");
+            //Debug.Log("kaks");
             rb2.gravityScale = playerStateCheck.NormalGravity * fallAdd;
             JumpVariables = JumpVariables.SetFallAddApplied(true);
         }
@@ -252,7 +267,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         {
             groundTimer = groundTime;
             IsGround = true;
-            JumpVariables = JumpVariables.SetIsJumping(false);
+            JumpVariables = new JumpVariables(false, true, true, true);
+            rb2.gravityScale = playerStateCheck.NormalGravity;
         }
         else if (groundTimer <= 0)
         {

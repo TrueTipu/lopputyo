@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd480956ca3bdf34bb5a6f173437088d, type: 3}
   m_Name: RoomVisitedData
   m_EditorClassIdentifier: 
-  roomsVisited: []
+  roomsVisited:
+  - roomPos: {x: 0, y: 0}
+    enterPointIndexes: 
+    exitPointIndexes: 

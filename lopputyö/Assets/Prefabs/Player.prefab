@@ -67,10 +67,10 @@ MonoBehaviour:
   acceleration: 17.1
   deceleration: 45
   turnSpeed: 45
+  maxAirAcceleration: 11
   hangTimeRange: 1.46
   hangTimeStrength: 0.32
   playerStateCheck: {fileID: 11400000, guid: 7c9061502fe59084496f4b16da69620a, type: 2}
-  playerData: {fileID: 0}
 --- !u!50 &1697212272135305796
 Rigidbody2D:
   serializedVersion: 4
@@ -138,6 +138,7 @@ MonoBehaviour:
   - <abilityName>k__BackingField: Dash
     abilityObject: {fileID: 1697212272684894324}
     <AbilityTag>k__BackingField: 3
+  playerStateCheck: {fileID: 11400000, guid: 7c9061502fe59084496f4b16da69620a, type: 2}
   normalGravity: 5
 --- !u!114 &1697212272135305786
 MonoBehaviour:
@@ -226,6 +227,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1697212272684894315}
   - component: {fileID: 1697212272684894314}
+  - component: {fileID: 8284313842513541956}
+  - component: {fileID: 1635275617}
   m_Layer: 0
   m_Name: Dash
   m_TagString: Untagged
@@ -260,10 +263,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2c2eb3c87fd5f4da480b358436a13d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashingPower: 20
-  dashingTime: 0.1
-  dashingCooldown: 0.1
-  stopSpeed: 10
+  doubleDashBufferTime: 0.05
+  dashWJ: {fileID: 8284313842513541956}
+  dashL: {fileID: 1635275617}
+  wallJumpCheckPos: {x: -0.15, y: -0.03}
+  wallJumpCheckArea: {x: 0.1, y: 0.47}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  dashingPower: 12
+  dashingTime: 0.15
+  dashingCooldown: 0.3
+  stopSpeed: 12
+  dashPressTime: 0.2
+  jumpPressTime: 0.2
+--- !u!114 &8284313842513541956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697212272684894324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5cbd2ee377b9cd4b900e5fb192e626f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallJumpingDuration: 0.05
+  wallJumpingPower: {x: 15, y: 14}
+--- !u!114 &1635275617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697212272684894324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d676e08cb79b746a1ec28012c55fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashBoostingPower: {x: 8, y: 16}
 --- !u!1 &1697212272990659109
 GameObject:
   m_ObjectHideFlags: 0
