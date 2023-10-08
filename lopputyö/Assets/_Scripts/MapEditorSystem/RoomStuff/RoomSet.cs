@@ -37,6 +37,7 @@ public class RoomSet : PlaytimeObject
 
     protected override void LoadInspectorData()
     {
+        Debug.Log("moi");
         var a = new Dictionary<Vector2Int, Room>();
         for (int i = 0; i < poses.Count; i++)
         {

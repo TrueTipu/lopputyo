@@ -14,17 +14,20 @@ public static class ResourceSystem {
 
     private static void AssembleResources() {
         var _loadManager = Resources.Load<SOLoadManager>("ScriptableObjects/LoadManager");
-
+        Debug.Log(_loadManager.FolderName);
         AllScriptableObject = Resources.LoadAll<ScriptableObject>("ScriptableObjects/"+ _loadManager.FolderName).ToList();
+
         AllScriptableObjectDict = AllScriptableObject.ToDictionary(s => s.GetType().ToString(), s => s);
     }
 
     public static ScriptableObject GetScriptableObject(string name) 
     {
-        if(AllScriptableObjectDict == null)
+
+        if (AllScriptableObjectDict == null)
         {
             AssembleResources();
         }
+        Debug.Log(name);
         return AllScriptableObjectDict[name];
     }
 }   
