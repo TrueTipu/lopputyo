@@ -10,7 +10,7 @@ using System;
 [System.Serializable]
 public class AbilityData : PlaytimeObject, IHasDelegates
 {
-    [SerializeField]List<PlayerAbility> activeAbilities;
+    [SerializeField] List<PlayerAbility> activeAbilities = new List<PlayerAbility>();
     public List<PlayerAbility> ActiveAbilities { get; private set; }
 
     public void AddActiveAbilities(PlayerAbility _ability)
@@ -53,12 +53,20 @@ public class AbilityData : PlaytimeObject, IHasDelegates
         ActiveAbilities = new List<PlayerAbility>(activeAbilities);
     }
 
+
     void IHasDelegates.AutoUnsubscribeDelegates()
      {
         abilityAdded = delegate { };
         abilityRemoved = delegate { };
         Helpers.AddAutounsubDelegate(() => abilityAdded = null);
         Helpers.AddAutounsubDelegate(() => abilityRemoved = null);
+    }
+
+    protected override void InitSO(ScriptableObject _obj)
+    {
+        AbilityData _oldData = _obj as AbilityData;
+
+        activeAbilities = new List<PlayerAbility>(_oldData.ActiveAbilities);
     }
 }
 

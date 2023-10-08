@@ -21,7 +21,15 @@ public abstract class PlaytimeObject : ScriptableObject
         this.hideFlags = HideFlags.DontUnloadUnusedAsset;
         OnStartLoad();
     }
+    public void InitSOCall(ScriptableObject _obj)
+    {
+        InitSO(_obj);
+        LoadInspectorData();
+    }
+    protected virtual void InitSO(ScriptableObject _obj)
+    {
 
+    }
 }
 public abstract class EditablePlaytimeObject : PlaytimeObject
 {

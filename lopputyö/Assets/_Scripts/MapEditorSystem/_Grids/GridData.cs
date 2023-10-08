@@ -26,7 +26,9 @@ public abstract class GridData<Node> : PlaytimeObject where Node : ITileNode
 
 
 
-
+    protected override void InitSO(ScriptableObject _obj)
+    {
+    }
 
     public virtual Node GetTile(Vector3 _worldPos)
     {

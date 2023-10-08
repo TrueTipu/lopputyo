@@ -78,7 +78,17 @@ public class ActiveStreamsData : PlaytimeObject
     {
         LastCore = _coreData;
     }
+    public void SetVisits(CoreLink _link, List<VisitedRoom> _list)
+    {
+        ActiveStreamKeys.Add(_link);
+        ActiveStreamValues.Add(_list.ToSerializeList());
 
+        if (ActiveStreamKeys.Count > NextLevelUp)
+        {
+            roomSet.IncreaseStreamLevel();
+            NextLevelUp++;
+        }
+    }
 
     protected override void LoadInspectorData()
     {
@@ -96,16 +106,23 @@ public class ActiveStreamsData : PlaytimeObject
         ActiveStreamKeys = new List<CoreLink>(activeStreamKeys);
     }
 
-    public void SetVisits(CoreLink _link, List<VisitedRoom> _list)
-    {
-        ActiveStreamKeys.Add(_link);
-        ActiveStreamValues.Add(_list.ToSerializeList());
 
-        if(ActiveStreamKeys.Count > NextLevelUp)
+    protected override void InitSO(ScriptableObject _obj)
+    {
+        ActiveStreamsData _oldData = _obj as ActiveStreamsData;
+
+        lastCore = _oldData.LastCore;
+        defaultCore = _oldData.DefaultCore;
+        nextLevelUp = _oldData.NextLevelUp;
+
+        var b = new List<SerializeList<VisitedRoom>>();
+        foreach (var _serList in _oldData.ActiveStreamValues)
         {
-            roomSet.IncreaseStreamLevel();
-            NextLevelUp++;
+            b.Add(new SerializeList<VisitedRoom>(_serList.List));
         }
+        activeStreamValues = b;
+
+        activeStreamKeys = new List<CoreLink>(_oldData.ActiveStreamKeys);
     }
 }
 

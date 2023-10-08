@@ -79,5 +79,7 @@ public class CoreData : PlaytimeObject, IHasDelegates
         setAbility = delegate { };
         Helpers.AddAutounsubDelegate(()=> setAbility = null);
     }
+
+
 }
 

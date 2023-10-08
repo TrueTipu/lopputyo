@@ -80,5 +80,17 @@ public class PlayerData : PlaytimeObject, IHasDelegates
         teleport = delegate { };
         Helpers.AddAutounsubDelegate(() => teleport = null);
     }
+
+    protected override void InitSO(ScriptableObject _obj)
+    {
+        PlayerData _oldData = _obj as PlayerData;
+
+
+        positionPlaced = _oldData.PositionPlaced;
+        position = _oldData.Position;
+        teleportRoom = _oldData.TeleportRoom;
+
+        respawnPoint = _oldData.RespawnPoint;
+    }
 }
 

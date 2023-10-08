@@ -6,7 +6,7 @@ using System;
 
 [CreateAssetMenu(fileName = "RoomVisitedData", menuName = "ScriptableObjects/RoomVisitedData")]
 [System.Serializable]
-public class RoomVisitedData : EditablePlaytimeObject
+public class RoomVisitedData : PlaytimeObject
 {
     [SerializeField] List<VisitedRoom> roomsVisited = new List<VisitedRoom>();
     public List<VisitedRoom> RoomsVisited { get; private set; }
@@ -96,7 +96,12 @@ public class RoomVisitedData : EditablePlaytimeObject
     {
         RoomsVisited = new List<VisitedRoom>(roomsVisited);
     }
+    protected override void InitSO(ScriptableObject _obj)
+    {
+        RoomVisitedData _oldData = _obj as RoomVisitedData;
 
+        roomsVisited = new List<VisitedRoom>(_oldData.RoomsVisited);
+    }
 }
 [System.Serializable]
 public class VisitedRoom

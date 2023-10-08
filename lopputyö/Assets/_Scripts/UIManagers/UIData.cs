@@ -85,5 +85,14 @@ public class UIData : PlaytimeObject, IHasDelegates
         roomsLeftChanged = delegate { };
         Helpers.AddAutounsubDelegate(() => roomsLeftChanged = null);
     }
+
+    protected override void InitSO(ScriptableObject _obj)
+    {
+        UIData _oldData = _obj as UIData;
+
+
+        itemUIActive = _oldData.ItemUIActive;
+        roomsLeft = _oldData.RoomsLeft;
+    }
 }
 

@@ -8,13 +8,14 @@ using UnityEngine;
 /// If you don't feel free to make this a standard class
 /// </summary>
 public static class ResourceSystem {
-    static List<ScriptableObject> AllScriptableObject { get; set; }
+    public static List<ScriptableObject> AllScriptableObject { get; private set; }
     static Dictionary<string, ScriptableObject> AllScriptableObjectDict { get; set; }
-
-
+ 
 
     private static void AssembleResources() {
-        AllScriptableObject = Resources.LoadAll<ScriptableObject>("ScriptableObjects/DataSaving").ToList();
+        var _loadManager = Resources.Load<SOLoadManager>("ScriptableObjects/LoadManager");
+
+        AllScriptableObject = Resources.LoadAll<ScriptableObject>("ScriptableObjects/"+ _loadManager.FolderName).ToList();
         AllScriptableObjectDict = AllScriptableObject.ToDictionary(s => s.GetType().ToString(), s => s);
     }
 
