@@ -57,6 +57,10 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
     [SerializeField] float jumpPressTime = 0.2f;
     float jumpPressTimer;
 
+    bool dashBuffer;
+    [SerializeField] float dashBufferTime = 0.2f;
+    float dashBufferTimer;
+
     public void Init(PlayerStateCheck _playerState, Rigidbody2D _rb2)
     {
         playerStateCheck = _playerState;
@@ -68,6 +72,7 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
     public void Update()
     {
         PressCheck();
+        DashCheck();
         if (pressedDash && dashReady == true)
         {
             pressedDash = false;
@@ -77,9 +82,10 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
         {
             noDashRemaining = false;
         }
-        if (IsDashing && IsWalled())
+        if (dashBuffer && IsWalled())
         {
             StartCoroutine(DoubleDashBufferTime());
+            dashBuffer = false;
             IsDashing = false;
         }
     }
@@ -107,13 +113,29 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
         return Physics2D.OverlapBox((Vector2)transform.position - dir * wallJumpCheckPos, wallJumpCheckArea, 1, wallLayer);
     }
 
-    private void PressCheck()
+    private void DashCheck()
+    {
+        if (IsDashing)
+        {
+            dashBufferTimer = dashBufferTime;
+            dashBuffer = true;
+        }
+        else if (dashPressTimer <= 0)
+        {
+            dashBuffer = false;
+        }
+        else
+        {
+            dashBufferTimer -= Time.deltaTime;
+        }
+    }
+
+        private void PressCheck()
     {
         if (Keys.DashKeysDown())
         {
             dashPressTimer = dashPressTime;
             pressedDash = true;
-            Debug.Log(1);
         }
         else if (dashPressTimer <= 0)
         {
@@ -128,7 +150,6 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
         {
             jumpPressTimer = jumpPressTime;
             pressedJump = true;
-            Debug.Log(1);
         }
         else if (dashPressTimer <= 0)
         {
