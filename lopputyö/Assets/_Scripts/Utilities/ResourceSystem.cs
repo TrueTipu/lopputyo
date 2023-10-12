@@ -12,9 +12,9 @@ public static class ResourceSystem {
     static Dictionary<string, ScriptableObject> AllScriptableObjectDict { get; set; }
  
 
-    private static void AssembleResources() {
+    public static void AssembleResources() {
+        Debug.Log("Loaded");
         var _loadManager = Resources.Load<SOLoadManager>("ScriptableObjects/LoadManager");
-        Debug.Log(_loadManager.FolderName);
         AllScriptableObject = Resources.LoadAll<ScriptableObject>("ScriptableObjects/"+ _loadManager.FolderName).ToList();
 
         AllScriptableObjectDict = AllScriptableObject.ToDictionary(s => s.GetType().ToString(), s => s);
@@ -27,7 +27,6 @@ public static class ResourceSystem {
         {
             AssembleResources();
         }
-        Debug.Log(name);
         return AllScriptableObjectDict[name];
     }
 }   

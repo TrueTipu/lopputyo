@@ -75,4 +75,4 @@ MonoBehaviour:
       - dir: 0
         isOpen: 0
   isMovable: 0
-  core: {fileID: 11400000, guid: e00bd6b98c1b2384892feb4eec274683, type: 2}
+  core: {fileID: 11400000, guid: 7c9454f74ff37704ea199d1cc53b7a7c, type: 2}

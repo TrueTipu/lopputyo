@@ -2661,7 +2661,6 @@ MonoBehaviour:
   chosenAbilitySquare: {fileID: 660914743}
   openEditorButton: {fileID: 1981631343}
   openEditorButtonFake: {fileID: 2126402058}
-  abilityData: {fileID: 0}
 --- !u!1 &887927661
 GameObject:
   m_ObjectHideFlags: 0
@@ -3277,7 +3276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6892b640d9445e41b7765c02309c601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomSet: {fileID: 0}
 --- !u!4 &1073388549
 Transform:
   m_ObjectHideFlags: 0
@@ -5510,11 +5508,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1697212272135305799, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 233.07693
+      value: 264.6154
       objectReference: {fileID: 0}
     - target: {fileID: 1697212272135305799, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 137.19232
+      value: 138.23077
       objectReference: {fileID: 0}
     - target: {fileID: 1697212272135305799, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
       propertyPath: m_LocalPosition.z

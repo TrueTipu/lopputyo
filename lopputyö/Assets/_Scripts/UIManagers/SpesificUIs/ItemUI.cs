@@ -24,7 +24,7 @@ public class ItemUI : MonoBehaviour
     [SerializeField] GameObject openEditorButtonFake;
 
 
-    [SerializeField] AbilityData abilityData;
+    [GetSO] AbilityData abilityData;
 
     Action<PlayerAbility> abilityCallback;
 

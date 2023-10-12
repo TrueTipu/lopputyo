@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5735e84f94f1a0e4286aeadb9662964e, type: 3}
-  m_Name: Core B1 SO
+  m_Script: {fileID: 11500000, guid: 240cc1a134dd8af4eb0b33fa30dc59b0, type: 3}
+  m_Name: RoomSpawnerGridData
   m_EditorClassIdentifier: 
-  main: 0
-  currentAbility: 0
+  width: 0
+  height: 0
+  roomWidth: 0
+  roomHeight: 0
+  gridOffset: 0

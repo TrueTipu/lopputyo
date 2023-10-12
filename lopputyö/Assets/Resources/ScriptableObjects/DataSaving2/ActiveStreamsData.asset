@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 32
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5b2878e524fa849b48bf4ea91b360a, type: 3}
+  m_Name: ActiveStreamsData
+  m_EditorClassIdentifier: 
+  lastCore: {fileID: 11400000, guid: 482f4a80657847b4cbfde625ae647ca4, type: 2}
+  defaultCore: {fileID: 11400000, guid: b7fa595a9d76c5f4db148bad7d18140f, type: 2}
+  activeStreamKeys:
+  - core1: {fileID: 11400000, guid: 482f4a80657847b4cbfde625ae647ca4, type: 2}
+    core2: {fileID: 11400000, guid: 482f4a80657847b4cbfde625ae647ca4, type: 2}
+  activeStreamValues:
+  - list:
+    - roomPos: {x: 11, y: 11}
+      enterPointIndexes: 0c000000
+      exitPointIndexes: 08000000
+    - roomPos: {x: 12, y: 11}
+      enterPointIndexes: 00000000
+      exitPointIndexes: 08000000
+    - roomPos: {x: 13, y: 11}
+      enterPointIndexes: 00000000
+      exitPointIndexes: 06000000
+    - roomPos: {x: 14, y: 11}
+      enterPointIndexes: 02000000
+      exitPointIndexes: 04000000
+    - roomPos: {x: 14, y: 12}
+      enterPointIndexes: 0a000000
+      exitPointIndexes: 
+  nextLevelUp: 1

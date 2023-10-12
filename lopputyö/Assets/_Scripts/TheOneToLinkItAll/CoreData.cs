@@ -8,20 +8,20 @@ using System.Linq;
 [System.Serializable]
 public class CoreData : PlaytimeObject, IHasDelegates
 {
+    CoreDataManager.CoreDataObject Data = new CoreDataManager.CoreDataObject();
 
-
-    [SerializeField] bool main;
-    public bool IsMainCore { get; private set; }
+    public bool IsMainCore => Data.IsMain;
 
     public bool Powered => (CurrentAbility != PlayerAbility.None) || IsMainCore;
 
     public Vector2Int RoomPos { get; private set; }
 
-    [SerializeField] PlayerAbility currentAbility = PlayerAbility.None;
-    public PlayerAbility CurrentAbility { get; private set; }
+    public PlayerAbility CurrentAbility => Data.CurrentAbility;
 
 
     [GetSO] AbilityData abilityData;
+    [GetSO] CoreDataManager dataManager;
+
 
 
     protected override void OnEnable()
@@ -30,11 +30,29 @@ public class CoreData : PlaytimeObject, IHasDelegates
         this.InjectGetSO();
     }
 
+    void TryGetData()
+    {
+        if(dataManager.FindSavedCore(this, out CoreDataManager.CoreDataObject _newData))
+        {
+            Debug.Log("joo");
+            if (_newData == null) return;
+            Data = _newData;
+        }
+        else
+        {
+            Debug.Log("ei");
+        }
+    }
+
     protected override void LoadInspectorData()
     {
-        CurrentAbility = currentAbility;
-        IsMainCore = main;
+        TryGetData();
     }
+    public void SetData(CoreDataManager.CoreDataObject _data)
+    {
+        Data = _data;
+    }
+
 
     public void SetRoomPos(Vector2Int _pos)
     {
@@ -50,7 +68,7 @@ public class CoreData : PlaytimeObject, IHasDelegates
     public void SetAbility(PlayerAbility _ability)
     {
         var _oldAbility = CurrentAbility;
-        CurrentAbility = _ability;
+        Data.SetCurrentAbility(_ability);
 
 
         if (_oldAbility != PlayerAbility.None)

@@ -18,7 +18,12 @@ public class AbilityEnabler : MonoBehaviour
     [SerializeField] bool wJump;
     bool wJumpActive;
 
-    [SerializeField] AbilityData abilityData;
+    [GetSO] AbilityData abilityData;
+
+    private void Start()
+    {
+        this.InjectGetSO();
+    }
 
     private void Update()
     {

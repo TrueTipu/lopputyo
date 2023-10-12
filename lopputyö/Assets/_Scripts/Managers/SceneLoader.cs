@@ -8,6 +8,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : PersistentSingleton<SceneLoader>
 {
+    protected override void Awake()
+    {
+        base.Awake();
+        ResourceSystem.AssembleResources();
+    }
     private void OnEnable()
     {
         Resources.FindObjectsOfTypeAll<PlaytimeObject>().ToList().ForEach(x => x.OnStartLoad());

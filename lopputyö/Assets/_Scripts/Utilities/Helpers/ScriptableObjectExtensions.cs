@@ -12,6 +12,7 @@ public abstract class PlaytimeObject : ScriptableObject
         {
             ((IHasDelegates)this).AutoUnsubscribeDelegates();
         }
+        this.InjectGetSO();
         LoadInspectorData();
     }
     protected abstract void LoadInspectorData();

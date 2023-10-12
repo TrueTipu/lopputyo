@@ -15,10 +15,8 @@ public class AbilityManager : MonoBehaviour
 
     [field: SerializeField] List<AbilityPacket> Abilities { get; set; }
 
-    [SerializeField]
-    PlayerStateCheck playerStateCheck;
-    [GetSO]
-    AbilityData abilityData;
+    [SerializeField]  PlayerStateCheck playerStateCheck;
+    [GetSO] AbilityData abilityData;
 
 
     [Range(0.0f, 20.0f)]

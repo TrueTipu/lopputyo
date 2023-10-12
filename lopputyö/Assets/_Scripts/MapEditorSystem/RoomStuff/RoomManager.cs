@@ -8,7 +8,7 @@ public class RoomManager : Singleton<RoomManager>
 {
 
 
-    [GetSO, SerializeField] RoomSet roomSet;
+    [GetSO] RoomSet roomSet;
     Dictionary<Vector2Int, Room> rooms => roomSet.Rooms; //shortcut niin ei tarvi rewriteä
 
     Action roomsChanged = () => { return; };

@@ -26,8 +26,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b6ceee009fa9f364ca0b83b22acf640a, type: 2}
   poses:
   - {x: 11, y: 11}
+  - {x: 13, y: 11}
   - {x: 14, y: 11}
-  - {x: 15, y: 11}
   - {x: 12, y: 11}
   - {x: 10, y: 11}
   - {x: 15, y: 10}
@@ -43,4 +43,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 841afb768b10c924cbe23667e6ff4795, type: 2}
     - {fileID: 11400000, guid: bac70c7b63420db4aa190291d30d6d29, type: 2}
     - {fileID: 11400000, guid: c490a2af4da7fd7479b45b3eaf6cce60, type: 2}
-  currentStreamLevel: 0
+  currentStreamLevel: 1
