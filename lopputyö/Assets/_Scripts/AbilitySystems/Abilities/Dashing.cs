@@ -199,6 +199,6 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
 
     public void DashBoostActivation()
     {
-        noDashRemaining = true;
+        noDashRemaining = false;
     }
 }

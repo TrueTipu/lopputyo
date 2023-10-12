@@ -8,6 +8,11 @@ public class PickUpItem : MonoBehaviour
     [SerializeField] PlayerAbility ability;
 
     [GetSO] AbilityData abilityData;
+
+    private void Start()
+    {
+        this.InjectGetSO();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

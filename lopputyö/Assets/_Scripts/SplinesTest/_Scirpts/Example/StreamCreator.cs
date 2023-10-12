@@ -8,6 +8,7 @@ using System.Collections.Generic;
 ///Ei omista editorscriptiä, referensöitävä, muun koodin käytettäväksi
 public class StreamCreator : MonoBehaviour
 {
+
     [Range(0.05f, 1.5f)]
     [SerializeField] float meshSpacing = 1;
     [Range(0.05f, 1.5f)]
