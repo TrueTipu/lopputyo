@@ -20,23 +20,27 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4d8a6c5b380e5d644a14b10572e67556, type: 2}
   - {fileID: 11400000, guid: f0f0a95aa7e0d6e45898a61c6180cfbf, type: 2}
   - {fileID: 11400000, guid: 78c93854d308cc9469c166adc470274a, type: 2}
+  - {fileID: 11400000, guid: 65f18ee7987d7bc449a202bc19ab73c6, type: 2}
+  - {fileID: 11400000, guid: 504127a776d1dfc4ca31686ca24e397b, type: 2}
+  - {fileID: 11400000, guid: 903e122ffdb10bd4eb46d0770778df51, type: 2}
+  - {fileID: 11400000, guid: b6ceee009fa9f364ca0b83b22acf640a, type: 2}
   poses:
-  - {x: 1, y: 1}
-  - {x: 4, y: 1}
-  - {x: 5, y: 1}
-  - {x: 2, y: 1}
-  - {x: 0, y: 1}
-  - {x: 5, y: 0}
-  - {x: 4, y: 2}
+  - {x: 11, y: 11}
+  - {x: 14, y: 11}
+  - {x: 15, y: 11}
+  - {x: 12, y: 11}
+  - {x: 10, y: 11}
+  - {x: 15, y: 10}
+  - {x: 14, y: 12}
+  - {x: 10, y: 15}
+  - {x: 9, y: 13}
+  - {x: 6, y: 12}
+  - {x: 7, y: 9}
   roomAdds:
   - list: []
   - list:
-    - {fileID: 11400000, guid: 66e0c487c3e32654a9eb5a478dddac09, type: 2}
-    - {fileID: 11400000, guid: 7cb6e4acca4d11a4b9814d8ddcd8a54b, type: 2}
-  - list:
-    - {fileID: 11400000, guid: f0f0a95aa7e0d6e45898a61c6180cfbf, type: 2}
-    - {fileID: 11400000, guid: f0f0a95aa7e0d6e45898a61c6180cfbf, type: 2}
-    - {fileID: 11400000, guid: 7fd09a4c3a69aa5478de2d4600e4d3d3, type: 2}
-  - list:
-    - {fileID: 11400000, guid: 78c93854d308cc9469c166adc470274a, type: 2}
+    - {fileID: 11400000, guid: 52c264ff6bf1fa54a85c90ad4e7d631c, type: 2}
+    - {fileID: 11400000, guid: 841afb768b10c924cbe23667e6ff4795, type: 2}
+    - {fileID: 11400000, guid: bac70c7b63420db4aa190291d30d6d29, type: 2}
+    - {fileID: 11400000, guid: c490a2af4da7fd7479b45b3eaf6cce60, type: 2}
   currentStreamLevel: 0

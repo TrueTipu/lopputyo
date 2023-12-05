@@ -49,7 +49,7 @@ public class ActiveStreamsData : PlaytimeObject
         }
     }
 
-    public bool GetStreamFromCore1(CoreData _coreData, out List<List<VisitedRoom>> _result)
+    public bool GetStreamsFromCore1(CoreData _coreData, out List<List<VisitedRoom>> _result)
     {
         _result = new List<List<VisitedRoom>>();
         for (int i = 0; i < ActiveStreamKeys.Count; i++)
@@ -62,11 +62,33 @@ public class ActiveStreamsData : PlaytimeObject
         return _result.Count > 0;
     }
 
+    public bool GetLink(CoreData _coreData1, CoreData _coreData2)
+    {
+        for (int i = 0; i < ActiveStreamKeys.Count; i++)
+        {
+            if (ActiveStreamKeys[i].Compare(_coreData1) && ActiveStreamKeys[i].Compare(_coreData2))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void SetLastCore(CoreData _coreData)
     {
         LastCore = _coreData;
     }
+    public void SetVisits(CoreLink _link, List<VisitedRoom> _list)
+    {
+        ActiveStreamKeys.Add(_link);
+        ActiveStreamValues.Add(_list.ToSerializeList());
 
+        if (ActiveStreamKeys.Count > NextLevelUp)
+        {
+            roomSet.IncreaseStreamLevel();
+            NextLevelUp++;
+        }
+    }
 
     protected override void LoadInspectorData()
     {
@@ -84,16 +106,23 @@ public class ActiveStreamsData : PlaytimeObject
         ActiveStreamKeys = new List<CoreLink>(activeStreamKeys);
     }
 
-    public void SetVisits(CoreLink _link, List<VisitedRoom> _list)
-    {
-        ActiveStreamKeys.Add(_link);
-        ActiveStreamValues.Add(_list.ToSerializeList());
 
-        if(ActiveStreamKeys.Count > NextLevelUp)
+    protected override void InitSO(ScriptableObject _obj)
+    {
+        ActiveStreamsData _oldData = _obj as ActiveStreamsData;
+
+        lastCore = _oldData.LastCore;
+        defaultCore = _oldData.DefaultCore;
+        nextLevelUp = _oldData.NextLevelUp;
+
+        var b = new List<SerializeList<VisitedRoom>>();
+        foreach (var _serList in _oldData.ActiveStreamValues)
         {
-            roomSet.IncreaseStreamLevel();
-            NextLevelUp++;
+            b.Add(new SerializeList<VisitedRoom>(_serList.List));
         }
+        activeStreamValues = b;
+
+        activeStreamKeys = new List<CoreLink>(_oldData.ActiveStreamKeys);
     }
 }
 

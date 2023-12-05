@@ -9,7 +9,7 @@ public interface IPlayerStateChanger
 {
 
 }
-public interface IAbility : IPlayerStateChanger
+public interface IAbility_Main : IPlayerStateChanger
 {
     void Init(PlayerStateCheck _playerState, Rigidbody2D _rb2);
 }

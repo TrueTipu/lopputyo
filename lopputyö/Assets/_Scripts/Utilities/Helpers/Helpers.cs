@@ -46,6 +46,8 @@ public static class Helpers
     //    return new Timer(time, end);
     //}
 
+
+
     public static int FindValue<T>(T _begin, Func<int,T> _getNewComparable, Func<T, T, bool> _returnComparision, int _iterationMax, int _iterationIncrement = 1)
     {
         int _minIndex = -1;

@@ -12,10 +12,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMPro.TextMeshProUGUI countText;
     [GetSO] RoomSet roomSet; //VAIHDA MYÖHEMMIN, vain koska next room
 
-
-    private void Start()
+    private void OnEnable()
     {
         this.InjectGetSO();
+    }
+    private void Start()
+    {
+
 
         uIData.SubscribeItemUIActivated(ActivateItemChoose);
         uIData.SubscribeRoomsLeftChanged(ActivateRoomCount);

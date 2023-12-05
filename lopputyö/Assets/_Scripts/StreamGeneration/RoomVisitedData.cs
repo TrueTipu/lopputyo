@@ -6,10 +6,11 @@ using System;
 
 [CreateAssetMenu(fileName = "RoomVisitedData", menuName = "ScriptableObjects/RoomVisitedData")]
 [System.Serializable]
-public class RoomVisitedData : EditablePlaytimeObject
+public class RoomVisitedData : PlaytimeObject
 {
     [SerializeField] List<VisitedRoom> roomsVisited = new List<VisitedRoom>();
     public List<VisitedRoom> RoomsVisited { get; private set; }
+    [SerializeField] List<VisitedRoom> oldVisited = new List<VisitedRoom>();
     public List<VisitedRoom> OldVisited { get; private set; }
     [GetSO] RoomSpawnerGridData spawnerGridData;
 
@@ -95,8 +96,15 @@ public class RoomVisitedData : EditablePlaytimeObject
     protected override void LoadInspectorData()
     {
         RoomsVisited = new List<VisitedRoom>(roomsVisited);
+        OldVisited = new List<VisitedRoom>(oldVisited);
     }
+    protected override void InitSO(ScriptableObject _obj)
+    {
+        RoomVisitedData _oldData = _obj as RoomVisitedData;
 
+        roomsVisited = new List<VisitedRoom>(_oldData.RoomsVisited);
+        oldVisited = new List<VisitedRoom>(_oldData.OldVisited);
+    }
 }
 [System.Serializable]
 public class VisitedRoom

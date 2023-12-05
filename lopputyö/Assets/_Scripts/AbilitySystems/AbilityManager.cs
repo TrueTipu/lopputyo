@@ -15,10 +15,8 @@ public class AbilityManager : MonoBehaviour
 
     [field: SerializeField] List<AbilityPacket> Abilities { get; set; }
 
-    [GetSO]
-    PlayerStateCheck playerStateCheck;
-    [GetSO]
-    AbilityData abilityData;
+    [SerializeField]  PlayerStateCheck playerStateCheck;
+    [GetSO] AbilityData abilityData;
 
 
     [Range(0.0f, 20.0f)]
@@ -39,11 +37,8 @@ public class AbilityManager : MonoBehaviour
             _ability.Boot(_value, playerStateCheck, rb2);
         }
         
-        List<IPlayerStateChanger> playerStateChangers = Abilities.Select(a => a.AbilityScript).
-            ToList().
-            ConvertAll(a => (IPlayerStateChanger)a);
-
-        playerStateCheck.SetAbilities(playerStateChangers);
+        List<IPlayerStateChanger> mainAbilities = Abilities.ConvertAll(a => (IPlayerStateChanger)(a.AbilityScript));
+        playerStateCheck.SetAbilities(mainAbilities);
 
     }
 
@@ -68,7 +63,7 @@ public class AbilityManager : MonoBehaviour
         public void Boot(bool _active, PlayerStateCheck _pSC, Rigidbody2D _rb2)
         {
             if (AbilityScript == null)
-                AbilityScript = abilityObject.GetComponent<IAbility>();
+                AbilityScript = abilityObject.GetComponent<IAbility_Main>();
 
             if (_active) Activate(_pSC, _rb2);
             else DeActivate();
@@ -77,7 +72,7 @@ public class AbilityManager : MonoBehaviour
         [field: SerializeField] public string abilityName { get; private set; }
         [SerializeField] GameObject abilityObject;
 
-        public IAbility AbilityScript { get; private set; }
+        public IAbility_Main AbilityScript { get; private set; }
 
         public bool Enabled { get; private set; }
 

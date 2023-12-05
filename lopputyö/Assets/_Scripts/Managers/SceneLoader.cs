@@ -8,6 +8,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : PersistentSingleton<SceneLoader>
 {
+    protected override void Awake()
+    {
+        base.Awake();
+        ResourceSystem.AssembleResources();
+    }
     private void OnEnable()
     {
         Resources.FindObjectsOfTypeAll<PlaytimeObject>().ToList().ForEach(x => x.OnStartLoad());
@@ -30,6 +35,11 @@ public class SceneLoader : PersistentSingleton<SceneLoader>
     public static void LoadLevelEditor()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public static void LoadLevel()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public static void ChangeScene(int _index)

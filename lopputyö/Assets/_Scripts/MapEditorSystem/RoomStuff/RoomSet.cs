@@ -6,11 +6,11 @@ using System.Linq;
 public class RoomSet : PlaytimeObject
 {
 
-    [SerializeField] List<Room> rooms;
-    [SerializeField] List<Vector2Int> poses;
+    [SerializeField] List<Room> rooms = new List<Room>();
+    [SerializeField] List<Vector2Int> poses = new List<Vector2Int>();
     public Dictionary<Vector2Int, Room> Rooms { get; private set; } = new Dictionary<Vector2Int, Room>();
 
-    [SerializeField] List<SerializeList<Room>> roomAdds;
+    [SerializeField] List<SerializeList<Room>> roomAdds = new List<SerializeList<Room>>();
     public List<SerializeList<Room>> RoomAdds { get; private set; } = new List<SerializeList<Room>>();
 
     [SerializeField] int currentStreamLevel;//HUOM VAIHDA TOISAALLE, joko oma tai linkit
@@ -52,5 +52,26 @@ public class RoomSet : PlaytimeObject
         RoomAdds = b;
 
         CurrentStreamLevel = currentStreamLevel;
+    }
+
+    protected override void InitSO(ScriptableObject _obj)
+    {
+        RoomSet _oldData = _obj as RoomSet;
+
+
+        foreach(var _item in _oldData.Rooms)
+        {
+            poses.Add(_item.Key);
+            rooms.Add(_item.Value);
+        }
+
+        var b = new List<SerializeList<Room>>();
+        foreach (var _serList in _oldData.RoomAdds)
+        {
+            b.Add(new SerializeList<Room>(_serList.List));
+        }
+        roomAdds = b;
+
+        currentStreamLevel = _oldData.CurrentStreamLevel;
     }
 }

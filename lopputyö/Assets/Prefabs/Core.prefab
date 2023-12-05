@@ -126,8 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coreData: {fileID: 0}
-  abilityData: {fileID: 11400000, guid: 55260b79bf6dcbb4fbbe87faef80d289, type: 2}
-  uIData: {fileID: 11400000, guid: f53ab9dbbf5c63d478b347b7142674dc, type: 2}
 --- !u!114 &2063312131699485230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,4 +138,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bbb76939e5b07f498de450c4e57b351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coreData: {fileID: 0}
+  streamCreatorPrefab: {fileID: 4519659713103308340, guid: e7db0d2b5217b3f4ebaf6f0be50fc554, type: 3}

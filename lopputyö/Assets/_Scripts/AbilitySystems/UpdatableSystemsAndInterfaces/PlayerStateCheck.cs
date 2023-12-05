@@ -23,6 +23,10 @@ public class PlayerStateCheck : ScriptableObject
     public bool IsWallJumping { get; private set; }
     public bool OnWall { get; private set; }
 
+    Action DashBoostActivation;
+    public void DashBoostActivationCall() => DashBoostActivation.Invoke();
+
+
 
     [SerializeField]float normalGravity;
     public float NormalGravity => normalGravity;
@@ -62,6 +66,12 @@ public class PlayerStateCheck : ScriptableObject
         _abilities.FindAll(_ability => typeof(IA_OnWall).
            IsAssignableFrom(_ability.GetType())).
             ForEach(x => { ((IA_OnWall)x).SetOnWall = y => { OnWall = y; }; });
+
+
+
+        _abilities.FindAll(_ability => typeof(IA_DashBoostCall).
+            IsAssignableFrom(_ability.GetType())).
+            ForEach(x => { DashBoostActivation += ((IA_DashBoostCall)x).DashBoostActivation; } );
 
     }
 }

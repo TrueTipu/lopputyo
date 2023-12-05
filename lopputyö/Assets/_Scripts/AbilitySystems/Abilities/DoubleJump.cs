@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-public class DoubleJump : MonoBehaviour, IAbility, IA_JumpVariables
+public class DoubleJump : MonoBehaviour, IAbility_Main, IA_JumpVariables
 {
     PlayerStateCheck playerStateCheck;
     Rigidbody2D rb2;

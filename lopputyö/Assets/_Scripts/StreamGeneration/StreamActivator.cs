@@ -10,6 +10,8 @@ public class StreamActivator : MonoBehaviour
 
     [GetSO] RoomSpawnerGridData spawnerGridData;
 
+    [SerializeField] StreamCreator streamCreatorPrefab;
+
     private void OnEnable()
     {
         this.InjectGetSO();
@@ -30,7 +32,8 @@ public class StreamActivator : MonoBehaviour
             RoomObject _room = spawnerGridData.GetTile(_visit.RoomPos).RoomObject;
             _room.PathNodes.ResetLocalData(_room.transform.position);
 
-            _room.RoomStream.gameObject.SetActive(false); //vaihda remove object component
+
+            _room.RoomStreams.Find((x) => x.name.Equals(_visit.EnterPointIndexes[0] + " " + _visit.ExitPointIndexes[0])); //vaihda remove object component
         }
     }
 
@@ -48,8 +51,10 @@ public class StreamActivator : MonoBehaviour
         _path.DeleteSegment(0);
         _path.DeleteSegment(0);
 
-        _room.RoomStream.gameObject.SetActive(true); //vaihda instantieta prefab // object pooling
-        _room.RoomStream.UpdateStream(_path);
+        StreamCreator _creator = Instantiate(streamCreatorPrefab, _room.transform);
+        _creator.UpdateStream(_path);
+        _creator.name = (_start + " " + _end);
+        _room.RoomStreams.Add(_creator);
     }
 
     public void SpawnTrayForEachRoom(List<VisitedRoom> _visitedRooms)

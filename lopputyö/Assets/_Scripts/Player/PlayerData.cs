@@ -6,7 +6,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerData", menuName = "ScriptableObjects/PlayerData")]
 [System.Serializable]
-public class PlayerData : PlaytimeObject
+public class PlayerData : PlaytimeObject, IHasDelegates
 {
     [SerializeField] bool positionPlaced = false;
     bool PositionPlaced { get; set; }
@@ -16,6 +16,20 @@ public class PlayerData : PlaytimeObject
 
     [SerializeField] Vector3 respawnPoint = Vector2.zero;
     public Vector3 RespawnPoint { get; private set; }
+
+    [SerializeField] Vector2Int teleportRoom;
+    public Vector2Int TeleportRoom { get; private set; }
+
+    Action<Vector2> teleport;
+
+    public void SubscribeTeleport(Action<Vector2> _action)
+    {
+        teleport += _action;
+    }
+    public void UnSubscribeTeleport(Action<Vector2> _action)
+    {
+        teleport -= _action;
+    }
 
     protected override void OnEnable()
     {
@@ -37,20 +51,46 @@ public class PlayerData : PlaytimeObject
         RespawnPoint = _pos;
     }
 
-
+    public void Teleport(Vector3 _position)
+    {
+        teleport.Invoke(_position);
+    }
 
     public void UpdatePosition(Vector3 _position)
     {
         Position = _position;
     }
 
+    public void ChangeTeleportLocation(Vector2Int _cords)
+    {
+        TeleportRoom = _cords;
+    }
+
     protected override void LoadInspectorData()
     {
         PositionPlaced = positionPlaced;
         Position = position;
-
+        TeleportRoom = teleportRoom;
 
         RespawnPoint = respawnPoint;
+    }
+
+    public void AutoUnsubscribeDelegates()
+    {
+        teleport = delegate { };
+        Helpers.AddAutounsubDelegate(() => teleport = null);
+    }
+
+    protected override void InitSO(ScriptableObject _obj)
+    {
+        PlayerData _oldData = _obj as PlayerData;
+
+
+        positionPlaced = _oldData.PositionPlaced;
+        position = _oldData.Position;
+        teleportRoom = _oldData.TeleportRoom;
+
+        respawnPoint = _oldData.RespawnPoint;
     }
 }
 

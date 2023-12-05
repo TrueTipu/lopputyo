@@ -10,7 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5735e84f94f1a0e4286aeadb9662964e, type: 3}
-  m_Name: Core A0 SO
+  m_Name: Core B1
   m_EditorClassIdentifier: 
-  main: 1
-  currentAbility: 0
