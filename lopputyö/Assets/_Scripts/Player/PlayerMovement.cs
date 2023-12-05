@@ -61,6 +61,10 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     [GetSO, SerializeField] PlayerStateCheck playerStateCheck;
     [GetSO, SerializeField] PlayerData playerData;
 
+    [Header("Animation")]
+    bool isHovering = false;
+    [SerializeField] Animator anim;
+    
     bool IsGround
     {
         get { return playerStateCheck.OnGround; }
@@ -116,6 +120,15 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     {
         dir = Input.GetAxisRaw("Horizontal");
 
+        if (dir != 0){
+            isHovering = true;
+
+        }
+        else {
+            isHovering = false;
+        }
+
+
         Flip();
 
         if (playerStateCheck.IsDashing) return;
@@ -126,6 +139,14 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         if (pressedJump && IsGround)
         {
             Jump();
+        }
+
+        if (isHovering) {
+            anim.SetBool("isIdling", false);
+        }
+
+        else {
+            anim.SetBool("isIdling", true);   
         }
 
         //lopeta hyppy hyppy irrottaessa
@@ -139,6 +160,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         {
             JumpVariables = JumpVariables.SetIsJumping(false);
         }
+
 
         GroundCheck();
     }
