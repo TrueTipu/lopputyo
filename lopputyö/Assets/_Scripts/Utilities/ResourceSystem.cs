@@ -11,7 +11,7 @@ using UnityEditor;
 public static class ResourceSystem {
     public static List<ScriptableObject> AllScriptableObject { get; private set; }
     static Dictionary<string, ScriptableObject> AllScriptableObjectDict { get; set; }
-    public static string FolderName = "DataSaving2";
+    public static string FolderName = "DataSaving";
  
 
     public static Dictionary<string, ScriptableObject> AssembleResources() {
