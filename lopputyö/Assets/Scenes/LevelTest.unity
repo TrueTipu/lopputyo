@@ -4233,7 +4233,7 @@ Transform:
   m_Children:
   - {fileID: 478389063}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1542575992
 Animator:
@@ -5971,9 +5971,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5948983215241496772, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: m_FlipX
-      value: 0
+    - target: {fileID: 1697212272990659099, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
+      propertyPath: jumpForce
+      value: 14.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
