@@ -40,6 +40,20 @@ public interface IA_OnWall : IA_Bool
 {
     Action<bool> SetOnWall { get; set; }
 }
+public interface IA_OnCeiling : IA_Bool
+{
+    Action<bool> SetOnCeiling { get; set; }
+}
+
+public interface IA_IsSupering : IA_Bool
+{
+    Action<bool> SetIsSupering { get; set; }
+}
+
+public interface IA_IsCharging : IA_Bool
+{
+    Action<bool> SetIsCharging { get; set; }
+}
 
 [System.Serializable]
 public struct JumpVariables

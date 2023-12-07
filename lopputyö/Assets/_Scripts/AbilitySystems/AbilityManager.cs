@@ -98,6 +98,8 @@ public enum PlayerAbility
 {
     None,
     Doublejump,
-    Walljump,
-    Dash
+    Dash,
+    SuperDash,
+    TimeStop,
+    Roomwarp
 }

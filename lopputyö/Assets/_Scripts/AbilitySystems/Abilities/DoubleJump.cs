@@ -14,11 +14,7 @@ public class DoubleJump : MonoBehaviour, IAbility_Main, IA_JumpVariables
     JumpVariables JumpVariables
     {
         get { return playerStateCheck.JumpVariables; }
-
-        set
-        {
-            SetJumpVariables(value);
-        }
+        set  {  SetJumpVariables(value);   }
     }
     public Action<JumpVariables> SetJumpVariables { get; set; }
 

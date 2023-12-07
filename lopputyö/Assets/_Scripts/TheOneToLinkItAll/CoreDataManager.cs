@@ -8,25 +8,51 @@ using System.Linq;
 public class CoreDataManager : PlaytimeObject
 {
     [SerializeField] List<CoreDataObject> coreStorage = new List<CoreDataObject>();
+    [SerializeField, HideInInspector] CoreData[] coreDataStorage = new CoreData[100];
     public List<CoreDataObject> CoreStorage { get; private set; }
+
 
 
 
     public bool FindSavedCore(CoreData _core, out CoreDataObject _savedCore)
     {
-        if (CoreStorage == null) LoadInspectorData();
-
-        _savedCore = null;
-        int _i = CoreStorage.FindIndex((x) => x.Name.Equals(_core.name));
-        if(_i != -1)
+        bool _val = FindSavedCore(_core.name, out int _i);
+        if (_val)
         {
             _savedCore = CoreStorage[_i];
+            coreDataStorage[_i] = _core;
             return true;
         }
         else
         {
+            _savedCore = null;
             return false;
         }
+
+    }
+    public bool FindSavedCoreData(string _coreName, out CoreData _savedCoreData)
+    {
+        bool _val = FindSavedCore(_coreName, out int _i);
+        if (_val)
+        {
+            _savedCoreData = coreDataStorage[_i];
+            return true;
+        }
+        else
+        {
+            _savedCoreData = null;
+            return false;
+        }
+
+    }
+
+    public bool FindSavedCore(string _coreName, out int _savedCoreIndex)
+    {
+        if (CoreStorage == null) LoadInspectorData();
+
+
+        _savedCoreIndex = CoreStorage.FindIndex((x) => x.Name.Equals(_coreName));
+        return (_savedCoreIndex != -1);
     }
 
     protected override void LoadInspectorData()

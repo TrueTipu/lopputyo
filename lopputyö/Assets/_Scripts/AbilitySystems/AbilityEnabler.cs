@@ -15,8 +15,8 @@ public class AbilityEnabler : MonoBehaviour
     bool dashActive;
 
 
-    [SerializeField] bool wJump;
-    bool wJumpActive;
+    [SerializeField] bool superDash;
+    bool superDashActive;
 
     [GetSO] AbilityData abilityData;
 
@@ -79,29 +79,29 @@ public class AbilityEnabler : MonoBehaviour
         }
         #endregion
 
-        #region WallJump
-        if (Input.GetKeyDown(KeyCode.L) && !abilityData.IsActive(PlayerAbility.Walljump))
+        #region SuperDash
+        if (Input.GetKeyDown(KeyCode.L) && !abilityData.IsActive(PlayerAbility.SuperDash))
         {
-            abilityData.AddActiveAbilities(PlayerAbility.Walljump);
-            wJump = true;
-            wJumpActive = true;
+            abilityData.AddActiveAbilities(PlayerAbility.SuperDash);
+            superDash = true;
+            superDashActive = true;
         }
         else if (Input.GetKeyDown(KeyCode.L))
         {
-            abilityData.RemoveActiveAbilities(PlayerAbility.Walljump);
-            wJump = false;
-            wJumpActive = false;
+            abilityData.RemoveActiveAbilities(PlayerAbility.SuperDash);
+            superDash = false;
+            superDashActive = false;
         }
 
-        if (wJump && !wJumpActive)
+        if (superDash && !superDashActive)
         {
-            wJumpActive = true;
-            abilityData.AddActiveAbilities(PlayerAbility.Walljump);
+            superDashActive = true;
+            abilityData.AddActiveAbilities(PlayerAbility.SuperDash);
         }
-        else if (!wJump && wJumpActive)
+        else if (!superDash && superDashActive)
         {
-            wJumpActive = false;
-            abilityData.RemoveActiveAbilities(PlayerAbility.Walljump);
+            superDashActive = false;
+            abilityData.RemoveActiveAbilities(PlayerAbility.SuperDash);
         }
         #endregion
 

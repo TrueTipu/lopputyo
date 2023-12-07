@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D))]
-public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_OnGround, IA_FacingRight, IA_JumpVariables
+public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_OnGround, IA_FacingRight, IA_JumpVariables, IA_OnWall, IA_OnCeiling
 {
     [SerializeField] Rigidbody2D rb2;
 
@@ -56,6 +56,15 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     [SerializeField, Range(0f, 10f)] float hangTimeRange = 2f;
     [SerializeField, Range(0f, 1f)] float hangTimeStrength = 0.5f;
 
+    [Header("WallCheck")]
+    [SerializeField] Vector2 wallJumpCheckPos;
+    [SerializeField] Vector2 wallJumpCheckArea = new Vector2(1, 0.2f);
+    [SerializeField] LayerMask wallLayer;
+
+    [Header("CeilingCheck")]
+    [SerializeField] Vector2 ceilCheckPos;
+    [SerializeField] Vector2 ceilCheckArea = new Vector2(1, 0.2f);
+
 
     [Header("SO")]
     [SerializeField] PlayerStateCheck playerStateCheck;
@@ -97,6 +106,19 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     }
     public Action<bool> SetFacingRight { get; set; } = (x) => { };
 
+    public bool OnWall
+    {
+        get { return playerStateCheck.OnWall; }
+        set { SetOnWall(value); }
+    }
+    public Action<bool> SetOnWall { get; set; }
+
+    public bool OnCeiling
+    {
+        get { return playerStateCheck.OnCeiling; }
+        set { SetOnCeiling(value); }
+    }
+    public Action<bool> SetOnCeiling { get; set; }
 
     private void Start()
     {
@@ -120,6 +142,17 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         playerData.ChangeTeleportLocation(gridData.GetTile(transform.position).TileCords);
     }
 
+    void WallCheck()
+    {
+        int _wallDir = FacingRight ? 1 : -1;
+        OnWall = Physics2D.OverlapBox((Vector2)transform.position - _wallDir * wallJumpCheckPos, wallJumpCheckArea, 1, wallLayer);
+    }
+
+    void CeilCheck()
+    {
+        OnCeiling = Physics2D.OverlapBox((Vector2)transform.position - ceilCheckPos, ceilCheckArea, 1, wallLayer);
+    }
+
     private void Update()
     {
         dir = Input.GetAxisRaw("Horizontal");
@@ -135,11 +168,11 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
         Flip();
 
-        if (!playerStateCheck.IsDashing) MultiplyFall();
+        if (!playerStateCheck.IsDashing && !playerStateCheck.IsSupering) MultiplyFall();
 
         PressCheck();
 
-        if (pressedJump && IsGround && !playerStateCheck.IsDashing)
+        if (pressedJump && IsGround && !playerStateCheck.IsDashing && !playerStateCheck.IsSupering && !playerStateCheck.IsCharging)
         {
             Jump();
         }
@@ -166,6 +199,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
 
         GroundCheck();
+        WallCheck();
+        CeilCheck();
     }
     private void FixedUpdate()
     {
@@ -174,6 +209,9 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
     private void Flip() //vaihda spriten k��ntymiseksi jos tarve, t�ss� etuna lasten k��ntyminen mukana
     {
+
+        if (!playerStateCheck.CanFlip) return;
+
         if (FacingRight)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y);
@@ -183,7 +221,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y);
         }
 
-        if (playerStateCheck.IsDashing) return;
+
         if (dir > 0)
         {
             FacingRight = true;
@@ -206,7 +244,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         turnSpeed = onGround ? maxTurnSpeed : maxAirTurnSpeed
         */
 
-        if (playerStateCheck.IsDashing || playerStateCheck.IsWallJumping) return;
+        if (!playerStateCheck.CanMove) return;
 
         float _maxSpeedChange;
 
@@ -237,6 +275,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         }
 
         float _desiredSpeed = dir * speed;
+        if (playerStateCheck.IsCharging) _desiredSpeed /= 2.0f;
 
         //Liikutetaan velocity� kohti haluttua nopeutta, yll� m��ritetyll� nopeudella
         _velocity = Mathf.MoveTowards(_velocity, _desiredSpeed, _maxSpeedChange);
@@ -322,6 +361,10 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
     private void OnDrawGizmosSelected()
     {
+        Gizmos.DrawWireCube((Vector2)transform.position - wallJumpCheckPos, wallJumpCheckArea);
+
+        Gizmos.DrawWireCube((Vector2)transform.position - ceilCheckPos, ceilCheckArea);
+
         if (IsGround) { Gizmos.color = Color.green; } else { Gizmos.color = Color.red; }
         Gizmos.DrawLine(transform.position + colliderOffset, transform.position + colliderOffset + Vector3.down * groundLength);
         Gizmos.DrawLine(new Vector3(transform.position.x - colliderOffset.x, transform.position.y + colliderOffset.y), new Vector3(transform.position.x - colliderOffset.x, transform.position.y + colliderOffset.y) + Vector3.down * groundLength);
