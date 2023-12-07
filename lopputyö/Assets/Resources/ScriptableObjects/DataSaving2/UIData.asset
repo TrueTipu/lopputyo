@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: UIData
   m_EditorClassIdentifier: 
   itemUIActive: 0
-  roomsLeft: 4
+  roomsLeft: 0

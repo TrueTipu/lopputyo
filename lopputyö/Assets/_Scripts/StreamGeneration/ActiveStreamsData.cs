@@ -11,8 +11,24 @@ public class ActiveStreamsData : PlaytimeObject
     [SerializeField] CoreData lastCore;
     public CoreData LastCore { get; private set; }
 
-    [SerializeField] CoreData defaultCore;
-    public CoreData DefaultCore { get; private set; }
+    [SerializeField] string defaultCoreName;
+    CoreData defaultCore;
+    public CoreData DefaultCore
+    {
+        get
+        {
+            if(defaultCore == null)
+            {
+                if(!coreDataManager.FindSavedCoreData(defaultCoreName, out defaultCore))
+                    Debug.LogError("VAROITUS; VIRHE");
+                return defaultCore;
+            }
+            else
+            {
+                return defaultCore;
+            }
+        }
+    }
 
     [SerializeField] List<CoreLink> activeStreamKeys = new List<CoreLink>();
     List<CoreLink> ActiveStreamKeys { get; set; }
@@ -22,6 +38,7 @@ public class ActiveStreamsData : PlaytimeObject
     public int ActiveStreamAmount => ActiveStreamKeys.Count;
 
     [GetSO] RoomSet roomSet; //VAIHDA MYÖHEMMIN, vain koska next room
+    [GetSO] CoreDataManager coreDataManager;
 
     [SerializeField] int nextLevelUp; //vaihda listaksi/arrayksi jos haluat ettei ole tasainen
     int NextLevelUp { get; set; }
@@ -78,7 +95,7 @@ public class ActiveStreamsData : PlaytimeObject
     {
         LastCore = _coreData;
     }
-    public void SetVisits(CoreLink _link, List<VisitedRoom> _list)
+    public void AddCoreLink(CoreLink _link, List<VisitedRoom> _list)
     {
         ActiveStreamKeys.Add(_link);
         ActiveStreamValues.Add(_list.ToSerializeList());
@@ -93,7 +110,6 @@ public class ActiveStreamsData : PlaytimeObject
     protected override void LoadInspectorData()
     {
         LastCore = lastCore;
-        DefaultCore = defaultCore;
         NextLevelUp = nextLevelUp;
 
         var b = new List<SerializeList<VisitedRoom>>();
@@ -112,7 +128,7 @@ public class ActiveStreamsData : PlaytimeObject
         ActiveStreamsData _oldData = _obj as ActiveStreamsData;
 
         lastCore = _oldData.LastCore;
-        defaultCore = _oldData.DefaultCore;
+        defaultCoreName = nameof(_oldData.DefaultCore);
         nextLevelUp = _oldData.NextLevelUp;
 
         var b = new List<SerializeList<VisitedRoom>>();

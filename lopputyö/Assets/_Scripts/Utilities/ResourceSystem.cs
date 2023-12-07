@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEditor;
 
 /// <summary>
 /// One repository for all scriptable objects. Create your query methods here to keep your business logic clean.
@@ -10,23 +11,37 @@ using UnityEngine;
 public static class ResourceSystem {
     public static List<ScriptableObject> AllScriptableObject { get; private set; }
     static Dictionary<string, ScriptableObject> AllScriptableObjectDict { get; set; }
+    public static string FolderName = "DataSaving2";
  
 
-    public static void AssembleResources() {
+    public static Dictionary<string, ScriptableObject> AssembleResources() {
         Debug.Log("Loaded");
-        var _loadManager = Resources.Load<SOLoadManager>("ScriptableObjects/LoadManager");
-        AllScriptableObject = Resources.LoadAll<ScriptableObject>("ScriptableObjects/"+ _loadManager.FolderName).ToList();
+
+
+
+        AllScriptableObject = Resources.LoadAll<ScriptableObject>("ScriptableObjects/" + FolderName).ToList();
 
         AllScriptableObjectDict = AllScriptableObject.ToDictionary(s => s.GetType().ToString(), s => s);
+
+        return AllScriptableObjectDict;
     }
 
     public static ScriptableObject GetScriptableObject(string name) 
     {
-
+        Dictionary<string, ScriptableObject> _allScriptableObjectDict;
         if (AllScriptableObjectDict == null)
         {
-            AssembleResources();
+            _allScriptableObjectDict = AssembleResources();
         }
-        return AllScriptableObjectDict[name];
+        else
+        {
+            _allScriptableObjectDict = AllScriptableObjectDict;
+        }
+        try { return _allScriptableObjectDict[name]; }
+        catch
+        {
+            _allScriptableObjectDict = AssembleResources();
+            return _allScriptableObjectDict[name];
+        }
     }
 }   

@@ -22,11 +22,16 @@ public class PlayerStateCheck : ScriptableObject
     public bool FacingRight { get; private set; }
     public bool IsWallJumping { get; private set; }
     public bool OnWall { get; private set; }
+    public bool OnCeiling { get; private set; }
+    public bool IsSupering { get; private set; }
+    public bool IsCharging { get; private set; }
 
     Action DashBoostActivation;
     public void DashBoostActivationCall() => DashBoostActivation.Invoke();
 
+    public bool CanFlip => !(IsSupering || IsDashing);
 
+    public bool CanMove => !(IsDashing || IsWallJumping || IsSupering);
 
     [SerializeField]float normalGravity;
     public float NormalGravity => normalGravity;
@@ -67,7 +72,18 @@ public class PlayerStateCheck : ScriptableObject
            IsAssignableFrom(_ability.GetType())).
             ForEach(x => { ((IA_OnWall)x).SetOnWall = y => { OnWall = y; }; });
 
+        _abilities.FindAll(_ability => typeof(IA_OnCeiling).
+           IsAssignableFrom(_ability.GetType())).
+            ForEach(x => { ((IA_OnCeiling)x).SetOnCeiling = y => { OnCeiling = y; }; });
 
+        _abilities.FindAll(_ability => typeof(IA_IsSupering).
+           IsAssignableFrom(_ability.GetType())).
+            ForEach(x => { ((IA_IsSupering)x).SetIsSupering = y => { IsSupering = y; }; });
+        IsSupering = false;
+
+        _abilities.FindAll(_ability => typeof(IA_IsCharging).
+           IsAssignableFrom(_ability.GetType())).
+            ForEach(x => { ((IA_IsCharging)x).SetIsCharging = y => { IsCharging = y; }; });
 
         _abilities.FindAll(_ability => typeof(IA_DashBoostCall).
             IsAssignableFrom(_ability.GetType())).

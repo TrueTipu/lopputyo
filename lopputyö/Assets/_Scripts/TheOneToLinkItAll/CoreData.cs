@@ -27,7 +27,6 @@ public class CoreData : PlaytimeObject, IHasDelegates
     protected override void OnEnable()
     {
         base.OnEnable();
-        this.InjectGetSO();
     }
 
     void TryGetData()

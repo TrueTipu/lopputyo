@@ -32,14 +32,15 @@ public class DashLaunch : MonoBehaviour, IPlayerStateChanger, IA_DashBoostCall, 
 
     public void DashBoostActivation()
     {
-        IsDashing = false;
+        IsDashing = true;
         int dashBoostingDirection = playerStateCheck.FacingRight ? 1 : -1;
 
         //Debug.Log("WJ");
         rb2.gravityScale = 0;
         rb2.velocity = new Vector2(dashBoostingDirection * dashBoostingPower.x, dashBoostingPower.y);
 
-        JumpVariables = new JumpVariables(false, true, true, true);
         rb2.gravityScale = playerStateCheck.NormalGravity;
+        IsDashing = false;
     }
+
 }

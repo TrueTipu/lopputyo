@@ -10,8 +10,9 @@ public class SceneLoader : PersistentSingleton<SceneLoader>
 {
     protected override void Awake()
     {
-        base.Awake();
         ResourceSystem.AssembleResources();
+        base.Awake();
+
     }
     private void OnEnable()
     {

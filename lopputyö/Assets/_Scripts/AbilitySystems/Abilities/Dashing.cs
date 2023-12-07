@@ -16,10 +16,7 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
     [SerializeField] DashWJ dashWJ;
     [SerializeField] DashLaunch dashL;
 
-    int dir;
-    [SerializeField] Vector2 wallJumpCheckPos;
-    [SerializeField] Vector2 wallJumpCheckArea = new Vector2(1, 0.2f);
-    [SerializeField] LayerMask wallLayer;
+
 
     bool IsDashing {
         get { return playerStateCheck.IsDashing; }
@@ -73,7 +70,7 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
     {
         PressCheck();
         DashCheck();
-        if (pressedDash && dashReady == true)
+        if (pressedDash && dashReady == true &&  !playerStateCheck.IsCharging && !playerStateCheck.IsSupering)
         {
             pressedDash = false;
             StartCoroutine(Dash());
@@ -82,7 +79,7 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
         {
             noDashRemaining = false;
         }
-        if (dashBuffer && IsWalled())
+        if (dashBuffer && playerStateCheck.OnWall)
         {
             StartCoroutine(DoubleDashBufferTime());
             dashBuffer = false;
@@ -97,7 +94,6 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
         if (pressedDash)
         {
             pressedDash = false;
-            FacingRight = !FacingRight;
             StopCoroutine(Dash());
             StartCoroutine(Dash());
         }
@@ -107,11 +103,7 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
         }
     }
 
-    bool IsWalled()
-    {
-        dir = FacingRight ? 1 : -1;
-        return Physics2D.OverlapBox((Vector2)transform.position - dir * wallJumpCheckPos, wallJumpCheckArea, 1, wallLayer);
-    }
+
 
     private void DashCheck()
     {
@@ -130,7 +122,7 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
         }
     }
 
-        private void PressCheck()
+    void PressCheck()
     {
         if (Keys.DashKeysDown())
         {
@@ -192,10 +184,6 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
         dashReady = true;
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireCube((Vector2)transform.position - dir * wallJumpCheckPos, wallJumpCheckArea);
-    }
 
     public void DashBoostActivation()
     {

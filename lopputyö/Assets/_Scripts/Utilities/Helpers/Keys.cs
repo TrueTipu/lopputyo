@@ -9,6 +9,7 @@ public static class Keys
 {
     //helpotetaan nappien vaihtamista ja ehkä toiseen input järjestelmään siirtymistä
 
+
     #region jump
     public static bool JumpKeysDown()
     {
@@ -39,6 +40,8 @@ public static class Keys
     }
     #endregion
 
+
+
     #region Interact
     public static bool InteractKeysDown()
     {
@@ -53,4 +56,25 @@ public static class Keys
         return (Input.GetKeyUp(KeyCode.I));
     }
     #endregion
+
+    public static Direction GetInputDirection()
+    {
+        if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        {
+            return Direction.Left;
+        }
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        {
+            return Direction.Right;
+        }
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        {
+            return Direction.Up;
+        }
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        {
+            return Direction.Down;
+        }
+        return Direction.Null;
+    }
 }

@@ -48,7 +48,6 @@ public class StreamCore : MonoBehaviour
 
     void CheckStreamState(PlayerAbility _ability) //deaktivatellkin oma action ehkä joskus
     {
-        CoreData _currentCore = coreData;
         if (_ability == PlayerAbility.None)
         {
             DeActivateStream();
@@ -58,16 +57,16 @@ public class StreamCore : MonoBehaviour
         {
             return;
         }
-        if (activeStreamsData.LastCore == coreData)
+        if(activeStreamsData.LastCore == null)
         {
-            activeStreamsData.SetLastCore(coreData);
-            _currentCore = activeStreamsData.DefaultCore;
+            activeStreamsData.SetLastCore(activeStreamsData.DefaultCore);
         }
+
         roomVisitData.ResetVisits(roomVisitData.RoomsVisited.Last().RoomPos);
 
         streamActivator.SpawnTrayForEachRoom(roomVisitData.OldVisited);
 
-        activeStreamsData.SetVisits(new CoreLink(_currentCore, coreData), new List<VisitedRoom>(roomVisitData.OldVisited));
+        activeStreamsData.AddCoreLink(new CoreLink(activeStreamsData.LastCore, coreData), new List<VisitedRoom>(roomVisitData.OldVisited));
         activeStreamsData.SetLastCore(coreData);
     }
 
