@@ -13,13 +13,22 @@ MonoBehaviour:
   m_Name: RoomVisitedData
   m_EditorClassIdentifier: 
   roomsVisited:
-  - roomPos: {x: 14, y: 12}
+  - roomPos: {x: 11, y: 11}
     enterPointIndexes: 0c000000
+    exitPointIndexes: 08000000
+  - roomPos: {x: 12, y: 11}
+    enterPointIndexes: 00000000
+    exitPointIndexes: 04000000
+  - roomPos: {x: 12, y: 12}
+    enterPointIndexes: 0a000000
+    exitPointIndexes: 06000000
+  - roomPos: {x: 13, y: 12}
+    enterPointIndexes: 02000000
+    exitPointIndexes: 06000000
+  - roomPos: {x: 14, y: 12}
+    enterPointIndexes: 02000000
     exitPointIndexes: 
   oldVisited:
   - roomPos: {x: 11, y: 11}
-    enterPointIndexes: 0c000000
-    exitPointIndexes: 06000000
-  - roomPos: {x: 14, y: 12}
     enterPointIndexes: 0c000000
     exitPointIndexes: 

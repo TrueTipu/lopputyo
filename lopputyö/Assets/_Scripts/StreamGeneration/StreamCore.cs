@@ -28,6 +28,7 @@ public class StreamCore : MonoBehaviour
         streamActivator = GetComponent<StreamActivator>();
         coreData.SubscribeSetAbility((_newAbility, _oldAbility) => { CheckStreamState(_newAbility); }); //HMMM
 
+
         List<List<VisitedRoom>> _streamData;
         if(activeStreamsData.GetStreamsFromCore1(coreData, out _streamData))
         {
@@ -99,9 +100,4 @@ public class StreamCore : MonoBehaviour
 
         }
     }
-
-
-
-
-
 }

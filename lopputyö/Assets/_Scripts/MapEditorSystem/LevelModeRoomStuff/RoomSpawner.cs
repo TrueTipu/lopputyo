@@ -93,7 +93,7 @@ public class RoomSpawner : MonoBehaviour, ITileNode
     }
 
     ///kinda vois siirtää roomObjektiin mut toimikoon täällä
-    void SetBlocks(Room _room)
+    public void SetBlocks(Room _room)
     {
         RoomObject.Clear();
         foreach (Direction _bDir in _room.BlockedDirections.Keys)

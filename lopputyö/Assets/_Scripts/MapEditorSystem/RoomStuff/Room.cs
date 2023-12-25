@@ -13,6 +13,8 @@ public class Room : ScriptableObject
     [SerializeField] Sprite mapIcon;
     public Sprite MapIcon => mapIcon;
 
+    [GetSO] RoomVisitedData roomVisitedData;
+
     [SerializeField] GameObject roomPrefab;
     public GameObject RoomPrefab => roomPrefab;
 
@@ -28,6 +30,9 @@ public class Room : ScriptableObject
     public bool HasCore => Core != null;
     [SerializeField] CoreData core;
     public CoreData Core => core;
+
+
+
 
     public Dictionary<Direction, bool> BlockedDirections { get; } = new Dictionary<Direction, bool>()
     {
@@ -45,6 +50,39 @@ public class Room : ScriptableObject
         {Direction.DownRight, false},
     };
 
+    public Direction BlockedExtraDirection;
+
+
+    public void LoadRoom()
+    {
+        this.InjectGetSO();
+        Dictionary<int, Direction> dirs = new Dictionary<int, Direction>
+        {
+            {0, Direction.LeftDown},
+            {1, Direction.Left},
+            {2, Direction.LeftUp},
+            {3, Direction.UpLeft},
+            {4, Direction.Up},
+            {5, Direction.UpRight},
+            {6, Direction.RightUp},
+            {7, Direction.Right},
+            {8, Direction.RightDown},
+            {9, Direction.DownRight},
+            {10, Direction.Down},
+            {11, Direction.DownLeft},
+        };
+
+        Core?.SubscribeSetAbility((_newAbility, _oldAbility) => {
+            if (_newAbility != PlayerAbility.None)
+            {
+                BlockedExtraDirection = dirs[roomVisitedData.RoomsVisited[roomVisitedData.RoomsVisited.Count - 1].EnterPointIndexes[0]];
+            }
+            else
+            {
+                BlockedExtraDirection = Direction.None;
+            }
+        });
+    }
 
     public void AddBlockedDirection(Direction _dir)
     {

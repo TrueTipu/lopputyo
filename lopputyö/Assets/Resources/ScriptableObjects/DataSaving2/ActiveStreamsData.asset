@@ -12,26 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5b2878e524fa849b48bf4ea91b360a, type: 3}
   m_Name: ActiveStreamsData
   m_EditorClassIdentifier: 
-  lastCore: {fileID: 11400000, guid: 482f4a80657847b4cbfde625ae647ca4, type: 2}
+  lastCore: {fileID: 0}
   defaultCoreName: DefaultCore
-  activeStreamKeys:
-  - core1: {fileID: 11400000, guid: 5513b86449913ab4fae0daa676a6bb53, type: 2}
-    core2: {fileID: 11400000, guid: 482f4a80657847b4cbfde625ae647ca4, type: 2}
-  activeStreamValues:
-  - list:
-    - roomPos: {x: 11, y: 11}
-      enterPointIndexes: 0c000000
-      exitPointIndexes: 08000000
-    - roomPos: {x: 12, y: 11}
-      enterPointIndexes: 00000000
-      exitPointIndexes: 04000000
-    - roomPos: {x: 12, y: 12}
-      enterPointIndexes: 0a000000
-      exitPointIndexes: 08000000
-    - roomPos: {x: 13, y: 12}
-      enterPointIndexes: 00000000
-      exitPointIndexes: 06000000
-    - roomPos: {x: 14, y: 12}
-      enterPointIndexes: 02000000
-      exitPointIndexes: 
-  nextLevelUp: 1
+  activeStreamKeys: []
+  activeStreamValues: []
+  nextLevelUp: 0

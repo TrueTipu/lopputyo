@@ -18,7 +18,7 @@ MonoBehaviour:
     currentAbility: 0
   - main: 0
     name: Core B0
-    currentAbility: 2
+    currentAbility: 0
   - main: 1
     name: Core A0
     currentAbility: 0

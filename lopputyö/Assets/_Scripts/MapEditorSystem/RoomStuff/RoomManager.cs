@@ -24,6 +24,7 @@ public class RoomManager : Singleton<RoomManager>
         foreach (Vector2Int _pos in rooms.Keys)
         {
             SetNeighbours(rooms[_pos], _pos);
+            rooms[_pos].LoadRoom();
         }
 
     }
@@ -50,6 +51,7 @@ public class RoomManager : Singleton<RoomManager>
         Room _up = GetRoom(_roomPosition.x, _roomPosition.y + 1);
         CheckDirectionRooms(_room, _up, new List<Direction> { Direction.Up, Direction.UpLeft, Direction.UpRight });
 
+        
     }
     void CheckDirectionRooms(Room _currentRoom, Room _neighbourRoom, List<Direction> _dirs)
     {
