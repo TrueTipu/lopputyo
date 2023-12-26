@@ -53,7 +53,7 @@ public class DialogueManager : Singleton<DialogueManager>
         foreach (char letter in sentence.ToCharArray())
         {
             dialog.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(0.025f);
         }
     }
     public void EndDialogue()
