@@ -48,6 +48,13 @@ AnimationClip:
     path: PlayerSprite
     classID: 212
     script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 1687024058, guid: 32c0775ade0cf724f919499079377700, type: 3}
+    attribute: m_Sprite
+    path: Protagonist_Sprite_Sheet_0
+    classID: 212
+    script: {fileID: 0}
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -69,10 +76,18 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 2975978635
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 282462333, guid: 32c0775ade0cf724f919499079377700, type: 3}
     - {fileID: 1687024058, guid: 32c0775ade0cf724f919499079377700, type: 3}
     - {fileID: 282462333, guid: 32c0775ade0cf724f919499079377700, type: 3}
+    - {fileID: 1687024058, guid: 32c0775ade0cf724f919499079377700, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

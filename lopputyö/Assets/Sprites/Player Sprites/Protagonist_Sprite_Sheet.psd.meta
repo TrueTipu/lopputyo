@@ -272,7 +272,7 @@ TextureImporter:
         width: 113
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -280,6 +280,27 @@ TextureImporter:
       bones: []
       spriteID: b50e63d3e3541d58a8ecbae88ff48de0
       internalID: 1422474243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protagonist_Sprite_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 214
+        width: 192
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50d76373d5dda88cbd438f53e3aa4db
+      internalID: -2130251281
       vertices: []
       indices: 
       edges: []
@@ -298,6 +319,7 @@ TextureImporter:
       Idle_01: 282462333
       Run_04: -1227642313
       Protagonist_Sprite_Sheet_0: 1422474243
+      Protagonist_Sprite_Sheet_1: -2130251281
       Run_02: 1891793716
       Run_03: 1167225155
       Run_01: 1925511914
