@@ -44,6 +44,8 @@ public class Intro : MonoBehaviour
 
     IEnumerator NextScene(){
         yield return new WaitForSeconds(1.5f);
+        anim.SetTrigger("start");
+        yield return new WaitForSeconds(1.1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

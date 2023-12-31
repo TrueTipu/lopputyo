@@ -9645,13 +9645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This game is our final project uwu owo
-
-    pls jairola give us good grades
-    please
-
-
-    specia thanks to gilles deleuxe and his firned felis quatarei'
+  m_text: "Jotain kivaa teksti\xE4 idk uwu"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 452a94ffb7779412484c6a96d9fff35c, type: 2}
   m_sharedMaterial: {fileID: -1649131924782420107, guid: 452a94ffb7779412484c6a96d9fff35c, type: 2}
