@@ -141,7 +141,7 @@ TextureImporter:
       name: Trees_1
       rect:
         serializedVersion: 2
-        x: 626
+        x: 627
         y: 574
         width: 115
         height: 289
@@ -158,6 +158,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Trees_2
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 408
+        width: 192
+        height: 452
+      alignment: 9
+      pivot: {x: 0.4928894, y: -0.0074148937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513fe97653a00ef91825fcbdd52fb8d2
+      internalID: -1547503348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kelopuu
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 336
+        width: 415
+        height: 543
+      alignment: 9
+      pivot: {x: 0.38157415, y: 0.017281717}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f4c3bc81e6befdd9ee1f11822af265
+      internalID: 837281941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -169,8 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Trees_2: -1547503348
       Trees_1: 468271784
       Trees_0: -560272231
+      Kelopuu: 837281941
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1
