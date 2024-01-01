@@ -23,7 +23,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 65f18ee7987d7bc449a202bc19ab73c6, type: 2}
   - {fileID: 11400000, guid: 504127a776d1dfc4ca31686ca24e397b, type: 2}
   - {fileID: 11400000, guid: 903e122ffdb10bd4eb46d0770778df51, type: 2}
-  - {fileID: 11400000, guid: b6ceee009fa9f364ca0b83b22acf640a, type: 2}
   poses:
   - {x: 11, y: 11}
   - {x: 14, y: 11}
@@ -35,7 +34,6 @@ MonoBehaviour:
   - {x: 10, y: 15}
   - {x: 9, y: 13}
   - {x: 6, y: 12}
-  - {x: 7, y: 9}
   roomAdds:
   - list: []
   - list:

@@ -726,16 +726,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141331305}
   m_CullTransparentMesh: 1
---- !u!95 &192843591 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7506990974881529670, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-  m_PrefabInstance: {fileID: 1697212272863388795}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &192843595 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 1697212272135305796, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-  m_PrefabInstance: {fileID: 1697212272863388795}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &202715776
 GameObject:
   m_ObjectHideFlags: 0
@@ -6759,53 +6749,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1697212272135305786, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: doubleJump
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1697212272135305793, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: rb2
-      value: 
-      objectReference: {fileID: 192843595}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 192843591}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: fallAdd
-      value: 1.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: jumpForce
-      value: 12.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: turnSpeed
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: deceleration
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: groundLength
-      value: 0.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: colliderOffset.x
-      value: -0.149
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: colliderOffset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697212272135305798, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: maxAirAcceleration
-      value: 33.1
       objectReference: {fileID: 0}
     - target: {fileID: 1697212272135305799, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
       propertyPath: m_RootOrder
@@ -6850,18 +6796,6 @@ PrefabInstance:
     - target: {fileID: 1697212272135305799, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5948983215241496772, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7387217546043750482, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: m_Name
-      value: PlayerSprite
-      objectReference: {fileID: 0}
-    - target: {fileID: 7506990974881529670, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
