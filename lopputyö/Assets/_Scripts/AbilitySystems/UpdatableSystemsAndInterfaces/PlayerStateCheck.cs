@@ -26,8 +26,8 @@ public class PlayerStateCheck : ScriptableObject
     public bool IsSupering { get; private set; }
     public bool IsCharging { get; private set; }
 
-    Action DashBoostActivation;
-    public void DashBoostActivationCall() => DashBoostActivation.Invoke();
+    event Action DashBoostActivation;
+    public void DashBoostActivationCall() => DashBoostActivation();
 
     public bool CanFlip => !(IsSupering || IsDashing);
 
@@ -38,9 +38,15 @@ public class PlayerStateCheck : ScriptableObject
 
 
 
-    public void SetAbilities(IPlayerStateChanger _ability) => SetAbilities(new List<IPlayerStateChanger>(){_ability});
+    public void SetAbilities(IPlayerStateChanger _ability) => SetAbilitiesFinal(new List<IPlayerStateChanger>(){_ability});
 
     public void SetAbilities(List<IPlayerStateChanger> _abilities)
+    {
+        DashBoostActivation = delegate { };
+        SetAbilitiesFinal(_abilities);
+    }
+
+    void SetAbilitiesFinal(List<IPlayerStateChanger> _abilities)
     {
         if (_abilities == null) return;
 
@@ -87,7 +93,8 @@ public class PlayerStateCheck : ScriptableObject
 
         _abilities.FindAll(_ability => typeof(IA_DashBoostCall).
             IsAssignableFrom(_ability.GetType())).
-            ForEach(x => { DashBoostActivation += ((IA_DashBoostCall)x).DashBoostActivation; } );
+            ForEach(x => {
+                DashBoostActivation += ((IA_DashBoostCall)x).DashBoostActivation; } );
 
     }
 }

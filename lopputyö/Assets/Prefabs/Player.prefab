@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 1697212272684894315}
   - component: {fileID: 1697212272684894314}
   - component: {fileID: 8284313842513541956}
-  - component: {fileID: 1635275617}
+  - component: {fileID: 8476493402296808457}
   m_Layer: 0
   m_Name: Dash
   m_TagString: Untagged
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doubleDashBufferTime: 0.05
   dashWJ: {fileID: 8284313842513541956}
-  dashL: {fileID: 1635275617}
+  dashL: {fileID: 8476493402296808457}
   dashingPower: 12
   dashingTime: 0.15
   dashingCooldown: 0.3
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallJumpingDuration: 0.05
   wallJumpingPower: {x: 15, y: 14}
---- !u!114 &1635275617
+--- !u!114 &8476493402296808457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
