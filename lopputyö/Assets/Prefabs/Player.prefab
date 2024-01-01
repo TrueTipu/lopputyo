@@ -58,7 +58,7 @@ MonoBehaviour:
   colliderOffset: {x: -0.149, y: 0, z: 0}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 72
   jumpForce: 12.9
   jumpCut: 0.236
   fallAdd: 1.15
@@ -68,6 +68,7 @@ MonoBehaviour:
   deceleration: 45
   turnSpeed: 45
   maxAirAcceleration: 17.1
+  roomChangeSpeed: 350
   hangTimeRange: 1.46
   hangTimeStrength: 0.32
   wallJumpCheckPos: {x: 0, y: 0}

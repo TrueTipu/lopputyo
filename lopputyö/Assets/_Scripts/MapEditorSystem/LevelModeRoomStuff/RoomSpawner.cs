@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 [RequireComponent(typeof(BoxCollider2D))]
 public class RoomSpawner : MonoBehaviour, ITileNode
@@ -38,12 +39,22 @@ public class RoomSpawner : MonoBehaviour, ITileNode
 
         roomActivated += _activationCallBack;
         roomActivated += (_pos) => roomVisitedData.AddRoom(RoomObject, TileCords, _pos);
+
+        roomActivated += (_pos) =>
+        {
+            if (Enumerable.Range(9, 3).Contains(RoomObject.GetClosest(_pos))) //jos joku alaosista eli 9, 10 tai 11
+            {
+                playerData.AddRoomChangeVelocity();
+            }
+        };
+        
         if (_room.HasCore)
         {
             roomActivated += (_pos) => { if (_room.Core.Powered) roomVisitedData.ResetVisits(TileCords); };
         }
 
         roomActivated += (_pos) => SetSpawnPoint(_pos, RoomObject);
+
     }
 
 

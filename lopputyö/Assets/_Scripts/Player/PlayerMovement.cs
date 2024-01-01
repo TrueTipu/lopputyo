@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     [SerializeField, Range(0f, 100f)] float maxAirAcceleration;
     //[SerializeField, Range(0f, 100f)] float maxAirDeceleration;
     //[SerializeField, Range(0f, 100f)] float maxAirTurnSpeed = 80f;
+    [SerializeField] float roomChangeSpeed;
 
     [SerializeField, Range(0f, 10f)] float hangTimeRange = 2f;
     [SerializeField, Range(0f, 1f)] float hangTimeStrength = 0.5f;
@@ -75,6 +76,9 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     [Header("Animation")]
     bool isHovering = false;
     [SerializeField] Animator anim;
+
+
+
     
     bool IsGround
     {
@@ -128,6 +132,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
         playerData.SubscribeTeleport((p) => this.transform.position = p);
         playerData.SubscribeTeleport(playerData.SetRespawnPoint);
+
+        playerData.SubscribeAddRoomChangeVelocity(() => rb2.AddForce(Vector2.up * roomChangeSpeed));
 
         playerStateCheck.SetAbilities(this as IPlayerStateChanger);
         rb2.gravityScale = playerStateCheck.NormalGravity;
