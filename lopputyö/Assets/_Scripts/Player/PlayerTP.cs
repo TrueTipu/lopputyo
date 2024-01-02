@@ -14,10 +14,10 @@ public class PlayerTP : MonoBehaviour
 
         yield return null;
         
-        var _spawner = gridData.GetTile(playerData.TeleportRoom);
+        RoomSpawner _spawner = gridData.GetTile(playerData.TeleportRoom);
         if (gridData.GetTile(transform.position) != _spawner)
         {
-            playerData.Teleport(_spawner.transform.position);
+            playerData.Teleport(_spawner.RoomObject.SpawnPoint);
         }
     }
 

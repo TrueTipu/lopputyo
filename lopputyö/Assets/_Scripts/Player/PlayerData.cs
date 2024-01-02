@@ -22,6 +22,8 @@ public class PlayerData : PlaytimeObject, IHasDelegates
 
     Action<Vector2> teleport;
 
+    Action respawn;
+
     Action addRoomChangeVelocity;
 
     public void SubscribeTeleport(Action<Vector2> _action)
@@ -33,6 +35,15 @@ public class PlayerData : PlaytimeObject, IHasDelegates
         teleport -= _action;
     }
 
+    public void SubscribeRespawn(Action _action)
+    {
+        respawn += _action;
+    }
+    public void UnSubscribeRespawn(Action _action)
+    {
+        respawn -= _action;
+    }
+
     public void SubscribeAddRoomChangeVelocity(Action _action)
     {
         addRoomChangeVelocity += _action;
@@ -41,6 +52,7 @@ public class PlayerData : PlaytimeObject, IHasDelegates
     {
         addRoomChangeVelocity -= _action;
     }
+
 
 
     protected override void OnEnable()
@@ -73,6 +85,11 @@ public class PlayerData : PlaytimeObject, IHasDelegates
         addRoomChangeVelocity.Invoke();
     }
 
+    public void Respawn()
+    {
+        respawn.Invoke();
+    }
+
     public void UpdatePosition(Vector3 _position)
     {
         Position = _position;
@@ -96,8 +113,14 @@ public class PlayerData : PlaytimeObject, IHasDelegates
     {
         teleport = delegate { };
         Helpers.AddAutounsubDelegate(() => teleport = null);
+
+        respawn = delegate { };
+        Helpers.AddAutounsubDelegate(() => respawn = null);
+
         addRoomChangeVelocity = delegate { };
         Helpers.AddAutounsubDelegate(() => addRoomChangeVelocity = null);
+
+
     }
 
     protected override void InitSO(ScriptableObject _obj)

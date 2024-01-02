@@ -52,10 +52,14 @@ public class Room : ScriptableObject
 
     public Direction BlockedExtraDirection;
 
-
+    public void ResetBlockedExtraDir()
+    {
+        BlockedExtraDirection = Direction.None;
+    }
     public void LoadRoom()
     {
         this.InjectGetSO();
+
         Dictionary<int, Direction> dirs = new Dictionary<int, Direction>
         {
             {0, Direction.Left},

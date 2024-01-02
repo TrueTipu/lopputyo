@@ -8,15 +8,27 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : PersistentSingleton<SceneLoader>
 {
+    [GetSO] RoomSet roomset;
     protected override void Awake()
     {
         ResourceSystem.AssembleResources();
         base.Awake();
 
+
+
+
+    }
+
+    private void Start()
+    {
+        this.InjectGetSO();
+
+        roomset.Rooms.Values.ToList().ForEach((r) => r.ResetBlockedExtraDir());
     }
     private void OnEnable()
     {
         Resources.FindObjectsOfTypeAll<PlaytimeObject>().ToList().ForEach(x => x.OnStartLoad());
+
     }
 
     // Update is called once per frame

@@ -28,7 +28,12 @@ public class RoomObject : MonoBehaviour
 
     [field: SerializeField] public Vector2 CorePointPos { get; private set; } = Vector2.one;
 
+    [SerializeField] Transform coreSpawnPoint;
+    public Vector3 SpawnPoint => coreSpawnPoint.position;
+
     [SerializeField] DirectionGameObjectDict blockObjectDict = new DirectionGameObjectDict();
+
+    [SerializeField] DirectionGameObjectDict respawnPointObjectDict = new DirectionGameObjectDict();
 
     private void OnEnable()
     {
@@ -63,10 +68,11 @@ public class RoomObject : MonoBehaviour
             PathNodes.BorderPointCount);
     }
 
-    //spawnpointtia varten, huom, voi toteuttaa paremminkin ig
-    public Vector2 GetClosestPos(Vector2 _pos)
+
+    public Vector2 GetRespawnPoint(Vector2 _pos)
     {
-        return PathNodes.GetBorderPoint(GetClosest(_pos));
+
+        return respawnPointObjectDict[DirectionExtension.DoorIntToDir(GetClosest(_pos))].transform.position;
     }
 
     public bool IsInPath(int _enterPoint, Vector2 _playerPos)

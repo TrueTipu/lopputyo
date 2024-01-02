@@ -62,7 +62,7 @@ public class RoomSpawner : MonoBehaviour, ITileNode
 
     void SetSpawnPoint(Vector2 _pos, RoomObject _roomObject)
     {
-        playerData.SetRespawnPoint(_roomObject.GetClosestPos(_pos));
+        playerData.SetRespawnPoint(_roomObject.GetRespawnPoint(_pos));
     }
 
     public void ActivateDisabledRoom()

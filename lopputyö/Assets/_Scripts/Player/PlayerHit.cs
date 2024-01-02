@@ -13,7 +13,7 @@ public class PlayerHit : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //yksinkertaistetusti, toki efektit pitää lisätä action kutsulla esim playerdsatan kautta
-            collision.transform.position = playerData.RespawnPoint;
+            playerData.Respawn();
         }
     }
 }

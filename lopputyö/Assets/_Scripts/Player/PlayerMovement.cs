@@ -134,6 +134,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         playerData.SubscribeTeleport(playerData.SetRespawnPoint);
 
         playerData.SubscribeAddRoomChangeVelocity(() => rb2.AddForce(Vector2.up * roomChangeSpeed));
+        playerData.SubscribeRespawn(() => transform.position = playerData.RespawnPoint);
 
         playerStateCheck.SetAbilities(this as IPlayerStateChanger);
         rb2.gravityScale = playerStateCheck.NormalGravity;

@@ -6,6 +6,7 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
 {
     PlayerStateCheck playerStateCheck;
     Rigidbody2D rb2;
+   
 
     [SerializeField] float superSpeed;
 
@@ -44,10 +45,21 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
     }
     public Action<bool> SetIsCharging { get; set; }
 
+    bool outsideBoolToStopSuper = false;
+
+    [GetSO] PlayerData playerData;
+
+    //kutsutaan joka kerta kun ability aktivoidaan
     public void Init(PlayerStateCheck _playerState, Rigidbody2D _rb2)
     {
+        this.InjectGetSO();
+
+
         playerStateCheck = _playerState;
         rb2 = _rb2;
+
+        playerData.SubscribeRespawn(() => outsideBoolToStopSuper = true);
+
     }
 
     [SerializeField] float chargeTime;
@@ -162,10 +174,11 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
         rb2.velocity = _dir * superSpeed;
 
 
-        while (!playerStateCheck.OnWall && !playerStateCheck.OnCeiling)
+        while (!playerStateCheck.OnWall && !playerStateCheck.OnCeiling && !outsideBoolToStopSuper)
         {
             yield return null;
         }
+        outsideBoolToStopSuper = false;
 
         IsSupering = false;
         rb2.gravityScale = playerStateCheck.NormalGravity;

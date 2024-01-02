@@ -39,6 +39,39 @@ static class DirectionExtension
                 return Direction.Null;
         }
     }
+
+    public static Direction DoorIntToDir(int _doorI)
+    {
+        switch (_doorI)
+        {
+            case 0:
+                return Direction.LeftDown;
+            case 1:
+                return Direction.Left;
+            case 2:
+                return Direction.LeftUp;
+            case 3:
+                return Direction.UpLeft; 
+            case 4:
+                return Direction.Up;
+            case 5:
+                return Direction.UpRight;  
+            case 6:
+                return Direction.RightUp;
+            case 7:
+                return Direction.Right;
+            case 8:
+                return Direction.RightDown;
+            case 9:
+                return Direction.DownRight;
+            case 10:
+                return Direction.Down;
+            case 11:
+                return Direction.DownLeft;
+            default:
+                return Direction.None;
+        }
+    }
 }
 public enum Direction
 {

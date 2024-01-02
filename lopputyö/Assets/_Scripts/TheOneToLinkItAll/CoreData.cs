@@ -31,9 +31,10 @@ public class CoreData : PlaytimeObject, IHasDelegates
 
     void TryGetData()
     {
+        this.InjectGetSO();
+
         if(dataManager.FindSavedCore(this, out CoreDataManager.CoreDataObject _newData))
         {
-            Debug.Log("joo");
             if (_newData == null) return;
             Data = _newData;
         }
