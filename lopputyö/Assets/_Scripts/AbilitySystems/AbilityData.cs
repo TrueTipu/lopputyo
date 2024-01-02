@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 /// <summary>
 /// Pitää muistissa pelaajan omistamat abilityt, ja mahdollistaa niiden lisäämisen/poistamisen, ja asioiden triggeröimisen niiden auvlla
@@ -11,7 +12,7 @@ using System;
 public class AbilityData : PlaytimeObject, IHasDelegates
 {
     [SerializeField] List<PlayerAbility> activeAbilities = new List<PlayerAbility>();
-    public List<PlayerAbility> ActiveAbilities { get; private set; }
+    public HashSet<PlayerAbility> ActiveAbilities { get; private set; }
 
     public void AddActiveAbilities(PlayerAbility _ability)
     {
@@ -26,7 +27,7 @@ public class AbilityData : PlaytimeObject, IHasDelegates
     }
     public bool IsActive(PlayerAbility _ability)
     {
-        bool _value = ActiveAbilities.Exists(a => a == _ability);
+        bool _value = ActiveAbilities.ToList().Exists(a => a == _ability);
         return _value;
     }
 
@@ -50,7 +51,7 @@ public class AbilityData : PlaytimeObject, IHasDelegates
     }
     protected override void LoadInspectorData()
     {
-        ActiveAbilities = new List<PlayerAbility>(activeAbilities);
+        ActiveAbilities = new HashSet<PlayerAbility>(activeAbilities);
     }
 
 

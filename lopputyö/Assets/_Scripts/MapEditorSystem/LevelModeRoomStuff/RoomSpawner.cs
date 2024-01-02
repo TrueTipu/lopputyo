@@ -51,6 +51,8 @@ public class RoomSpawner : MonoBehaviour, ITileNode
         if (_room.HasCore)
         {
             roomActivated += (_pos) => { if (_room.Core.Powered) roomVisitedData.ResetVisits(TileCords); };
+
+            _room.Core.SubscribeSetAbility((_p1, _p2) => Helpers.pointOneSDelay(() => SetBlocks(_room)));
         }
 
         roomActivated += (_pos) => SetSpawnPoint(_pos, RoomObject);
@@ -106,6 +108,7 @@ public class RoomSpawner : MonoBehaviour, ITileNode
     ///kinda vois siirtää roomObjektiin mut toimikoon täällä
     public void SetBlocks(Room _room)
     {
+
         RoomObject.Clear();
         foreach (Direction _bDir in _room.BlockedDirections.Keys)
         {
@@ -113,9 +116,36 @@ public class RoomSpawner : MonoBehaviour, ITileNode
             {
                 RoomObject.BlockPath(_bDir);
             }
-                
+        }
+
+        switch (_room.BlockedExtraDirection)
+        {
+            case Direction.Left:
+                RoomObject.BlockPath(Direction.LeftDown);
+                RoomObject.BlockPath(Direction.Left);
+                RoomObject.BlockPath(Direction.LeftUp);
+                break;
+            case Direction.Right:
+                RoomObject.BlockPath(Direction.RightDown);
+                RoomObject.BlockPath(Direction.Right);
+                RoomObject.BlockPath(Direction.RightUp);
+                break;
+            case Direction.Up:
+                RoomObject.BlockPath(Direction.UpLeft);
+                RoomObject.BlockPath(Direction.Up);
+                RoomObject.BlockPath(Direction.UpRight);
+                break;
+            case Direction.Down:
+                RoomObject.BlockPath(Direction.DownLeft);
+                RoomObject.BlockPath(Direction.Down);
+                RoomObject.BlockPath(Direction.DownRight);
+                break;
+            case Direction.None:
+                break;
         }
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -58,18 +58,18 @@ public class Room : ScriptableObject
         this.InjectGetSO();
         Dictionary<int, Direction> dirs = new Dictionary<int, Direction>
         {
-            {0, Direction.LeftDown},
+            {0, Direction.Left},
             {1, Direction.Left},
-            {2, Direction.LeftUp},
-            {3, Direction.UpLeft},
+            {2, Direction.Left},
+            {3, Direction.Up},
             {4, Direction.Up},
-            {5, Direction.UpRight},
-            {6, Direction.RightUp},
+            {5, Direction.Up},
+            {6, Direction.Right},
             {7, Direction.Right},
-            {8, Direction.RightDown},
-            {9, Direction.DownRight},
+            {8, Direction.Right},
+            {9, Direction.Down},
             {10, Direction.Down},
-            {11, Direction.DownLeft},
+            {11, Direction.Down},
         };
 
         Core?.SubscribeSetAbility((_newAbility, _oldAbility) => {

@@ -13,9 +13,9 @@ public class DialogueTrigger : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            TriggerDialogue();
-        }
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    TriggerDialogue();
+        //}
     }
 }

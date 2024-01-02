@@ -52,23 +52,24 @@ public class ItemUI : MonoBehaviour
         }
     }
 
-    public void Load(List<PlayerAbility> _abilities, CoreData _core)
+    public void Load(HashSet<PlayerAbility> _abilities, CoreData _core)
     {
-        //Debug.Log("2 [" + string.Join(", ",_abilities.ConvertAll<string>((x)=>x.ToString()).ToArray()) + "]");
+
+        //Debug.Log("2 [" + string.Join(", ", _abilities.ToList().ConvertAll<string>((x) => x.ToString()).ToArray()) + "]");
         for (int i = 0; i < abilitySquares.Length; i++)
         {
             if (i < _abilities.Count)
             {
                 abilitySquares[i].SetActive(true);
                 Text _text = abilitySquares[i].GetComponentInChildren<Text>();
-                _text.text = _abilities[i].ToString();
+                _text.text = _abilities.ToList()[i].ToString();
             }
 
             else { abilitySquares[i].SetActive(false); }
         }
 
         lastCore = _core;
-        abilities = _abilities;
+        abilities = _abilities.ToList();
 
         if (lastCore.CurrentAbility != PlayerAbility.None)
         {
@@ -95,7 +96,7 @@ public class ItemUI : MonoBehaviour
 
     public void SetAbility(int _index)
     {
-        abilitySquares.ToList().ForEach((x) => { x.SetActive(false); });
+        //abilitySquares.ToList().ForEach((x) => { x.SetActive(false); });
 
         if(_index != -1)
         {
@@ -106,7 +107,10 @@ public class ItemUI : MonoBehaviour
         }
         else
         {
-            if (roomSet.CurrentStreamLevel >= streamData.ActiveStreamAmount) return;
+            if (roomSet.CurrentStreamLevel >= streamData.ActiveStreamAmount)
+            {
+                return;
+            }
 
             lastCore.SetAbility(PlayerAbility.None);
             openEditorButton.SetActive(false);
