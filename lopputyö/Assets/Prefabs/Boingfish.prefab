@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8209606855398383496}
-  - component: {fileID: 1924987110421806420}
   m_Layer: 0
   m_Name: Boingfish
   m_TagString: Untagged
@@ -53,26 +52,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1924987110421806420
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338184414764432914}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ffe33ef203ddec3aeaa93c54efd496ed, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &353912812275835547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,6 +1406,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1653768475760187589}
   - component: {fileID: 7761020074890403847}
+  - component: {fileID: 5024988219483368114}
+  - component: {fileID: 6370696123360979517}
   m_Layer: 0
   m_Name: Fishy
   m_TagString: Untagged
@@ -1489,7 +1470,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -94722913, guid: 8ec087c3985aa411092753c272969236, type: 3}
   m_Color: {r: 0.81394625, g: 0.85779613, b: 0.8584906, a: 1}
   m_FlipX: 0
@@ -1501,6 +1482,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &5024988219483368114
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975965789188687234}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.20774114, y: -0.11137724}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.4018465, y: 0.56653404}
+    oldSize: {x: 2.11, y: 2.14}
+    newSize: {x: 2.11, y: 2.14}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.118746, y: 2.966536}
+  m_EdgeRadius: 0
+--- !u!114 &6370696123360979517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975965789188687234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b227bec71e18cd549887335f43da08c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 1.5
+  sprite1: {fileID: -94722913, guid: 8ec087c3985aa411092753c272969236, type: 3}
+  sprite2: {fileID: -1030757315, guid: 8ec087c3985aa411092753c272969236, type: 3}
+  particles: {fileID: 7874960636549918518, guid: 0fe4671045e0d74fb806ea3e854515d1, type: 3}
 --- !u!1 &8110264955736052618
 GameObject:
   m_ObjectHideFlags: 0
