@@ -8548,6 +8548,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2991141701340364148, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4504581984083025075, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
       propertyPath: <CorePointPos>k__BackingField.x
       value: 0
@@ -8963,6 +8967,10 @@ PrefabInstance:
     - target: {fileID: 4504581984083025075, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
       propertyPath: PathNodes.borderPoints.Array.data[12].linkedNodes.Array.data[1].pos.y
       value: -3.781274
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059948882250357406, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
