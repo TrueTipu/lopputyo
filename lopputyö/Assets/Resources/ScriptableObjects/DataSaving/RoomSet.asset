@@ -17,6 +17,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: df698c068dc295341beb67582ad4b36c, type: 2}
   - {fileID: 11400000, guid: 1f2ce91960cb5c24993c8259f4c79d3e, type: 2}
   - {fileID: 11400000, guid: 7d0aa739d320ef040b57e6265bb3d46a, type: 2}
+  - {fileID: 11400000, guid: 841afb768b10c924cbe23667e6ff4795, type: 2}
   - {fileID: 11400000, guid: 4d8a6c5b380e5d644a14b10572e67556, type: 2}
   - {fileID: 11400000, guid: f0f0a95aa7e0d6e45898a61c6180cfbf, type: 2}
   - {fileID: 11400000, guid: 78c93854d308cc9469c166adc470274a, type: 2}
@@ -34,6 +35,7 @@ MonoBehaviour:
   - {x: 10, y: 15}
   - {x: 9, y: 13}
   - {x: 6, y: 12}
+  - {x: 6, y: 13}
   roomAdds:
   - list: []
   - list:

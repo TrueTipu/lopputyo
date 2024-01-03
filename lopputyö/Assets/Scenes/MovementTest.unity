@@ -1485,7 +1485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1697212272135305786, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
       propertyPath: superDash
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1697212272135305793, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
       propertyPath: m_Name
@@ -1538,6 +1538,10 @@ PrefabInstance:
     - target: {fileID: 1697212272135305799, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697212272684894314, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
+      propertyPath: dashingPower
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbf457113bd9a4449a6b658009dbc89e, type: 3}
