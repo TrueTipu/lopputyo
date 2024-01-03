@@ -96,7 +96,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 5
   m_Material: {fileID: 6200000, guid: 2ea3033ca2efb9440aab2194d862e63d, type: 2}
   m_Interpolate: 1
@@ -301,9 +301,9 @@ MonoBehaviour:
   dashWJ: {fileID: 8284313842513541956}
   dashL: {fileID: 8476493402296808457}
   dashingPower: 15
-  dashingTime: 0.19
+  dashingTime: 0.2
   dashingCooldown: 0.3
-  stopSpeed: 13
+  stopSpeed: 12
   dashPressTime: 0.2
   jumpPressTime: 0.2
   dashBufferTime: 0.2
