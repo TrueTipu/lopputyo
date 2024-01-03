@@ -301,9 +301,9 @@ MonoBehaviour:
   dashWJ: {fileID: 8284313842513541956}
   dashL: {fileID: 8476493402296808457}
   dashingPower: 15
-  dashingTime: 0.15
+  dashingTime: 0.19
   dashingCooldown: 0.3
-  stopSpeed: 12
+  stopSpeed: 13
   dashPressTime: 0.2
   jumpPressTime: 0.2
   dashBufferTime: 0.2

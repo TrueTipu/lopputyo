@@ -82,8 +82,8 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
         if (dashBuffer && playerStateCheck.OnWall)
         {
             StartCoroutine(DoubleDashBufferTime());
-            dashBuffer = false;
-            IsDashing = false;
+            //dashBuffer = false;
+            //IsDashing = false;
         }
     }
 
@@ -95,11 +95,12 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
         {
             pressedDash = false;
             StopCoroutine(Dash());
+            yield return null;
             StartCoroutine(Dash());
         }
         else
         {
-            StartCoroutine(dashWJ.WallJump());
+            //StartCoroutine(dashWJ.WallJump());
         }
     }
 
