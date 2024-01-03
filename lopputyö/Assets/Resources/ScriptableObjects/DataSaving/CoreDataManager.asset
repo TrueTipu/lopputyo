@@ -25,11 +25,14 @@ MonoBehaviour:
   - main: 0
     name: Core B3
     currentAbility: 0
+  - main: 0
+    name: Core B4
+    currentAbility: 0
   coreDataStorage:
   - {fileID: 11400000, guid: 7c9454f74ff37704ea199d1cc53b7a7c, type: 2}
   - {fileID: 11400000, guid: 482f4a80657847b4cbfde625ae647ca4, type: 2}
   - {fileID: 11400000, guid: 5513b86449913ab4fae0daa676a6bb53, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 2ddb310acc496f54c82127e7f38ef9c2, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
