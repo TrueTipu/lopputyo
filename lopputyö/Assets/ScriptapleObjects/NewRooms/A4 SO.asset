@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04f5eca74137114aa92b591c2645760, type: 3}
   m_Name: A4 SO
   m_EditorClassIdentifier: 
-  mapIcon: {fileID: 21300000, guid: 6ee211eaa06831c43964b5142031d7d7, type: 3}
+  mapIcon: {fileID: 280593914, guid: 29ba2b49a47f2e876bc65b9cc25b73ff, type: 3}
   roomPrefab: {fileID: 1292937630802836385, guid: 4993b96105462864084bb7074c22c8a7, type: 3}
   name: StartRoom
   possibleDirections:
@@ -76,3 +76,4 @@ MonoBehaviour:
         isOpen: 0
   isMovable: 1
   core: {fileID: 0}
+  BlockedExtraDirection: 13

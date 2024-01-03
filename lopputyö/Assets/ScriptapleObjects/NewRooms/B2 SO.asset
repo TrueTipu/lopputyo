@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04f5eca74137114aa92b591c2645760, type: 3}
   m_Name: B2 SO
   m_EditorClassIdentifier: 
-  mapIcon: {fileID: 21300000, guid: 8201719454abe9e44aa139a9d9d26a91, type: 3}
+  mapIcon: {fileID: -972268253, guid: 29ba2b49a47f2e876bc65b9cc25b73ff, type: 3}
   roomPrefab: {fileID: 5291471208568790323, guid: 4f20cb75bd0569c4a876d0125b5c253b, type: 3}
   name: DashAbility
   possibleDirections:
@@ -76,3 +76,4 @@ MonoBehaviour:
         isOpen: 0
   isMovable: 0
   core: {fileID: 0}
+  BlockedExtraDirection: 13

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04f5eca74137114aa92b591c2645760, type: 3}
   m_Name: B0 SO
   m_EditorClassIdentifier: 
-  mapIcon: {fileID: 21300000, guid: 33c179345e9e929448c8a8b0ff6d087c, type: 3}
+  mapIcon: {fileID: -1801538004, guid: 29ba2b49a47f2e876bc65b9cc25b73ff, type: 3}
   roomPrefab: {fileID: 8765460783083932813, guid: 34bb265fccee35e47bbd429c3de84ea4, type: 3}
   name: FirstCore
   possibleDirections:

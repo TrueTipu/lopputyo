@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04f5eca74137114aa92b591c2645760, type: 3}
   m_Name: C3 SO
   m_EditorClassIdentifier: 
-  mapIcon: {fileID: 21300000, guid: 1a263bf88612de748a5d0b37d5007bcf, type: 3}
+  mapIcon: {fileID: -1202985150, guid: 29ba2b49a47f2e876bc65b9cc25b73ff, type: 3}
   roomPrefab: {fileID: 5291471208568790323, guid: 60fe0bddf71f45a41a2de6ebc73be107, type: 3}
   name: DonutWayUp
   possibleDirections:
@@ -76,3 +76,4 @@ MonoBehaviour:
         isOpen: 0
   isMovable: 1
   core: {fileID: 0}
+  BlockedExtraDirection: 13

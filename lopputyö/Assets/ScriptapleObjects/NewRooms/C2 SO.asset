@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04f5eca74137114aa92b591c2645760, type: 3}
   m_Name: C2 SO
   m_EditorClassIdentifier: 
-  mapIcon: {fileID: 21300000, guid: ed1bba22ee19b894993cfb1c1d5d429d, type: 3}
+  mapIcon: {fileID: -288251404, guid: 29ba2b49a47f2e876bc65b9cc25b73ff, type: 3}
   roomPrefab: {fileID: 5291471208568790323, guid: cef16efbadd3d0346ac09aa276983134, type: 3}
   name: DashHall
   possibleDirections:
@@ -76,3 +76,4 @@ MonoBehaviour:
         isOpen: 0
   isMovable: 1
   core: {fileID: 0}
+  BlockedExtraDirection: 13

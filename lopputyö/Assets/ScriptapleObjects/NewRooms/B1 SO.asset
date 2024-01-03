@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04f5eca74137114aa92b591c2645760, type: 3}
   m_Name: B1 SO
   m_EditorClassIdentifier: 
-  mapIcon: {fileID: 21300000, guid: f7806cd9946864147a20a2e1d39b841d, type: 3}
+  mapIcon: {fileID: -972268253, guid: 29ba2b49a47f2e876bc65b9cc25b73ff, type: 3}
   roomPrefab: {fileID: 5291471208568790323, guid: dab65fd22d0936247afb49fb97b42b77, type: 3}
   name: TopCore
   possibleDirections:
@@ -76,3 +76,4 @@ MonoBehaviour:
         isOpen: 0
   isMovable: 0
   core: {fileID: 11400000, guid: 7c9454f74ff37704ea199d1cc53b7a7c, type: 2}
+  BlockedExtraDirection: 13
