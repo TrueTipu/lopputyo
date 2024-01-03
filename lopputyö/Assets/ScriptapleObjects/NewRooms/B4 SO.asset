@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: B4 SO
   m_EditorClassIdentifier: 
   mapIcon: {fileID: 21300000, guid: 1db513c3055c9bf46af83ec579339c55, type: 3}
-  roomPrefab: {fileID: 5291471208568790323, guid: 30943ead718243a418a7454f0bc1d70b, type: 3}
+  roomPrefab: {fileID: 5291471208568790323, guid: b2fbb026ffccf5e50bcdf91e695d2498, type: 3}
   name: FirstDoubleC 2/2
   possibleDirections:
     gridSize: {x: 5, y: 5}
@@ -40,7 +40,7 @@ MonoBehaviour:
       - dir: 0
         isOpen: 0
       - dir: 5
-        isOpen: 1
+        isOpen: 0
     - row:
       - dir: 1
         isOpen: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
       - dir: 0
         isOpen: 0
       - dir: 4
-        isOpen: 0
+        isOpen: 1
     - row:
       - dir: 3
         isOpen: 1
@@ -76,4 +76,4 @@ MonoBehaviour:
         isOpen: 0
   isMovable: 0
   core: {fileID: 11400000, guid: 7e677a90d356da3499303f2858cfb61b, type: 2}
-  BlockedExtraDirection: 0
+  BlockedExtraDirection: 13

@@ -64,12 +64,11 @@ MonoBehaviour:
   jumpForce: 12.9
   jumpCut: 0.236
   fallAdd: 1.15
-  groundTime: 0.2
+  groundTime: 0.15
   pressJumpTime: 0.2
   acceleration: 17.1
   deceleration: 45
   turnSpeed: 45
-  maxAirAcceleration: 17.1
   roomChangeSpeed: 350
   hangTimeRange: 1.46
   hangTimeStrength: 0.32
@@ -301,9 +300,9 @@ MonoBehaviour:
   dashWJ: {fileID: 8284313842513541956}
   dashL: {fileID: 8476493402296808457}
   dashingPower: 15
-  dashingTime: 0.2
+  dashingTime: 0.18
   dashingCooldown: 0.3
-  stopSpeed: 12
+  stopSpeed: 8
   dashPressTime: 0.2
   jumpPressTime: 0.2
   dashBufferTime: 0.2

@@ -32,7 +32,7 @@ MonoBehaviour:
         isOpen: 0
     - row:
       - dir: 2
-        isOpen: 1
+        isOpen: 0
       - dir: 0
         isOpen: 0
       - dir: 0
@@ -76,4 +76,4 @@ MonoBehaviour:
         isOpen: 0
   isMovable: 1
   core: {fileID: 0}
-  BlockedExtraDirection: 0
+  BlockedExtraDirection: 13

@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     [SerializeField, Range(0f, 100f)] float acceleration = 52f;
     [SerializeField, Range(0f, 100f)] float deceleration = 52f;
     [SerializeField, Range(0f, 100f)] float turnSpeed = 80f;
-    [SerializeField, Range(0f, 100f)] float maxAirAcceleration;
+    //[SerializeField, Range(0f, 100f)] float maxAirAcceleration;
     //[SerializeField, Range(0f, 100f)] float maxAirDeceleration;
     //[SerializeField, Range(0f, 100f)] float maxAirTurnSpeed = 80f;
     [SerializeField] float roomChangeSpeed;
@@ -266,15 +266,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
             }
             else
             {
-                if (IsGround)
-                {
-                    _maxSpeedChange = acceleration * Time.fixedDeltaTime;
+                _maxSpeedChange = acceleration * Time.fixedDeltaTime;
 
-                }
-                else
-                {
-                    _maxSpeedChange = maxAirAcceleration * Time.fixedDeltaTime;
-                }
             }
         }
         else

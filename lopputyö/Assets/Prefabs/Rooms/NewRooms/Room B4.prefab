@@ -111,6 +111,8 @@ GameObject:
   - component: {fileID: 6346408195191895640}
   - component: {fileID: 7263442720871219306}
   - component: {fileID: 1798402792363407423}
+  - component: {fileID: 5087146481932923485}
+  - component: {fileID: 3434310311215322041}
   m_Layer: 3
   m_Name: Laituri 2 (5)
   m_TagString: Untagged
@@ -126,12 +128,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280269281312321576}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.95, y: -0.51, z: 0}
+  m_LocalPosition: {x: -8.95, y: -0.50999975, z: 0}
   m_LocalScale: {x: 0.57574, y: 0.57574, z: 0.57574}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5291471208568790285}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7263442720871219306
 SpriteRenderer:
@@ -173,7 +175,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1794227632, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -196,7 +198,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.19246638, y: 0.14907563}
   m_SpriteTilingProperty:
@@ -211,6 +213,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9750674, y: 0.19990695}
   m_EdgeRadius: 0
+--- !u!251 &5087146481932923485
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280269281312321576}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &3434310311215322041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280269281312321576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 1798402792363407423}
 --- !u!1 &296402515215380372
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,7 +876,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1797379672, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5889,6 +5923,8 @@ GameObject:
   - component: {fileID: 3976095904456933128}
   - component: {fileID: 6383247344508584334}
   - component: {fileID: 785642102698341695}
+  - component: {fileID: 6388767625253870352}
+  - component: {fileID: 1718516061784250556}
   m_Layer: 3
   m_Name: Laituri 2 (8)
   m_TagString: Untagged
@@ -5951,7 +5987,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1794227632, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -5974,7 +6010,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.19246638, y: 0.14907563}
   m_SpriteTilingProperty:
@@ -5989,6 +6025,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9750674, y: 0.19990695}
   m_EdgeRadius: 0
+--- !u!251 &6388767625253870352
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269027959390498768}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &1718516061784250556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269027959390498768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 785642102698341695}
 --- !u!1 &1395083361257194498
 GameObject:
   m_ObjectHideFlags: 0
@@ -6597,6 +6665,8 @@ GameObject:
   - component: {fileID: 2402258417250757944}
   - component: {fileID: 7048002007592019404}
   - component: {fileID: 8307668759643873860}
+  - component: {fileID: 152237853464707892}
+  - component: {fileID: 8023624076555556038}
   m_Layer: 3
   m_Name: Laituri 2 (2)
   m_TagString: Untagged
@@ -6659,7 +6729,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2074851035, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -6682,7 +6752,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.14907563}
   m_SpriteTilingProperty:
@@ -6697,6 +6767,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.36, y: 0.19990695}
   m_EdgeRadius: 0
+--- !u!251 &152237853464707892
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929993066043280036}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &8023624076555556038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929993066043280036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 8307668759643873860}
 --- !u!1 &3105824427083216272
 GameObject:
   m_ObjectHideFlags: 0
@@ -6708,6 +6810,8 @@ GameObject:
   - component: {fileID: 8183739864884689206}
   - component: {fileID: 5156771676496596947}
   - component: {fileID: 9218994260418697902}
+  - component: {fileID: 1166497027158295509}
+  - component: {fileID: 2917128568573925256}
   m_Layer: 3
   m_Name: Laituri 2 (1)
   m_TagString: Untagged
@@ -6770,7 +6874,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2074851035, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6793,7 +6897,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.14907563}
   m_SpriteTilingProperty:
@@ -6808,6 +6912,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.36, y: 0.19990695}
   m_EdgeRadius: 0
+--- !u!251 &1166497027158295509
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3105824427083216272}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &2917128568573925256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3105824427083216272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 9218994260418697902}
 --- !u!1 &3189670244339089443
 GameObject:
   m_ObjectHideFlags: 0
@@ -7075,7 +7211,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1789532203, guid: 2d7e12c88895e98678ee676c27a801fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7629,6 +7765,8 @@ GameObject:
   - component: {fileID: 1453218383945888837}
   - component: {fileID: 4964982957445348505}
   - component: {fileID: 8430375354556382270}
+  - component: {fileID: 8671393147109032363}
+  - component: {fileID: 6562947106567047970}
   m_Layer: 3
   m_Name: Laituri 2 (3)
   m_TagString: Untagged
@@ -7691,7 +7829,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2074851035, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -7714,7 +7852,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.14907563}
   m_SpriteTilingProperty:
@@ -7729,6 +7867,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.36, y: 0.19990695}
   m_EdgeRadius: 0
+--- !u!251 &8671393147109032363
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798115929505948953}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &6562947106567047970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798115929505948953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 8430375354556382270}
 --- !u!1 &4833154895201515960
 GameObject:
   m_ObjectHideFlags: 0
@@ -8687,7 +8857,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1797379672, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8736,6 +8906,8 @@ GameObject:
   - component: {fileID: 2349363421691782246}
   - component: {fileID: 8799529174411890450}
   - component: {fileID: 8287639547452037456}
+  - component: {fileID: 2090298438182276296}
+  - component: {fileID: 1082233299738969578}
   m_Layer: 3
   m_Name: Laituri 2 (7)
   m_TagString: Untagged
@@ -8798,7 +8970,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1794227632, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8821,7 +8993,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.19246638, y: 0.14907563}
   m_SpriteTilingProperty:
@@ -8836,6 +9008,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9750674, y: 0.19990695}
   m_EdgeRadius: 0
+--- !u!251 &2090298438182276296
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6008334013693558655}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &1082233299738969578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6008334013693558655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 8287639547452037456}
 --- !u!1 &6225142397245583248
 GameObject:
   m_ObjectHideFlags: 0
@@ -9270,6 +9474,8 @@ GameObject:
   - component: {fileID: 2416499797869286646}
   - component: {fileID: 4468685380359664769}
   - component: {fileID: 954207668794136932}
+  - component: {fileID: 3860966948834354462}
+  - component: {fileID: 3781932372145297049}
   m_Layer: 3
   m_Name: Laituri 2 (4)
   m_TagString: Untagged
@@ -9332,7 +9538,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1794227632, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -9355,7 +9561,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.19246638, y: 0.14907563}
   m_SpriteTilingProperty:
@@ -9370,6 +9576,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9750674, y: 0.19990695}
   m_EdgeRadius: 0
+--- !u!251 &3860966948834354462
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6622218528255657779}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &3781932372145297049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6622218528255657779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 954207668794136932}
 --- !u!1 &6646184932733364847
 GameObject:
   m_ObjectHideFlags: 0
@@ -9443,7 +9681,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1797379672, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9660,6 +9898,8 @@ GameObject:
   - component: {fileID: 1943959350941544221}
   - component: {fileID: 1831031345435399661}
   - component: {fileID: 9070135827735888731}
+  - component: {fileID: 6598303802381646639}
+  - component: {fileID: 7111935759242135373}
   m_Layer: 3
   m_Name: Laituri 2 (6)
   m_TagString: Untagged
@@ -9680,7 +9920,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5291471208568790285}
-  m_RootOrder: 22
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1831031345435399661
 SpriteRenderer:
@@ -9722,7 +9962,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2074851035, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9745,7 +9985,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.14907563}
   m_SpriteTilingProperty:
@@ -9760,6 +10000,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.36, y: 0.19990695}
   m_EdgeRadius: 0
+--- !u!251 &6598303802381646639
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6999229769734576756}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &7111935759242135373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6999229769734576756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 9070135827735888731}
 --- !u!1 &7004022429036832350
 GameObject:
   m_ObjectHideFlags: 0
@@ -9771,6 +10043,8 @@ GameObject:
   - component: {fileID: 9031915864819035232}
   - component: {fileID: 4630416522444352523}
   - component: {fileID: 940338250832383621}
+  - component: {fileID: 7722209710027201240}
+  - component: {fileID: 3740588415630108807}
   m_Layer: 3
   m_Name: Laituri 2 (9)
   m_TagString: Untagged
@@ -9791,7 +10065,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5291471208568790285}
-  m_RootOrder: 19
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4630416522444352523
 SpriteRenderer:
@@ -9833,7 +10107,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1794227632, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -9856,7 +10130,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.19246638, y: 0.14907563}
   m_SpriteTilingProperty:
@@ -9871,6 +10145,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9750674, y: 0.19990695}
   m_EdgeRadius: 0
+--- !u!251 &7722209710027201240
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7004022429036832350}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &3740588415630108807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7004022429036832350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 940338250832383621}
 --- !u!1 &7015160578846859113
 GameObject:
   m_ObjectHideFlags: 0
@@ -10396,6 +10702,8 @@ GameObject:
   - component: {fileID: 5588563936057876942}
   - component: {fileID: 7116847840952465697}
   - component: {fileID: 126903098776112086}
+  - component: {fileID: 5894812647071137324}
+  - component: {fileID: 4684446095634030532}
   m_Layer: 3
   m_Name: Laituri 2
   m_TagString: Untagged
@@ -10458,7 +10766,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2074851035, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10481,7 +10789,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.14907563}
   m_SpriteTilingProperty:
@@ -10496,6 +10804,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.36, y: 0.19990695}
   m_EdgeRadius: 0
+--- !u!251 &5894812647071137324
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8523130800688328304}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &4684446095634030532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8523130800688328304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 126903098776112086}
 --- !u!1 &8910953769025236558
 GameObject:
   m_ObjectHideFlags: 0
@@ -11531,7 +11871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1649470291318837978, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4504581984083025075, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
       propertyPath: <CorePointPos>k__BackingField.x

@@ -7253,7 +7253,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7c26b239dab81291eb9d46631a9c7890, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8529,6 +8529,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5202428737737617507, guid: c0d0457f596cedb48a86aaf24f76cba5, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8742285
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202428737737617507, guid: c0d0457f596cedb48a86aaf24f76cba5, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.72578096
+      objectReference: {fileID: 0}
     - target: {fileID: 5202428737737617509, guid: c0d0457f596cedb48a86aaf24f76cba5, type: 3}
       propertyPath: m_Name
       value: Core
@@ -9029,6 +9037,10 @@ PrefabInstance:
     - target: {fileID: 155022131729980322, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
       propertyPath: m_Name
       value: Room B1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649470291318837978, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4504581984083025075, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
       propertyPath: <CorePointPos>k__BackingField.x

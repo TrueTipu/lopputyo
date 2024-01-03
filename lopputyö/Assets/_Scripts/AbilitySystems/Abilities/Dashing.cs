@@ -162,7 +162,7 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
         rb2.gravityScale = 0f;
 
         rb2.velocity = playerStateCheck.FacingRight ? new Vector2(dashingPower, 0f) : rb2.velocity = new Vector2(-1 * dashingPower, 0f);
-
+        JumpVariables = new JumpVariables(false, true, true, true);
 
         yield return new WaitForSeconds(dashingTime);
         if (IsDashing != false)

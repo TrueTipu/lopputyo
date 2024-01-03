@@ -1238,7 +1238,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1794227632, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8372,7 +8372,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 176918840, guid: fec081d118f63b267bece00546ea91d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13968,9 +13968,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 742778933976804293}
     m_Modifications:
+    - target: {fileID: 78489290584669297, guid: e20658bb4c735b653ba24d47fe81c03a, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.026338698
+      objectReference: {fileID: 0}
+    - target: {fileID: 694733554448794548, guid: e20658bb4c735b653ba24d47fe81c03a, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.026406625
+      objectReference: {fileID: 0}
     - target: {fileID: 1164661572699696690, guid: e20658bb4c735b653ba24d47fe81c03a, type: 3}
       propertyPath: m_Name
       value: Chain
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108658980820430137, guid: e20658bb4c735b653ba24d47fe81c03a, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.026406936
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605323601962054018, guid: e20658bb4c735b653ba24d47fe81c03a, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.026406508
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411750989220113290, guid: e20658bb4c735b653ba24d47fe81c03a, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.026406968
+      objectReference: {fileID: 0}
+    - target: {fileID: 4081198394721338360, guid: e20658bb4c735b653ba24d47fe81c03a, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.026406502
       objectReference: {fileID: 0}
     - target: {fileID: 4175444958848104868, guid: e20658bb4c735b653ba24d47fe81c03a, type: 3}
       propertyPath: m_RootOrder
@@ -14015,6 +14039,22 @@ PrefabInstance:
     - target: {fileID: 4175444958848104868, guid: e20658bb4c735b653ba24d47fe81c03a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -4.239
+      objectReference: {fileID: 0}
+    - target: {fileID: 5309578647582832026, guid: e20658bb4c735b653ba24d47fe81c03a, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.00000006592356
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192946892979508348, guid: e20658bb4c735b653ba24d47fe81c03a, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.026406446
+      objectReference: {fileID: 0}
+    - target: {fileID: 8457933853229809021, guid: e20658bb4c735b653ba24d47fe81c03a, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.026406482
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054105659140045654, guid: e20658bb4c735b653ba24d47fe81c03a, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.026406609
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e20658bb4c735b653ba24d47fe81c03a, type: 3}
