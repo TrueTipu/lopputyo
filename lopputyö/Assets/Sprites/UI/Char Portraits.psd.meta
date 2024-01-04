@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c1105c671cad21f659f34e3b38031b32
+guid: 357d82e3d8d021492acc535f5da86ce8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,127 +117,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Robots_Sheet_0
+      name: Beverun_Shocked
       rect:
         serializedVersion: 2
-        x: 25
-        y: 699
-        width: 126
-        height: 245
-      alignment: 9
-      pivot: {x: 0.4566608, y: 0.07898971}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 034e70624662f54209045339b76b4355
-      internalID: 1279084287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robots_Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 217
-        y: 698
-        width: 143
-        height: 240
-      alignment: 9
-      pivot: {x: 0.41514, y: 0.047465578}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a4cd2b4b61593e03b0204513e121e14
-      internalID: -2141530702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robots_Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 483
-        width: 109
-        height: 207
-      alignment: 9
-      pivot: {x: 0.4554678, y: 0.051532563}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afdacc4610a1ab0ad97ffe4bad6394cf
-      internalID: -657754792
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robots_Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 220
-        y: 484
-        width: 109
-        height: 196
-      alignment: 9
-      pivot: {x: 0.4721674, y: 0.048033156}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d7fbedfa7091fd868dc96647bcd323f
-      internalID: -559108841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Robots_Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 236
-        width: 136
-        height: 213
+        x: 7
+        y: 710
+        width: 317
+        height: 287
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 420b71563dbe06b8682677f3be58e1ac
-      internalID: 1292321234
+      spriteID: 1e38fccada7ded644bd6a4baeb42df29
+      internalID: 1622579418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Robots_Sheet_5
+      name: Beverun_Happy
       rect:
         serializedVersion: 2
-        x: 251
-        y: 238
-        width: 127
-        height: 196
+        x: 341
+        y: 713
+        width: 317
+        height: 287
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1a905216f5d2ee9eb1f30a184e1c042
-      internalID: -1356030924
+      spriteID: b8d6df246c9be22fabb47fa0e0644517
+      internalID: 168308941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beverun_Wondering
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 712
+        width: 317
+        height: 287
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9cec68d8de9b0f5890a51fe24fe2ac3
+      internalID: -258789360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camus
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 390
+        width: 284
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07cd513849f6be081be08b2cb913b49e
+      internalID: 297101882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ertras_Wondering
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 392
+        width: 340
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e968094c756ccdf1b98851d1b85a26da
+      internalID: 2030428869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dostyjov
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 381
+        width: 325
+        height: 289
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc2668de65fe1941f8ae775a71d418d1
+      internalID: 1987942353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ertras_Happy
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 29
+        width: 340
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274cfc3c2086fb85880d4824af4ca755
+      internalID: -44394790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Iachan
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 5
+        width: 334
+        height: 351
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3767b28ec0ce77b4ab3751f26bf3bcca
+      internalID: 1599340119
       vertices: []
       indices: 
       edges: []
@@ -253,12 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Robots_Sheet_4: 1292321234
-      Robots_Sheet_3: -559108841
-      Robots_Sheet_5: -1356030924
-      Robots_Sheet_1: -2141530702
-      Robots_Sheet_0: 1279084287
-      Robots_Sheet_2: -657754792
+      Beverun_Happy: 168308941
+      Iachan: 1599340119
+      Camus: 297101882
+      Ertras_Happy: -44394790
+      Dostyjov: 1987942353
+      Beverun_Wondering: -258789360
+      Beverun_Shocked: 1622579418
+      Ertras_Wondering: 2030428869
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1
