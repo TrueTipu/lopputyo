@@ -100,6 +100,7 @@ public class ItemUI : MonoBehaviour
 
         if(_index != -1)
         {
+            AudioManager.Instance.Play("Aktivoi");
             lastCore.SetAbility(abilities[_index]);
             openEditorButton.SetActive(true);
             openEditorButtonFake.SetActive(false);
@@ -107,10 +108,13 @@ public class ItemUI : MonoBehaviour
         }
         else
         {
+
+
             if (roomSet.CurrentStreamLevel >= streamData.ActiveStreamAmount)
             {
                 return;
             }
+            AudioManager.Instance.Play("Sammuta");
 
             lastCore.SetAbility(PlayerAbility.None);
             openEditorButton.SetActive(false);
@@ -121,6 +125,7 @@ public class ItemUI : MonoBehaviour
 
     public void CloseUI()
     {
+        AudioManager.Instance.Play("Valikko");
         abilitySquares.ToList().ForEach((x) => { x.SetActive(false); });
         uIData.SetItemUI(false);
         gameObject.SetActive(false);

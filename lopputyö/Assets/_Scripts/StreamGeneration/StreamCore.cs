@@ -92,6 +92,7 @@ public class StreamCore : MonoBehaviour
         {
             if (coreData.IsMainCore)
             {
+                AudioManager.Instance.Play("TilaVaihto");
                 SceneLoader.LoadLevelEditor();
                 return;
             }

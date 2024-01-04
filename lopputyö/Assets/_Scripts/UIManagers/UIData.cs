@@ -34,6 +34,7 @@ public class UIData : PlaytimeObject, IHasDelegates
     }
     public void SetupItemUI(AbilityData _abilities, CoreData _core)
     {
+        AudioManager.Instance.Play("Valikko");
         lastAbilities = _abilities;
         lastCore = _core;
         itemUIActivated?.Invoke(_abilities, _core);

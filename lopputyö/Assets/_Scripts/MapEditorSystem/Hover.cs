@@ -94,8 +94,11 @@ public class Hover : MonoBehaviour
 
         if (selectedTile == null)
         {
+
+
             if (!currentTile.HasRoom) return;
 
+            AudioManager.Instance.Play("Asetus");
             //huom, käsitellään vain tilejä, koska ainakin joskus ajattelin että tämä johtaisi siistimpään koodiin
             //muuta järkevästi jos muutat, idea on siis että roomien siirtymiä hallitaan yhdestä(1) paikasta: room manager
             //ei sekotetat gridiä tähän
@@ -109,16 +112,19 @@ public class Hover : MonoBehaviour
         {
             if (currentTile.HasRoom)
             {
+                AudioManager.Instance.PlayRandomPitch("Siirto");
                 //Debug.Log("Täynnä");
                 return;
             }
             if (!selectedTile.HasMovableRoom || selectedTile.StreamLocked)
             {
+                AudioManager.Instance.PlayRandomPitch("Siirto");
                 //et voi siirtää tätä huonetta
                 selectedTile = null;
                 return;
             }
 
+            AudioManager.Instance.Play("Asetus");
             roomManager.MoveRoom(selectedTile.TileCords, currentTile.TileCords);
             selectedTile = null;
 

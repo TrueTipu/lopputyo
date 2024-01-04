@@ -48,6 +48,15 @@ public class AudioManager : PersistentSingleton<AudioManager>
         s.source.Play();
         return s.source;
     }
+    public AudioSource PlayRandomPitch(string name)
+    {
+        Debug.Log("call");
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+
+        s.source.pitch = UnityEngine.Random.Range(0.7f, 1.4f);
+        s.source.Play();
+        return s.source;
+    }
     public void PlayRandom(string[] names)
     {
         string name = names[Mathf.FloorToInt(UnityEngine.Random.Range(0, names.Length-0.1f))];
