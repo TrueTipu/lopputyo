@@ -31,12 +31,14 @@ public class AbilityManager : MonoBehaviour
         abilityData.SubscribeAbilityAdded(ActivateAbility);
         abilityData.SubscribeAbilityRemoved(DeActivateAbility);
 
+
+
         foreach (AbilityPacket _ability in Abilities)
         {
             bool _value = abilityData.IsActive(_ability.AbilityTag);
             _ability.Boot(_value, playerStateCheck, rb2);
         }
-        
+
         List<IPlayerStateChanger> mainAbilities = Abilities.ConvertAll(a => (IPlayerStateChanger)(a.AbilityScript));
         playerStateCheck.SetAbilities(mainAbilities);
 

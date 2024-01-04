@@ -75,5 +75,5 @@ MonoBehaviour:
       - dir: 0
         isOpen: 0
   isMovable: 0
-  core: {fileID: 11400000, guid: 7e677a90d356da3499303f2858cfb61b, type: 2}
+  core: {fileID: 11400000, guid: 619183e1808231c41a8e48958824c364, type: 2}
   BlockedExtraDirection: 13

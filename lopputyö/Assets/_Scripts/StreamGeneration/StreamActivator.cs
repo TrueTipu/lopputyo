@@ -16,7 +16,7 @@ public class StreamActivator : MonoBehaviour
     {
         this.InjectGetSO();
     }
-    
+
     public void DeleteTrayList(List<List<VisitedRoom>> _list)
     {
         foreach (var _i in _list)
@@ -32,8 +32,11 @@ public class StreamActivator : MonoBehaviour
             RoomObject _room = spawnerGridData.GetTile(_visit.RoomPos).RoomObject;
             _room.PathNodes.ResetLocalData(_room.transform.position);
 
+            int _enter = (_visit.EnterPointIndexes.Count > 0) ? _visit.EnterPointIndexes[0] : 12;
+            int _exit = (_visit.ExitPointIndexes.Count > 0) ? _visit.ExitPointIndexes[0] : 12;
 
-            _room.RoomStreams.Find((x) => x.name.Equals(_visit.EnterPointIndexes[0] + " " + _visit.ExitPointIndexes[0])); //vaihda remove object component
+
+            Destroy(_room.RoomStreams.Find((x) => x.name.Equals(_enter + " " + _exit + " (StreamCreator)")).gameObject); //vaihda remove object component
         }
     }
 

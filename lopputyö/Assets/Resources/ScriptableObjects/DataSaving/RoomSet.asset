@@ -13,29 +13,29 @@ MonoBehaviour:
   m_Name: RoomSet
   m_EditorClassIdentifier: 
   rooms:
+  - {fileID: 11400000, guid: 4d8a6c5b380e5d644a14b10572e67556, type: 2}
   - {fileID: 11400000, guid: 7fd09a4c3a69aa5478de2d4600e4d3d3, type: 2}
+  - {fileID: 11400000, guid: 7d0aa739d320ef040b57e6265bb3d46a, type: 2}
   - {fileID: 11400000, guid: df698c068dc295341beb67582ad4b36c, type: 2}
   - {fileID: 11400000, guid: 1f2ce91960cb5c24993c8259f4c79d3e, type: 2}
-  - {fileID: 11400000, guid: 1f2ce91960cb5c24993c8259f4c79d3e, type: 2}
-  - {fileID: 11400000, guid: 78c93854d308cc9469c166adc470274a, type: 2}
-  - {fileID: 11400000, guid: 4d8a6c5b380e5d644a14b10572e67556, type: 2}
   - {fileID: 11400000, guid: f0f0a95aa7e0d6e45898a61c6180cfbf, type: 2}
   - {fileID: 11400000, guid: 78c93854d308cc9469c166adc470274a, type: 2}
   - {fileID: 11400000, guid: 65f18ee7987d7bc449a202bc19ab73c6, type: 2}
   - {fileID: 11400000, guid: 504127a776d1dfc4ca31686ca24e397b, type: 2}
   - {fileID: 11400000, guid: 903e122ffdb10bd4eb46d0770778df51, type: 2}
+  - {fileID: 11400000, guid: b6ceee009fa9f364ca0b83b22acf640a, type: 2}
   poses:
+  - {x: 10, y: 11}
   - {x: 11, y: 11}
+  - {x: 12, y: 11}
   - {x: 14, y: 11}
   - {x: 15, y: 11}
-  - {x: 10, y: 12}
-  - {x: 10, y: 11}
   - {x: 15, y: 10}
   - {x: 14, y: 12}
   - {x: 10, y: 15}
   - {x: 9, y: 13}
   - {x: 6, y: 12}
-  - {x: 6, y: 13}
+  - {x: 7, y: 9}
   roomAdds:
   - list: []
   - list:

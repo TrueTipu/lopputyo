@@ -751,6 +751,8 @@ GameObject:
   - component: {fileID: 7789831063044075968}
   - component: {fileID: 3506259147071890926}
   - component: {fileID: 3697671510036965054}
+  - component: {fileID: 3752721739376809620}
+  - component: {fileID: 4960336163191984853}
   m_Layer: 3
   m_Name: Laituri 3 (2)
   m_TagString: Untagged
@@ -836,7 +838,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.028297424, y: 0.05659461}
   m_SpriteTilingProperty:
@@ -851,6 +853,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7734051, y: 0.39213502}
   m_EdgeRadius: 0
+--- !u!251 &3752721739376809620
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355566135110463450}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &4960336163191984853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355566135110463450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 0}
 --- !u!1 &1456084316749565974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2461,6 +2495,8 @@ GameObject:
   - component: {fileID: 868032898936722150}
   - component: {fileID: 7593599723188678699}
   - component: {fileID: 6992340158460450934}
+  - component: {fileID: 8746607158346947856}
+  - component: {fileID: 1109035849729883833}
   m_Layer: 3
   m_Name: Laituri 3 (4)
   m_TagString: Untagged
@@ -2546,7 +2582,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.06562662, y: 0.42602962}
   m_SpriteTilingProperty:
@@ -2561,6 +2597,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.387042, y: 0.5048442}
   m_EdgeRadius: 0
+--- !u!251 &8746607158346947856
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3938883170977738414}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &1109035849729883833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3938883170977738414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 0}
 --- !u!1 &3955331123340795459
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,6 +2640,8 @@ GameObject:
   - component: {fileID: 960506003885992249}
   - component: {fileID: 718108578115635401}
   - component: {fileID: 6556315123938711385}
+  - component: {fileID: 4484050598117045672}
+  - component: {fileID: 5469073754686028687}
   m_Layer: 3
   m_Name: Laituri 3 (3)
   m_TagString: Untagged
@@ -2657,7 +2727,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.028297424, y: 0.05659461}
   m_SpriteTilingProperty:
@@ -2672,6 +2742,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7734051, y: 0.39213502}
   m_EdgeRadius: 0
+--- !u!251 &4484050598117045672
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3955331123340795459}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &5469073754686028687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3955331123340795459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 0}
 --- !u!1 &4010233656819223846
 GameObject:
   m_ObjectHideFlags: 0
@@ -9968,6 +10070,8 @@ GameObject:
   - component: {fileID: 4886534701818358060}
   - component: {fileID: 7169496996224742901}
   - component: {fileID: 1013286233022917457}
+  - component: {fileID: 2097084422277556373}
+  - component: {fileID: 4693875289862623644}
   m_Layer: 3
   m_Name: Laituri 3 (5)
   m_TagString: Untagged
@@ -10053,7 +10157,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.028297424, y: 0.05659461}
   m_SpriteTilingProperty:
@@ -10068,6 +10172,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7734051, y: 0.39213502}
   m_EdgeRadius: 0
+--- !u!251 &2097084422277556373
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7371039561545536630}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &4693875289862623644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7371039561545536630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 0}
 --- !u!1 &7606288889976754301
 GameObject:
   m_ObjectHideFlags: 0
@@ -10247,6 +10383,8 @@ GameObject:
   - component: {fileID: 5193087486484177843}
   - component: {fileID: 1702668949254604010}
   - component: {fileID: 2760997755101020246}
+  - component: {fileID: 866766453695824268}
+  - component: {fileID: 750845309739773101}
   m_Layer: 3
   m_Name: Laituri 3 (1)
   m_TagString: Untagged
@@ -10332,7 +10470,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.1565696, y: 0.20931105}
   m_SpriteTilingProperty:
@@ -10347,6 +10485,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1431391, y: 0.37605944}
   m_EdgeRadius: 0
+--- !u!251 &866766453695824268
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7682939328522017375}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &750845309739773101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7682939328522017375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 0}
 --- !u!1 &7700321908496260887
 GameObject:
   m_ObjectHideFlags: 0
@@ -10442,6 +10612,8 @@ GameObject:
   - component: {fileID: 5677273674775028158}
   - component: {fileID: 1242695283621610368}
   - component: {fileID: 1715901994828914903}
+  - component: {fileID: 1030950765421568220}
+  - component: {fileID: 1432988963892809501}
   m_Layer: 3
   m_Name: Laituri 3
   m_TagString: Untagged
@@ -10527,7 +10699,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.028297424, y: 0.12527825}
   m_SpriteTilingProperty:
@@ -10542,6 +10714,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7734051, y: 0.25476775}
   m_EdgeRadius: 0
+--- !u!251 &1030950765421568220
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7796605820460199806}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &1432988963892809501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7796605820460199806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699bf55c733885f40be751363bf8792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 0}
 --- !u!1 &8026838442797785233
 GameObject:
   m_ObjectHideFlags: 0
@@ -11279,6 +11483,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4348342161812833979, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4504581984083025075, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
       propertyPath: PathNodes.middlePoints.Array.size
       value: 8
@@ -11786,6 +11994,14 @@ PrefabInstance:
     - target: {fileID: 4504581984083025075, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
       propertyPath: PathNodes.borderPoints.Array.data[11].linkedNodes.Array.data[0].pos.y
       value: -4.623304
+      objectReference: {fileID: 0}
+    - target: {fileID: 7850110981223562824, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8190456533755263640, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10eb7bfc36b03a4f925ad1605d1f917, type: 3}

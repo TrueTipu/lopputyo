@@ -23,6 +23,7 @@ public class RoomSet : PlaytimeObject
 
     public List<Room> GetNextRooms()
     {
+        if (CurrentStreamLevel != 1) return new List<Room>();
         return RoomAdds[CurrentStreamLevel].List;
     }
 

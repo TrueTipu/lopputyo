@@ -15,6 +15,8 @@ public class ItemUI : MonoBehaviour
     [GetSO] UIData uIData;
     [GetSO] RoomSet roomSet; //tämäkin vain sen yhden intin takia
     [GetSO] ActiveStreamsData streamData; //tämäkin vain yhden variablen takia
+    [GetSO] PlayerData playerData; //tämäkin vain yhden variablen takia
+
 
     List<PlayerAbility> abilities;
 
@@ -41,6 +43,13 @@ public class ItemUI : MonoBehaviour
         };
         abilityData.SubscribeAbilityAdded(abilityCallback);
         abilityData.SubscribeAbilityRemoved(abilityCallback);
+
+        if(lastCore.RoomPos != playerData.TeleportRoom)
+        {
+            abilitySquares.ToList().ForEach((x) => { x.SetActive(false); });
+            uIData.SetItemUI(false);
+            gameObject.SetActive(false);
+        }
     }
 
     private void Update()

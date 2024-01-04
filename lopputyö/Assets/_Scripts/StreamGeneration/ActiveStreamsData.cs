@@ -103,7 +103,7 @@ public class ActiveStreamsData : PlaytimeObject
         if (ActiveStreamKeys.Count > NextLevelUp)
         {
             roomSet.IncreaseStreamLevel();
-            NextLevelUp++;
+            NextLevelUp = 3;
         }
     }
 

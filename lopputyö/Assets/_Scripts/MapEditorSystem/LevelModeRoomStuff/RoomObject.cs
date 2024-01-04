@@ -96,7 +96,7 @@ public class RoomObject : MonoBehaviour
     {
         foreach(GameObject _object in blockObjectDict.Values)
         {
-            _object.SetActive(false);
+            _object?.SetActive(false);
         }
     }
 

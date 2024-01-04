@@ -20,6 +20,9 @@ public class StreamCore : MonoBehaviour
     [GetSO] ActiveStreamsData activeStreamsData;
     [GetSO] RoomVisitedData roomVisitData;
 
+    [GetSO] PlayerData playerData;
+    [GetSO] RoomSpawnerGridData gridData;
+
     StreamActivator streamActivator;
 
     private void Start()
@@ -27,7 +30,14 @@ public class StreamCore : MonoBehaviour
         this.InjectGetSO();
         streamActivator = GetComponent<StreamActivator>();
         coreData.SubscribeSetAbility((_newAbility, _oldAbility) => { CheckStreamState(_newAbility); }); //HMMM
-
+        playerData.SubscribeTeleport((p) =>
+        {
+            if(playerData.TeleportRoom == coreData.RoomPos)
+            {
+                activeStreamsData.SetLastCore(coreData);
+            }
+        }
+        );
 
         List<List<VisitedRoom>> _streamData;
         if(activeStreamsData.GetStreamsFromCore1(coreData, out _streamData))
@@ -43,8 +53,10 @@ public class StreamCore : MonoBehaviour
     void DeActivateStream()
     {
         activeStreamsData.PopStream(coreData, out List<List<VisitedRoom>> _deletableLists);
-        streamActivator.DeleteTrayList(_deletableLists);
-        activeStreamsData.SetLastCore(null); //HUOM, vaihda edellisen asettamiseksi
+        //streamActivator.DeleteTrayList(_deletableLists);
+        _deletableLists.ForEach((x) => roomVisitData.SetVisitedRooms(x));
+        activeStreamsData.SetLastCore(activeStreamsData.DefaultCore);
+        SceneLoader.ChangeScene(0);
     }
 
     void CheckStreamState(PlayerAbility _ability) //deaktivatellkin oma action ehkä joskus
@@ -54,7 +66,8 @@ public class StreamCore : MonoBehaviour
             DeActivateStream();
             return;
         }
-        if (activeStreamsData.LastCore == coreData)
+        List<List<VisitedRoom>> _x;
+        if (activeStreamsData.LastCore == coreData || activeStreamsData.GetStreamsFromCore1(coreData, out _x))
         {
             return;
         }

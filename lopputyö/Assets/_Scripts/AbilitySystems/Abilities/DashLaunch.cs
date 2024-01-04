@@ -27,7 +27,11 @@ public class DashLaunch : MonoBehaviour, IPlayerStateChanger, IA_DashBoostCall, 
     {
         playerStateCheck = _playerState;
         rb2 = _rb2;
-        playerStateCheck.SetAbilities(this as IPlayerStateChanger);
+        playerStateCheck?.SetAbilities(this as IPlayerStateChanger);
+    }
+    private void Start()
+    {
+        playerStateCheck?.SetAbilities(this as IPlayerStateChanger);
     }
 
     public void DashBoostActivation()

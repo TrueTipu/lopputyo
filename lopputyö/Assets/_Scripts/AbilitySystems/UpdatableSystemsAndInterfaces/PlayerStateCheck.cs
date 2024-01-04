@@ -11,7 +11,7 @@ using System;
 /// </summary>
 [CreateAssetMenu(fileName = "PlayerStateCheck", menuName = "ScriptableObjects/PlayerStateCheck")]
 [System.Serializable]
-public class PlayerStateCheck : ScriptableObject
+public class PlayerStateCheck : ScriptableObject, IHasDelegates
 {
 
 
@@ -42,7 +42,6 @@ public class PlayerStateCheck : ScriptableObject
 
     public void SetAbilities(List<IPlayerStateChanger> _abilities)
     {
-        DashBoostActivation = delegate { };
         SetAbilitiesFinal(_abilities);
     }
 
@@ -97,4 +96,11 @@ public class PlayerStateCheck : ScriptableObject
                 DashBoostActivation += ((IA_DashBoostCall)x).DashBoostActivation; } );
 
     }
+
+    void IHasDelegates.AutoUnsubscribeDelegates()
+    {
+        DashBoostActivation = delegate { };
+        Helpers.AddAutounsubDelegate(() => DashBoostActivation = null);
+    }
+
 }

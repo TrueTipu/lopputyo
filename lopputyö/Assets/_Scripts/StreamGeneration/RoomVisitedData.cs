@@ -82,6 +82,11 @@ public class RoomVisitedData : PlaytimeObject
 
     }
 
+    public void SetVisitedRooms(List<VisitedRoom> _list)
+    {
+        RoomsVisited = _list;
+    }
+
     public void ResetVisits(Vector2Int _room)
     {
         OldVisited = new List<VisitedRoom>(RoomsVisited);
