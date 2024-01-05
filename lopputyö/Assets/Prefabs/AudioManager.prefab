@@ -175,6 +175,38 @@ MonoBehaviour:
     mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
     loop: 0
     source: {fileID: 0}
+  - name: Charge
+    clip: {fileID: 8300000, guid: 803b14f9e1d8c334ca1f68ad803b868f, type: 3}
+    volume: 0.6
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Launch
+    clip: {fileID: 8300000, guid: 999fec547b6c9dc42bed2b02fbee82f8, type: 3}
+    volume: 0.83
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Stop
+    clip: {fileID: 8300000, guid: bf7a1ff1d04e04648b3d2f5fa5f34254, type: 3}
+    volume: 0.637
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Kuolema
+    clip: {fileID: 8300000, guid: 999fec547b6c9dc42bed2b02fbee82f8, type: 3}
+    volume: 1
+    pitch: 1.5
+    stereo: 0
+    mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    loop: 0
+    source: {fileID: 0}
   musicPlayer: {fileID: 3896334908221246884}
 --- !u!114 &3896334908221246884
 MonoBehaviour:

@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   superSpeed: 6
-  chargeTime: 0.3
+  chargeTime: 2.5
 --- !u!1 &7387217546043750482
 GameObject:
   m_ObjectHideFlags: 0

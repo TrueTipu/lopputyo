@@ -106,7 +106,7 @@ public class StreamCore : MonoBehaviour
             if (coreData.IsMainCore)
             {
                 AudioManager.Instance.Play("TilaVaihto");
-                Helpers.pointOneSDelay(SceneLoader.LoadLevelEditor); ;
+                StartCoroutine(Helpers.PointOneSDelay(SceneLoader.LoadLevelEditor)); ;
                 return;
             }
 

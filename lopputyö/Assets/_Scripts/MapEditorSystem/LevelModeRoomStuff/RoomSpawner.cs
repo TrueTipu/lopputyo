@@ -52,7 +52,7 @@ public class RoomSpawner : MonoBehaviour, ITileNode
         {
             roomActivated += (_pos) => { if (_room.Core.Powered) roomVisitedData.ResetVisits(TileCords); };
 
-            _room.Core.SubscribeSetAbility((_p1, _p2) => Helpers.pointOneSDelay(() => SetBlocks(_room)));
+            _room.Core.SubscribeSetAbility((_p1, _p2) => StartCoroutine(Helpers.PointOneSDelay(() => SetBlocks(_room))));
         }
 
         roomActivated += (_pos) => SetSpawnPoint(_pos, RoomObject);

@@ -56,7 +56,7 @@ public class Hover : MonoBehaviour
             if(streamsData.GetLink(grid.GetTile(playerData.TeleportRoom).Core, _core))
             {
                 playerData.ChangeTeleportLocation(selectedTile.TileCords);
-                Helpers.pointO_OneSDelay(SceneLoader.LoadLevel);
+                StartCoroutine(Helpers.PointO_OneSDelay(SceneLoader.LoadLevel));
 
                 selectedTile = null;
                 selectedLogo.SetActive(false);

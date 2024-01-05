@@ -74,12 +74,25 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
         if (Keys.DashKeys())
         {
             chargeTimer += Time.deltaTime;
+            if (!isCharged)
+            {
+                var _audio = AudioManager.Instance.PlayOnLoop("Charge");
+                if (IsDashing)
+                {
+                    _audio.volume = 0;
+                }
+                else
+                {
+                    _audio.volume = 1;
+                }
+            }
         }
         else
         {
             chargeTimer = 0;
             isCharged = false;
             IsCharging = false;
+            AudioManager.Instance.Stop("Charge");
         }
 
         if(chargeTimer > chargeTime)
@@ -165,6 +178,8 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
 
     IEnumerator LaunchSuper(Vector2 _dir)
     {
+        AudioManager.Instance.Play("Launch");
+
         IsCharging = false;
         chargeTimer = 0;
         IsSupering = true;
@@ -179,7 +194,7 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
             yield return null;
         }
         outsideBoolToStopSuper = false;
-
+        AudioManager.Instance.Play("Stop");
         IsSupering = false;
         rb2.gravityScale = playerStateCheck.NormalGravity;
     }

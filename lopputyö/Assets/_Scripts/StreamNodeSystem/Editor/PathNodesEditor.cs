@@ -182,6 +182,6 @@ public class PathNodesEditor : Editor
             pathNodeHandler.CreateNodes();
         }
         PathNodes.ResetLocalLinkDatas();
-        Undo.undoRedoPerformed = () => Helpers.pointO_OneSDelay(PathNodes.ResetLocalLinkDatas);
+        Undo.undoRedoPerformed = () => Helpers.PointO_OneSDelay(PathNodes.ResetLocalLinkDatas);
     }
 }

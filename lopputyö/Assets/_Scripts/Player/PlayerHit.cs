@@ -7,6 +7,7 @@ public class PlayerHit : MonoBehaviour
     private void Start()
     {
         this.InjectGetSO();
+        playerData.SubscribeRespawn(() => AudioManager.Instance.Play("Kuolema"));
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
