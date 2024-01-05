@@ -30,6 +30,7 @@ public class DoubleJump : MonoBehaviour, IAbility_Main, IA_JumpVariables
         {
             JumpVariables = new JumpVariables(true, false, false, false);
 
+            AudioManager.Instance.Play("Jump");
             rb2.velocity = new Vector2(rb2.velocity.x, Vector2.up.y * jumpForce);
             rb2.gravityScale = playerStateCheck.NormalGravity;
             hasDoubleJump = false;

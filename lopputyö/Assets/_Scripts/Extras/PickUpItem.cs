@@ -20,6 +20,7 @@ public class PickUpItem : MonoBehaviour
 
             //cool effekts här
             abilityData.AddActiveAbilities(ability);
+            AudioManager.Instance.Play("Ability");
 
             Destroy(gameObject);
         }

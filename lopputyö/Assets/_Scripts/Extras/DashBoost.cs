@@ -12,6 +12,7 @@ public class DashBoost : MonoBehaviour
     [SerializeField] Sprite sprite1;
     [SerializeField] Sprite sprite2;
     [SerializeField] GameObject particles;
+    [SerializeField] GameObject particles2;
 
     private void Start()
     {
@@ -24,9 +25,11 @@ public class DashBoost : MonoBehaviour
         active = false;
         spriteRenderer.sprite = sprite2;
         Instantiate(particles, transform);
+        AudioManager.Instance.Play("PalloKala");
 
         yield return new WaitForSeconds(time);
 
+        Instantiate(particles2, transform);
         spriteRenderer.sprite = sprite1;
         active = true;
     }

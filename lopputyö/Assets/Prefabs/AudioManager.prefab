@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3896334908221246887}
   - component: {fileID: 3896334908221246885}
   - component: {fileID: 3896334908221246884}
+  - component: {fileID: 2305030958244280955}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -88,7 +89,87 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Valikko
     clip: {fileID: 8300000, guid: a4ec163ef01dfe2479f7c97a2fd866d8, type: 3}
+    volume: 0.5
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Wind
+    clip: {fileID: 8300000, guid: 2b8d35577e1ce8f4ebec6972928fe71e, type: 3}
+    volume: 0.2
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    loop: 1
+    source: {fileID: 0}
+  - name: Ability
+    clip: {fileID: 8300000, guid: a0e6ac7ddb091474c8ab6d0946f911a4, type: 3}
+    volume: 0.5
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Spiders
+    clip: {fileID: 8300000, guid: d20402cded397594ba23ab2d79211346, type: 3}
+    volume: 0
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    loop: 1
+    source: {fileID: 0}
+  - name: Dash
+    clip: {fileID: 8300000, guid: a3cc2f0024fb45748b3134879aaa9fb5, type: 3}
+    volume: 0.5
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 6056ac68c2b056c41bead16c4334bcb1, type: 3}
     volume: 1
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: PalloKala
+    clip: {fileID: 8300000, guid: bf7a1ff1d04e04648b3d2f5fa5f34254, type: 3}
+    volume: 0.65
+    pitch: 2
+    stereo: 0
+    mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Enkeli1
+    clip: {fileID: 8300000, guid: 44c53f8e8a4c0d0408a94509686471d5, type: 3}
+    volume: 0.3
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Enkeli2
+    clip: {fileID: 8300000, guid: f2a9c06a02c92b8479b42b5f79dafa46, type: 3}
+    volume: 0.3
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Enkeli3
+    clip: {fileID: 8300000, guid: 350837458575c68439f5776e6218ad83, type: 3}
+    volume: 0.3
+    pitch: 1
+    stereo: 0
+    mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    loop: 0
+    source: {fileID: 0}
+  - name: Enkeli4
+    clip: {fileID: 8300000, guid: cee7e96150c277d489d892cac19ca8c7, type: 3}
+    volume: 0.3
     pitch: 1
     stereo: 0
     mixer: {fileID: -144428071001835911, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
@@ -107,3 +188,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5e98234873bbd4dad622abbe3838e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2305030958244280955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3896334908221246886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d257982c0598e47bbf82ec6fc0f773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1

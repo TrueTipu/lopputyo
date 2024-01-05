@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     [SerializeField] PlayerStateCheck playerStateCheck;
     public PlayerStateCheck GetState => playerStateCheck;
     [GetSO] PlayerData playerData;
+    [GetSO] ActiveStreamsData streamData;
     [GetSO] RoomSpawnerGridData gridData;
 
     [Header("Animation")]
@@ -160,10 +161,24 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     {
         OnCeiling = Physics2D.OverlapBox((Vector2)transform.position - ceilCheckPos, ceilCheckArea, 1, wallLayer);
     }
+    void PlaySounds()
+    {
+        bool _roomStream = streamData.HasRoomStream(gridData.GetTile(transform.position).TileCords);
+        if(_roomStream)
+        {
+            AudioManager.Instance.PlayOnLoop("Wind");
+        }
+        else
+        {
+            AudioManager.Instance.Stop("Wind");
+        }
+    }
 
     private void Update()
     {
         dir = Input.GetAxisRaw("Horizontal");
+
+        PlaySounds();
 
         if (dir != 0){
             isHovering = true;
@@ -285,6 +300,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
     private void Jump()
     {
+        AudioManager.Instance.Play("Jump");
         rb2.gravityScale = playerStateCheck.NormalGravity;
         JumpVariables = new JumpVariables(true, false, false, false);
 

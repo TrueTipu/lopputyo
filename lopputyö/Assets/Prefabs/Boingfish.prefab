@@ -1520,10 +1520,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b227bec71e18cd549887335f43da08c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 1.5
+  time: 2.5
   sprite1: {fileID: -94722913, guid: 8ec087c3985aa411092753c272969236, type: 3}
   sprite2: {fileID: -1030757315, guid: 8ec087c3985aa411092753c272969236, type: 3}
-  particles: {fileID: 7874960636549918518, guid: 0fe4671045e0d74fb806ea3e854515d1, type: 3}
+  particles: {fileID: 7434190545789518219, guid: 2b78152d9bc5e6b6aa19438a2052a6cc, type: 3}
+  particles2: {fileID: 9008619932481821013, guid: b874009bfb3f334bf81da3cc656ec3ad, type: 3}
 --- !u!1 &8110264955736052618
 GameObject:
   m_ObjectHideFlags: 0

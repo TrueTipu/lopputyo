@@ -67,7 +67,7 @@ public class AudioManager : PersistentSingleton<AudioManager>
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
 
-        if (s.source.isPlaying) return null;
+        if (s.source.isPlaying) return s.source;
         s.source.Play();
         return s.source;
     }

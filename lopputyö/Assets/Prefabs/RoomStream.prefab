@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshSpacing: 0.05
   particleSpacing: 1
-  particlePrefab: {fileID: 3167076967437474699, guid: 6cdaa5bf9d306e04097d90ae8f5bd27f, type: 3}
-  width: 0.45
+  particlePrefab: {fileID: 4572142303659728211, guid: e3ba60e8bcbd79292b6014375ae7b169, type: 3}
+  width: 0.75
   tiling: 18.32
-  streamMoveSpeed: 1
+  streamMoveSpeed: 0.53

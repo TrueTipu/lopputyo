@@ -37,6 +37,11 @@ public class ActiveStreamsData : PlaytimeObject
 
     public int ActiveStreamAmount => ActiveStreamKeys.Count;
 
+    public bool HasRoomStream(Vector2Int _pos)
+    {
+        return ActiveStreamValues.Exists((x) => x.List.Exists((y) => y.RoomPos == _pos));
+    }
+
     [GetSO] RoomSet roomSet; //VAIHDA MYÖHEMMIN, vain koska next room
     [GetSO] CoreDataManager coreDataManager;
 

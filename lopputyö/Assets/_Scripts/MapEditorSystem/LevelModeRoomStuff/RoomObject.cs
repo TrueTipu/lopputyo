@@ -96,7 +96,14 @@ public class RoomObject : MonoBehaviour
     {
         foreach(GameObject _object in blockObjectDict.Values)
         {
-            _object?.SetActive(false);
+            try
+            {
+                _object.SetActive(false);
+            }
+            catch
+            {
+
+            }
         }
     }
 
