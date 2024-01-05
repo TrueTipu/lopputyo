@@ -25,11 +25,15 @@ public class StreamCore : MonoBehaviour
 
     StreamActivator streamActivator;
 
+
+
     private void Start()
     {
         this.InjectGetSO();
         streamActivator = GetComponent<StreamActivator>();
         coreData.SubscribeSetAbility((_newAbility, _oldAbility) => { CheckStreamState(_newAbility); }); //HMMM
+
+
         playerData.SubscribeTeleport((p) =>
         {
             if(playerData.TeleportRoom == coreData.RoomPos)

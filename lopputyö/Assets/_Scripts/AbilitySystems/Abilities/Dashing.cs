@@ -169,6 +169,7 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
         yield return new WaitForSeconds(dashingTime);
         if (IsDashing != false)
         {
+            if (playerStateCheck.IsSupering) yield break;
             rb2.gravityScale = playerStateCheck.NormalGravity;
             IsDashing = false;
             JumpVariables = new JumpVariables(false, true, true, true);

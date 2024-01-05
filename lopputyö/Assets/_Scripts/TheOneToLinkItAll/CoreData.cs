@@ -22,11 +22,16 @@ public class CoreData : PlaytimeObject, IHasDelegates
     [GetSO] AbilityData abilityData;
     [GetSO] CoreDataManager dataManager;
 
-
+    [SerializeField] bool lastUse = false; //loppua varten
 
     protected override void OnEnable()
     {
         base.OnEnable();
+
+        if (lastUse)
+        {
+            
+        }
     }
 
     void TryGetData()

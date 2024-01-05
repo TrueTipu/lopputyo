@@ -12,11 +12,12 @@ public class CameraMovement : MonoBehaviour
         target = _target;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if(transform.position != target.position)
+        if(Mathf.Round(Vector2.Distance(transform.position, target.position)*100) != 0)
         {
-            transform.position = Vector3.Lerp(transform.position, target.position, speed);
+            var _a = Vector2.MoveTowards(transform.position, target.position, Time.deltaTime*speed* Vector2.Distance(transform.position, target.position));
+            transform.position = new Vector3(_a.x, _a.y, -10);
         }
     }
 }

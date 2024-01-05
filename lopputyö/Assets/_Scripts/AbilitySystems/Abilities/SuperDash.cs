@@ -184,6 +184,7 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
         chargeTimer = 0;
         IsSupering = true;
         FacingRight = _dir.x == 1;
+        outsideBoolToStopSuper = false;
 
         rb2.gravityScale = 0;
         rb2.velocity = _dir * superSpeed;
@@ -191,6 +192,7 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
 
         while (!playerStateCheck.OnWall && !playerStateCheck.OnCeiling && !outsideBoolToStopSuper)
         {
+            rb2.gravityScale = 0;
             yield return null;
         }
         outsideBoolToStopSuper = false;

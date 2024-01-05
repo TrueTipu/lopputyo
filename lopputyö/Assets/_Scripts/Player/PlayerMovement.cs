@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     public Action<bool> SetOnGround { get; set; } = (x) => { };
     public Action<bool> SetOnAir { get; set; } = (x) => { };
 
-
+    
 
     JumpVariables JumpVariables
     {
@@ -163,15 +163,26 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     }
     void PlaySounds()
     {
-        bool _roomStream = streamData.HasRoomStream(gridData.GetTile(transform.position).TileCords);
-        if(_roomStream)
+        try
         {
-            AudioManager.Instance.PlayOnLoop("Wind");
+            bool _roomStream = streamData.HasRoomStream(gridData.GetTile(transform.position).TileCords);
+
+            if (_roomStream)
+            {
+                AudioManager.Instance.PlayOnLoop("Wind");
+            }
+            else
+            {
+                AudioManager.Instance.Stop("Wind");
+            }
         }
-        else
+        catch
         {
-            AudioManager.Instance.Stop("Wind");
+
+            
         }
+
+
     }
 
     private void Update()
@@ -313,6 +324,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
     private void MultiplyFall() //vapaaehtoinen koodi putoamisnopeuden kiihdytt�miseen
     {
+        if (playerStateCheck.IsSupering) return;
+
         if (playerStateCheck.OnGround)
         {
             rb2.gravityScale = playerStateCheck.NormalGravity;           
@@ -343,8 +356,11 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
             Physics2D.Raycast(new Vector3(transform.position.x - colliderOffset.x, transform.position.y + colliderOffset.y), Vector2.down, groundLength, groundLayer)) && 
             rb2.velocity.y <= 0)
         {
+            if (playerStateCheck.IsSupering) return;
+
             groundTimer = groundTime;
             IsGround = true;
+                    rb2.gravityScale = 0;
             JumpVariables = new JumpVariables(false, true, true, true);
             rb2.gravityScale = playerStateCheck.NormalGravity;
         }
