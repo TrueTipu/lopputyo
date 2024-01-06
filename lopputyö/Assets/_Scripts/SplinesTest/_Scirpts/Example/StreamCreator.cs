@@ -24,6 +24,8 @@ public class StreamCreator : MonoBehaviour
     [SerializeField] float streamMoveSpeed = 1;
     float streamMove;
 
+    [SerializeField] bool spawnParticles = false;
+
     Material mat;
 
     private void Start()
@@ -46,6 +48,11 @@ public class StreamCreator : MonoBehaviour
         //asetetaan tiling consistentiksi
         int _textureRepeat = Mathf.RoundToInt(tiling * _points.Length * meshSpacing * 0.05f);
         this.GetComponent<MeshRenderer>().sharedMaterial.mainTextureScale = new Vector2(1, _textureRepeat);
+
+        if (spawnParticles)
+        {
+            UpdateParticles(_path);
+        }
     }
     public void UpdateParticles(Path _path)
     {
@@ -63,7 +70,7 @@ public class StreamCreator : MonoBehaviour
 
         for (int i = 0; i < _points.Length; i += 1)
         {
-            particles.Add(Instantiate(particlePrefab, _points[i], Quaternion.LookRotation(RoadMeshCreator.CalculateForwardVector(i, _points, 3)), transform));
+            particles.Add(Instantiate(particlePrefab, _points[i] + (Vector2)transform.position, Quaternion.LookRotation(RoadMeshCreator.CalculateForwardVector(i, _points, 3)), transform));
         }
     }
 }

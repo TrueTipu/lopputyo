@@ -102,3 +102,4 @@ MonoBehaviour:
   width: 0.75
   tiling: 18.32
   streamMoveSpeed: 0.53
+  spawnParticles: 1
