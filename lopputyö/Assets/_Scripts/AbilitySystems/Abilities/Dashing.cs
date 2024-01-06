@@ -16,7 +16,7 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
     [SerializeField] DashWJ dashWJ;
     [SerializeField] DashLaunch dashL;
 
-
+    [SerializeField] GameObject eff;
 
     bool IsDashing {
         get { return playerStateCheck.IsDashing; }
@@ -72,6 +72,7 @@ public class Dashing : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDash
         DashCheck();
         if (pressedDash && dashReady == true &&  !playerStateCheck.IsCharging && !playerStateCheck.IsSupering)
         {
+            Instantiate(eff, transform.position, Quaternion.identity);
             pressedDash = false;
             StartCoroutine(Dash());
         }

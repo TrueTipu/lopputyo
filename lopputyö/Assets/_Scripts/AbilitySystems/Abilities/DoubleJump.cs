@@ -7,6 +7,8 @@ public class DoubleJump : MonoBehaviour, IAbility_Main, IA_JumpVariables
     PlayerStateCheck playerStateCheck;
     Rigidbody2D rb2;
 
+    [SerializeField] GameObject eff;
+
     bool hasDoubleJump;
 
     [SerializeField] float jumpForce;
@@ -29,7 +31,7 @@ public class DoubleJump : MonoBehaviour, IAbility_Main, IA_JumpVariables
         if(playerStateCheck.OnAir && !JumpVariables.IsJumping && hasDoubleJump && Keys.JumpKeysDown())
         {
             JumpVariables = new JumpVariables(true, false, false, false);
-
+            Instantiate(eff, transform.position, Quaternion.identity);
             AudioManager.Instance.Play("Jump");
             rb2.velocity = new Vector2(rb2.velocity.x, Vector2.up.y * jumpForce);
             rb2.gravityScale = playerStateCheck.NormalGravity;

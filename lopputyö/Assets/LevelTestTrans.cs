@@ -17,7 +17,6 @@ public class LevelTestTrans : MonoBehaviour
     {
         if (!started && SceneManager.GetActiveScene().name == "LevelTest"){
             started = true;
-            Debug.Log("test");
             anim.SetTrigger("Start");
             Destroy(this.gameObject, 2f);
         }        

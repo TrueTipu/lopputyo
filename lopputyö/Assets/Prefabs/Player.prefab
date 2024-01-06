@@ -299,6 +299,7 @@ MonoBehaviour:
   doubleDashBufferTime: 0.05
   dashWJ: {fileID: 8284313842513541956}
   dashL: {fileID: 8476493402296808457}
+  eff: {fileID: 574551873935694459, guid: e8d6e66bc515272fa92b67a25b6cac9b, type: 3}
   dashingPower: 15
   dashingTime: 0.18
   dashingCooldown: 0.3
@@ -377,6 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80aa4cbf29e8b614a80db5413678f9ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eff: {fileID: 574551873935694459, guid: e8d6e66bc515272fa92b67a25b6cac9b, type: 3}
   jumpForce: 14.5
 --- !u!1 &4419306325542749488
 GameObject:
@@ -506,6 +508,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27fdfffb426299141b6027b6f11120e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eff: {fileID: 7106512400582588430, guid: 4c8fe30581f659e01adafbdf9966eb87, type: 3}
+  eff2: {fileID: 5023401411029021455, guid: 848e7593f7efd1e40b1ff4ec4a5c7823, type: 3}
   superSpeed: 30
   chargeTime: 2.5
 --- !u!1 &7387217546043750482

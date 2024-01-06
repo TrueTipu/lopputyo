@@ -7,7 +7,9 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
     PlayerStateCheck playerStateCheck;
     Rigidbody2D rb2;
    
-
+    [SerializeField] GameObject eff;
+    [SerializeField] GameObject eff2;
+ 
     [SerializeField] float superSpeed;
 
     JumpVariables JumpVariables
@@ -119,7 +121,7 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
     void HoldCharge()
     {
         IsCharging = true;
-
+        Instantiate(eff2, transform.position, Quaternion.identity);
         if (Keys.DashKeysUp())
         {
             switch (Keys.GetInputDirection())
@@ -189,9 +191,9 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
         rb2.gravityScale = 0;
         rb2.velocity = _dir * superSpeed;
 
-
         while (!playerStateCheck.OnWall && !playerStateCheck.OnCeiling && !outsideBoolToStopSuper)
         {
+            Instantiate(eff, transform.position, Quaternion.identity);
             rb2.gravityScale = 0;
             yield return null;
         }

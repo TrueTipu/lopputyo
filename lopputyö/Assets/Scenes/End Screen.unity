@@ -1570,6 +1570,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108027007}
   m_CullTransparentMesh: 1
+--- !u!1 &1140432116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1140432118}
+  - component: {fileID: 1140432117}
+  m_Layer: 0
+  m_Name: CollectibleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1140432117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140432116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268502a30264b7adf95d3c8e8acf23fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1140432118
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140432116}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.1020527, y: -3.2422585, z: 0.18629332}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1219020154
 GameObject:
   m_ObjectHideFlags: 0
@@ -2884,6 +2928,7 @@ GameObject:
   - component: {fileID: 1891341932}
   - component: {fileID: 1891341934}
   - component: {fileID: 1891341933}
+  - component: {fileID: 1891341935}
   m_Layer: 5
   m_Name: Stardust amount'
   m_TagString: Untagged
@@ -2931,7 +2976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stardust found: 0'
+  m_text: UwU
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 452a94ffb7779412484c6a96d9fff35c, type: 2}
   m_sharedMaterial: {fileID: -1649131924782420107, guid: 452a94ffb7779412484c6a96d9fff35c, type: 2}
@@ -3008,6 +3053,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891341931}
   m_CullTransparentMesh: 1
+--- !u!114 &1891341935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891341931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16749f66a34452a19b80b2010638b3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1891341933}
 --- !u!1 &1907746141
 GameObject:
   m_ObjectHideFlags: 0
