@@ -25,7 +25,7 @@ public class StreamCore : MonoBehaviour
 
     StreamActivator streamActivator;
 
-
+    [SerializeField] GameObject portal;
 
     private void Start()
     {
@@ -52,7 +52,7 @@ public class StreamCore : MonoBehaviour
             }
         }
     }
-
+    
 
     void DeActivateStream()
     {
@@ -116,6 +116,11 @@ public class StreamCore : MonoBehaviour
 
             uIData.SetupItemUI(abilityData, coreData);
 
+        }
+
+        if (coreData.LastUsed)
+        {
+            portal.SetActive(true);
         }
     }
 }

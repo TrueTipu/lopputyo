@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using System;
 using System.Linq;
+using UnityEngine.UI;
 using Text = TMPro.TextMeshProUGUI;
 
 public class ItemUI : MonoBehaviour
@@ -27,6 +28,8 @@ public class ItemUI : MonoBehaviour
 
 
     [GetSO] AbilityData abilityData;
+
+    [SerializeField] Sprite[] imgs = new Sprite[2];
 
     Action<PlayerAbility> abilityCallback;
 
@@ -64,14 +67,20 @@ public class ItemUI : MonoBehaviour
     public void Load(HashSet<PlayerAbility> _abilities, CoreData _core)
     {
 
+        Dictionary<PlayerAbility, int> _dic = new Dictionary<PlayerAbility, int>()
+        {
+            {PlayerAbility.Doublejump, 0},
+            {PlayerAbility.Dash, 1},
+        };
+
         //Debug.Log("2 [" + string.Join(", ", _abilities.ToList().ConvertAll<string>((x) => x.ToString()).ToArray()) + "]");
         for (int i = 0; i < abilitySquares.Length; i++)
         {
             if (i < _abilities.Count)
             {
                 abilitySquares[i].SetActive(true);
-                Text _text = abilitySquares[i].GetComponentInChildren<Text>();
-                _text.text = _abilities.ToList()[i].ToString();
+                Image _img = abilitySquares[i].GetComponent<Image>();
+                _img.sprite = imgs[_dic[_abilities.ToList()[i]]];
             }
 
             else { abilitySquares[i].SetActive(false); }

@@ -23,14 +23,15 @@ public class CoreData : PlaytimeObject, IHasDelegates
     [GetSO] CoreDataManager dataManager;
 
     [SerializeField] bool lastUse = false; //loppua varten
-
+    [SerializeField] CoreData last;
+    public bool LastUsed { get; private set; }
     protected override void OnEnable()
     {
         base.OnEnable();
 
         if (lastUse)
         {
-            
+            last.LastUsed = true;
         }
     }
 

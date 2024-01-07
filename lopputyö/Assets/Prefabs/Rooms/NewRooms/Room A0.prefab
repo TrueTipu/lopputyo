@@ -9902,6 +9902,10 @@ PrefabInstance:
       value: Core A0
       objectReference: {fileID: 0}
     - target: {fileID: 5202428737737617518, guid: c0d0457f596cedb48a86aaf24f76cba5, type: 3}
+      propertyPath: portal
+      value: 
+      objectReference: {fileID: 3165702275927890713}
+    - target: {fileID: 5202428737737617518, guid: c0d0457f596cedb48a86aaf24f76cba5, type: 3}
       propertyPath: coreData
       value: 
       objectReference: {fileID: 11400000, guid: 5513b86449913ab4fae0daa676a6bb53, type: 2}
