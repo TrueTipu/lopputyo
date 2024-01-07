@@ -22,17 +22,13 @@ public class CoreData : PlaytimeObject, IHasDelegates
     [GetSO] AbilityData abilityData;
     [GetSO] CoreDataManager dataManager;
 
-    [SerializeField] bool lastUse = false; //loppua varten
-    [SerializeField] CoreData last;
-    public bool LastUsed { get; private set; }
+    [SerializeField] public bool lastUse = false; //loppua varten
+    [SerializeField] public CoreData last;
+    public bool LastUsed;
     protected override void OnEnable()
     {
         base.OnEnable();
 
-        if (lastUse)
-        {
-            last.LastUsed = true;
-        }
     }
 
     void TryGetData()
@@ -52,6 +48,7 @@ public class CoreData : PlaytimeObject, IHasDelegates
 
     protected override void LoadInspectorData()
     {
+        LastUsed = false;
         TryGetData();
     }
     public void SetData(CoreDataManager.CoreDataObject _data)

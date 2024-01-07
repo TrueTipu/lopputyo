@@ -59,7 +59,7 @@ public class SceneLoader : PersistentSingleton<SceneLoader>
         }
         if (_index == 2)
         {
-            SceneManager.LoadScene("EndSequence");
+            SceneManager.LoadScene("End Sequence");
         }
     }
     public static void NextScene()

@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5735e84f94f1a0e4286aeadb9662964e, type: 3}
   m_Name: Core B0
   m_EditorClassIdentifier: 
+  lastUse: 0
+  last: {fileID: 11400000, guid: 5513b86449913ab4fae0daa676a6bb53, type: 2}
+  LastUsed: 0

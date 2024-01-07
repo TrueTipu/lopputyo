@@ -86,6 +86,11 @@ public class StreamCore : MonoBehaviour
 
         activeStreamsData.AddCoreLink(new CoreLink(activeStreamsData.LastCore, coreData), new List<VisitedRoom>(roomVisitData.OldVisited));
         activeStreamsData.SetLastCore(coreData);
+
+        if (coreData.lastUse)
+        {
+            coreData.last.LastUsed = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -122,5 +127,9 @@ public class StreamCore : MonoBehaviour
         {
             portal.SetActive(true);
         }
+
+
+
+
     }
 }
