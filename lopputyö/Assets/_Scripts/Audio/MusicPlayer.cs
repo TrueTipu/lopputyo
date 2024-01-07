@@ -1,52 +1,61 @@
 using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicPlayer : Singleton<MusicPlayer>
 {
-    const int AMOUNT = 6;
-    AudioSource[] sources = new AudioSource[AMOUNT];
-
-
-    void Start()
+    private void Update()
     {
-        //Init();
-    }
+        int _a = SceneManager.GetActiveScene().buildIndex;
 
-    void Init()
-    {
-
-        if (!AudioManager.Instance.IsPlaying("M1"))
+        switch (_a)
         {
-            for (int i = 0; i < AMOUNT; i++)
-            {
-                sources[i] = AudioManager.Instance.PlayOnLoop("M" + (i+1).ToString());
-            }
+            case 0:
+                AudioManager.Instance.PlayOnLoop("Menu");
+                AudioManager.Instance.Stop("Intro");
+                AudioManager.Instance.Stop("Seikkailu");
+                AudioManager.Instance.Stop("Loppu");
+                AudioManager.Instance.Stop("Credits");
+                break;
+            case 1:
+                AudioManager.Instance.PlayOnLoop("Intro");
+                AudioManager.Instance.Stop("Menu");
+                AudioManager.Instance.Stop("Seikkailu");
+                AudioManager.Instance.Stop("Loppu");
+                AudioManager.Instance.Stop("Credits");
+                break;
+            case 2:
+                AudioManager.Instance.PlayOnLoop("Seikkailu");
+                AudioManager.Instance.Stop("Menu");
+                AudioManager.Instance.Stop("Intro");
+                AudioManager.Instance.Stop("Loppu");
+                AudioManager.Instance.Stop("Credits");
+                break;
+            case 3:
+                AudioManager.Instance.PlayOnLoop("Seikkailu");
+                AudioManager.Instance.Stop("Menu");
+                AudioManager.Instance.Stop("Intro");
+                AudioManager.Instance.Stop("Loppu");
+                AudioManager.Instance.Stop("Credits");
+                break;
+            case 4:
+                AudioManager.Instance.PlayOnLoop("Loppu");
+                AudioManager.Instance.Stop("Menu");
+                AudioManager.Instance.Stop("Intro");
+                AudioManager.Instance.Stop("Seikkailu");
+                AudioManager.Instance.Stop("Credits");
+                break;
+            case 5:
+                AudioManager.Instance.PlayOnLoop("Credits");
+                AudioManager.Instance.Stop("Menu");
+                AudioManager.Instance.Stop("Intro");
+                AudioManager.Instance.Stop("Seikkailu");
+                AudioManager.Instance.Stop("Loppu");
+                break;
+            default:
+                break;
         }
-     
-    }
-
-
-    public void SetSourcesActiveUntil(int _stop)
-    {
-        for (int i = 0; i < _stop; i++)
-        {
-            sources[i].volume = 1;
-        }
-        for (int i = _stop; i < AMOUNT; i++)
-        {
-            sources[i].volume = 0;
-        }
-    }
-
-    public void SetSourceActive(int _i)
-    {
-        sources[_i].volume = 1;
-    }
-
-    public void SilenceSource(int _i)
-    {
-        sources[_i].volume = 0;
     }
 
 }

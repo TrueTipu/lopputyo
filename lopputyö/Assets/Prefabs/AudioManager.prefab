@@ -210,50 +210,42 @@ MonoBehaviour:
   - name: Menu
     clip: {fileID: 8300000, guid: f2efeefbfb1431845b404279d072c74c, type: 3}
     volume: 1
-    pitch: 1.5
+    pitch: 1
     stereo: 0
     mixer: {fileID: 7917896306174616493, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: Seikkailu
     clip: {fileID: 8300000, guid: 36a3fa4c6f1cfa146a7bad92a9a4b3ce, type: 3}
     volume: 1
-    pitch: 1.5
+    pitch: 1
     stereo: 0
     mixer: {fileID: 7917896306174616493, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
-    loop: 0
+    loop: 1
     source: {fileID: 0}
-  - name: Seikkailu
-    clip: {fileID: 8300000, guid: 36a3fa4c6f1cfa146a7bad92a9a4b3ce, type: 3}
-    volume: 1
-    pitch: 1.5
-    stereo: 0
-    mixer: {fileID: 7917896306174616493, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
-    loop: 0
-    source: {fileID: 0}
-  - name: "J\xE4nnnitys"
+  - name: Intro
     clip: {fileID: 8300000, guid: b55a3ed7ebbd96044b8bfcf348cc91c0, type: 3}
     volume: 1
-    pitch: 1.5
+    pitch: 1
     stereo: 0
     mixer: {fileID: 7917896306174616493, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: Loppu
     clip: {fileID: 8300000, guid: ec00c07ed86126b45aba7ebad5ac7492, type: 3}
     volume: 1
-    pitch: 1.5
+    pitch: 1
     stereo: 0
     mixer: {fileID: 7917896306174616493, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: Credits
     clip: {fileID: 8300000, guid: f60399dd65ba9e54e88bba15facca9fe, type: 3}
     volume: 1
-    pitch: 1.5
+    pitch: 1
     stereo: 0
     mixer: {fileID: 7917896306174616493, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   musicPlayer: {fileID: 3896334908221246884}
 --- !u!114 &3896334908221246884
