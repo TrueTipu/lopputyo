@@ -9578,7 +9578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4896702816021512125, guid: 668d999cea3bf14f59fc11d71579c092, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -551.2
+      value: -551.22
       objectReference: {fileID: 0}
     - target: {fileID: 4896702816021512125, guid: 668d999cea3bf14f59fc11d71579c092, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10378,15 +10378,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4896702816031661818, guid: 668d999cea3bf14f59fc11d71579c092, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -12.25
+      value: -10.44
       objectReference: {fileID: 0}
     - target: {fileID: 4896702816031661818, guid: 668d999cea3bf14f59fc11d71579c092, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 7.65
+      value: 7.85
       objectReference: {fileID: 0}
     - target: {fileID: 4896702816031661821, guid: 668d999cea3bf14f59fc11d71579c092, type: 3}
       propertyPath: m_text
-      value: Interact with characters with I
+      value: 'Interact with characters with I
+
+        Click the text obx to advance
+        the conversation'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896702816031661821, guid: 668d999cea3bf14f59fc11d71579c092, type: 3}
+      propertyPath: m_margin.x
+      value: -249.99236
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896702816031661821, guid: 668d999cea3bf14f59fc11d71579c092, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 668d999cea3bf14f59fc11d71579c092, type: 3}
