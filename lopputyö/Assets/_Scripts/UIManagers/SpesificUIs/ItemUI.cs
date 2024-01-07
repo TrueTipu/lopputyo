@@ -92,7 +92,7 @@ public class ItemUI : MonoBehaviour
         if (lastCore.CurrentAbility != PlayerAbility.None)
         {
             chosenAbilitySquare.SetActive(true);
-            chosenAbilitySquare.GetComponentInChildren<Text>().text = lastCore.CurrentAbility.ToString();
+            chosenAbilitySquare.GetComponent<Image>().sprite = imgs[_dic[lastCore.CurrentAbility]];
         }
         else
         {
