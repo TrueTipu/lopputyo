@@ -81,6 +81,7 @@ MonoBehaviour:
   ceilCheckArea: {x: 0.43, y: 0.09}
   playerStateCheck: {fileID: 11400000, guid: 7c9061502fe59084496f4b16da69620a, type: 2}
   anim: {fileID: 7506990974881529670}
+  jumpEff: {fileID: 8943715173362938168, guid: e642c8d1a2c9e457a90c724b40771196, type: 3}
 --- !u!50 &1697212272135305796
 Rigidbody2D:
   serializedVersion: 4

@@ -77,7 +77,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
     [Header("Animation")]
     bool isHovering = false;
     [SerializeField] Animator anim;
-
+    [SerializeField] GameObject jumpEff; 
+    bool effUsed;
 
 
     
@@ -208,6 +209,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
         if (pressedJump && IsGround && !playerStateCheck.IsDashing && !playerStateCheck.IsSupering && !playerStateCheck.IsCharging)
         {
+            Instantiate (jumpEff, transform.position, Quaternion.identity);
             Jump();
         }
 
@@ -328,6 +330,10 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
 
         if (playerStateCheck.OnGround)
         {
+            if (!effUsed){ 
+                Instantiate (jumpEff, transform.position, Quaternion.identity);
+                effUsed = true;
+            }
             rb2.gravityScale = playerStateCheck.NormalGravity;           
             return;
         }
@@ -367,6 +373,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerStateChanger, IA_OnAir, IA_O
         else if (groundTimer <= 0)
         {
             IsGround = false;
+            effUsed = false;
         }
         else
         {
