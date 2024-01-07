@@ -57,6 +57,10 @@ public class SceneLoader : PersistentSingleton<SceneLoader>
         {
             SceneManager.LoadScene("LevelEditor");
         }
+        if (_index == 2)
+        {
+            SceneManager.LoadScene("EndSequence");
+        }
     }
     public static void NextScene()
     {
