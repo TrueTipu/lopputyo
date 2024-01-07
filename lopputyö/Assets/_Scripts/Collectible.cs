@@ -10,7 +10,7 @@ public class Collectible : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            AudioManager.Instance.Play("Nappula 2");
+            AudioManager.Instance.Play("Launch");
             Instantiate(eff, transform.position, Quaternion.identity);
             CollectibleManager.Instance.Collect();
             Destroy(this.gameObject);
