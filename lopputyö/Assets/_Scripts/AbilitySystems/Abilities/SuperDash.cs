@@ -9,6 +9,7 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
    
     [SerializeField] GameObject eff;
     [SerializeField] GameObject eff2;
+    [SerializeField] Animator anim;
  
     [SerializeField] float superSpeed;
 
@@ -193,6 +194,9 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
 
         while (!playerStateCheck.OnWall && !playerStateCheck.OnCeiling && !outsideBoolToStopSuper)
         {
+            if (_dir != Vector2.up){ 
+                anim.ResetTrigger("isIdling");
+            }
             Instantiate(eff, transform.position, Quaternion.identity);
             rb2.gravityScale = 0;
             yield return null;
