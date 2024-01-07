@@ -2379,8 +2379,8 @@ MonoBehaviour:
   openEditorButton: {fileID: 1981631343}
   openEditorButtonFake: {fileID: 2126402058}
   imgs:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: d1c4880ef65e25c50a4e85673673a665, type: 3}
+  - {fileID: 21300000, guid: 24da0df8684ccdcb88f93dd43d6dc47a, type: 3}
 --- !u!1 &887927661
 GameObject:
   m_ObjectHideFlags: 0
