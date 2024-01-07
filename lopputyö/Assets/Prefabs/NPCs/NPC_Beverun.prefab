@@ -133,10 +133,11 @@ MonoBehaviour:
     - sentence: There are five of them in total and that notable friendy looking
         machine there is the central one.
       image: {fileID: 168308941, guid: 357d82e3d8d021492acc535f5da86ce8, type: 3}
-    - sentence: You just need to connect them together with an ability core. You'll
-        figure it out. You will probably meet my brother Dostyjov somewhere...
+    - sentence: 'You just need to connect them together with an ability core. You''ll
+        figure it out. '
       image: {fileID: 168308941, guid: 357d82e3d8d021492acc535f5da86ce8, type: 3}
-    - sentence: and Camus...and Ertras the fishmonger...
+    - sentence: You will probably meet my brother Dostyjov somewhere... and Camus...and
+        Ertras the fishmonger...
       image: {fileID: -258789360, guid: 357d82e3d8d021492acc535f5da86ce8, type: 3}
     - sentence: 'Sorry about rambling. You just happen to be the first person I''ve
         met for weeks. '

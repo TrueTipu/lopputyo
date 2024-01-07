@@ -9,6 +9,8 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
    
     [SerializeField] GameObject eff;
     [SerializeField] GameObject eff2;
+    [SerializeField] GameObject eff3;
+    bool effUsed;
     [SerializeField] Animator anim;
  
     [SerializeField] float superSpeed;
@@ -73,9 +75,10 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
 
 
     void ChargeDash()
-    {
+    {        
         if (Keys.DashKeys())
         {
+            Instantiate(eff2, transform.position, Quaternion.identity);
             chargeTimer += Time.deltaTime;
             if (!isCharged)
             {
@@ -104,6 +107,7 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
         }
         else
         {
+            effUsed = false;
             isCharged = false;
         }
     }
@@ -113,6 +117,10 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
     {
         if(isCharged && (playerStateCheck.OnGround || playerStateCheck.OnWall))
         {
+            if (!effUsed){
+                Instantiate(eff3, transform.position, Quaternion.identity);
+                effUsed = true;
+            }
             HoldCharge();
         }
 
@@ -122,7 +130,6 @@ public class SuperDash : MonoBehaviour, IAbility_Main, IA_JumpVariables, IA_IsDa
     void HoldCharge()
     {
         IsCharging = true;
-        Instantiate(eff2, transform.position, Quaternion.identity);
         if (Keys.DashKeysUp())
         {
             switch (Keys.GetInputDirection())

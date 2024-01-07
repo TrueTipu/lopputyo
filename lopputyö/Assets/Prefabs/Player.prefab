@@ -510,6 +510,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eff: {fileID: 7106512400582588430, guid: 4c8fe30581f659e01adafbdf9966eb87, type: 3}
   eff2: {fileID: 5023401411029021455, guid: 848e7593f7efd1e40b1ff4ec4a5c7823, type: 3}
+  eff3: {fileID: 3449517268442525061, guid: 0153e9118a6288414884cc1ab6461431, type: 3}
+  anim: {fileID: 7506990974881529670}
   superSpeed: 30
   chargeTime: 2.5
 --- !u!1 &7387217546043750482
