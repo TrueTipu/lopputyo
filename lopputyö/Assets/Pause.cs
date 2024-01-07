@@ -17,11 +17,12 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!paused && Input.GetKeyDown(KeyCode.Escape)){
+        if (!paused && Keys.EscapeKeysDown()){
             Time.timeScale = 0f;
             pausemenu.SetActive(true);
         }    
-        else if (paused && Input.GetKeyDown(KeyCode.Escape)){
+        else if (paused && Keys.EscapeKeysDown())
+        {
             Continue();
         }
     }

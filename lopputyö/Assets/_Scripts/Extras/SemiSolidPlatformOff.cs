@@ -11,7 +11,7 @@ public class SemiSolidPlatformOff : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Keys.DirectionKey(Direction.Down))
         {
             boxCollider.enabled = false;
         }

@@ -69,6 +69,4 @@ public class UIManager : MonoBehaviour
     }
 
     public void ChangeScene(int _index) { AudioManager.Instance.Play("TilaVaihto"); StartCoroutine(Helpers.PointOneSDelay(() => SceneLoader.ChangeScene(_index))); }
-    public void NextScene() {  SceneLoader.NextScene(); }
-    public void ReloadScene() {  SceneLoader.ReloadScene(); }
 }

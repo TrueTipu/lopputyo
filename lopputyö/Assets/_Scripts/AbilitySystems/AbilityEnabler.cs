@@ -27,6 +27,8 @@ public class AbilityEnabler : MonoBehaviour
 
     private void Update()
     {
+
+        #if UNITY_EDITOR
         #region DoubleJump
         if (Input.GetKeyDown(KeyCode.J) && !abilityData.IsActive(PlayerAbility.Doublejump))
         {
@@ -105,6 +107,7 @@ public class AbilityEnabler : MonoBehaviour
         }
         #endregion
 
+        #endif
     }
 
 }

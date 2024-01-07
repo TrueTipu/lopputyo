@@ -22,7 +22,7 @@ public class Intro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && knocks < 11)
+        if (Keys.InteractKeysDown() && knocks < 11)
         {
             knocks++;
             Instantiate(eff, transform.position, Quaternion.identity);

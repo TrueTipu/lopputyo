@@ -55,10 +55,10 @@ public class ItemUI : MonoBehaviour
     private void Update()
     {
         ///debug
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Load(abilityData.ActiveAbilities, lastCore);
-        }
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    Load(abilityData.ActiveAbilities, lastCore);
+        //}
     }
 
     public void Load(HashSet<PlayerAbility> _abilities, CoreData _core)

@@ -35,20 +35,29 @@ public class Hover : MonoBehaviour
 
     private void Update()
     {
-        MouseCheck();
+        if (Keys.DashKeysDown() && !Input.GetMouseButtonDown(1))
+        {
+            Helpers.Camera.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+            rememberPos = Helpers.GetMousePosition();
+        }
+        else
+        {
+            MouseCheck();
+        }
         CheckKeyboard();
-        if(Input.GetKeyDown(KeyCode.Z) || Input.GetMouseButtonDown(0))
+    
+        if (Keys.JumpKeysDown() && !Keys.DirectionKey(Direction.Up))
         {
             SelectTile();
         }
 
-        if (Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(3))
+        if (Keys.InteractKeysDown())
         {
             selectedTile = null;
             selectedLogo.SetActive(false);
         }
 
-        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetMouseButtonDown(0)) && Input.GetKey(KeyCode.LeftShift) && !selectedTile.HasMovableRoom)
+        if (Keys.JumpKeysDown() && Keys.DashKeys() && !selectedTile.HasMovableRoom)
         {
             var _core = selectedTile.Core;
             if (_core == null) return;
@@ -56,7 +65,7 @@ public class Hover : MonoBehaviour
             if(streamsData.GetLink(grid.GetTile(playerData.TeleportRoom).Core, _core))
             {
                 playerData.ChangeTeleportLocation(selectedTile.TileCords);
-                StartCoroutine(Helpers.PointO_OneSDelay(SceneLoader.LoadLevel));
+                StartCoroutine(Helpers.PointO_OneSDelay(() => SceneLoader.ChangeScene(0)));
 
                 selectedTile = null;
                 selectedLogo.SetActive(false);
@@ -67,10 +76,10 @@ public class Hover : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.P))//DEBUG
-        {
-            roomSet.IncreaseStreamLevel(); 
-        }
+        //if (Input.GetKeyDown(KeyCode.P))//DEBUG
+        //{
+        //    roomSet.IncreaseStreamLevel(); 
+        //}
 
         transform.position = currentTile.transform.position;
 
@@ -110,10 +119,18 @@ public class Hover : MonoBehaviour
         }
         else
         {
-            if (currentTile.HasRoom)
+            if (currentTile.HasRoom && !(!selectedTile.HasMovableRoom || selectedTile.StreamLocked))
             {
                 AudioManager.Instance.PlayRandomPitch("Siirto");
                 //Debug.Log("Täynnä");
+                return;
+            }
+            else if (currentTile.HasRoom)
+            {
+                AudioManager.Instance.PlayRandomPitch("Siirto");
+                //et voi siirtää tätä huonetta
+                selectedTile = null;
+                SelectTile();
                 return;
             }
             if (!selectedTile.HasMovableRoom || selectedTile.StreamLocked)
@@ -137,6 +154,7 @@ public class Hover : MonoBehaviour
     /// <returns> Palauttaa true/false sen mukaan vaihtuiko ruutu </returns>
     void MouseCheck()
     {
+
         Vector3 _mousePos = Helpers.GetMousePosition();
         if (_mousePos == rememberPos)
         {
@@ -149,19 +167,19 @@ public class Hover : MonoBehaviour
 
     void CheckKeyboard()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Keys.DirectionKeyDown(Direction.Up))
         {
             currentTile = grid.GetTile(currentTile.TileCords.x, currentTile.TileCords.y + 1);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Keys.DirectionKeyDown(Direction.Down))
         {
             currentTile = grid.GetTile(currentTile.TileCords.x, currentTile.TileCords.y - 1);
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Keys.DirectionKeyDown(Direction.Right))
         {
             currentTile = grid.GetTile(currentTile.TileCords.x + 1, currentTile.TileCords.y);
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Keys.DirectionKeyDown(Direction.Left))
         {
             currentTile = grid.GetTile(currentTile.TileCords.x - 1, currentTile.TileCords.y);
         }
