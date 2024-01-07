@@ -24,6 +24,7 @@ public class Intro : MonoBehaviour
     {
         if (Keys.InteractKeysDown() && knocks < 11)
         {
+            AudioManager.Instance.Play("Tömähdys");
             knocks++;
             Instantiate(eff, transform.position, Quaternion.identity);
         }

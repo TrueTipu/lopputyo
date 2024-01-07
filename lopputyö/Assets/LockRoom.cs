@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class LockRoom : MonoBehaviour
 {
+    [SerializeField] Animator anim;
+    [SerializeField] SpriteRenderer rend;
+    [SerializeField] Sprite sprit;
     [SerializeField] Transform _poos;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,7 +20,12 @@ public class LockRoom : MonoBehaviour
 
     IEnumerator End()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
+        rend.sprite = sprit;
+        AudioManager.Instance.Play("Tömähdys");
+        yield return new WaitForSeconds(3);
+        anim.SetTrigger("trigger");
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("End Screen");
     }
 }

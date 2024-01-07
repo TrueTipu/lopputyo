@@ -20,6 +20,7 @@ public class StartGame : MonoBehaviour
 
     IEnumerator StartTransition () 
     {
+        AudioManager.Instance.Play("Enkeli1");
         anim.SetTrigger("start");
         yield return new WaitForSeconds(1.1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

@@ -125,7 +125,7 @@ TextureImporter:
         width: 254
         height: 364
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,7 +146,7 @@ TextureImporter:
         width: 255
         height: 361
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,7 +167,7 @@ TextureImporter:
         width: 337
         height: 379
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,6 +175,27 @@ TextureImporter:
       bones: []
       spriteID: e572ba7b7bc8959ecac1f8b0b8bb5b5a
       internalID: -1116779434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Egg stuff_0
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 669
+        width: 240
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade3406429779cd24b157e895be94428
+      internalID: 663442961
       vertices: []
       indices: 
       edges: []
@@ -190,6 +211,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Egg stuff_0: 663442961
       Egg2: 1337481684
       Egg: -109807663
       Egg ball: -1116779434

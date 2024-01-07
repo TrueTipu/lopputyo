@@ -1125,7 +1125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &164322777
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1379,6 +1379,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3896334908221246885, guid: 9fc9a9c173862a444b8a760fd72704db, type: 3}
+      propertyPath: sounds.Array.size
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896334908221246885, guid: 9fc9a9c173862a444b8a760fd72704db, type: 3}
+      propertyPath: sounds.Array.data[25].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: bf7a1ff1d04e04648b3d2f5fa5f34254, type: 3}
+    - target: {fileID: 3896334908221246885, guid: 9fc9a9c173862a444b8a760fd72704db, type: 3}
+      propertyPath: sounds.Array.data[25].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896334908221246885, guid: 9fc9a9c173862a444b8a760fd72704db, type: 3}
+      propertyPath: sounds.Array.data[25].name
+      value: "T\xF6m\xE4hdys"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896334908221246885, guid: 9fc9a9c173862a444b8a760fd72704db, type: 3}
+      propertyPath: sounds.Array.data[25].mixer
+      value: 
+      objectReference: {fileID: 7917896306174616493, guid: 70cc51cf81be4c44ebebd5f7cc4faad0, type: 2}
+    - target: {fileID: 3896334908221246885, guid: 9fc9a9c173862a444b8a760fd72704db, type: 3}
+      propertyPath: sounds.Array.data[25].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896334908221246885, guid: 9fc9a9c173862a444b8a760fd72704db, type: 3}
+      propertyPath: sounds.Array.data[25].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3896334908221246886, guid: 9fc9a9c173862a444b8a760fd72704db, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -2075,7 +2103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27, y: -184.5}
+  m_AnchoredPosition: {x: -27, y: -245}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &587921129
@@ -4319,7 +4347,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27, y: -110}
+  m_AnchoredPosition: {x: -27, y: -143}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1305119774
